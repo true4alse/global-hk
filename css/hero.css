@@ -1,0 +1,52 @@
+@font-face { font-family: 'HK Pretendard'; src: url('/assets/PretendardVariable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Playfair Display'; src: url('/assets/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 400 900; font-style: italic; font-display: swap; }
+/* 시안에서는 PC 헤더와 히어로가 같은 y=0에서 시작합니다. */
+@media (min-width: 761px) { body:has(.hero) > .site-header { position: absolute; inset-block-start: 0; inset-inline: 0; } }
+.hero { position: relative; isolation: isolate; min-height: 971px; padding-block: 428px 120px; color: #fff; overflow: hidden; background: #041a2b; font-family: 'HK Pretendard', var(--font-ui); }
+.hero-background, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+.hero-background { object-fit: cover; object-position: center; }
+.hero-shade { background: linear-gradient(180deg, rgb(0 0 0 / 22%) 53.365%, rgb(0 0 0 / 60%) 100%); }
+.hero-statistic { position: relative; display: grid; grid-template-columns: minmax(0, calc(50% - 222px)) 413px minmax(0, 1fr); gap: 21px; direction: ltr; height: 216px; }
+.hero-rule { display: block; width: 100%; height: 1px; margin-block-start: 159px; }
+.hero-statistic-center { position: relative; }
+.hero-period { position: absolute; inset-block-start: 12px; inset-inline: 0; margin: 0; text-align: center; transform: translateX(-21px); font-size: 24px; line-height: 1.45; }
+.hero-number { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 155.09px; font-weight: 600; font-style: italic; line-height: 1.32; white-space: nowrap; }
+.hero-unit { position: absolute; inset-inline-end: 0; inset-block-start: 138px; font-size: 36px; font-weight: 900; line-height: 1.2; }
+.hero-copy { width: min(962px, calc(100% - 64px)); margin-inline: auto; margin-block-start: 22px; }
+.hero-title { margin: 0; font-size: 54px; font-weight: 700; line-height: 1.2; letter-spacing: 0; word-break: keep-all; overflow-wrap: anywhere; }
+.hero-description { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; margin-block-start: 20px; padding-inline-start: 7px; }
+.hero-description p { margin: 0; padding-inline: 20px; border-inline-start: 1px solid #fff; font-size: 16px; font-weight: 400; line-height: 1.45; overflow-wrap: anywhere; }
+@media (min-width: 1921px) { .hero { min-height: 50.573vw; } }
+@media (min-width: 761px) and (max-width: 1200px) {
+  .hero { min-height: 850px; padding-block-start: 320px; }
+  .hero-title { font-size: clamp(36px, 4.2vw, 50px); text-align: center; }
+}
+/* 모바일 히어로 임시 적응형 배치. 모바일 헤더 스타일은 수정하지 않습니다. */
+@media (max-width: 760px) {
+  .hero { min-height: 680px; padding-block: 210px 64px; }
+  .hero-background { object-position: 62% center; }
+  .hero-statistic { grid-template-columns: minmax(0, 1fr) 250px minmax(0, 1fr); gap: 10px; height: 143px; }
+  .hero-period { inset-block-start: 0; transform: none; font-size: 18px; }
+  .hero-number { padding-block-start: 12px; font-size: 90px; }
+  .hero-unit { inset-block-start: 94px; font-size: 24px; }
+  .hero-rule { margin-block-start: 111px; }
+  .hero-copy { width: calc(100% - 40px); margin-block-start: 14px; }
+  .hero-title { font-size: clamp(27px, 6.5vw, 40px); text-align: center; }
+  .hero-description { grid-template-columns: 1fr; gap: 18px; margin-block-start: 26px; padding: 0; }
+  .hero-description p { padding-inline: 14px; font-size: 15px; line-height: 1.6; }
+}
+
+
+/* JS가 준비된 요소만 숨겨서 JS 비활성화 시에도 콘텐츠를 읽을 수 있습니다. */
+.hero-number { font-variant-numeric: tabular-nums; }
+.hero-rule { transform: scaleX(1); transition: transform 1600ms cubic-bezier(.22, 1, .36, 1); }
+.hero-rule:first-child { transform-origin: right center; }
+.hero-rule:last-child { transform-origin: left center; }
+.statistic-pending .hero-rule { transform: scaleX(0); transition: none; }
+/* translate 속성을 사용하여 '연 간'의 기존 가로 위치(transform)를 보존합니다. */
+.reveal-pending { opacity: 0; translate: 0 -28px; }
+.reveal-pending.is-revealed { opacity: 1; translate: 0 0; transition: opacity 900ms ease, translate 900ms cubic-bezier(.22, 1, .36, 1); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-rule { transform: none !important; transition: none !important; }
+  .reveal-pending { opacity: 1 !important; translate: none !important; transition: none !important; }
+}

@@ -1,0 +1,63 @@
+/* HSS: 콘텐츠는 HTML, 배치/등장 효과는 이 파일에서 관리합니다. */
+.global-excellence { position: relative; isolation: isolate; padding-top: clamp(70px,6.3vw,121px); color: #080d10; font-family: 'HK Pretendard',var(--font-ui); }
+.global-kicker { display: grid; gap: 10px; margin: 0; text-align: center; color: #46aaa9; font-size: 16px; line-height: 1.4; }
+.global-kicker > span:first-child { font-size: 24px; font-weight: 700; }
+.global-stage { display: grid; position: relative; }
+.global-sticky-layer, .global-intro { grid-area: 1 / 1; min-width: 0; }
+.global-sticky-layer { pointer-events: none; z-index: 0; }
+.global-watermark { opacity: .85; position: sticky; top: 12vh; margin: 12px 0 0; text-align: center; color: #e1f3f2; font-size: clamp(42px,13.3vw,256px); line-height: 1.15; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
+.global-intro { position: relative; z-index: 1; padding: clamp(130px,13vw,250px) 24px 110px; }
+.global-copy { position: relative; z-index: 1; width: max-content; max-width: 100%; margin-inline: auto; }
+.global-lead { margin: 0 0 20px; font-size: clamp(16px,1.2vw,23px); font-weight: 700; line-height: 1.5; word-break: keep-all; }
+.global-lead strong { color: #277fa4; }
+.global-title { margin: 0; font-family: 'Playfair Display',Georgia,serif; font-size: clamp(52px,4.2vw,81px); font-style: italic; font-weight: 500; line-height: 1.06; letter-spacing: -.04em; }
+.global-title > span { display: block; }
+.global-title b { color: #3dbabc; font-family: 'HK Pretendard',var(--font-ui); font-style: normal; font-weight: 700; }
+.global-description { white-space: pre-line; margin: 32px 0 0; font-size: 16px; line-height: 1.6; word-break: keep-all; }
+.global-photo { position: absolute; right: 0; top: 27%; width: 38%; height: 65%; z-index: 0; pointer-events: none; overflow: hidden; -webkit-mask-image: radial-gradient(ellipse at 80% 50%,#000 15%,transparent 73%); mask-image: radial-gradient(ellipse at 80% 50%,#000 15%,transparent 73%); }
+.global-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .6; }
+.global-awards { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; width: min(850px,100%); margin: 104px auto 0; padding: 0; list-style: none; }
+.global-award { position: relative; min-height: 246px; text-align: center; padding: 0 70px 8px; }
+.global-laurel { position: absolute; top: 15px; width: 112px; height: 211px; object-fit: contain; pointer-events: none; }
+.global-laurel-left { left: 0; }
+.global-laurel-right { right: 0; }
+.global-award-copy { position: relative; }
+.global-years { display: block; font-family: 'Playfair Display',Georgia,serif; font-size: 104px; line-height: 1; font-style: italic; font-variant-numeric: tabular-nums; min-height: 104px; }
+.global-unit { display: block; margin: 24px 0 8px; color: #b39a5e; font-family: 'Playfair Display',Georgia,serif; font-size: 36px; line-height: 1.2; }
+.global-award-source { color: #287ba1; font-size: 14px; line-height: 1.4; font-weight: 700; margin: 0 0 4px; white-space: nowrap; }
+.global-award-detail, .global-award-date { color: #174d71; margin: 0; font-size: 14px; line-height: 1.5; word-break: keep-all; }
+/* JS가 준비된 경우에만 숨겨서, JS 비활성화 시에도 콘텐츠를 읽을 수 있습니다. */
+.global-pending[data-global-reveal] { opacity: 0; transform: translateX(-32px); transition: opacity .9s ease,transform .9s cubic-bezier(.2,.65,.3,1); }
+.global-pending[data-global-photo] { opacity: 0; filter: blur(20px); transition: opacity 2.2s ease,filter 2.2s ease; }
+.global-shown[data-global-reveal] { opacity: 1; transform: translateX(0); }
+.global-shown[data-global-photo] { opacity: 1; filter: blur(0); }
+@media (max-width: 900px) {
+ .global-intro { padding-bottom: 80px; }
+ .global-copy { max-width: 560px; }
+ .global-photo { width: 58%; top: 30%; opacity: .7; }
+ .global-awards { max-width: 660px; gap: 8px; margin-top: 76px; }
+ .global-award { padding-inline: 40px; }
+ .global-laurel { width: 80px; height: 190px; }
+ .global-years { font-size: 88px; min-height: 88px; }
+ .global-unit { font-size: 30px; }
+ .global-award-source { font-size: 11px; }
+ .global-award-detail,.global-award-date { font-size: 12px; }
+}
+@media (max-width: 600px) {
+ .global-kicker { font-size: 13px; }
+ .global-intro { padding: 100px 22px 64px; }
+ .global-watermark { top: 14vh; font-size: 13.2vw; margin-top: 22px; }
+ .global-copy { width: 100%; }
+ .global-lead { max-width: 320px; margin-bottom: 20px; }
+ .global-title { font-size: clamp(45px,12vw,66px); }
+ .global-description { font-size: 14px; margin-top: 26px; }
+ .global-photo { width: 100%; height: 420px; top: 170px; opacity: .45; }
+ .global-awards { grid-template-columns: minmax(0,1fr); max-width: 340px; gap: 36px; margin-top: 64px; }
+ .global-award { min-height: 220px; padding-inline: 58px; }
+ .global-laurel { height: 190px; width: 86px; }
+ .global-award-source { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .global-pending[data-global-reveal],.global-pending[data-global-photo] { opacity: 1; transform: none; filter: none; transition: none; }
+ .global-watermark { position: static; }
+}
