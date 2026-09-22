@@ -1,7 +1,7 @@
 @font-face { font-family: 'HK Pretendard'; src: url('/assets/PretendardVariable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
 @font-face { font-family: 'Playfair Display'; src: url('/assets/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 400 900; font-style: italic; font-display: swap; }
-/* 시안에서는 PC 헤더와 히어로가 같은 y=0에서 시작합니다. */
-@media (min-width: 761px) { body:has(.hero) > .site-header { position: absolute; inset-block-start: 0; inset-inline: 0; } }
+/* PC에서는 고정 헤더가 히어로 배경 위에 겹쳐집니다. */
+@media (min-width: 761px) { body:has(.hero) { padding-top: 0; } }
 .hero { position: relative; isolation: isolate; min-height: 971px; padding-block: 428px 120px; color: #fff; overflow: hidden; background: #041a2b; font-family: 'HK Pretendard', var(--font-ui); }
 .hero-background, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
 .hero-background { object-fit: cover; object-position: center; }

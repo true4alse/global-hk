@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="/css/hero.css">
   <link rel="stylesheet" href="/css/about.css">
   <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/hss.css">
+  <link rel="stylesheet" href="/css/mis.css">
+  <link rel="stylesheet" href="/css/treatment.css">
   <script type="module" src="/js/header.js"></script>
 </head>
 <body class="lang-ko">
@@ -34,9 +37,8 @@
         </div>
       </div>
       <a class="hospital-logo" href="/ko/" aria-label="흥K병원 홈">
-        <img class="logo-symbol" src="/assets/logo-symbol.png" alt="" width="44" height="40">
-        <img class="logo-wordmark" src="/assets/logo-wordmark.svg" alt="" width="170" height="13">
-        <img class="logo-affiliations" src="/assets/logo-affiliations.svg" alt="" width="63" height="29">
+        <!-- 새 로고 원본 비율 553:80. 파일 교체 시 이 img 경로와 크기만 확인합니다. -->
+        <img class="logo-main" src="/assets/logo.svg" alt="" width="553" height="80">
       </a>
       <!-- 시안의 임시 번호. 실제 연락처 확인 후 tel 링크로 변경합니다. -->
       <span class="header-phone pill" aria-label="시안용 임시 전화번호">+82-10-1111-2222</span>
@@ -207,8 +209,157 @@
             </li>
           </ul>
         </div>
+        <!-- HSS 소개: 사진 교체는 아래 img의 src, 한국어 문구는 HTML에서 직접 수정합니다. -->
+        <section class="hss-story" id="hss" aria-labelledby="hss-title">
+          <div class="hss-heading">
+            <h3 id="hss-title" data-global="hssTitle" data-global-reveal>세계 정형외과의 기준 HSS</h3>
+            <p data-global="hssDescription" data-global-reveal>뉴욕 맨해튼의 HSS(Hospital for Special Surgery)는 세계 최고 수준의 정형외과 전문 의료기관으로, 진료를 넘어 연구와 교육, 의료 혁신을 선도하고 있습니다.</p>
+          </div>
+          <!-- 왼쪽: HSS 방문 사진 / 수술 교류 사진 / HSS 건물 -->
+          <div class="hss-intro-gallery">
+            <img data-hss-image="left" class="hss-snf" src="/assets/hss/hss-snf.jpg" alt="HSS SNF 인공관절 재건센터를 방문한 김종근 대표원장" width="1430" height="827" loading="lazy">
+            <img data-hss-image="left" class="hss-monochrome" src="/assets/hss/surgery-exchange.jpg" alt="HSS 수술 현장에서 경험을 나누는 의료진" width="375" height="500" loading="lazy">
+            <img data-hss-image="left" class="" src="/assets/hss/hss-building.png" alt="뉴욕 HSS 병원 전경" width="384" height="256" loading="lazy">
+          </div>
+          <div class="hss-exchange-copy">
+            <h3 data-global="hssExchangeTitle" data-global-reveal>HSS에서 배우고,<br>흥K의 전문성을 공유하다</h3>
+            <p data-global="hssExchangeFirst" data-global-reveal>김종근 대표원장은 HSS Academic Visitor Program(AVP) 초청 연수와 Cornell University Visiting Scholar 과정을 통해 세계적인 정형외과 임상·연구 현장을 경험했습니다.</p>
+            <p data-global="hssExchangeSecond" data-global-reveal>현지 의료진과 인공관절 수술에 대한 경험을 나누고, 흥K병원이 축적해 온 MIS TKA 수술 경험과 노하우를 공유하며 세계와 꾸준히 교류하고 있습니다.</p>
+          </div>
+          <!-- 오른쪽: 위 2장 / 가운데 3장 / 아래 2장. 이미지 순서와 경로는 여기서 수정합니다. -->
+          <div class="hss-exchange-gallery">
+            <img data-hss-image="right" class="hss-visit" src="/assets/hss/hss-visit.jpg" alt="HSS 수술실 앞에 선 김종근 대표원장" width="375" height="500" loading="lazy">
+            <img data-hss-image="right" class="hss-team" src="/assets/hss/surgery-team.jpg" alt="HSS 수술에 참여하는 의료진" width="500" height="375" loading="lazy">
+            <img data-hss-image="right" class="hss-colleagues hss-monochrome" src="/assets/hss/colleagues.jpg" alt="HSS 의료진과 함께한 김종근 대표원장" width="375" height="500" loading="lazy">
+            <img data-hss-image="right" class="hss-operating" src="/assets/hss/operating-room.jpg" alt="HSS 수술실에서 이루어지는 임상 교류" width="369" height="375" loading="lazy">
+            <img data-hss-image="right" class="hss-lobby hss-monochrome" src="/assets/hss/hss-lobby.jpg" alt="HSS 방문 현장의 김종근 대표원장" width="1848" height="4000" loading="lazy">
+            <img data-hss-image="right" class="hss-visitors" src="/assets/hss/visitor-team.jpg" alt="HSS 의료진과 연수 방문 기념사진" width="500" height="375" loading="lazy">
+            <img data-hss-image="right" class="hss-discussion" src="/assets/hss/surgical-discussion.jpg" alt="수술 중 치료 경험과 의견을 나누는 의료진" width="1848" height="2844" loading="lazy">
+          </div>
+        </section>
       </div>
     </section>
+    <!-- MIS TKA: 한국어 문구와 이미지 src는 이 HTML에서 직접 수정합니다. -->
+    <section class="mis-tka" id="mis-tka" aria-labelledby="mis-title">
+      <div class="mis-side-rail" aria-hidden="true">
+        <p class="mis-side-label"><strong>3</strong><span lang="en">MIS TKA · Minimally Invasive TKA</span></p>
+      </div>
+      <div class="mis-intro">
+        <div class="mis-doctor" data-mis-blur aria-hidden="true">
+          <img src="/assets/mis/doctor-background.png" alt="" width="1500" height="1240" loading="lazy">
+        </div>
+        <div class="mis-heading">
+          <p class="mis-kicker" data-mis-reveal><span>3</span><span lang="en">MIS TKA · Minimally Invasive TKA</span></p>
+          <h2 id="mis-title" data-mis="title" data-mis-reveal>최소절개 인공관절 수술</h2>
+          <p class="mis-description" data-mis="description" data-mis-reveal>최소절개 인공관절 수술은 절개를 최소화하여 내부 연부조직의 손상을 줄이고, 이를 통해 통증을 감소시키며 재활을 빠르게 진행하여 환자의 일상생활 복귀를 촉진하고 만족도를 높이는 수술입니다.</p>
+        </div>
+        <!-- 무릎뼈가 먼저 나타난 뒤 양쪽 문구가 차례로 등장합니다. -->
+        <div class="mis-signature" data-mis-sequence>
+          <img class="mis-knee" src="/assets/mis/knee-visual.png" alt="무릎 관절의 뼈 구조" width="1920" height="970" loading="lazy">
+          <p class="mis-claim mis-claim-start"><span data-mis="claimStartFirst">전세계</span><strong data-mis="claimStartSecond">단 하나의 기술</strong></p>
+          <p class="mis-claim mis-claim-end"><strong data-mis="claimEndFirst">진정한 의미의</strong><strong class="mis-accent" data-mis="claimEndSecond">최소절개</strong></p>
+        </div>
+      </div>
+      <section class="mis-difference" id="mis-difference" aria-labelledby="mis-difference-title">
+        <div class="mis-question-heading">
+          <p class="mis-question" data-mis-reveal><strong aria-hidden="true">?</strong><span lang="en">Question</span></p>
+          <h3 id="mis-difference-title" data-mis-reveal><span data-mis="questionFirst">무엇이 </span><mark data-mis="questionStrong">다른가요</mark><span class="mis-sr-only">?</span></h3>
+          <div class="mis-description" data-mis-reveal>
+            <p data-mis="differenceFirst">슬개골의 위쪽 끝과 아래쪽 끝에서 각각 약 3~4cm만 절개하여 무릎관절 내에서 수술을 진행합니다.</p>
+            <p data-mis="differenceSecond">기존 수술 방식의 약 7~9cm (검지손가락 한마디) 절개와 비교해</p>
+            <p data-mis="differenceThird">절개 범위를 최소화하고, 주변 조직의 손상 부담을 줄이는 것을 목표로 합니다.</p>
+          </div>
+        </div>
+        <div class="mis-comparison">
+          <figure class="mis-incision">
+            <div class="mis-incision-image"><img src="/assets/mis/incision-comparison.png" alt="무릎 절개 위치와 검지손가락 길이를 비교한 설명도" width="3072" height="2048" loading="lazy"></div>
+            <figcaption lang="en"><span>MIS TKA</span> · Minimally Invasive TKA</figcaption>
+          </figure>
+          <div class="mis-benefits">
+            <h4 data-mis="benefitTitle" data-mis-reveal>작은 절개에서 시작되는 회복의 차이</h4>
+            <p class="mis-benefit-intro" data-mis="benefitIntro" data-mis-reveal>최소한의 절개와 조직 손상으로 수술 후 부담을 줄이고, 빠른 재활과 일상 복귀를 돕는 것. 흥K의 MIS TKA는 환자의 회복까지 생각하는 수술을 지향합니다.</p>
+            <ul class="mis-benefit-list">
+              <li data-mis-reveal>
+                <img src="/assets/mis/icon-mis1.svg" alt="" width="100" height="100" loading="lazy">
+                <div><h5 data-mis="benefit1Title">절개 부담을 최소화한 수술</h5><p data-mis="benefit1Description">허벅지 부위 절개 없이<br>정강이 부위 절개 최소화</p></div>
+              </li>
+              <li data-mis-reveal>
+                <img src="/assets/mis/icon-mis2.svg" alt="" width="100" height="100" loading="lazy">
+                <div><h5 data-mis="benefit2Title">꼭 필요한 만큼만 절개</h5><p data-mis="benefit2Description">위·아래 각각 약 3~4cm 절개<br>필요한 부위에 최소한으로 접근하여</p></div>
+              </li>
+              <li data-mis-reveal>
+                <img src="/assets/mis/icon-mis3.svg" alt="" width="100" height="100" loading="lazy">
+                <div><h5 data-mis="benefit3Title">최소침습 정밀 인공관절 수술</h5><p data-mis="benefit3Description">무릎관절 내에서 수술<br>정교한 인공관절 수술을 진행합니다.</p></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- 차별화된 치료: 이미지 src와 한국어 문구는 이 섹션에서 직접 수정합니다. -->
+    <section class="treatment" id="differentiated-treatment" aria-labelledby="treatment-title">
+      <div class="treatment-banner">
+        <img class="treatment-background" src="/assets/treatment/surgery-background.png" alt="" width="1920" height="1326" loading="lazy">
+        <div class="treatment-banner-copy">
+          <h2 id="treatment-title" data-treatment-reveal><span><em data-treatment="hospital">흥K병원</em><span data-treatment="titleFirst">은</span></span><span data-treatment="titleSecond">차별화된 치료를</span><span data-treatment="titleThird">제공합니다</span></h2>
+          <p data-treatment="intro" data-treatment-reveal>정밀하고 체계적인 수술을 위한<br>흥K병원의 차별화된 치료</p>
+        </div>
+      </div>
+      <div class="treatment-details">
+        <img class="treatment-detail-background" src="/assets/treatment/light-background.png" alt="" width="1920" height="1674" loading="lazy">
+        <div class="treatment-patent">
+          <!-- 액자는 화면 진입 시 아래에서 위로 등장합니다. 원본의 바깥 여백만 CSS로 잘라냅니다. -->
+          <figure class="treatment-patent-frame" data-treatment-reveal="up">
+            <img src="/assets/treatment/patent-frame.png" alt="최소침습식 인공무릎관절 전치환술용 경골 사이즈 측정 수기구 특허증, 제10-2622418호" width="1054" height="1492" loading="lazy">
+          </figure>
+          <img class="treatment-ribbon treatment-ribbon-left" src="/assets/about/ribbon.png" alt="" width="692" height="292" loading="lazy">
+          <div class="treatment-patent-copy">
+            <h3 data-treatment-reveal><span lang="en">InJury Knee Minimal:</span><strong lang="en">JK Minimal</strong></h3>
+            <p data-treatment-reveal><em data-treatment="patentEmphasis">최소절개 인공관절 수술</em> <span data-treatment="patentDescription">경골 대퇴골 사이즈 기구</span></p>
+          </div>
+        </div>
+        <div class="treatment-method" aria-label="JK Minimal의 특징">
+          <div class="treatment-efficiency">
+            <h3 data-treatment-reveal><em data-treatment="maximum">최대</em><span data-treatment="efficiency">효율</span></h3>
+            <p data-treatment="methodDescription" data-treatment-reveal>최소 절개에서도 수술 공간의 활용성을 극대화할 수 있는 인공관절 시스템 (InJury Knee Minimal / JK Minimal) 개발</p>
+          </div>
+          <div class="treatment-instrument">
+            <div class="treatment-instrument-circle" aria-hidden="true"></div>
+            <img src="/assets/treatment/jk-minimal.png" alt="JK Minimal 경골 대퇴골 사이즈 측정 기구" width="1920" height="1920" loading="lazy">
+          </div>
+          <div class="treatment-minimum">
+            <h3 data-treatment-reveal><em data-treatment="minimumInjury">최소</em><span data-treatment="injury">손상</span></h3>
+            <h3 data-treatment-reveal><em data-treatment="minimumIncision">최소</em><span data-treatment="incision">절개</span></h3>
+          </div>
+        </div>
+        <section class="treatment-strategies" id="treatment-strategies" aria-labelledby="treatment-strategies-title">
+          <img class="treatment-ribbon treatment-ribbon-right" src="/assets/about/ribbon.png" alt="" width="692" height="292" loading="lazy">
+          <h3 id="treatment-strategies-title" data-treatment="strategiesTitle" data-treatment-reveal>성공률과 만족도를 높이기 위한 차별화된 전략</h3>
+          <div class="treatment-strategy-grid">
+            <article class="treatment-strategy-card">
+              <h4 lang="en" data-treatment-reveal>PSI</h4>
+              <p class="treatment-strategy-subtitle" data-treatment="psiSubtitle" data-treatment-reveal>환자 맞춤형 인공관절</p>
+              <p class="treatment-strategy-description" data-treatment="psiDescription" data-treatment-reveal>개인의 뼈 구조에 맞춘 3D 맞춤형 수술도구(PSI)를 활용하여 정밀한 인공관절 삽입 가능</p>
+              <img class="treatment-strategy-image" src="/assets/treatment/psi.png" alt="환자의 뼈 구조에 맞춘 PSI 수술도구" width="1535" height="1024" loading="lazy">
+            </article>
+            <article class="treatment-strategy-card">
+              <h4 lang="en" data-treatment-reveal>MAKO</h4>
+              <p class="treatment-strategy-subtitle" data-treatment="makoSubtitle" data-treatment-reveal>로봇 인공관절 수술</p>
+              <p class="treatment-strategy-description" data-treatment="makoDescription" data-treatment-reveal>CT 기반의 환자 맞춤형 3D 수술 계획을 통해 계획된 범위 내에서 정밀한 뼈 절삭 로봇의 정밀함과 최소침습 수술 노하우의 결합</p>
+              <img class="treatment-strategy-image treatment-mako" src="/assets/treatment/mako.jpg" alt="MAKO 인공관절 수술 로봇" width="2122" height="1664" loading="lazy">
+            </article>
+            <article class="treatment-strategy-card">
+              <h4 lang="en" data-treatment-reveal>Mobile Window Technique</h4>
+              <p class="treatment-strategy-subtitle" data-treatment="windowSubtitle" data-treatment-reveal>최소절개 수술 공간 확보</p>
+              <p class="treatment-strategy-description" data-treatment="windowDescription" data-treatment-reveal>모바일 윈도우 테크닉(Mobile Window Technique)을 통해 수술 공간의 활용성을 극대화하는 효율적인 수술 술기</p>
+              <!-- 현재 디자인처럼 이 카드는 텍스트로 구성합니다. 추후 사진 추가 시 여기에 img를 넣습니다. -->
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
   </main>
 </body>
 </html>

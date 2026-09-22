@@ -3,9 +3,10 @@
 .global-kicker { display: grid; gap: 10px; margin: 0; text-align: center; color: #46aaa9; font-size: 16px; line-height: 1.4; }
 .global-kicker > span:first-child { font-size: 24px; font-weight: 700; }
 .global-stage { display: grid; position: relative; }
-.global-sticky-layer, .global-intro { grid-area: 1 / 1; min-width: 0; }
-.global-sticky-layer { pointer-events: none; z-index: 0; }
-.global-watermark { opacity: .85; position: sticky; top: 12vh; margin: 12px 0 0; text-align: center; color: #e1f3f2; font-size: clamp(42px,13.3vw,256px); line-height: 1.15; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
+.global-intro { grid-area: 1 / 1; min-width: 0; }
+/* 소개 + 화관 + HSS 의료 교류 전체를 스티키 범위로 사용합니다. */
+.global-sticky-layer { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.global-watermark { opacity: 1; position: sticky; top: 12vh; margin: 12px 0 0; text-align: center; color: #50bfc0; font-size: clamp(42px,13.3vw,256px); line-height: 1.15; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
 .global-intro { position: relative; z-index: 1; padding: clamp(130px,13vw,250px) 24px 110px; }
 .global-copy { position: relative; z-index: 1; width: max-content; max-width: 100%; margin-inline: auto; }
 .global-lead { margin: 0 0 20px; font-size: clamp(16px,1.2vw,23px); font-weight: 700; line-height: 1.5; word-break: keep-all; }

@@ -1,0 +1,551 @@
+/* 차별화된 치료: 콘텐츠는 index.html, 등장 효과 연결은 js/treatment.js에서 수정합니다. */
+.treatment {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  font-family: 'HK Pretendard', var(--font-ui);
+  color: #080d10;
+}
+
+.treatment em {
+  font-style: normal;
+  color: #3eb6b8;
+}
+
+.treatment-banner {
+  position: relative;
+  min-height: 60vw;
+  background: #031733;
+  color: #fff;
+}
+
+.treatment-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.treatment-banner-copy {
+  position: relative;
+  padding-top: 7.5vw;
+  margin-left: 56%;
+  padding-right: 5%;
+}
+
+.treatment-banner h2 {
+  margin: 0;
+  font-size: clamp(36px, 4.17vw, 80px);
+  line-height: 1.22;
+  letter-spacing: -.035em;
+  word-break: keep-all;
+}
+
+.treatment-banner h2>span {
+  display: block;
+}
+
+.treatment-banner-copy p {
+  margin: 38px 0 0;
+  font-size: clamp(18px, 1.875vw, 36px);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.treatment-details {
+  position: relative;
+  padding-bottom: clamp(90px, 10vw, 192px);
+  background: #fff;
+}
+
+.treatment-detail-background {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .4;
+  pointer-events: none;
+}
+
+.treatment-patent {
+  position: relative;
+  min-height: 29vw;
+}
+
+.treatment-patent-frame {
+  position: absolute;
+  left: 3.4%;
+  top: -24.5vw;
+  width: 37.5%;
+  margin: 0;
+}
+
+.treatment-patent-frame>img {
+  display: block;
+  width: 100%;
+  height: auto;
+  clip-path: inset(8% 6.3% 6.8%);
+}
+
+.treatment-patent-copy {
+  position: relative;
+  margin-left: 42%;
+  padding: 12vw 5% 0 0;
+}
+
+.treatment-patent-copy h3 {
+  margin: 0 0 22px;
+  font-size: clamp(30px, 4.17vw, 80px);
+  line-height: 1.18;
+  letter-spacing: -.025em;
+}
+
+.treatment-patent-copy h3 span,
+.treatment-patent-copy h3 strong {
+  display: block;
+}
+
+.treatment-patent-copy h3 strong {
+  color: #b48b3f;
+}
+
+.treatment-patent-copy p {
+  margin: 0;
+  font-size: clamp(18px, 1.875vw, 36px);
+  font-weight: 700;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.treatment-ribbon {
+  position: absolute;
+  pointer-events: none;
+  width: 28%;
+  height: auto;
+}
+
+.treatment-ribbon-left {
+  left: -8%;
+  top: 15vw;
+  transform: rotate(20deg);
+}
+
+.treatment-method {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  align-items: center;
+  width: 70%;
+  max-width: 1400px;
+  margin: 0 auto 7vw;
+  min-height: 31vw;
+}
+
+.treatment-method h3 {
+  margin: 0;
+  font-size: clamp(28px, 3.75vw, 72px);
+  line-height: 1.2;
+  letter-spacing: -.055em;
+  white-space: nowrap;
+}
+
+.treatment-efficiency {
+  align-self: start;
+  padding-top: 6vw;
+}
+
+.treatment-efficiency p {
+  max-width: 360px;
+  margin: 60px 0 0;
+  font-size: clamp(14px, 1.15vw, 22px);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.treatment-instrument {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-self: stretch;
+}
+
+.treatment-instrument-circle {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #3db4b7;
+  outline: 2px dashed #3db4b7;
+  outline-offset: 15px;
+  box-shadow: 0 0 0 50px rgb(61 180 183 / 2%), 0 0 0 95px rgb(61 180 183 / 2%);
+}
+
+.treatment-instrument img {
+  position: relative;
+  width: 155%;
+  max-width: none;
+  height: auto;
+  transform: rotate(20deg);
+}
+
+.treatment-minimum {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6vw 0 2vw 4vw;
+}
+
+.treatment-minimum em {
+  color: #277fb9;
+}
+
+.treatment-strategies {
+  position: relative;
+  width: 84%;
+  max-width: 1680px;
+  margin: 0 auto;
+  border: 1px solid #3db4b7;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.treatment-strategies>h3 {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  max-width: 90%;
+  margin: -35px auto 0;
+  padding: 12px 40px;
+  border-radius: 6px;
+  background: #3db4b7;
+  color: #fff;
+  font-size: clamp(20px, 1.875vw, 36px);
+  line-height: 1.35;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.treatment-ribbon-right {
+  right: -16%;
+  top: -2vw;
+  width: 32%;
+  transform: rotate(30deg);
+}
+
+.treatment-strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3.7vw;
+  padding: 4vw 2.6vw 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.treatment-strategy-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.treatment-strategy-card h4 {
+  margin: 0;
+  font-size: clamp(22px, 1.875vw, 36px);
+  line-height: 1.3;
+  letter-spacing: -.025em;
+  overflow-wrap: anywhere;
+}
+
+.treatment-strategy-subtitle {
+  margin: 12px 0 32px;
+  color: #49aeae;
+  font-size: clamp(16px, 1.25vw, 24px);
+  line-height: 1.5;
+}
+
+.treatment-strategy-description {
+  margin: 0 0 28px;
+  font-size: clamp(14px, .84vw, 16px);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.treatment-strategy-image {
+  display: block;
+  width: 100%;
+  height: clamp(230px, 19vw, 365px);
+  object-fit: contain;
+  object-position: center bottom;
+  margin-top: auto;
+}
+
+.treatment-mako {
+  transform: scaleX(-1);
+}
+
+/* 화면에 보일 때 한 번: 기본 문구는 왼쪽→오른쪽, 특허 액자는 아래→위로 1.1초 동안 등장합니다. */
+.treatment-pending {
+  opacity: 0;
+  transform: translateX(-36px);
+}
+
+.treatment-pending[data-treatment-reveal="up"] {
+  transform: translateY(60px);
+}
+
+.treatment-shown[data-treatment-reveal] {
+  opacity: 1;
+  transform: translate(0);
+  transition: opacity 1.1s ease, transform 1.1s cubic-bezier(.22, .61, .36, 1);
+}
+
+.treatment-banner-copy p.treatment-shown,
+.treatment-patent-copy p.treatment-shown {
+  transition-delay: .15s;
+}
+
+@media (max-width: 1100px) {
+  .treatment-banner {
+    min-height: 670px;
+  }
+
+  .treatment-banner-copy {
+    margin-left: 50%;
+    padding-top: 80px;
+  }
+
+  .treatment-patent {
+    min-height: 380px;
+  }
+
+  .treatment-patent-frame {
+    top: -190px;
+    width: 42%;
+    left: 1%;
+  }
+
+  .treatment-patent-copy {
+    margin-left: 44%;
+    padding-top: 100px;
+  }
+
+  .treatment-method {
+    width: 85%;
+    margin-bottom: 95px;
+    min-height: 430px;
+  }
+
+  .treatment-efficiency p {
+    margin-top: 32px;
+  }
+
+  .treatment-strategies {
+    width: 90%;
+  }
+
+  .treatment-strategy-grid {
+    gap: 24px;
+    padding: 40px 24px 0;
+  }
+
+  .treatment-strategies>h3 {
+    margin-top: -28px;
+    padding: 12px 24px;
+  }
+
+  .treatment-strategy-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 760px) {
+  .treatment-banner {
+    min-height: 640px;
+  }
+
+  .treatment-background {
+    object-position: 32% center;
+  }
+
+  .treatment-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(3 23 51 / 65%), rgb(3 23 51 / 20%));
+  }
+
+  .treatment-banner-copy {
+    z-index: 1;
+    margin-left: 0;
+    padding: 70px 28px 190px;
+  }
+
+  .treatment-banner h2 {
+    font-size: clamp(36px, 7vw, 52px);
+  }
+
+  .treatment-banner-copy p {
+    margin-top: 24px;
+    font-size: 20px;
+  }
+
+  .treatment-patent {
+    min-height: 0;
+    padding: 0 24px 40px;
+  }
+
+  .treatment-patent-frame {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: min(90%, 430px);
+    margin: 0 auto;
+    padding-top: 1px;
+  }
+
+  .treatment-patent-frame img {
+    margin-top: -160px;
+  }
+
+  .treatment-patent-copy {
+    margin-left: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .treatment-patent-copy h3 {
+    font-size: clamp(28px, 6vw, 40px);
+    margin-bottom: 16px;
+  }
+
+  .treatment-patent-copy p {
+    font-size: 18px;
+  }
+
+  .treatment-ribbon-left {
+    top: 286px;
+    left: -19%;
+    width: 51%;
+  }
+
+  .treatment-method {
+    width: calc(100% - 48px);
+    max-width: 500px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+    margin: 0 auto 90px;
+  }
+
+  .treatment-efficiency {
+    grid-column: 1 / -1;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .treatment-method h3 {
+    font-size: 32px;
+  }
+
+  .treatment-efficiency p {
+    max-width: 360px;
+    margin: 20px auto 0;
+    font-size: 15px;
+  }
+
+  .treatment-instrument {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    height: 360px;
+    margin: 20px 0;
+  }
+
+  .treatment-instrument-circle {
+    width: 230px;
+    outline-offset: 12px;
+  }
+
+  .treatment-instrument img {
+    width: 360px;
+  }
+
+  .treatment-minimum {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .treatment-minimum h3 {
+    font-size: clamp(26px, 6vw, 32px);
+  }
+
+  .treatment-strategies {
+    width: calc(100% - 40px);
+  }
+
+  .treatment-strategies>h3 {
+    font-size: 20px;
+    padding: 12px 18px;
+    max-width: 92%;
+    margin-top: -36px;
+  }
+
+  .treatment-strategy-grid {
+    grid-template-columns: 1fr;
+    padding: 34px 24px;
+    gap: 32px;
+  }
+
+  .treatment-strategy-card+.treatment-strategy-card {
+    border-top: 1px solid #daeeee;
+    padding-top: 28px;
+  }
+
+  .treatment-strategy-card h4 {
+    font-size: 26px;
+  }
+
+  .treatment-strategy-subtitle {
+    margin: 8px 0 18px;
+  }
+
+  .treatment-strategy-description {
+    margin-bottom: 20px;
+  }
+
+  .treatment-strategy-image {
+    height: 240px;
+  }
+
+  .treatment-ribbon-right {
+    top: -43px;
+    right: -25%;
+    width: 55%;
+  }
+
+  .treatment-details {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width:360px) {
+  .treatment-instrument img {
+    width: 290px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .treatment-pending,
+  .treatment-shown,
+  .treatment-pending[data-treatment-reveal="up"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
