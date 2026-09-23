@@ -61,3 +61,21 @@
 - css/treatment.css에서 PC·모바일 배치와 애니메이션 시간(1.1초), 이동 거리(문구 36px, 액자 60px)를 수정합니다.
 - js/treatment.js는 번역과 화면 진입 효과만 연결합니다. data-treatment-reveal="up"은 아래에서 위, 기본 속성은 왼쪽에서 오른쪽입니다. 각 요소는 한 번만 실행됩니다.
 - locale의 treatment에 data-treatment 키와 같은 이름으로 번역을 추가할 수 있습니다. JS 비활성화나 모션 감소 설정에서도 본문은 표시됩니다.
+
+
+### 2026-09-23 치료 영역 보완
+- 사용자 수정 CSS(배경 높이, PC·모바일 리본 위치, 360px 이하 기구 크기)를 보존한 채 도면 배경과 연결선을 추가했습니다.
+- 도면 배경은 index.html의 treatment-blueprint 이미지입니다. 원본: assets/treatment/heungk-white-mint-blueprint-bg.png.
+- 기구 이미지 선택자는 treatment-instrument-image로 구분했습니다. 배경에 기구 회전·크기 스타일이 적용되지 않도록 하기 위함입니다.
+- 연결선 태그는 HTML에 있으며, js/treatment.js의 connectTreatmentLabels가 창 크기·문구 크기 변경 시 좌표만 갱신합니다. 모바일 최대 효율 연결선은 설명 문단 바깥 여백을 따라갑니다.
+- 연결선 색과 두께는 css/treatment.css 하단 treatment-connector 규칙에서 수정합니다.
+
+
+## 작은 절개, 눈으로 확인되는 차이 (2026-09-23)
+- 범위: 68세·72세·79세 비교 사진 3장 및 최소절개 인공관절 수술의 장점 4개까지.
+- index.html에서 incision-results 검색: 이미지 src, 나이, 점선 위치(--mark-*), 문구를 직접 수정합니다.
+- 이미지: assets/incision/case-68.png, case-72.png, case-79.png. Figma 백업의 원본 이미지를 사용합니다.
+- 배치: css/incision.css. PC 사진 3열, 700px 이하 사진 1열. 장점은 PC 4열, 태블릿 2열, 작은 모바일 1열입니다.
+- 효과: js/incision.js. 문구는 왼쪽에서, 사진은 아래에서 1.1초 동안 한 번 등장합니다. 모션 감소 설정에서는 즉시 표시됩니다.
+- 다국어: locale의 incision 객체에 data-incision 키와 같은 번역 문구를 추가합니다. 한국어 원본은 HTML이며 이미지·나이는 번역 파일에 넣지 않습니다.
+- 장점 아이콘: assets/treatment/tj1.svg ~ tj4.svg를 각 li의 h4 앞에 HTML img 태그로 연결했습니다. 크기와 간격은 css/incision.css의 .incision-benefit-icon에서 수정합니다.

@@ -1,3 +1,4 @@
+import { renderIncision } from './incision.js';
 import { renderTreatment } from './treatment.js';
 import { renderMis } from './mis.js';
 import { renderGlobal } from './global.js';
@@ -11,6 +12,7 @@ renderAbout(selected.content.about);
 renderGlobal(selected.content.global);
 renderMis(selected.content.mis);
 renderTreatment(selected.content.treatment);
+renderIncision(selected.content.incision);
 const toggle = document.querySelector('.language-toggle');
 const panel = document.querySelector('.language-options');
 toggle.disabled = false;

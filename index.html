@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/css/hss.css">
   <link rel="stylesheet" href="/css/mis.css">
   <link rel="stylesheet" href="/css/treatment.css">
+  <link rel="stylesheet" href="/css/incision.css">
   <script type="module" src="/js/header.js"></script>
 </head>
 <body class="lang-ko">
@@ -320,13 +321,21 @@
           </div>
         </div>
         <div class="treatment-method" aria-label="JK Minimal의 특징">
+          <!-- 최대 효율·최소 손상·최소 절개 연결선: 화면 크기와 문구 위치에 맞춰 좌표만 자동 갱신합니다. -->
+          <div class="treatment-connectors" aria-hidden="true">
+            <div class="treatment-connector" data-treatment-connector="efficiency"><span class="treatment-connector-arm"></span><span class="treatment-connector-stem"></span><span class="treatment-connector-tail"></span><span class="treatment-connector-text-dot"></span><span class="treatment-connector-circle-dot"></span></div>
+            <div class="treatment-connector" data-treatment-connector="injury"><span class="treatment-connector-arm"></span><span class="treatment-connector-stem"></span><span class="treatment-connector-tail"></span><span class="treatment-connector-text-dot"></span><span class="treatment-connector-circle-dot"></span></div>
+            <div class="treatment-connector" data-treatment-connector="incision"><span class="treatment-connector-arm"></span><span class="treatment-connector-stem"></span><span class="treatment-connector-tail"></span><span class="treatment-connector-text-dot"></span><span class="treatment-connector-circle-dot"></span></div>
+          </div>
           <div class="treatment-efficiency">
             <h3 data-treatment-reveal><em data-treatment="maximum">최대</em><span data-treatment="efficiency">효율</span></h3>
             <p data-treatment="methodDescription" data-treatment-reveal>최소 절개에서도 수술 공간의 활용성을 극대화할 수 있는 인공관절 시스템 (InJury Knee Minimal / JK Minimal) 개발</p>
           </div>
           <div class="treatment-instrument">
+            <!-- 기구 뒤 도면 배경: 원본은 assets/treatment에서 교체하고 농도·크기는 CSS에서 조정합니다. -->
+            <img class="treatment-blueprint" src="/assets/treatment/heungk-white-mint-blueprint-bg.png" alt="" width="1913" height="1000" loading="lazy">
             <div class="treatment-instrument-circle" aria-hidden="true"></div>
-            <img src="/assets/treatment/jk-minimal.png" alt="JK Minimal 경골 대퇴골 사이즈 측정 기구" width="1920" height="1920" loading="lazy">
+            <img class="treatment-instrument-image" src="/assets/treatment/jk-minimal.png" alt="JK Minimal 경골 대퇴골 사이즈 측정 기구" width="1920" height="1920" loading="lazy">
           </div>
           <div class="treatment-minimum">
             <h3 data-treatment-reveal><em data-treatment="minimumInjury">최소</em><span data-treatment="injury">손상</span></h3>
@@ -359,6 +368,66 @@
         </section>
       </div>
     </section>
+
+    <!-- 작은 절개 비교: 사진·나이·한국어 문구는 여기에서 직접 수정합니다. -->
+    <section class="incision-results" id="incision-results" aria-labelledby="incision-results-title">
+      <img class="incision-results-background" src="/assets/treatment/light-background.png" alt="" width="1920" height="1674" loading="lazy">
+      <h2 id="incision-results-title" data-incision-reveal><em data-incision="titleAccent">작은 절개</em> <span data-incision="title">눈으로 확인되는 차이</span></h2>
+      <div class="incision-case-grid">
+        <figure class="incision-case" data-incision-reveal="up">
+          <div class="incision-case-photo">
+            <img src="/assets/incision/case-68.png" alt="68세 여성 환자의 양쪽 무릎 절개 부위 비교" width="528" height="581" loading="lazy">
+            <!-- 점선은 원본 사진 위에 겹치는 표시입니다. 위치는 아래 --mark-* 값에서 조정합니다. -->
+            <span class="incision-mark incision-mark-other" style="--mark-left:9%;--mark-top:18%;--mark-width:30%;--mark-height:74%"><span data-incision="otherHospital">타병원</span></span>
+            <span class="incision-mark incision-mark-heungk" style="--mark-left:59%;--mark-top:36%;--mark-width:30%;--mark-height:41%"><span data-incision="ourHospital">흥K병원</span></span>
+          </div>
+          <figcaption><strong>68<span data-incision="ageUnit">세</span></strong><span data-incision="femalePatient">여성 환자</span></figcaption>
+        </figure>
+        <figure class="incision-case" data-incision-reveal="up" style="--incision-delay:120ms">
+          <div class="incision-case-photo">
+            <img src="/assets/incision/case-72.png" alt="72세 여성 환자의 양쪽 무릎 절개 부위 비교" width="550" height="581" loading="lazy">
+            <span class="incision-mark incision-mark-other" style="--mark-left:11%;--mark-top:15%;--mark-width:30%;--mark-height:63%"><span data-incision="otherHospital">타병원</span></span>
+            <span class="incision-mark incision-mark-heungk" style="--mark-left:56%;--mark-top:35%;--mark-width:30%;--mark-height:45%"><span data-incision="ourHospital">흥K병원</span></span>
+          </div>
+          <figcaption><strong>72<span data-incision="ageUnit">세</span></strong><span data-incision="femalePatient">여성 환자</span></figcaption>
+        </figure>
+        <figure class="incision-case" data-incision-reveal="up" style="--incision-delay:240ms">
+          <div class="incision-case-photo">
+            <img src="/assets/incision/case-79.png" alt="79세 남성 환자의 양쪽 무릎 절개 부위 비교" width="474" height="581" loading="lazy">
+            <span class="incision-mark incision-mark-heungk" style="--mark-left:12%;--mark-top:38%;--mark-width:30%;--mark-height:42%"><span data-incision="ourHospital">흥K병원</span></span>
+            <span class="incision-mark incision-mark-other" style="--mark-left:64%;--mark-top:15%;--mark-width:30%;--mark-height:63%"><span data-incision="otherHospital">타병원</span></span>
+          </div>
+          <figcaption><strong>79<span data-incision="ageUnit">세</span></strong><span data-incision="malePatient">남성 환자</span></figcaption>
+        </figure>
+      </div>
+      <section class="incision-benefits" aria-labelledby="incision-benefits-title">
+        <h3 id="incision-benefits-title" data-incision-reveal><em data-incision="benefitsAccent">최소절개 인공관절 수술</em><span data-incision="benefitsTitle">의 장점</span></h3>
+        <ul class="incision-benefit-grid">
+          <li data-incision-reveal>
+            <!-- 장점 아이콘: assets/treatment/tj1.svg ~ tj4.svg 원본을 사용합니다. -->
+            <img class="incision-benefit-icon" src="/assets/treatment/tj1.svg" alt="" width="100" height="100" loading="lazy">
+            <h4 data-incision="painTitle">수술 후 통증 감소</h4>
+            <p data-incision="painDescription">절개 범위를 최소화하여 주변 연부조직(근육, 인대 등)의 손상을 줄이므로, 수술 후 통증이 덜하고 진통제 사용도 감소합니다.</p>
+          </li>
+          <li data-incision-reveal style="--incision-delay:100ms">
+            <img class="incision-benefit-icon" src="/assets/treatment/tj2.svg" alt="" width="100" height="100" loading="lazy">
+            <h4 data-incision="movementTitle">원활한 관절 운동<br>조기보행 가능</h4>
+            <p data-incision="movementDescription">조직 손상이 적어 관절내 유착이 적게 발생하여, 관절의 움직임이 보다 원활해지고 수술 후 빠른 보행이 가능합니다.</p>
+          </li>
+          <li data-incision-reveal style="--incision-delay:200ms">
+            <img class="incision-benefit-icon" src="/assets/treatment/tj3.svg" alt="" width="100" height="100" loading="lazy">
+            <h4 data-incision="scarTitle">흉터 최소화</h4>
+            <p data-incision="scarDescription">절개 범위를 최소화하여 수술 후 남는 흉터가 작고 눈에 덜 띕니다. 환자의 만족도를 높이는 데 도움이 됩니다.</p>
+          </li>
+          <li data-incision-reveal style="--incision-delay:300ms">
+            <img class="incision-benefit-icon" src="/assets/treatment/tj4.svg" alt="" width="100" height="100" loading="lazy">
+            <h4 data-incision="recoveryTitle">입원 기간 단축 및 빠른 일상생활 복귀</h4>
+            <p data-incision="recoveryDescription">수술 후 회복 속도가 빨라 입원기간이 짧아지고, 환자가 더 빠르게 일상으로 복귀할 수 있습니다.</p>
+          </li>
+        </ul>
+      </section>
+    </section>
+
 
   </main>
 </body>

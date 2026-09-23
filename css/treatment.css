@@ -184,7 +184,7 @@
   box-shadow: 0 0 0 50px rgb(61 180 183 / 2%), 0 0 0 95px rgb(61 180 183 / 2%);
 }
 
-.treatment-instrument img {
+.treatment-instrument > .treatment-instrument-image {
   position: relative;
   width: 155%;
   max-width: none;
@@ -468,7 +468,7 @@
     outline-offset: 12px;
   }
 
-  .treatment-instrument img {
+  .treatment-instrument > .treatment-instrument-image {
     width: 360px;
   }
 
@@ -534,7 +534,7 @@
 }
 
 @media (max-width:360px) {
-  .treatment-instrument img {
+  .treatment-instrument > .treatment-instrument-image {
     width: 290px;
   }
 }
@@ -542,10 +542,40 @@
 @media (prefers-reduced-motion: reduce) {
 
   .treatment-pending,
-  .treatment-shown,
+  .treatment-shown[data-treatment-reveal],
   .treatment-pending[data-treatment-reveal="up"] {
     opacity: 1;
     transform: none;
     transition: none;
   }
+}
+/* 2026-09-23 보완: 기존 배치 값은 유지하고 도면 배경과 설명 연결선만 추가합니다. */
+.treatment-method { isolation: isolate; }
+.treatment-blueprint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  width: max(100vw, 850px);
+  max-width: none;
+  height: auto;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+/* 연결선은 장식 요소입니다. 좌표만 JS에서 계산하고 실제 태그는 HTML에 둡니다. */
+.treatment-connectors { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+.treatment-connector { position: absolute; inset: 0; visibility: hidden; }
+.treatment-connector.is-positioned { visibility: visible; }
+.treatment-connector > span { position: absolute; display: block; }
+.treatment-connector-arm,
+.treatment-connector-stem,
+.treatment-connector-tail { height: 1px; background: #52676d; transform-origin: 0 50%; }
+.treatment-connector-arm { left: var(--start-x); top: var(--start-y); width: var(--arm-length); transform: rotate(var(--arm-angle)); }
+.treatment-connector-stem { left: var(--joint-x); top: var(--joint-y); width: var(--stem-length); transform: rotate(var(--stem-angle)); }
+.treatment-connector-tail { left: var(--bend-x); top: var(--bend-y); width: var(--tail-length); transform: rotate(var(--tail-angle)); }
+.treatment-connector-text-dot { left: var(--start-x); top: var(--start-y); width: 4px; height: 4px; border-radius: 50%; background: #344e55; transform: translate(-50%,-50%); }
+.treatment-connector-circle-dot { left: var(--end-x); top: var(--end-y); width: 9px; height: 9px; border: 1px solid #277f8f; border-radius: 50%; background: #49b8bb; transform: translate(-50%,-50%); }
+@media (max-width: 760px) {
+  .treatment-blueprint { width: 850px; }
+  .treatment-connector-circle-dot { width: 7px; height: 7px; }
 }
