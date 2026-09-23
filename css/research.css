@@ -1,0 +1,66 @@
+/* 연구 성과: 문구·사진·액자 목록은 index.html의 #research에서 직접 수정합니다. */
+.research { position: relative; overflow: clip; padding-top: clamp(90px,9.4vw,180px); color: #2b2b29; background: #efedeb; font-family: 'HK Pretendard',var(--font-ui); }
+.research :is(h2,p,figure) { margin: 0; }
+.research-heading { width: min(1500px,86%); margin: 0 auto; text-align: center; }
+.research h2 { font-size: clamp(30px,3.75vw,72px); line-height: 1.35; letter-spacing: -.035em; word-break: keep-all; }
+.research h2 em { color: #3bb5b8; font-style: normal; }
+.research-description { margin-top: clamp(28px,3.5vw,67px); font-size: clamp(18px,1.88vw,36px); line-height: 1.5; word-break: keep-all; }
+.research-side-label { position: absolute; top: clamp(110px,11.5vw,220px); left: 2%; display: flex; gap: 12px; align-items: center; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 14px; color: #3bb5b8; }
+.research-side-label strong { font-size: 24px; }
+.research-slider-area { margin-top: clamp(46px,5.2vw,100px); }
+/* 시안의 Frame 53: 가운데 사진을 강조하고 이웃 사진은 흐리게 표시합니다. */
+.research .research-slider { overflow: visible; }
+.research-slider .swiper-slide { width: min(47vw,900px); height: auto; }
+.research-slider img { display: block; width: 100%; aspect-ratio: 1.5; height: auto; object-fit: cover; opacity: .42; transition: opacity .6s ease; }
+.research-slider .swiper-slide-active img { opacity: 1; }
+.research-slider figcaption { padding: 24px 16px 0; min-height: 48px; text-align: center; font-size: 14px; line-height: 1.5; opacity: 0; transition: opacity .6s ease; }
+.research-slider .swiper-slide-active figcaption { opacity: 1; }
+.research-controls { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 18px; }
+.research-controls button,.research-marquee-toggle { border: 1px solid #cbd6d6; border-radius: 30px; background: #ffffffb3; color: #4c676e; cursor: pointer; min-height: 36px; padding: 6px 15px; font-size: 13px; }
+.research-controls button:hover,.research-marquee-toggle:hover { background: #fff; }
+.research-controls button:disabled { opacity: .5; cursor: default; }
+.research-controls .research-previous,.research-controls .research-next { min-width: 38px; padding: 4px; font-size: 22px; }
+/* 두 벌의 동일한 액자를 HTML에 작성하여 JS 복제 없이 매끄럽게 반복합니다. */
+.research-publications { position: relative; isolation: isolate; margin-top: clamp(66px,6.5vw,125px); padding-bottom: clamp(75px,8vw,154px); }
+.research-publications::before { content: ''; position: absolute; z-index: -1; inset: clamp(115px,12vw,230px) 0 0; background: #fff; }
+.research-publications-word { text-align: center; color: #8eb7ca; font-size: clamp(40px,12.4vw,238px); line-height: 1; font-weight: 800; letter-spacing: -.035em; white-space: nowrap; }
+.research-marquee { position: relative; margin-top: -4.4vw; overflow: hidden; }
+.research-marquee-track { display: flex; width: max-content; animation: research-marquee 80s linear infinite; animation-play-state: paused; }
+.research.is-in-view .research-marquee-track { animation-play-state: running; }
+.research.is-paused .research-marquee-track,.research-marquee:hover .research-marquee-track { animation-play-state: paused; }
+.research-marquee-set { display: flex; flex: 0 0 auto; align-items: end; gap: clamp(20px,2.5vw,48px); padding: 0 clamp(20px,2.5vw,48px) 0 0; margin: 0; list-style: none; }
+.research-marquee-set li { width: clamp(158px,14.4vw,280px); flex: 0 0 auto; }
+.research-marquee-set img { display: block; width: 100%; height: auto; }
+.research-ribbon { position: absolute; z-index: 2; bottom: 30px; width: min(31%,590px); pointer-events: none; }
+.research-ribbon-left { left: -7%; }
+.research-ribbon-right { right: -8%; transform: scaleX(-1); }
+.research-marquee-actions { position: relative; z-index: 3; text-align: center; margin-top: 32px; }
+@keyframes research-marquee { to { transform: translateX(-50%); } }
+/* 기존 섹션과 같은 좌→우 등장. 화면 진입 시 한 번만 실행합니다. */
+.research-pending { opacity: 0; transform: translateX(-36px); transition: opacity 1.1s ease var(--research-delay,0ms),transform 1.1s cubic-bezier(.22,1,.36,1) var(--research-delay,0ms); }
+.research-shown { opacity: 1; transform: none; }
+@media (max-width: 700px) {
+  .research { padding-top: 80px; }
+  .research-heading { width: calc(100% - 40px); }
+  .research h2 { font-size: 30px; }
+  .research-description { font-size: 17px; line-height: 1.7; }
+  .research-description p + p { margin-top: 8px; }
+  .research-side-label { display: none; }
+  .research-slider .swiper-slide { width: 84vw; }
+  .research-slider img { aspect-ratio: 1.2; }
+  .research-slider figcaption { font-size: 12px; padding-top: 18px; }
+  .research-publications { margin-top: 62px; padding-bottom: 70px; }
+  .research-publications-word { font-size: 12.4vw; }
+  .research-publications::before { top: 50px; }
+  .research-marquee { margin-top: -8px; }
+  .research-marquee-track { animation-duration: 70s; }
+  .research-ribbon { bottom: 38px; width: 45%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .research-pending { opacity: 1; transform: none; transition: none; }
+  .research-slider :is(img,figcaption) { transition: none; }
+  .research-marquee { overflow-x: auto; }
+  .research-marquee-track { animation: none; }
+  .research-marquee-set[aria-hidden] { display: none; }
+  .research-marquee-actions { display: none; }
+}

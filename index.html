@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="/css/mis.css">
   <link rel="stylesheet" href="/css/treatment.css">
   <link rel="stylesheet" href="/css/incision.css">
+  <link rel="stylesheet" href="/css/cadaver.css">
+  <link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/css/research.css">
+  <script defer src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script type="module" src="/js/header.js"></script>
 </head>
 <body class="lang-ko">
@@ -428,6 +432,125 @@
       </section>
     </section>
 
+
+    <!-- CADAVER 워크숍: 문구·사진은 HTML에서 수정합니다. 범위는 아래 트로피까지입니다. -->
+    <section class="cadaver" id="cadaver" aria-labelledby="cadaver-title">
+      <div class="cadaver-stage">
+        <img class="cadaver-spotlight" src="/assets/cadaver/spotlight.png" alt="" width="1122" height="1402" loading="lazy">
+        <div class="cadaver-background-photo cadaver-background-left" data-cadaver-reveal="blur"><img src="/assets/cadaver/lecture-background.png" alt="" width="480" height="320" loading="lazy"></div>
+        <div class="cadaver-background-photo cadaver-background-right" data-cadaver-reveal="blur" style="--cadaver-delay:180ms"><img src="/assets/cadaver/training-background.png" alt="" width="480" height="320" loading="lazy"></div>
+        <img class="cadaver-wave cadaver-wave-left" src="/assets/cadaver/gold-wave.png" alt="" width="368" height="368" loading="lazy">
+        <img class="cadaver-wave cadaver-wave-right" src="/assets/cadaver/gold-wave.png" alt="" width="368" height="368" loading="lazy">
+        <div class="cadaver-copy">
+          <p class="cadaver-kicker" data-cadaver-reveal><strong>4</strong><span lang="en">MIS TKA · CADAVER WORKSHOP</span></p>
+          <h2 id="cadaver-title" data-cadaver="title" data-cadaver-reveal>국제 최소침습 및 환자 맞춤형 인공관절 연수 교육센터</h2>
+          <div class="cadaver-title-panel">
+            <p class="cadaver-word" lang="en" data-cadaver-reveal>CADAVER</p>
+            <div class="cadaver-subtitle" data-cadaver-reveal>
+              <p lang="en">MIS TKA CADAVER WORKSHOP</p>
+              <p data-cadaver="workshop">2025 카데바 워크샵 성황리 개최</p>
+              <p data-cadaver="training">최소절개 인공관절 수술 교육</p>
+            </div>
+          </div>
+          <div class="cadaver-description">
+            <p data-cadaver-reveal><em data-cadaver="hospital">흥K병원</em><span data-cadaver="descriptionFirst">은 국내외 정형외과 전문의를 대상으로 카데바 워크샵을 개최하여</span></p>
+            <p data-cadaver="descriptionSecond" data-cadaver-reveal style="--cadaver-delay:120ms">최소절개 인공관절 수술의 술기와 임상 노하우를 공유하며,</p>
+            <p data-cadaver="descriptionThird" data-cadaver-reveal style="--cadaver-delay:240ms">지속적인 의료진 교육과 학술 교류를 이어가고 있습니다.</p>
+          </div>
+        </div>
+        <p class="cadaver-side-label" aria-hidden="true"><strong>4</strong><span lang="en">MIS TKA · CADAVER WORKSHOP</span></p>
+      </div>
+      <div class="cadaver-gallery">
+        <!-- 사진과 액자를 합친 완성 이미지입니다. 각 SVG 안에 모든 원본 사진이 내장되어 있습니다. -->
+        <div class="cadaver-frames">
+          <img src="/assets/cadaver/workshop-group-framed.svg" alt="금빛 액자 안의 카데바 워크샵 참가 의료진 단체 사진" width="960" height="624" loading="lazy">
+          <img src="/assets/cadaver/workshop-collage-framed.svg" alt="금빛 액자 안에 모은 카데바 워크샵 강의, 실습, 의료진 교류 사진" width="960" height="624" loading="lazy">
+        </div>
+        <!-- 위치를 잡는 바깥 요소와 올라오는 안쪽 이미지를 분리해 애니메이션 중 중심이 흔들리지 않습니다. -->
+        <div class="cadaver-trophy"><img src="/assets/cadaver/trophy.png" alt="카데바 워크샵 영역을 장식하는 금빛 손 모양 트로피" width="1378" height="2000" loading="lazy" data-cadaver-reveal="up"></div>
+      </div>
+    </section>
+
+
+
+    <!-- 연구 성과: Frame 53 사진과 논문 액자 목록을 HTML에서 직접 수정합니다. -->
+    <section class="research" id="research" aria-labelledby="research-title">
+      <div class="research-heading">
+        <h2 id="research-title" data-research-reveal><em data-research="titleAccent">임상 경험</em><span data-research="titleRest">을 연구 성과로 이어갑니다</span></h2>
+        <div class="research-description">
+          <p data-research="descriptionFirst" data-research-reveal style="--research-delay:100ms">풍부한 임상 경험을 바탕으로 연구를 지속하며,</p>
+          <p data-research="descriptionSecond" data-research-reveal style="--research-delay:200ms">국내외 학술대회와 전문 학술지를 통해 연구 성과를 공유합니다.</p>
+        </div>
+      </div>
+      <p class="research-side-label" aria-hidden="true"><strong>5</strong><span lang="en">RESEARCH &amp; PUBLICATIONS</span></p>
+      <div class="research-slider-area">
+        <div class="swiper research-slider" aria-label="의료진 학술 활동 사진" aria-roledescription="carousel" tabindex="0">
+          <!-- 반복 재생에 필요한 두 벌을 직접 작성했습니다. 같은 사진을 교체할 때 두 곳을 함께 수정합니다. -->
+          <div class="swiper-wrapper">
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 / 3">
+              <img src="/assets/research/aaos-presentation.jpg" alt="국제 정형외과 학술대회에서 발표하는 김종근 대표원장" width="900" height="600" loading="lazy">
+              <figcaption lang="en" data-research="photoCaption1">AAOS PRESENTATION</figcaption>
+            </figure>
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 / 3">
+              <img src="/assets/research/yonsei-workshop.jpg" alt="연세대학교 카데바 워크숍에서 교류하는 의료진" width="900" height="600" loading="lazy">
+              <figcaption lang="en" data-research="photoCaption2">CADAVER WORKSHOP</figcaption>
+            </figure>
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 / 3">
+              <img src="/assets/research/koa-presentation.jpg" alt="정형외과 학술대회에서 임상 연구 성과를 발표하는 의료진" width="900" height="600" loading="lazy">
+              <figcaption lang="en" data-research="photoCaption3">ORTHOPAEDIC RESEARCH PRESENTATION</figcaption>
+            </figure>
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 / 3">
+              <img src="/assets/research/aaos-presentation.jpg" alt="국제 정형외과 학술대회에서 발표하는 김종근 대표원장" width="900" height="600" loading="lazy">
+              <figcaption lang="en" data-research="photoCaption1">AAOS PRESENTATION</figcaption>
+            </figure>
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 / 3">
+              <img src="/assets/research/yonsei-workshop.jpg" alt="연세대학교 카데바 워크숍에서 교류하는 의료진" width="900" height="600" loading="lazy">
+              <figcaption lang="en" data-research="photoCaption2">CADAVER WORKSHOP</figcaption>
+            </figure>
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 / 3">
+              <img src="/assets/research/koa-presentation.jpg" alt="정형외과 학술대회에서 임상 연구 성과를 발표하는 의료진" width="900" height="600" loading="lazy">
+              <figcaption lang="en" data-research="photoCaption3">ORTHOPAEDIC RESEARCH PRESENTATION</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="research-controls" aria-label="사진 슬라이드 제어">
+          <button class="research-previous" type="button" aria-label="이전 사진">‹</button>
+          <button class="research-photo-toggle" type="button" aria-pressed="false" data-research="photoPause" data-pause="사진 자동 재생 멈추기" data-play="사진 자동 재생 시작">사진 자동 재생 멈추기</button>
+          <button class="research-next" type="button" aria-label="다음 사진">›</button>
+        </div>
+      </div>
+      <div class="research-publications">
+        <p class="research-publications-word" lang="en" data-research-reveal>PUBLICATIONS</p>
+        <div class="research-marquee" aria-label="연구 논문 액자">
+          <!-- A/B 목록을 동일하게 유지하면 마지막 액자 뒤에 첫 액자가 자연스럽게 이어집니다. -->
+          <div class="research-marquee-track">
+            <ul class="research-marquee-set">
+              <li><img src="/assets/research/publication-01.svg" alt="흥K병원 의료진 연구 논문 액자 1" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-02.svg" alt="흥K병원 의료진 연구 논문 액자 2" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-03.svg" alt="흥K병원 의료진 연구 논문 액자 3" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-04.svg" alt="흥K병원 의료진 연구 논문 액자 4" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-05.svg" alt="흥K병원 의료진 연구 논문 액자 5" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-06.svg" alt="흥K병원 의료진 연구 논문 액자 6" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-07.svg" alt="흥K병원 의료진 연구 논문 액자 7" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-08.svg" alt="흥K병원 의료진 연구 논문 액자 8" width="308" height="402" loading="lazy"></li>
+            </ul>
+            <ul class="research-marquee-set" aria-hidden="true">
+              <li><img src="/assets/research/publication-01.svg" alt="" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-02.svg" alt="" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-03.svg" alt="" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-04.svg" alt="" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-05.svg" alt="" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-06.svg" alt="" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-07.svg" alt="" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-08.svg" alt="" width="308" height="402" loading="lazy"></li>
+            </ul>
+          </div>
+        </div>
+        <img class="research-ribbon research-ribbon-left" src="/assets/about/ribbon.png" alt="" loading="lazy">
+        <img class="research-ribbon research-ribbon-right" src="/assets/about/ribbon.png" alt="" loading="lazy">
+        <div class="research-marquee-actions"><button class="research-marquee-toggle" type="button" aria-pressed="false" data-research="marqueePause" data-pause="액자 움직임 멈추기" data-play="액자 움직임 시작">액자 움직임 멈추기</button></div>
+      </div>
+    </section>
 
   </main>
 </body>

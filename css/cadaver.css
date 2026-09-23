@@ -1,0 +1,67 @@
+/* CADAVER: 기존 섹션과 분리된 스타일. 콘텐츠와 이미지 경로는 index.html에서 수정합니다. */
+.cadaver { position: relative; overflow: clip; font-family: 'HK Pretendard',var(--font-ui); background: #efedeb; }
+.cadaver :is(h2,p) { margin: 0; }
+.cadaver-stage { position: relative; isolation: isolate; overflow: clip; padding: clamp(70px,6.25vw,120px) 0 clamp(145px,12vw,230px); color: #f7f7fa; background: linear-gradient(#020e1e,#052758 68%,#073777); }
+.cadaver-spotlight { position: absolute; z-index: -1; top: 0; left: 50%; transform: translateX(-50%); width: 58%; height: 100%; object-fit: cover; mix-blend-mode: screen; opacity: .7; mask-image: linear-gradient(#000 48%,transparent 85%); pointer-events: none; }
+.cadaver-copy { position: relative; z-index: 2; width: min(1420px,84%); margin-inline: auto; text-align: center; }
+.cadaver-kicker { display: grid; gap: 10px; color: #70c8c6; font-size: 16px; line-height: 1.5; }
+.cadaver-kicker strong { font-size: 24px; }
+.cadaver h2 { margin-top: clamp(58px,6.4vw,122px); font-size: clamp(25px,2.5vw,48px); line-height: 1.4; letter-spacing: -.025em; word-break: keep-all; }
+.cadaver-title-panel { position: relative; width: 88%; margin: 44px auto 0; }
+.cadaver-title-panel::before { content: ''; position: absolute; inset: 0 0 54px; opacity: .34; border: 1px solid #d5b356; background-image: linear-gradient(#b691574d 1px,transparent 1px),linear-gradient(90deg,#b691574d 1px,transparent 1px); background-size: 60px 60px; }
+.cadaver-word { position: relative; font-size: clamp(60px,12.1vw,232px); font-weight: 800; line-height: 1; letter-spacing: -.025em; background: linear-gradient(115deg,#d39b32 5%,#f3dfaa 26%,#d9a948 48%,#edc55e 70%,#ba852c 85%,#f2ddac); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cadaver-subtitle { position: relative; display: grid; gap: 10px; margin-top: 44px; color: #e1bf69; font-size: clamp(16px,1.25vw,24px); line-height: 1.4; }
+.cadaver-description { margin-top: 56px; font-size: clamp(20px,1.875vw,36px); line-height: 1.65; font-weight: 700; word-break: keep-all; }
+.cadaver-description em { font-style: normal; color: #43bfc0; }
+.cadaver-background-photo { position: absolute; z-index: -1; bottom: 0; width: 44%; aspect-ratio: 1.5; mask-image: linear-gradient(transparent,#000 40%); }
+.cadaver-background-photo img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .28; mix-blend-mode: luminosity; }
+.cadaver-background-left { left: 0; }
+.cadaver-background-right { right: 0; }
+.cadaver-wave { position: absolute; z-index: 1; bottom: 17%; width: 45%; height: 43%; object-fit: fill; mix-blend-mode: screen; opacity: .65; pointer-events: none; }
+.cadaver-wave-left { left: -3%; }
+.cadaver-wave-right { right: -3%; transform: scaleX(-1); }
+.cadaver-side-label { position: absolute; left: 3%; bottom: 35px; display: flex; align-items: center; gap: 14px; writing-mode: vertical-rl; transform: rotate(180deg); color: #49b8b9; font-size: 14px; }
+.cadaver-side-label strong { font-size: 24px; }
+.cadaver-gallery { position: relative; padding-bottom: 9vw; }
+.cadaver-frames { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.cadaver-frames > img { display: block; width: 100%; height: auto; }
+.cadaver-trophy { position: absolute; z-index: 3; top: -20vw; left: 50%; width: 45%; transform: translateX(-45%); pointer-events: none; }
+.cadaver-trophy img { display: block; width: 100%; height: auto; }
+/* 문구는 왼쪽→오른쪽, 배경은 블러 해제, 트로피는 아래→위. 각각 화면에 들어올 때 한 번 실행합니다. */
+.cadaver-pending { opacity: 0; transform: translateX(-36px); transition: opacity 1.1s ease var(--cadaver-delay,0ms),transform 1.1s cubic-bezier(.22,1,.36,1) var(--cadaver-delay,0ms); }
+.cadaver-pending[data-cadaver-reveal="blur"] { transform: none; filter: blur(18px); transition: opacity 2.2s ease var(--cadaver-delay,0ms),filter 2.2s ease var(--cadaver-delay,0ms); }
+.cadaver-pending[data-cadaver-reveal="up"] { transform: translateY(80px); transition-duration: 1.4s; }
+.cadaver-shown[data-cadaver-reveal] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    mix-blend-mode: hard-light;
+}
+@media (max-width: 1000px) {
+  .cadaver-copy { width: 88%; }
+  .cadaver-title-panel { width: 100%; }
+  .cadaver-title-panel::before { background-size: 32px 32px; }
+  .cadaver-description { font-size: 20px; }
+}
+@media (max-width: 700px) {
+  .cadaver-stage { padding: 64px 0 150px; }
+  .cadaver-copy { width: calc(100% - 40px); }
+  .cadaver h2 { font-size: 25px; margin-top: 52px; }
+  .cadaver-title-panel { margin-top: 32px; }
+  .cadaver-word { font-size: 12.4vw; }
+  .cadaver-subtitle { margin-top: 30px; font-size: 15px; }
+  .cadaver-description { margin-top: 36px; font-size: 18px; line-height: 1.7; }
+  .cadaver-description p + p { margin-top: 14px; }
+  .cadaver-background-photo { width: 65%; aspect-ratio: .9; }
+  .cadaver-background-photo img { opacity: .22; }
+  .cadaver-spotlight { width: 100%; object-fit: fill; }
+  .cadaver-wave { bottom: 9%; width: 65%; height: 28%; opacity: .4; }
+  .cadaver-side-label { display: none; }
+  .cadaver-frames { grid-template-columns: 1fr; }
+  .cadaver-gallery { padding-bottom: 0; }
+  /* 모바일에서는 액자 사진을 가리지 않도록 트로피를 액자 아래에 배치합니다. */
+  .cadaver-trophy { position: relative; left: auto; top: auto; width: min(78%,390px); margin: -8% auto -4%; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cadaver-pending[data-cadaver-reveal] { opacity: 1; transform: none; filter: none; transition: none; }
+}

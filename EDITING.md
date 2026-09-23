@@ -79,3 +79,24 @@
 - 효과: js/incision.js. 문구는 왼쪽에서, 사진은 아래에서 1.1초 동안 한 번 등장합니다. 모션 감소 설정에서는 즉시 표시됩니다.
 - 다국어: locale의 incision 객체에 data-incision 키와 같은 번역 문구를 추가합니다. 한국어 원본은 HTML이며 이미지·나이는 번역 파일에 넣지 않습니다.
 - 장점 아이콘: assets/treatment/tj1.svg ~ tj4.svg를 각 li의 h4 앞에 HTML img 태그로 연결했습니다. 크기와 간격은 css/incision.css의 .incision-benefit-icon에서 수정합니다.
+
+
+## CADAVER 워크숍 → 트로피 (2026-09-23)
+- 범위: 4 / CADAVER 소개와 파란 배경 사진, 금빛 액자 2개, 중앙 트로피까지. 다음 섹션은 추가하지 않았습니다.
+- index.html에서 id="cadaver" 검색: 문구·이미지 경로를 직접 수정합니다. 번역은 locale의 cadaver 객체와 data-cadaver 키로 연결됩니다.
+- css/cadaver.css: 파란 배경, 금빛 제목, 사진 배치, 반응형 및 등장 효과. 기존 섹션의 CSS는 변경하지 않았습니다.
+- js/cadaver.js: 문구 번역 및 화면 진입 시 한 번 실행하는 효과. 문구는 왼쪽→오른쪽(1.1초), 배경은 블러 해제(2.2초), 트로피는 아래→위(1.4초). 모션 감소 설정과 JS 비활성화 시에도 표시됩니다.
+- assets/cadaver/workshop-group-framed.svg, workshop-collage-framed.svg: 원본 액자와 사진을 하나로 조합한 완성 이미지. 사진을 웹용 WebP로 압축해 SVG 안에 내장하여 외부 파일 참조가 없습니다. 웹페이지에서는 액자당 img 하나만 사용합니다.
+- 모바일은 액자 2개를 세로로 배치하고 트로피를 아래에 두어 사진을 가리지 않습니다.
+
+
+## 연구 성과 / PUBLICATIONS (2026-09-23)
+- 범위: `#research`의 “임상 경험을 연구 성과로 이어갑니다”부터 논문 액자까지.
+- 문구, 원장 사진, 캡션, 액자는 `index.html`에 직접 작성했습니다. `assets/research/`에서 이미지를 교체할 수 있습니다.
+- 사진은 `Frame 53` 시안의 AAOS 발표 / 연세대학교 워크숍 / 정형외과 학술 발표 3종입니다. 무한 슬라이드에 필요한 동일한 두 벌을 HTML에 작성했으므로 사진 교체 시 두 곳을 함께 수정합니다.
+- Swiper 12.2.0은 `assets/vendor/swiper/`에 저장했습니다. 외부 CDN 접속 없이 작동하고 라이선스도 포함합니다. 참고: https://swiperjs.com/swiper-api
+- 사진 자동 전환: `js/research.js`의 `autoplay.delay: 2000`(2초), `speed: 650`(0.65초 이동). 직접 넘기기·터치 스와이프·재생 정지 지원.
+- 액자 마키: `css/research.css`의 `research-marquee` 80초(모바일 70초). 동일한 A/B 목록을 HTML에 작성해 CSS만으로 연결합니다. JS 이미지 생성/복제 없음.
+- 액자는 실제 흰 액자와 논문 원본을 함께 포함한 SVG 한 장씩입니다. 한국어 문구가 HTML 원본이고 `data-research`에 맞는 locale.research 번역 문자열만 선택적으로 연결합니다.
+- 글자 좌→우 등장은 1.1초. 화면 밖/백그라운드에서는 자동 움직임 정지. OS의 동작 줄이기에서는 자동 슬라이드와 마키를 끄고 수동 탐색을 유지합니다.
+- 기존 사용자 CSS는 수정하지 않고 연구 성과 전용 파일만 추가했습니다.
