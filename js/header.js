@@ -1,3 +1,4 @@
+import { renderSpecialty } from './specialty.js';
 import { renderResearch } from './research.js';
 import { renderCadaver } from './cadaver.js';
 import { renderIncision } from './incision.js';
@@ -17,6 +18,7 @@ renderTreatment(selected.content.treatment);
 renderIncision(selected.content.incision);
 renderCadaver(selected.content.cadaver);
 renderResearch(selected.content.research);
+renderSpecialty(selected.content.specialty);
 const toggle = document.querySelector('.language-toggle');
 const panel = document.querySelector('.language-options');
 toggle.disabled = false;

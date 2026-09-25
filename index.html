@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/css/cadaver.css">
   <link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="/css/research.css">
+  <link rel="stylesheet" href="/css/specialty.css">
   <script defer src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script type="module" src="/js/header.js"></script>
 </head>
@@ -51,7 +52,7 @@
     <nav class="header-nav" aria-label="주 메뉴">
       <!-- 대상 섹션 구현 후 href를 연결합니다. -->
       <a href="#about" data-nav="about">ABOUT HEUNG-K</a>
-      <button type="button" data-nav="specialties" aria-disabled="true">SPECIALTIES</button>
+      <a href="#specialty-center" data-nav="specialties">SPECIALTIES</a>
       <button type="button" data-nav="doctors" aria-disabled="true">OUR DOCTORS</button>
       <button type="button" data-nav="facilities" aria-disabled="true">FACILITIES</button>
       <button type="button" data-nav="inquiry" aria-disabled="true">INQUIRY</button>
@@ -550,6 +551,26 @@
         <img class="research-ribbon research-ribbon-right" src="/assets/about/ribbon.png" alt="" loading="lazy">
         <div class="research-marquee-actions"><button class="research-marquee-toggle" type="button" aria-pressed="false" data-research="marqueePause" data-pause="액자 움직임 멈추기" data-play="액자 움직임 시작">액자 움직임 멈추기</button></div>
       </div>
+    </section>
+
+    <!-- 의료진 변경: 해당 li의 img src와 alt를 수정합니다. 순서는 li를 옮겨 변경합니다. -->
+    <section class="specialty" id="specialty-center" aria-labelledby="specialty-title">
+      <p class="specialty-kicker" data-specialty-reveal><strong>6</strong><span lang="en">SPECIALTIES</span></p>
+      <p class="specialty-brand" lang="en" data-specialty-reveal>HEUNG-K</p>
+      <h2 class="specialty-title" id="specialty-title" lang="en" data-specialty-reveal><span>SPECIALTY</span><span>CENTER</span></h2>
+      <!-- 단체 통이미지가 아닙니다. 아래 9명은 각각 독립된 원본 PNG입니다. -->
+      <ul class="specialty-doctors" aria-label="흥K병원 의료진">
+        <li class="specialty-doctor specialty-doctor--lee-kyung-hwa" data-specialty-reveal><img src="/assets/specialty/lee-kyung-hwa.png" alt="이경화 원장" data-specialty-alt="leeKyungHwa" width="1848" height="3316" loading="lazy"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:60ms"><img src="/assets/specialty/park-jin-hyung.png" alt="박진형 원장" data-specialty-alt="parkJinHyung" width="1000" height="1500" loading="lazy"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:120ms"><img src="/assets/specialty/lee-su-geon.png" alt="이수건 원장" data-specialty-alt="leeSuGeon" width="1000" height="1500" loading="lazy"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:180ms"><img src="/assets/specialty/kim-se-hoon.png" alt="김세훈 원장" data-specialty-alt="kimSeHoon" width="1000" height="1500" loading="lazy"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:240ms"><img src="/assets/specialty/kim-jong-geun.png" alt="김종근 대표원장" data-specialty-alt="kimJongGeun" width="1000" height="1500" loading="lazy"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:300ms"><img src="/assets/specialty/kim-jun-sung.png" alt="김준성 원장" data-specialty-alt="kimJunSung" width="1000" height="1500" loading="lazy"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:360ms"><img src="/assets/specialty/lee-myung-chul.png" alt="이명철 명예원장" data-specialty-alt="leeMyungChul" width="1000" height="1500" loading="lazy"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:420ms"><img src="/assets/specialty/hwang-jae-yeon.png" alt="황재연 원장" data-specialty-alt="hwangJaeYeon" width="1494" height="3640" loading="lazy"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:480ms"><img src="/assets/specialty/jung-seung-jin.png" alt="정승진 원장" data-specialty-alt="jungSeungJin" width="1000" height="1500" loading="lazy"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:540ms"><img src="/assets/specialty/jung-seung-jin.png" alt="정승진 원장" data-specialty-alt="jungSeungJin" width="1000" height="1500" loading="lazy"></li>
+      </ul>
     </section>
 
   </main>

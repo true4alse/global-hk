@@ -1,0 +1,164 @@
+/* SPECIALTY CENTER: 제목은 실제 글자, 의료진은 각각 교체 가능한 HTML img입니다. */
+.specialty {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding-top: clamp(36px, 3.1vw, 60px);
+  background: #fff;
+  color: #2b2b29;
+  text-align: center;
+  font-family: 'HK Pretendard', var(--font-ui);
+}
+
+.specialty :is(p, h2) {
+  margin: 0;
+}
+
+.specialty-kicker {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  color: #50bfc0;
+}
+
+.specialty-kicker strong {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.specialty-kicker span {
+  font-size: 12px;
+  letter-spacing: .22em;
+}
+
+.specialty-brand {
+  margin-top: clamp(48px, 5vw, 96px) !important;
+  padding-left: .9em;
+  font-size: clamp(11px, .94vw, 18px);
+  letter-spacing: clamp(15px, 3.55vw, 68px);
+  text-indent: clamp(15px, 3.55vw, 68px);
+  font-weight: 600;
+}
+
+.specialty-title {
+  position: relative;
+  z-index: -1;
+  margin-top: clamp(26px, 2.6vw, 50px) !important;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(58px, 13.15vw, 253px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: -.055em;
+}
+
+.specialty-title span {
+  display: block;
+}
+
+.specialty-title span+span {
+  color: #50bfc0;
+}
+
+/* PC에서는 인원이 바뀌어도 같은 폭으로 나눕니다. 사진 추가·삭제·정렬은 li 단위로 합니다. */
+.specialty-doctors {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  align-items: end;
+  width: min(1700px, 100%);
+  margin: clamp(-64px, -3.3vw, -20px) auto 0;
+  padding: 0;
+  list-style: none;
+  direction: ltr;
+}
+
+.specialty-doctor {
+  position: relative;
+  height: clamp(140px, 17vw, 326px);
+  overflow: hidden;
+}
+
+.specialty-doctor img {
+  display: block;
+  width: 122%;
+  max-width: none;
+  height: auto;
+  margin-left: -11%;
+  transform: translateY(var(--doctor-offset, -4%));
+}
+
+/* 원본별 여백 차이만 보정합니다. 파일을 교체할 때 아래 값을 조절할 수 있습니다. */
+.specialty-doctor--lee-kyung-hwa {
+  --doctor-offset: -4.5%;
+}
+
+.specialty-pending {
+  opacity: 0;
+  translate: 0 30px;
+  transition: opacity 1.1s ease var(--specialty-delay, 0ms), translate 1.1s cubic-bezier(.22, 1, .36, 1) var(--specialty-delay, 0ms);
+}
+
+.specialty-shown {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (max-width: 1000px) {
+  .specialty-doctors {
+
+    width: min(760px, 100%);
+    grid-auto-flow: row;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-top: -34px;
+    /* row-gap: 20px; */
+  }
+
+  .specialty-doctor {
+    height: clamp(215px, 25vw, 250px);
+    padding-top: 10px;
+  }
+
+  .specialty-doctors>li:nth-of-type(5)~* {
+    background: #efedeb
+  }
+}
+
+@media (max-width:750px) {
+  .specialty-doctor {
+    height: clamp(214px, 25vw, 250px);
+    padding-top: 15px;
+}
+}
+
+@media (max-width: 600px) {
+  .specialty-brand {
+    margin-top: 42px !important;
+  }
+
+  .specialty-title {
+    font-size: 13vw;
+    margin-top: 26px !important;
+  }
+
+  .specialty-doctors {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 18px;
+  }
+
+  .specialty-doctor {
+    height: clamp(164px, 46vw, 250px);
+  }
+
+  .specialty-kicker {
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .specialty-pending {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}
