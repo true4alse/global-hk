@@ -1,0 +1,99 @@
+/* 어깨·손발 센터 공통 배치. 기본값은 어깨 시안 733:3192 (1921 × 920). */
+.center-banner {
+  overflow: clip;
+  color: #fff;
+  background: linear-gradient(180deg, #003380, #103a5b 33.75%, #003380 63.59%, #003380);
+  font-family: 'HK Pretendard', var(--font-ui);
+  scroll-margin-top: var(--header-height, 100px);
+}
+.center-banner-stage {
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  width: min(100%, 2520px);
+  aspect-ratio: 1921 / 920;
+  margin-inline: auto;
+  background: inherit;
+}
+.center-banner :is(h2, p, figure) { margin: 0; }
+.center-banner img { display: block; }
+.center-banner-background { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.center-banner-grid { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .22; mix-blend-mode: screen; }
+.center-banner-wave {
+  position: absolute;
+  left: 88.2326%;
+  top: 8.60666cqw;
+  width: 62.4675%;
+  height: auto;
+  max-width: none;
+  transform: matrix(-.9644008, -.2644448, -.2644448, .9644008, 0, 0);
+  transform-origin: 0 0;
+  mix-blend-mode: lighten;
+}
+.center-banner-texture { position: absolute; top: -4.3727cqw; left: 0; width: 99.9479%; height: auto; mix-blend-mode: multiply; }
+.center-banner-surgery { position: absolute; height: auto; mix-blend-mode: hard-light; }
+.center-banner-surgery--right { top: -1.1404cqw; left: 65.4347%; width: 42.1655%; transform: scaleX(-1); opacity: .53; }
+.center-banner-surgery--left { top: 18.7451cqw; left: 5.2577%; width: 32.1707%; opacity: .6; }
+.center-banner-copy { position: relative; width: 37.1681%; margin-left: 31.7022%; padding-top: 4.47684cqw; padding-bottom: 2.59766cqw; }
+.center-banner-title-wrap { position: relative; min-height: 10.6715cqw; display: grid; place-items: center; }
+.center-banner-title {
+  padding-top: .57262cqw;
+  font-size: 4.21655cqw;
+  font-weight: 700;
+  line-height: 1.19753;
+  text-align: center;
+}
+.center-banner-title, .center-banner-description {
+  color: #d7bf86;
+  background: linear-gradient(110deg, #e2a443 0%, #ecd2aa 19%, #cb9c51 37%, #f4c560 54%, #c99035 73%, #efce9a 91%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.center-banner-title span { display: block; }
+.center-banner-laurel { position: absolute; top: 0; width: 18.6275%; height: auto; }
+.center-banner-laurel--left { left: 0; }
+.center-banner-laurel--right { right: 0; top: .1562cqw; transform: scaleX(-1); }
+.center-banner-description { margin-top: 5.62103cqw; text-align: center; font-size: 1.24935cqw; line-height: 1.45833; word-break: keep-all; }
+.center-banner-description p + p { margin-top: .1041cqw; }
+.center-banner-services { width: fit-content; max-width: 100%; margin: 2.4987cqw auto 0; padding: 0; list-style: none; font-size: .8329cqw; line-height: 1.4375; }
+.center-banner-services li + li { margin-top: .41645cqw; }
+.center-banner .center-banner-affiliation { margin-top: 1.20217cqw; text-align: center; }
+.center-banner-logos { display: flex; justify-content: center; align-items: center; gap: .1041cqw; }
+.center-banner-logos img { width: auto; height: 5.20562cqw; background: #fff; border-radius: .41645cqw; }
+.center-banner-affiliation figcaption { margin-top: .62467cqw; font-family: var(--font-ui); font-size: .8329cqw; font-weight: 500; line-height: 1.21; }
+.center-banner-doctor { position: absolute; left: 59.136%; bottom: -.1562cqw; width: 19.417%; }
+.center-banner-doctor img { width: 100%; height: auto; }
+
+/* 확정 모바일 시안 전까지 문구와 학회 로고를 읽기 쉽게 흐름으로 배치합니다. */
+@media (max-width: 1200px) {
+  .center-banner-stage { aspect-ratio: auto; padding: 64px 32px 0; }
+  .center-banner-copy { width: min(714px, 100%); margin-inline: auto; padding: 0; }
+  .center-banner-title-wrap { min-height: 180px; padding-inline: 100px; }
+  .center-banner-title { padding-top: 8px; font-size: clamp(44px, 6.5vw, 70px); }
+  .center-banner-laurel { width: 110px; }
+  .center-banner-description { margin-top: 32px; font-size: 21px; line-height: 1.6; }
+  .center-banner-description p + p { margin-top: 6px; }
+  .center-banner-services { margin-top: 28px; font-size: 16px; line-height: 1.6; }
+  .center-banner-services li + li { margin-top: 5px; }
+  .center-banner .center-banner-affiliation { margin-top: 28px; }
+  .center-banner-logos { gap: 4px; }
+  .center-banner-logos img { height: 88px; border-radius: 8px; }
+  .center-banner-affiliation figcaption { margin-top: 12px; font-size: 14px; line-height: 1.5; }
+  .center-banner-doctor { position: relative; left: auto; bottom: auto; width: min(340px, 70%); margin: 30px auto 0; }
+  .center-banner-surgery--right { width: 90%; left: 38%; top: 0; opacity: .3; }
+  .center-banner-surgery--left { width: 75%; left: -15%; top: auto; bottom: 0; opacity: .5; }
+  .center-banner-texture { top: 0; width: 100%; height: 100%; object-fit: cover; }
+  .center-banner-wave { top: 400px; width: 150%; left: 140%; }
+}
+@media (max-width: 600px) {
+  .center-banner-stage { padding: 48px 20px 0; }
+  .center-banner-title-wrap { min-height: 112px; padding-inline: 46px; }
+  .center-banner-title { font-size: clamp(29px, 7.7vw, 44px); padding-top: 7px; }
+  .center-banner-laurel { top: 4px; width: 48px; }
+  .center-banner-description { margin-top: 24px; font-size: 16px; }
+  .center-banner-services { font-size: 13px; line-height: 1.7; margin-top: 24px; }
+  .center-banner-logos img { height: 72px; }
+  .center-banner-affiliation figcaption { font-size: 12px; }
+  .center-banner-doctor { width: min(300px, 88%); margin-top: 24px; }
+}

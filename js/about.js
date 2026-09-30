@@ -1,25 +1,17 @@
 const cleanups = new WeakMap();
-export function renderAbout(content) {
+export function renderAbout() {
   const section = document.querySelector('.about');
-  if (!section || !content) return;
+  if (!section) return;
   cleanups.get(section)?.();
   const formatter = new Intl.NumberFormat(document.documentElement.lang || 'ko');
-  section.querySelector('[data-about="kicker"]').textContent = content.kicker;
-  section.querySelector('.about-title').textContent = content.title;
-  section.querySelectorAll('.about-description p').forEach((p,i) => p.textContent = content.description[i]);
   const counters = [...section.querySelectorAll('.about-stat-value')];
   counters.forEach(element => {
     // 최종 숫자는 HTML에서 읽고, 애니메이션 재초기화에도 유지합니다.
     element.dataset.target ||= element.textContent.replaceAll(',', '').trim();
     const card = element.closest('[data-stat]');
     const label = card.querySelector('.about-stat-label');
-    if (content.statLabels?.[card.dataset.stat]) label.textContent = content.statLabels[card.dataset.stat];
     card.setAttribute('aria-label', label.textContent + ' ' + formatter.format(Number(element.dataset.target)));
     element.setAttribute('aria-hidden','true');
-  });
-  if (document.documentElement.lang !== 'ko') section.querySelectorAll('[data-photo]').forEach(img => {
-    const alt = content.photoAlt?.[img.dataset.photo];
-    if (alt) img.alt = alt;
   });
   const rows = [...section.querySelectorAll('.about-marquee')];
   const resizers = [];
@@ -50,11 +42,11 @@ export function renderAbout(content) {
   const toggle = section.querySelector('.about-motion-toggle');
   let paused = false;
   toggle.hidden = reduced.matches;
-  toggle.textContent = content.pause;
+  toggle.textContent = toggle.dataset.pause;
   function onToggle() {
     paused = !paused;
     rows.forEach(row => row.classList.toggle('is-paused', paused));
-    toggle.textContent = paused ? content.resume : content.pause;
+    toggle.textContent = paused ? toggle.dataset.play : toggle.dataset.pause;
   }
   toggle.addEventListener('click',onToggle);
   function count(element) {

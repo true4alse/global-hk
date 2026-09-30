@@ -1,3 +1,6 @@
+import { renderCenterBanners } from './center-banner.js';
+import { renderCenterTreatments } from './center-treatment.js';
+import { renderKneeCenter } from './knee-center.js';
 import { renderSpecialty } from './specialty.js';
 import { renderResearch } from './research.js';
 import { renderCadaver } from './cadaver.js';
@@ -8,26 +11,25 @@ import { renderGlobal } from './global.js';
 import { renderAbout } from './about.js';
 import { renderHero } from './hero.js';
 import { languages, initializeLocale, localeUrl } from './i18n.js';
+import { applyTranslations } from './translations.js';
 
 const selected = initializeLocale();
+applyTranslations(selected.content);
 renderHero(selected.content.hero);
-renderAbout(selected.content.about);
-renderGlobal(selected.content.global);
-renderMis(selected.content.mis);
-renderTreatment(selected.content.treatment);
-renderIncision(selected.content.incision);
-renderCadaver(selected.content.cadaver);
-renderResearch(selected.content.research);
-renderSpecialty(selected.content.specialty);
+renderAbout();
+renderGlobal();
+renderMis();
+renderTreatment();
+renderIncision();
+renderCadaver();
+renderResearch();
+renderSpecialty();
+renderKneeCenter();
+renderCenterBanners();
+renderCenterTreatments();
 const toggle = document.querySelector('.language-toggle');
 const panel = document.querySelector('.language-options');
 toggle.disabled = false;
-toggle.setAttribute('aria-label', selected.content.languageLabel);
-document.querySelector('.hospital-logo').setAttribute('aria-label', selected.content.homeLabel);
-document.querySelectorAll('[data-nav]').forEach(button => {
-  button.textContent = selected.content.nav[button.dataset.nav];
-});
-
 function setOpen(open, restoreFocus = false) {
   panel.hidden = !open;
   toggle.setAttribute('aria-expanded', String(open));

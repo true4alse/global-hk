@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>흥K병원 | 한국어 홈페이지</title>
+  <title data-i18n="pageTitle">흥K병원 | 한국어 홈페이지</title>
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/hero.css">
   <link rel="stylesheet" href="/css/about.css">
@@ -16,6 +16,12 @@
   <link rel="stylesheet" href="/assets/vendor/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="/css/research.css">
   <link rel="stylesheet" href="/css/specialty.css">
+  <link rel="stylesheet" href="/css/knee-center.css">
+  <link rel="stylesheet" href="/css/center-banner.css">
+  <link rel="stylesheet" href="/css/center-banner-layout.css">
+  <link rel="stylesheet" href="/css/hand-foot-center.css">
+  <link rel="stylesheet" href="/css/spine-center.css">
+  <link rel="stylesheet" href="/css/center-treatment.css">
   <script defer src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script type="module" src="/js/header.js"></script>
 </head>
@@ -23,33 +29,33 @@
   <header class="site-header" data-figma-node="30:736">
     <div class="header-top">
       <div class="language-picker">
-        <button class="language-toggle pill" type="button" aria-expanded="false" aria-controls="language-options" aria-label="언어 선택" disabled>
+        <button class="language-toggle pill" type="button" aria-expanded="false" aria-controls="language-options" aria-label="언어 선택" disabled data-i18n-label="languageLabel">
           <span class="globe"><img src="/assets/globe.svg" alt="" width="18" height="18"></span>
-          <span>global</span>
+          <span data-i18n="header.languageButton">global</span>
         </button>
         <div class="language-options" id="language-options" hidden>
-          <p>언어 선택</p>
+          <p data-i18n="languageLabel">언어 선택</p>
           <ul>
-            <li><button type="button" data-language="ko" lang="ko" dir="ltr" aria-current="true">한국어</button></li>
-            <li><button type="button" data-language="en" lang="en" dir="ltr" disabled>English</button></li>
-            <li><button type="button" data-language="zh" lang="zh" dir="ltr" disabled>中文</button></li>
-            <li><button type="button" data-language="ja" lang="ja" dir="ltr" disabled>日本語</button></li>
-            <li><button type="button" data-language="ru" lang="ru" dir="ltr" disabled>Русский</button></li>
-            <li><button type="button" data-language="mn" lang="mn" dir="ltr" disabled>Монгол</button></li>
-            <li><button type="button" data-language="hi" lang="hi" dir="ltr" disabled>हिन्दी</button></li>
-            <li><button type="button" data-language="ar" lang="ar" dir="rtl" disabled>العربية</button></li>
+            <li><button type="button" data-language="ko" lang="ko" dir="ltr" aria-current="true" data-i18n-static="언어 자국어 표기">한국어</button></li>
+            <li><button type="button" data-language="en" lang="en" dir="ltr" disabled data-i18n-static="언어 자국어 표기">English</button></li>
+            <li><button type="button" data-language="zh" lang="zh" dir="ltr" disabled data-i18n-static="언어 자국어 표기">中文</button></li>
+            <li><button type="button" data-language="ja" lang="ja" dir="ltr" disabled data-i18n-static="언어 자국어 표기">日本語</button></li>
+            <li><button type="button" data-language="ru" lang="ru" dir="ltr" disabled data-i18n-static="언어 자국어 표기">Русский</button></li>
+            <li><button type="button" data-language="mn" lang="mn" dir="ltr" disabled data-i18n-static="언어 자국어 표기">Монгол</button></li>
+            <li><button type="button" data-language="hi" lang="hi" dir="ltr" disabled data-i18n-static="언어 자국어 표기">हिन्दी</button></li>
+            <li><button type="button" data-language="ar" lang="ar" dir="rtl" disabled data-i18n-static="언어 자국어 표기">العربية</button></li>
           </ul>
-          <small>한국어 외 언어는 번역 준비 중입니다.</small>
+          <small data-i18n="header.translationPending">한국어 외 언어는 번역 준비 중입니다.</small>
         </div>
       </div>
-      <a class="hospital-logo" href="/ko/" aria-label="흥K병원 홈">
+      <a class="hospital-logo" href="/ko/" aria-label="흥K병원 홈" data-i18n-label="homeLabel">
         <!-- 새 로고 원본 비율 553:80. 파일 교체 시 이 img 경로와 크기만 확인합니다. -->
         <img class="logo-main" src="/assets/logo.svg" alt="" width="553" height="80">
       </a>
       <!-- 시안의 임시 번호. 실제 연락처 확인 후 tel 링크로 변경합니다. -->
-      <span class="header-phone pill" aria-label="시안용 임시 전화번호">+82-10-1111-2222</span>
+      <span class="header-phone pill" aria-label="시안용 임시 전화번호" data-i18n-label="header.phoneLabel">+82-10-1111-2222</span>
     </div>
-    <nav class="header-nav" aria-label="주 메뉴">
+    <nav class="header-nav" aria-label="주 메뉴" data-i18n-label="header.navLabel">
       <!-- 대상 섹션 구현 후 href를 연결합니다. -->
       <a href="#about" data-nav="about">ABOUT HEUNG-K</a>
       <a href="#specialty-center" data-nav="specialties">SPECIALTIES</a>
@@ -63,7 +69,7 @@
     <section class="hero" aria-labelledby="hero-title" data-figma-node="30:732">
       <img class="hero-background" src="/assets/hero-surgery.png" alt="" width="1920" height="971" fetchpriority="high">
       <div class="hero-shade" aria-hidden="true"></div>
-      <div class="hero-statistic" aria-label="연간 7,208례">
+      <div class="hero-statistic" aria-label="연간 7,208례" data-i18n-dynamic-label="HTML 숫자와 hero.period/unit로 조합">
         <img class="hero-rule" src="/assets/hero-line-start.svg" alt="" width="741" height="1">
         <div class="hero-statistic-center" aria-hidden="true">
           <p class="hero-period" data-hero="period">연 간</p>
@@ -85,19 +91,19 @@
         <img class="about-backdrop" src="/assets/about/background.png" alt="" width="1920" height="959" loading="lazy">
         <div class="about-heading">
           <p class="about-kicker" data-about-reveal><span>1</span><span data-about="kicker">About HEUNG-K</span></p>
-          <h2 class="about-title" id="about-title" data-about-reveal>관절·척추 치료의 전문성을 넘어,<br>더 나은 치료의 기준을 만들어갑니다.</h2>
+          <h2 class="about-title" id="about-title" data-about-reveal data-i18n="about.title" data-i18n-lines="">관절·척추 치료의 전문성을 넘어,<br>더 나은 치료의 기준을 만들어갑니다.</h2>
           <div class="about-description">
-            <p data-about-reveal>흥K병원은 무릎, 고관절, 어깨, 척추, 수부·족부를 전문적으로 진료하는 관절·척추 전문병원입니다.<br>풍부한 임상 경험을 바탕으로 진단부터 치료·수술·재활까지 체계적인 진료를 제공합니다.</p>
-            <p data-about-reveal>연구와 교육, 글로벌 의료 교류를 이어가며 환자가 더 건강하고 활기찬 일상으로 복귀할 수 있도록 노력합니다.</p>
+            <p data-about-reveal data-i18n="about.description.0" data-i18n-lines="">흥K병원은 무릎, 고관절, 어깨, 척추, 수부·족부를 전문적으로 진료하는 관절·척추 전문병원입니다.<br>풍부한 임상 경험을 바탕으로 진단부터 치료·수술·재활까지 체계적인 진료를 제공합니다.</p>
+            <p data-about-reveal data-i18n="about.description.1">연구와 교육, 글로벌 의료 교류를 이어가며 환자가 더 건강하고 활기찬 일상으로 복귀할 수 있도록 노력합니다.</p>
           </div>
         </div>
         <img class="about-laurel about-laurel-start" src="/assets/about/extra4.png" alt="" width="193" height="290" loading="lazy">
         <img class="about-laurel about-laurel-end" src="/assets/about/extra3.png" alt="" width="193" height="290" loading="lazy">
         <!-- 통계 카드: 숫자는 아래 표시값 한 곳만 변경하면 카운트업도 따라 바뀝니다. -->
-        <ul class="about-stats" aria-label="흥K병원 주요 현황">
+        <ul class="about-stats" aria-label="흥K병원 주요 현황" data-i18n-label="about.statsLabel">
           <!-- 병상 수: 아이콘 src와 표시 숫자는 이 카드에서 수정합니다. -->
           <li class="about-stat" data-stat="bed">
-            <p class="about-stat-label" data-about-reveal>병상 수</p>
+            <p class="about-stat-label" data-about-reveal data-i18n="about.statLabels.bed">병상 수</p>
             <span class="about-stat-icon bed" aria-hidden="true">
               <img src="/assets/about/group9.svg" class="" alt="" width="50" height="50">
             </span>
@@ -105,7 +111,7 @@
           </li>
           <!-- 외래환자: 아이콘 src와 표시 숫자는 이 카드에서 수정합니다. -->
           <li class="about-stat" data-stat="doctor">
-            <p class="about-stat-label" data-about-reveal>외래환자</p>
+            <p class="about-stat-label" data-about-reveal data-i18n="about.statLabels.doctor">외래환자</p>
             <span class="about-stat-icon doctor" aria-hidden="true">
               <img src="/assets/about/group10.svg" class="" alt="" width="50" height="50">
             </span>
@@ -113,7 +119,7 @@
           </li>
           <!-- 입원환자: 아이콘 src와 표시 숫자는 이 카드에서 수정합니다. -->
           <li class="about-stat" data-stat="iv">
-            <p class="about-stat-label" data-about-reveal>입원환자</p>
+            <p class="about-stat-label" data-about-reveal data-i18n="about.statLabels.iv">입원환자</p>
             <span class="about-stat-icon iv" aria-hidden="true">
               <img src="/assets/about/vector.svg" class="iv-outline" alt="" width="50" height="50">
               <img src="/assets/about/vector1.svg" class="iv-fill" alt="" width="50" height="50">
@@ -124,7 +130,7 @@
           </li>
           <!-- 국제환자: 아이콘 src와 표시 숫자는 이 카드에서 수정합니다. -->
           <li class="about-stat" data-stat="world">
-            <p class="about-stat-label" data-about-reveal>국제환자</p>
+            <p class="about-stat-label" data-about-reveal data-i18n="about.statLabels.world">국제환자</p>
             <span class="about-stat-icon world" aria-hidden="true">
               <img src="/assets/about/group11.svg" class="" alt="" width="50" height="50">
             </span>
@@ -132,7 +138,7 @@
           </li>
           <!-- 수술 수: 아이콘 src와 표시 숫자는 이 카드에서 수정합니다. -->
           <li class="about-stat" data-stat="stethoscope">
-            <p class="about-stat-label" data-about-reveal>수술 수</p>
+            <p class="about-stat-label" data-about-reveal data-i18n="about.statLabels.stethoscope">수술 수</p>
             <span class="about-stat-icon stethoscope" aria-hidden="true">
               <img src="/assets/about/vector5.svg" class="stethoscope-tube" alt="" width="50" height="50">
               <img src="/assets/about/vector4.svg" class="stethoscope-tips" alt="" width="50" height="50">
@@ -141,34 +147,36 @@
             <span class="about-stat-value">7,200</span>
           </li>
         </ul>
-        <span class="about-side-label" aria-hidden="true">1　About HEUNG-K</span>
+        <span class="about-side-label" aria-hidden="true">1　<span data-about="kicker">About HEUNG-K</span></span>
         <img class="about-ribbon about-ribbon-top" src="/assets/about/ribbon.png" alt="" width="692" height="292" loading="lazy">
       </div>
-      <div class="about-gallery" aria-label="흥K병원 진료와 의료 교류 사진">
+      <div class="about-gallery" aria-label="흥K병원 진료와 의료 교류 사진" data-i18n-label="about.galleryLabel">
         <!-- 위: 왼쪽 마키. 이미지 추가·삭제·순서는 아래 img 태그로 수정합니다. -->
         <div class="about-marquee" data-direction="left">
           <div class="about-marquee-track">
-            <img src="/assets/about/photo1.png" alt="수술 중인 의료진" data-photo="row1-1" width="390" height="260" loading="lazy">
-            <img src="/assets/about/surgery.png" alt="환자와 상담하는 의료진" data-photo="row1-2" width="390" height="260" loading="lazy">
-            <img src="/assets/about/photo2.png" alt="국제 학술대회 발표" data-photo="row1-3" width="390" height="260" loading="lazy">
-            <img src="/assets/about/photo3.png" alt="진료 상담" data-photo="row1-4" width="390" height="260" loading="lazy">
-            <img src="/assets/about/photo4.png" alt="수술 현장의 의료 교류" data-photo="row1-5" width="390" height="260" loading="lazy">
+            <img src="/assets/about/photo1.png" alt="수술 중인 의료진" data-photo="row1-1" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row1-1">
+            <img src="/assets/about/surgery.png" alt="환자와 상담하는 의료진" data-photo="row1-2" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row1-2">
+            <img src="/assets/about/photo2.png" alt="국제 학술대회 발표" data-photo="row1-3" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row1-3">
+            <img src="/assets/about/photo22.jpg" alt="국제 학술대회 발표" data-photo="row1-3" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row1-3">
+            <img src="/assets/about/photo3.png" alt="진료 상담" data-photo="row1-4" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row1-4">
+            <img src="/assets/about/photo4.png" alt="수술 현장의 의료 교류" data-photo="row1-5" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row1-5">
           </div>
         </div>
         <!-- 아래: 오른쪽 마키. 이미지 추가·삭제·순서는 아래 img 태그로 수정합니다. -->
         <div class="about-marquee" data-direction="right">
           <div class="about-marquee-track">
-            <img src="/assets/about/photo5.png" alt="해외 의료기관 방문" data-photo="row2-1" width="390" height="260" loading="lazy">
-            <img src="/assets/about/photo6.png" alt="국제 의료진 교류" data-photo="row2-2" width="390" height="260" loading="lazy">
-            <img src="/assets/about/consultation.png" alt="수술에 참여하는 의료진" data-photo="row2-3" width="390" height="260" loading="lazy">
-            <img src="/assets/about/photo7.png" alt="의료진과의 만남" data-photo="row2-4" width="390" height="260" loading="lazy">
-            <img src="/assets/about/photo8.png" alt="의료 교육 현장" data-photo="row2-5" width="390" height="260" loading="lazy">
-            <img src="/assets/about/photo9.png" alt="국제 연수 의료진" data-photo="row2-6" width="390" height="260" loading="lazy">
-            <img src="/assets/about/photo10.png" alt="교육 참가자 단체 사진" data-photo="row2-7" width="390" height="260" loading="lazy">
+            <img src="/assets/about/photo5.png" alt="해외 의료기관 방문" data-photo="row2-1" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row2-1">
+            <img src="/assets/about/photo6.png" alt="국제 의료진 교류" data-photo="row2-2" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row2-2">
+            <img src="/assets/about/consultation.png" alt="수술에 참여하는 의료진" data-photo="row2-3" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row2-3">
+            <img src="/assets/about/photo7.png" alt="의료진과의 만남" data-photo="row2-4" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row2-4">
+            <img src="/assets/about/photo11.jpg" alt="국제 의료진 교류" data-photo="row2-2" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row2-2">
+            <img src="/assets/about/photo8.png" alt="의료 교육 현장" data-photo="row2-5" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row2-5">
+            <img src="/assets/about/photo9.png" alt="국제 연수 의료진" data-photo="row2-6" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row2-6">
+            <img src="/assets/about/photo10.png" alt="교육 참가자 단체 사진" data-photo="row2-7" width="390" height="260" loading="lazy" data-i18n-alt="about.photoAlt.row2-7">
           </div>
         </div>
         <img class="about-ribbon about-ribbon-bottom" src="/assets/about/extra2.png" alt="" width="692" height="292" loading="lazy">
-        <button class="about-motion-toggle" type="button" hidden>사진 움직임 멈추기</button>
+        <button class="about-motion-toggle" type="button" hidden data-i18n="about.pause" data-pause="사진 움직임 멈추기" data-play="사진 움직임 재생" data-i18n-pause="about.pause" data-i18n-play="about.resume">사진 움직임 멈추기</button>
       </div>
     </section>
     <!-- GLOBAL EXCELLENCE: 이미지 src와 화관 안의 숫자는 이 영역에서 수정합니다. -->
@@ -176,7 +184,7 @@
       <p class="global-kicker" data-global-reveal><span>2</span><span data-global="kicker">GLOBAL EXCELLENCE</span></p>
       <!-- 다음 HSS 콘텐츠도 이 stage 안에 추가하면 배경 문구의 sticky 구간이 이어집니다. -->
       <div class="global-stage">
-        <div class="global-sticky-layer" aria-hidden="true"><p class="global-watermark">HSS IN KOREA</p></div>
+        <div class="global-sticky-layer" aria-hidden="true"><p class="global-watermark" data-i18n="global.watermark">HSS IN KOREA</p></div>
         <div class="global-intro">
           <div class="global-photo" data-global-photo aria-hidden="true">
             <!-- 피그마 원본 사진 수급 전 기존 수술 사진 사용. 이 src 한 곳에서 교체합니다. -->
@@ -184,20 +192,20 @@
           </div>
           <div class="global-copy">
             <p class="global-lead" data-global-reveal><span data-global="leadStart">세계적 정형외과 수술의 기준을, </span><strong data-global="hospital">흥K병원</strong><span data-global="leadEnd">에서 만나다.</span></p>
-            <h2 class="global-title" id="global-title" lang="en">
+            <h2 class="global-title" id="global-title" lang="en" data-i18n-static="HSS 머리글자 브랜드 표기">
               <span data-global-reveal><b>H</b>EUNG-K for</span>
               <span data-global-reveal><b>S</b>pecial</span>
               <span data-global-reveal><b>S</b>urgery</span>
             </h2>
-            <p class="global-description" data-global-reveal data-global="description">세계적인 의료 현장에서 배우고, 우리의 경험을 다시 세계와 나누며.<br>흥K는 관절·척추 전문병원으로서 더 나은 치료를 향해 나아갑니다.</p>
+            <p class="global-description" data-global-reveal data-global="description" data-i18n-lines="">세계적인 의료 현장에서 배우고, 우리의 경험을 다시 세계와 나누며.<br>흥K는 관절·척추 전문병원으로서 더 나은 치료를 향해 나아갑니다.</p>
           </div>
-          <ul class="global-awards" aria-label="HSS 정형외과 평가 이력">
+          <ul class="global-awards" aria-label="HSS 정형외과 평가 이력" data-i18n-label="global.awardsLabel">
             <li class="global-award">
               <img class="global-laurel global-laurel-left" src="/assets/about/extra4.png" alt="" width="193" height="290" loading="lazy">
               <div class="global-award-copy">
                 <span class="global-years" data-global-count>5</span>
-                <span class="global-unit" lang="en" data-global-reveal>YEARS</span>
-                <p class="global-award-source" lang="en" data-global-reveal>NEWSWEEK</p>
+                <span class="global-unit" lang="en" data-global-reveal data-i18n="global.yearsUnit">YEARS</span>
+                <p class="global-award-source" lang="en" data-global-reveal data-i18n-static="브랜드 고유 표기">NEWSWEEK</p>
                 <p class="global-award-detail" data-global="newsweek" data-global-reveal>세계 정형외과 5년 연속 1위</p>
                 <p class="global-award-date" data-global-reveal>2021-2025</p>
               </div>
@@ -207,8 +215,8 @@
               <img class="global-laurel global-laurel-left" src="/assets/about/extra4.png" alt="" width="193" height="290" loading="lazy">
               <div class="global-award-copy">
                 <span class="global-years" data-global-count>17</span>
-                <span class="global-unit" lang="en" data-global-reveal>YEARS</span>
-                <p class="global-award-source" lang="en" data-global-reveal>U.S NEWS &amp; WORLD REPORT</p>
+                <span class="global-unit" lang="en" data-global-reveal data-i18n="global.yearsUnit">YEARS</span>
+                <p class="global-award-source" lang="en" data-global-reveal data-i18n-static="브랜드 고유 표기">U.S NEWS &amp; WORLD REPORT</p>
                 <p class="global-award-detail" data-global="usnews" data-global-reveal>미국 정형외과 17년 연속 1위</p>
               </div>
               <img class="global-laurel global-laurel-right" src="/assets/about/extra3.png" alt="" width="193" height="290" loading="lazy">
@@ -223,24 +231,24 @@
           </div>
           <!-- 왼쪽: HSS 방문 사진 / 수술 교류 사진 / HSS 건물 -->
           <div class="hss-intro-gallery">
-            <img data-hss-image="left" class="hss-snf" src="/assets/hss/hss-snf.jpg" alt="HSS SNF 인공관절 재건센터를 방문한 김종근 대표원장" width="1430" height="827" loading="lazy">
-            <img data-hss-image="left" class="hss-monochrome" src="/assets/hss/surgery-exchange.jpg" alt="HSS 수술 현장에서 경험을 나누는 의료진" width="375" height="500" loading="lazy">
-            <img data-hss-image="left" class="" src="/assets/hss/hss-building.png" alt="뉴욕 HSS 병원 전경" width="384" height="256" loading="lazy">
+            <img data-hss-image="left" class="hss-snf" src="/assets/hss/hss-snf.jpg" alt="HSS SNF 인공관절 재건센터를 방문한 김종근 대표원장" width="1430" height="827" loading="lazy" data-i18n-alt="global.imageAlt.hssSnf">
+            <img data-hss-image="left" class="hss-monochrome" src="/assets/hss/surgery-exchange.jpg" alt="HSS 수술 현장에서 경험을 나누는 의료진" width="375" height="500" loading="lazy" data-i18n-alt="global.imageAlt.surgeryExchange">
+            <img data-hss-image="left" class="" src="/assets/hss/hss-building.png" alt="뉴욕 HSS 병원 전경" width="384" height="256" loading="lazy" data-i18n-alt="global.imageAlt.hssBuilding">
           </div>
           <div class="hss-exchange-copy">
-            <h3 data-global="hssExchangeTitle" data-global-reveal>HSS에서 배우고,<br>흥K의 전문성을 공유하다</h3>
+            <h3 data-global="hssExchangeTitle" data-global-reveal data-i18n-lines="">HSS에서 배우고,<br>흥K의 전문성을 공유하다</h3>
             <p data-global="hssExchangeFirst" data-global-reveal>김종근 대표원장은 HSS Academic Visitor Program(AVP) 초청 연수와 Cornell University Visiting Scholar 과정을 통해 세계적인 정형외과 임상·연구 현장을 경험했습니다.</p>
             <p data-global="hssExchangeSecond" data-global-reveal>현지 의료진과 인공관절 수술에 대한 경험을 나누고, 흥K병원이 축적해 온 MIS TKA 수술 경험과 노하우를 공유하며 세계와 꾸준히 교류하고 있습니다.</p>
           </div>
           <!-- 오른쪽: 위 2장 / 가운데 3장 / 아래 2장. 이미지 순서와 경로는 여기서 수정합니다. -->
           <div class="hss-exchange-gallery">
-            <img data-hss-image="right" class="hss-visit" src="/assets/hss/hss-visit.jpg" alt="HSS 수술실 앞에 선 김종근 대표원장" width="375" height="500" loading="lazy">
-            <img data-hss-image="right" class="hss-team" src="/assets/hss/surgery-team.jpg" alt="HSS 수술에 참여하는 의료진" width="500" height="375" loading="lazy">
-            <img data-hss-image="right" class="hss-colleagues hss-monochrome" src="/assets/hss/colleagues.jpg" alt="HSS 의료진과 함께한 김종근 대표원장" width="375" height="500" loading="lazy">
-            <img data-hss-image="right" class="hss-operating" src="/assets/hss/operating-room.jpg" alt="HSS 수술실에서 이루어지는 임상 교류" width="369" height="375" loading="lazy">
-            <img data-hss-image="right" class="hss-lobby hss-monochrome" src="/assets/hss/hss-lobby.jpg" alt="HSS 방문 현장의 김종근 대표원장" width="1848" height="4000" loading="lazy">
-            <img data-hss-image="right" class="hss-visitors" src="/assets/hss/visitor-team.jpg" alt="HSS 의료진과 연수 방문 기념사진" width="500" height="375" loading="lazy">
-            <img data-hss-image="right" class="hss-discussion" src="/assets/hss/surgical-discussion.jpg" alt="수술 중 치료 경험과 의견을 나누는 의료진" width="1848" height="2844" loading="lazy">
+            <img data-hss-image="right" class="hss-visit" src="/assets/hss/hss-visit.jpg" alt="HSS 수술실 앞에 선 김종근 대표원장" width="375" height="500" loading="lazy" data-i18n-alt="global.imageAlt.hssVisit">
+            <img data-hss-image="right" class="hss-team" src="/assets/hss/surgery-team.jpg" alt="HSS 수술에 참여하는 의료진" width="500" height="375" loading="lazy" data-i18n-alt="global.imageAlt.surgeryTeam">
+            <img data-hss-image="right" class="hss-colleagues hss-monochrome" src="/assets/hss/colleagues.jpg" alt="HSS 의료진과 함께한 김종근 대표원장" width="375" height="500" loading="lazy" data-i18n-alt="global.imageAlt.colleagues">
+            <img data-hss-image="right" class="hss-operating" src="/assets/hss/operating-room.jpg" alt="HSS 수술실에서 이루어지는 임상 교류" width="369" height="375" loading="lazy" data-i18n-alt="global.imageAlt.operatingRoom">
+            <img data-hss-image="right" class="hss-lobby hss-monochrome" src="/assets/hss/hss-lobby.jpg" alt="HSS 방문 현장의 김종근 대표원장" width="1848" height="4000" loading="lazy" data-i18n-alt="global.imageAlt.hssLobby">
+            <img data-hss-image="right" class="hss-visitors" src="/assets/hss/visitor-team.jpg" alt="HSS 의료진과 연수 방문 기념사진" width="500" height="375" loading="lazy" data-i18n-alt="global.imageAlt.visitorTeam">
+            <img data-hss-image="right" class="hss-discussion" src="/assets/hss/surgical-discussion.jpg" alt="수술 중 치료 경험과 의견을 나누는 의료진" width="1848" height="2844" loading="lazy" data-i18n-alt="global.imageAlt.surgicalDiscussion">
           </div>
         </section>
       </div>
@@ -248,27 +256,27 @@
     <!-- MIS TKA: 한국어 문구와 이미지 src는 이 HTML에서 직접 수정합니다. -->
     <section class="mis-tka" id="mis-tka" aria-labelledby="mis-title">
       <div class="mis-side-rail" aria-hidden="true">
-        <p class="mis-side-label"><strong>3</strong><span lang="en">MIS TKA · Minimally Invasive TKA</span></p>
+        <p class="mis-side-label"><strong>3</strong><span lang="en" data-i18n="mis.kicker">MIS TKA · Minimally Invasive TKA</span></p>
       </div>
       <div class="mis-intro">
         <div class="mis-doctor" data-mis-blur aria-hidden="true">
           <img src="/assets/mis/doctor-background.png" alt="" width="1500" height="1240" loading="lazy">
         </div>
         <div class="mis-heading">
-          <p class="mis-kicker" data-mis-reveal><span>3</span><span lang="en">MIS TKA · Minimally Invasive TKA</span></p>
+          <p class="mis-kicker" data-mis-reveal><span>3</span><span lang="en" data-i18n="mis.kicker">MIS TKA · Minimally Invasive TKA</span></p>
           <h2 id="mis-title" data-mis="title" data-mis-reveal>최소절개 인공관절 수술</h2>
           <p class="mis-description" data-mis="description" data-mis-reveal>최소절개 인공관절 수술은 절개를 최소화하여 내부 연부조직의 손상을 줄이고, 이를 통해 통증을 감소시키며 재활을 빠르게 진행하여 환자의 일상생활 복귀를 촉진하고 만족도를 높이는 수술입니다.</p>
         </div>
         <!-- 무릎뼈가 먼저 나타난 뒤 양쪽 문구가 차례로 등장합니다. -->
         <div class="mis-signature" data-mis-sequence>
-          <img class="mis-knee" src="/assets/mis/knee-visual.png" alt="무릎 관절의 뼈 구조" width="1920" height="970" loading="lazy">
+          <img class="mis-knee" src="/assets/mis/knee-visual.png" alt="무릎 관절의 뼈 구조" width="1920" height="970" loading="lazy" data-i18n-alt="mis.imageAlt.kneeVisual">
           <p class="mis-claim mis-claim-start"><span data-mis="claimStartFirst">전세계</span><strong data-mis="claimStartSecond">단 하나의 기술</strong></p>
           <p class="mis-claim mis-claim-end"><strong data-mis="claimEndFirst">진정한 의미의</strong><strong class="mis-accent" data-mis="claimEndSecond">최소절개</strong></p>
         </div>
       </div>
       <section class="mis-difference" id="mis-difference" aria-labelledby="mis-difference-title">
         <div class="mis-question-heading">
-          <p class="mis-question" data-mis-reveal><strong aria-hidden="true">?</strong><span lang="en">Question</span></p>
+          <p class="mis-question" data-mis-reveal><strong aria-hidden="true">?</strong><span lang="en" data-i18n="mis.questionLabel">Question</span></p>
           <h3 id="mis-difference-title" data-mis-reveal><span data-mis="questionFirst">무엇이 </span><mark data-mis="questionStrong">다른가요</mark><span class="mis-sr-only">?</span></h3>
           <div class="mis-description" data-mis-reveal>
             <p data-mis="differenceFirst">슬개골의 위쪽 끝과 아래쪽 끝에서 각각 약 3~4cm만 절개하여 무릎관절 내에서 수술을 진행합니다.</p>
@@ -278,8 +286,8 @@
         </div>
         <div class="mis-comparison">
           <figure class="mis-incision">
-            <div class="mis-incision-image"><img src="/assets/mis/incision-comparison.png" alt="무릎 절개 위치와 검지손가락 길이를 비교한 설명도" width="3072" height="2048" loading="lazy"></div>
-            <figcaption lang="en"><span>MIS TKA</span> · Minimally Invasive TKA</figcaption>
+            <div class="mis-incision-image"><img src="/assets/mis/incision-comparison.png" alt="무릎 절개 위치와 검지손가락 길이를 비교한 설명도" width="3072" height="2048" loading="lazy" data-i18n-alt="mis.imageAlt.incisionComparison"></div>
+            <figcaption lang="en"><span data-mis="captionName">MIS TKA</span><span data-mis="captionSuffix"> · Minimally Invasive TKA</span></figcaption>
           </figure>
           <div class="mis-benefits">
             <h4 data-mis="benefitTitle" data-mis-reveal>작은 절개에서 시작되는 회복의 차이</h4>
@@ -287,15 +295,15 @@
             <ul class="mis-benefit-list">
               <li data-mis-reveal>
                 <img src="/assets/mis/icon-mis1.svg" alt="" width="100" height="100" loading="lazy">
-                <div><h5 data-mis="benefit1Title">절개 부담을 최소화한 수술</h5><p data-mis="benefit1Description">허벅지 부위 절개 없이<br>정강이 부위 절개 최소화</p></div>
+                <div><h5 data-mis="benefit1Title">절개 부담을 최소화한 수술</h5><p data-mis="benefit1Description" data-i18n-lines="">허벅지 부위 절개 없이<br>정강이 부위 절개 최소화</p></div>
               </li>
               <li data-mis-reveal>
                 <img src="/assets/mis/icon-mis2.svg" alt="" width="100" height="100" loading="lazy">
-                <div><h5 data-mis="benefit2Title">꼭 필요한 만큼만 절개</h5><p data-mis="benefit2Description">위·아래 각각 약 3~4cm 절개<br>필요한 부위에 최소한으로 접근하여</p></div>
+                <div><h5 data-mis="benefit2Title">꼭 필요한 만큼만 절개</h5><p data-mis="benefit2Description" data-i18n-lines="">위·아래 각각 약 3~4cm 절개<br>필요한 부위에 최소한으로 접근하여</p></div>
               </li>
               <li data-mis-reveal>
                 <img src="/assets/mis/icon-mis3.svg" alt="" width="100" height="100" loading="lazy">
-                <div><h5 data-mis="benefit3Title">최소침습 정밀 인공관절 수술</h5><p data-mis="benefit3Description">무릎관절 내에서 수술<br>정교한 인공관절 수술을 진행합니다.</p></div>
+                <div><h5 data-mis="benefit3Title">최소침습 정밀 인공관절 수술</h5><p data-mis="benefit3Description" data-i18n-lines="">무릎관절 내에서 수술<br>정교한 인공관절 수술을 진행합니다.</p></div>
               </li>
             </ul>
           </div>
@@ -309,7 +317,7 @@
         <img class="treatment-background" src="/assets/treatment/surgery-background.png" alt="" width="1920" height="1326" loading="lazy">
         <div class="treatment-banner-copy">
           <h2 id="treatment-title" data-treatment-reveal><span><em data-treatment="hospital">흥K병원</em><span data-treatment="titleFirst">은</span></span><span data-treatment="titleSecond">차별화된 치료를</span><span data-treatment="titleThird">제공합니다</span></h2>
-          <p data-treatment="intro" data-treatment-reveal>정밀하고 체계적인 수술을 위한<br>흥K병원의 차별화된 치료</p>
+          <p data-treatment="intro" data-treatment-reveal data-i18n-lines="">정밀하고 체계적인 수술을 위한<br>흥K병원의 차별화된 치료</p>
         </div>
       </div>
       <div class="treatment-details">
@@ -317,15 +325,15 @@
         <div class="treatment-patent">
           <!-- 액자는 화면 진입 시 아래에서 위로 등장합니다. 원본의 바깥 여백만 CSS로 잘라냅니다. -->
           <figure class="treatment-patent-frame" data-treatment-reveal="up">
-            <img src="/assets/treatment/patent-frame.png" alt="최소침습식 인공무릎관절 전치환술용 경골 사이즈 측정 수기구 특허증, 제10-2622418호" width="1054" height="1492" loading="lazy">
+            <img src="/assets/treatment/patent-frame.png" alt="최소침습식 인공무릎관절 전치환술용 경골 사이즈 측정 수기구 특허증, 제10-2622418호" width="1054" height="1492" loading="lazy" data-i18n-alt="treatment.imageAlt.patentFrame">
           </figure>
           <img class="treatment-ribbon treatment-ribbon-left" src="/assets/about/ribbon.png" alt="" width="692" height="292" loading="lazy">
           <div class="treatment-patent-copy">
-            <h3 data-treatment-reveal><span lang="en">InJury Knee Minimal:</span><strong lang="en">JK Minimal</strong></h3>
+            <h3 data-treatment-reveal><span lang="en" data-i18n="treatment.systemName">InJury Knee Minimal:</span><strong lang="en" data-i18n="treatment.systemShortName">JK Minimal</strong></h3>
             <p data-treatment-reveal><em data-treatment="patentEmphasis">최소절개 인공관절 수술</em> <span data-treatment="patentDescription">경골 대퇴골 사이즈 기구</span></p>
           </div>
         </div>
-        <div class="treatment-method" aria-label="JK Minimal의 특징">
+        <div class="treatment-method" aria-label="JK Minimal의 특징" data-i18n-label="treatment.methodLabel">
           <!-- 최대 효율·최소 손상·최소 절개 연결선: 화면 크기와 문구 위치에 맞춰 좌표만 자동 갱신합니다. -->
           <div class="treatment-connectors" aria-hidden="true">
             <div class="treatment-connector" data-treatment-connector="efficiency"><span class="treatment-connector-arm"></span><span class="treatment-connector-stem"></span><span class="treatment-connector-tail"></span><span class="treatment-connector-text-dot"></span><span class="treatment-connector-circle-dot"></span></div>
@@ -340,7 +348,7 @@
             <!-- 기구 뒤 도면 배경: 원본은 assets/treatment에서 교체하고 농도·크기는 CSS에서 조정합니다. -->
             <img class="treatment-blueprint" src="/assets/treatment/heungk-white-mint-blueprint-bg.png" alt="" width="1913" height="1000" loading="lazy">
             <div class="treatment-instrument-circle" aria-hidden="true"></div>
-            <img class="treatment-instrument-image" src="/assets/treatment/jk-minimal.png" alt="JK Minimal 경골 대퇴골 사이즈 측정 기구" width="1920" height="1920" loading="lazy">
+            <img class="treatment-instrument-image" src="/assets/treatment/jk-minimal.png" alt="JK Minimal 경골 대퇴골 사이즈 측정 기구" width="1920" height="1920" loading="lazy" data-i18n-alt="treatment.imageAlt.jkMinimal">
           </div>
           <div class="treatment-minimum">
             <h3 data-treatment-reveal><em data-treatment="minimumInjury">최소</em><span data-treatment="injury">손상</span></h3>
@@ -352,19 +360,19 @@
           <h3 id="treatment-strategies-title" data-treatment="strategiesTitle" data-treatment-reveal>성공률과 만족도를 높이기 위한 차별화된 전략</h3>
           <div class="treatment-strategy-grid">
             <article class="treatment-strategy-card">
-              <h4 lang="en" data-treatment-reveal>PSI</h4>
+              <h4 lang="en" data-treatment-reveal data-i18n="treatment.psiTitle">PSI</h4>
               <p class="treatment-strategy-subtitle" data-treatment="psiSubtitle" data-treatment-reveal>환자 맞춤형 인공관절</p>
               <p class="treatment-strategy-description" data-treatment="psiDescription" data-treatment-reveal>개인의 뼈 구조에 맞춘 3D 맞춤형 수술도구(PSI)를 활용하여 정밀한 인공관절 삽입 가능</p>
-              <img class="treatment-strategy-image" src="/assets/treatment/psi.png" alt="환자의 뼈 구조에 맞춘 PSI 수술도구" width="1535" height="1024" loading="lazy">
+              <img class="treatment-strategy-image" src="/assets/treatment/psi.png" alt="환자의 뼈 구조에 맞춘 PSI 수술도구" width="1535" height="1024" loading="lazy" data-i18n-alt="treatment.imageAlt.psi">
             </article>
             <article class="treatment-strategy-card">
-              <h4 lang="en" data-treatment-reveal>MAKO</h4>
+              <h4 lang="en" data-treatment-reveal data-i18n="treatment.makoTitle">MAKO</h4>
               <p class="treatment-strategy-subtitle" data-treatment="makoSubtitle" data-treatment-reveal>로봇 인공관절 수술</p>
               <p class="treatment-strategy-description" data-treatment="makoDescription" data-treatment-reveal>CT 기반의 환자 맞춤형 3D 수술 계획을 통해 계획된 범위 내에서 정밀한 뼈 절삭 로봇의 정밀함과 최소침습 수술 노하우의 결합</p>
-              <img class="treatment-strategy-image treatment-mako" src="/assets/treatment/mako.jpg" alt="MAKO 인공관절 수술 로봇" width="2122" height="1664" loading="lazy">
+              <img class="treatment-strategy-image treatment-mako" src="/assets/treatment/mako.jpg" alt="MAKO 인공관절 수술 로봇" width="2122" height="1664" loading="lazy" data-i18n-alt="treatment.imageAlt.mako">
             </article>
             <article class="treatment-strategy-card">
-              <h4 lang="en" data-treatment-reveal>Mobile Window Technique</h4>
+              <h4 lang="en" data-treatment-reveal data-i18n="treatment.windowTitle">Mobile Window Technique</h4>
               <p class="treatment-strategy-subtitle" data-treatment="windowSubtitle" data-treatment-reveal>최소절개 수술 공간 확보</p>
               <p class="treatment-strategy-description" data-treatment="windowDescription" data-treatment-reveal>모바일 윈도우 테크닉(Mobile Window Technique)을 통해 수술 공간의 활용성을 극대화하는 효율적인 수술 술기</p>
               <!-- 현재 디자인처럼 이 카드는 텍스트로 구성합니다. 추후 사진 추가 시 여기에 img를 넣습니다. -->
@@ -381,7 +389,7 @@
       <div class="incision-case-grid">
         <figure class="incision-case" data-incision-reveal="up">
           <div class="incision-case-photo">
-            <img src="/assets/incision/case-68.png" alt="68세 여성 환자의 양쪽 무릎 절개 부위 비교" width="528" height="581" loading="lazy">
+            <img src="/assets/incision/case-68.png" alt="68세 여성 환자의 양쪽 무릎 절개 부위 비교" width="528" height="581" loading="lazy" data-i18n-alt="incision.imageAlt.case68">
             <!-- 점선은 원본 사진 위에 겹치는 표시입니다. 위치는 아래 --mark-* 값에서 조정합니다. -->
             <span class="incision-mark incision-mark-other" style="--mark-left:9%;--mark-top:18%;--mark-width:30%;--mark-height:74%"><span data-incision="otherHospital">타병원</span></span>
             <span class="incision-mark incision-mark-heungk" style="--mark-left:59%;--mark-top:36%;--mark-width:30%;--mark-height:41%"><span data-incision="ourHospital">흥K병원</span></span>
@@ -390,7 +398,7 @@
         </figure>
         <figure class="incision-case" data-incision-reveal="up" style="--incision-delay:120ms">
           <div class="incision-case-photo">
-            <img src="/assets/incision/case-72.png" alt="72세 여성 환자의 양쪽 무릎 절개 부위 비교" width="550" height="581" loading="lazy">
+            <img src="/assets/incision/case-72.png" alt="72세 여성 환자의 양쪽 무릎 절개 부위 비교" width="550" height="581" loading="lazy" data-i18n-alt="incision.imageAlt.case72">
             <span class="incision-mark incision-mark-other" style="--mark-left:11%;--mark-top:15%;--mark-width:30%;--mark-height:63%"><span data-incision="otherHospital">타병원</span></span>
             <span class="incision-mark incision-mark-heungk" style="--mark-left:56%;--mark-top:35%;--mark-width:30%;--mark-height:45%"><span data-incision="ourHospital">흥K병원</span></span>
           </div>
@@ -398,7 +406,7 @@
         </figure>
         <figure class="incision-case" data-incision-reveal="up" style="--incision-delay:240ms">
           <div class="incision-case-photo">
-            <img src="/assets/incision/case-79.png" alt="79세 남성 환자의 양쪽 무릎 절개 부위 비교" width="474" height="581" loading="lazy">
+            <img src="/assets/incision/case-79.png" alt="79세 남성 환자의 양쪽 무릎 절개 부위 비교" width="474" height="581" loading="lazy" data-i18n-alt="incision.imageAlt.case79">
             <span class="incision-mark incision-mark-heungk" style="--mark-left:12%;--mark-top:38%;--mark-width:30%;--mark-height:42%"><span data-incision="ourHospital">흥K병원</span></span>
             <span class="incision-mark incision-mark-other" style="--mark-left:64%;--mark-top:15%;--mark-width:30%;--mark-height:63%"><span data-incision="otherHospital">타병원</span></span>
           </div>
@@ -416,7 +424,7 @@
           </li>
           <li data-incision-reveal style="--incision-delay:100ms">
             <img class="incision-benefit-icon" src="/assets/treatment/tj2.svg" alt="" width="100" height="100" loading="lazy">
-            <h4 data-incision="movementTitle">원활한 관절 운동<br>조기보행 가능</h4>
+            <h4 data-incision="movementTitle" data-i18n-lines="">원활한 관절 운동<br>조기보행 가능</h4>
             <p data-incision="movementDescription">조직 손상이 적어 관절내 유착이 적게 발생하여, 관절의 움직임이 보다 원활해지고 수술 후 빠른 보행이 가능합니다.</p>
           </li>
           <li data-incision-reveal style="--incision-delay:200ms">
@@ -443,12 +451,12 @@
         <img class="cadaver-wave cadaver-wave-left" src="/assets/cadaver/gold-wave.png" alt="" width="368" height="368" loading="lazy">
         <img class="cadaver-wave cadaver-wave-right" src="/assets/cadaver/gold-wave.png" alt="" width="368" height="368" loading="lazy">
         <div class="cadaver-copy">
-          <p class="cadaver-kicker" data-cadaver-reveal><strong>4</strong><span lang="en">MIS TKA · CADAVER WORKSHOP</span></p>
+          <p class="cadaver-kicker" data-cadaver-reveal><strong>4</strong><span lang="en" data-i18n="cadaver.kicker">MIS TKA · CADAVER WORKSHOP</span></p>
           <h2 id="cadaver-title" data-cadaver="title" data-cadaver-reveal>국제 최소침습 및 환자 맞춤형 인공관절 연수 교육센터</h2>
           <div class="cadaver-title-panel">
-            <p class="cadaver-word" lang="en" data-cadaver-reveal>CADAVER</p>
+            <p class="cadaver-word" lang="en" data-cadaver-reveal data-i18n="cadaver.word">CADAVER</p>
             <div class="cadaver-subtitle" data-cadaver-reveal>
-              <p lang="en">MIS TKA CADAVER WORKSHOP</p>
+              <p lang="en" data-i18n="cadaver.workshopLabel">MIS TKA CADAVER WORKSHOP</p>
               <p data-cadaver="workshop">2025 카데바 워크샵 성황리 개최</p>
               <p data-cadaver="training">최소절개 인공관절 수술 교육</p>
             </div>
@@ -459,16 +467,16 @@
             <p data-cadaver="descriptionThird" data-cadaver-reveal style="--cadaver-delay:240ms">지속적인 의료진 교육과 학술 교류를 이어가고 있습니다.</p>
           </div>
         </div>
-        <p class="cadaver-side-label" aria-hidden="true"><strong>4</strong><span lang="en">MIS TKA · CADAVER WORKSHOP</span></p>
+        <p class="cadaver-side-label" aria-hidden="true"><strong>4</strong><span lang="en" data-i18n="cadaver.kicker">MIS TKA · CADAVER WORKSHOP</span></p>
       </div>
       <div class="cadaver-gallery">
         <!-- 사진과 액자를 합친 완성 이미지입니다. 각 SVG 안에 모든 원본 사진이 내장되어 있습니다. -->
         <div class="cadaver-frames">
-          <img src="/assets/cadaver/workshop-group-framed.svg" alt="금빛 액자 안의 카데바 워크샵 참가 의료진 단체 사진" width="960" height="624" loading="lazy">
-          <img src="/assets/cadaver/workshop-collage-framed.svg" alt="금빛 액자 안에 모은 카데바 워크샵 강의, 실습, 의료진 교류 사진" width="960" height="624" loading="lazy">
+          <img src="/assets/cadaver/workshop-group-framed.svg" alt="금빛 액자 안의 카데바 워크샵 참가 의료진 단체 사진" width="960" height="624" loading="lazy" data-i18n-alt="cadaver.imageAlt.workshopGroupFramed">
+          <img src="/assets/cadaver/workshop-collage-framed.svg" alt="금빛 액자 안에 모은 카데바 워크샵 강의, 실습, 의료진 교류 사진" width="960" height="624" loading="lazy" data-i18n-alt="cadaver.imageAlt.workshopCollageFramed">
         </div>
         <!-- 위치를 잡는 바깥 요소와 올라오는 안쪽 이미지를 분리해 애니메이션 중 중심이 흔들리지 않습니다. -->
-        <div class="cadaver-trophy"><img src="/assets/cadaver/trophy.png" alt="카데바 워크샵 영역을 장식하는 금빛 손 모양 트로피" width="1378" height="2000" loading="lazy" data-cadaver-reveal="up"></div>
+        <div class="cadaver-trophy"><img src="/assets/cadaver/trophy.png" alt="카데바 워크샵 영역을 장식하는 금빛 손 모양 트로피" width="1378" height="2000" loading="lazy" data-cadaver-reveal="up" data-i18n-alt="cadaver.imageAlt.trophy"></div>
       </div>
     </section>
 
@@ -483,57 +491,57 @@
           <p data-research="descriptionSecond" data-research-reveal style="--research-delay:200ms">국내외 학술대회와 전문 학술지를 통해 연구 성과를 공유합니다.</p>
         </div>
       </div>
-      <p class="research-side-label" aria-hidden="true"><strong>5</strong><span lang="en">RESEARCH &amp; PUBLICATIONS</span></p>
+      <p class="research-side-label" aria-hidden="true"><strong>5</strong><span lang="en" data-i18n="research.kicker">RESEARCH &amp; PUBLICATIONS</span></p>
       <div class="research-slider-area">
-        <div class="swiper research-slider" aria-label="의료진 학술 활동 사진" aria-roledescription="carousel" tabindex="0">
+        <div class="swiper research-slider" aria-label="의료진 학술 활동 사진" aria-roledescription="carousel" tabindex="0" data-i18n-role-description="research.carouselRole" data-i18n-label="research.sliderLabel">
           <!-- 반복 재생에 필요한 두 벌을 직접 작성했습니다. 같은 사진을 교체할 때 두 곳을 함께 수정합니다. -->
           <div class="swiper-wrapper">
-            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 / 3">
-              <img src="/assets/research/aaos-presentation.jpg" alt="국제 정형외과 학술대회에서 발표하는 김종근 대표원장" width="900" height="600" loading="lazy">
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 / 3" data-i18n-role-description="research.slideRole">
+              <img src="/assets/research/aaos-presentation.jpg" alt="국제 정형외과 학술대회에서 발표하는 김종근 대표원장" width="900" height="600" loading="lazy" data-i18n-alt="research.imageAlt.aaosPresentation">
               <figcaption lang="en" data-research="photoCaption1">AAOS PRESENTATION</figcaption>
             </figure>
-            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 / 3">
-              <img src="/assets/research/yonsei-workshop.jpg" alt="연세대학교 카데바 워크숍에서 교류하는 의료진" width="900" height="600" loading="lazy">
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 / 3" data-i18n-role-description="research.slideRole">
+              <img src="/assets/research/yonsei-workshop.jpg" alt="연세대학교 카데바 워크숍에서 교류하는 의료진" width="900" height="600" loading="lazy" data-i18n-alt="research.imageAlt.yonseiWorkshop">
               <figcaption lang="en" data-research="photoCaption2">CADAVER WORKSHOP</figcaption>
             </figure>
-            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 / 3">
-              <img src="/assets/research/koa-presentation.jpg" alt="정형외과 학술대회에서 임상 연구 성과를 발표하는 의료진" width="900" height="600" loading="lazy">
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 / 3" data-i18n-role-description="research.slideRole">
+              <img src="/assets/research/koa-presentation.jpg" alt="정형외과 학술대회에서 임상 연구 성과를 발표하는 의료진" width="900" height="600" loading="lazy" data-i18n-alt="research.imageAlt.koaPresentation">
               <figcaption lang="en" data-research="photoCaption3">ORTHOPAEDIC RESEARCH PRESENTATION</figcaption>
             </figure>
-            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 / 3">
-              <img src="/assets/research/aaos-presentation.jpg" alt="국제 정형외과 학술대회에서 발표하는 김종근 대표원장" width="900" height="600" loading="lazy">
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="1 / 3" data-i18n-role-description="research.slideRole">
+              <img src="/assets/research/aaos-presentation.jpg" alt="국제 정형외과 학술대회에서 발표하는 김종근 대표원장" width="900" height="600" loading="lazy" data-i18n-alt="research.imageAlt.aaosPresentation">
               <figcaption lang="en" data-research="photoCaption1">AAOS PRESENTATION</figcaption>
             </figure>
-            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 / 3">
-              <img src="/assets/research/yonsei-workshop.jpg" alt="연세대학교 카데바 워크숍에서 교류하는 의료진" width="900" height="600" loading="lazy">
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="2 / 3" data-i18n-role-description="research.slideRole">
+              <img src="/assets/research/yonsei-workshop.jpg" alt="연세대학교 카데바 워크숍에서 교류하는 의료진" width="900" height="600" loading="lazy" data-i18n-alt="research.imageAlt.yonseiWorkshop">
               <figcaption lang="en" data-research="photoCaption2">CADAVER WORKSHOP</figcaption>
             </figure>
-            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 / 3">
-              <img src="/assets/research/koa-presentation.jpg" alt="정형외과 학술대회에서 임상 연구 성과를 발표하는 의료진" width="900" height="600" loading="lazy">
+            <figure class="swiper-slide" role="group" aria-roledescription="slide" aria-label="3 / 3" data-i18n-role-description="research.slideRole">
+              <img src="/assets/research/koa-presentation.jpg" alt="정형외과 학술대회에서 임상 연구 성과를 발표하는 의료진" width="900" height="600" loading="lazy" data-i18n-alt="research.imageAlt.koaPresentation">
               <figcaption lang="en" data-research="photoCaption3">ORTHOPAEDIC RESEARCH PRESENTATION</figcaption>
             </figure>
           </div>
         </div>
-        <div class="research-controls" aria-label="사진 슬라이드 제어">
-          <button class="research-previous" type="button" aria-label="이전 사진">‹</button>
-          <button class="research-photo-toggle" type="button" aria-pressed="false" data-research="photoPause" data-pause="사진 자동 재생 멈추기" data-play="사진 자동 재생 시작">사진 자동 재생 멈추기</button>
-          <button class="research-next" type="button" aria-label="다음 사진">›</button>
+        <div class="research-controls" aria-label="사진 슬라이드 제어" data-i18n-label="research.controlsLabel">
+          <button class="research-previous" type="button" aria-label="이전 사진" data-i18n-label="research.previous">‹</button>
+          <button class="research-photo-toggle" type="button" aria-pressed="false" data-research="photoPause" data-pause="사진 자동 재생 멈추기" data-play="사진 자동 재생 시작" data-i18n-pause="research.photoPause" data-i18n-play="research.photoPlay">사진 자동 재생 멈추기</button>
+          <button class="research-next" type="button" aria-label="다음 사진" data-i18n-label="research.next">›</button>
         </div>
       </div>
       <div class="research-publications">
-        <p class="research-publications-word" lang="en" data-research-reveal>PUBLICATIONS</p>
-        <div class="research-marquee" aria-label="연구 논문 액자">
+        <p class="research-publications-word" lang="en" data-research-reveal data-i18n="research.publications">PUBLICATIONS</p>
+        <div class="research-marquee" aria-label="연구 논문 액자" data-i18n-label="research.marqueeLabel">
           <!-- A/B 목록을 동일하게 유지하면 마지막 액자 뒤에 첫 액자가 자연스럽게 이어집니다. -->
           <div class="research-marquee-track">
             <ul class="research-marquee-set">
-              <li><img src="/assets/research/publication-01.svg" alt="흥K병원 의료진 연구 논문 액자 1" width="308" height="402" loading="lazy"></li>
-              <li><img src="/assets/research/publication-02.svg" alt="흥K병원 의료진 연구 논문 액자 2" width="308" height="402" loading="lazy"></li>
-              <li><img src="/assets/research/publication-03.svg" alt="흥K병원 의료진 연구 논문 액자 3" width="308" height="402" loading="lazy"></li>
-              <li><img src="/assets/research/publication-04.svg" alt="흥K병원 의료진 연구 논문 액자 4" width="308" height="402" loading="lazy"></li>
-              <li><img src="/assets/research/publication-05.svg" alt="흥K병원 의료진 연구 논문 액자 5" width="308" height="402" loading="lazy"></li>
-              <li><img src="/assets/research/publication-06.svg" alt="흥K병원 의료진 연구 논문 액자 6" width="308" height="402" loading="lazy"></li>
-              <li><img src="/assets/research/publication-07.svg" alt="흥K병원 의료진 연구 논문 액자 7" width="308" height="402" loading="lazy"></li>
-              <li><img src="/assets/research/publication-08.svg" alt="흥K병원 의료진 연구 논문 액자 8" width="308" height="402" loading="lazy"></li>
+              <li><img src="/assets/research/publication-01.svg" alt="흥K병원 의료진 연구 논문 액자 1" width="308" height="402" loading="lazy" data-i18n-alt="research.imageAlt.publication01"></li>
+              <li><img src="/assets/research/publication-02.svg" alt="흥K병원 의료진 연구 논문 액자 2" width="308" height="402" loading="lazy" data-i18n-alt="research.imageAlt.publication02"></li>
+              <li><img src="/assets/research/publication-03.svg" alt="흥K병원 의료진 연구 논문 액자 3" width="308" height="402" loading="lazy" data-i18n-alt="research.imageAlt.publication03"></li>
+              <li><img src="/assets/research/publication-04.svg" alt="흥K병원 의료진 연구 논문 액자 4" width="308" height="402" loading="lazy" data-i18n-alt="research.imageAlt.publication04"></li>
+              <li><img src="/assets/research/publication-05.svg" alt="흥K병원 의료진 연구 논문 액자 5" width="308" height="402" loading="lazy" data-i18n-alt="research.imageAlt.publication05"></li>
+              <li><img src="/assets/research/publication-06.svg" alt="흥K병원 의료진 연구 논문 액자 6" width="308" height="402" loading="lazy" data-i18n-alt="research.imageAlt.publication06"></li>
+              <li><img src="/assets/research/publication-07.svg" alt="흥K병원 의료진 연구 논문 액자 7" width="308" height="402" loading="lazy" data-i18n-alt="research.imageAlt.publication07"></li>
+              <li><img src="/assets/research/publication-08.svg" alt="흥K병원 의료진 연구 논문 액자 8" width="308" height="402" loading="lazy" data-i18n-alt="research.imageAlt.publication08"></li>
             </ul>
             <ul class="research-marquee-set" aria-hidden="true">
               <li><img src="/assets/research/publication-01.svg" alt="" width="308" height="402" loading="lazy"></li>
@@ -549,29 +557,892 @@
         </div>
         <img class="research-ribbon research-ribbon-left" src="/assets/about/ribbon.png" alt="" loading="lazy">
         <img class="research-ribbon research-ribbon-right" src="/assets/about/ribbon.png" alt="" loading="lazy">
-        <div class="research-marquee-actions"><button class="research-marquee-toggle" type="button" aria-pressed="false" data-research="marqueePause" data-pause="액자 움직임 멈추기" data-play="액자 움직임 시작">액자 움직임 멈추기</button></div>
+        <div class="research-marquee-actions"><button class="research-marquee-toggle" type="button" aria-pressed="false" data-research="marqueePause" data-pause="액자 움직임 멈추기" data-play="액자 움직임 시작" data-i18n-pause="research.marqueePause" data-i18n-play="research.marqueePlay">액자 움직임 멈추기</button></div>
       </div>
     </section>
 
     <!-- 의료진 변경: 해당 li의 img src와 alt를 수정합니다. 순서는 li를 옮겨 변경합니다. -->
     <section class="specialty" id="specialty-center" aria-labelledby="specialty-title">
-      <p class="specialty-kicker" data-specialty-reveal><strong>6</strong><span lang="en">SPECIALTIES</span></p>
-      <p class="specialty-brand" lang="en" data-specialty-reveal>HEUNG-K</p>
-      <h2 class="specialty-title" id="specialty-title" lang="en" data-specialty-reveal><span>SPECIALTY</span><span>CENTER</span></h2>
+      <p class="specialty-kicker" data-specialty-reveal><strong>6</strong><span lang="en" data-i18n="specialty.kicker">SPECIALTIES</span></p>
+      <p class="specialty-brand" lang="en" data-specialty-reveal data-i18n-static="브랜드 고유 표기">HEUNG-K</p>
+      <h2 class="specialty-title" id="specialty-title" lang="en" data-specialty-reveal><span data-i18n="specialty.titleFirst">SPECIALTY</span><span data-i18n="specialty.titleSecond">CENTER</span></h2>
       <!-- 단체 통이미지가 아닙니다. 아래 9명은 각각 독립된 원본 PNG입니다. -->
-      <ul class="specialty-doctors" aria-label="흥K병원 의료진">
-        <li class="specialty-doctor specialty-doctor--lee-kyung-hwa" data-specialty-reveal><img src="/assets/specialty/lee-kyung-hwa.png" alt="이경화 원장" data-specialty-alt="leeKyungHwa" width="1848" height="3316" loading="lazy"></li>
-        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:60ms"><img src="/assets/specialty/park-jin-hyung.png" alt="박진형 원장" data-specialty-alt="parkJinHyung" width="1000" height="1500" loading="lazy"></li>
-        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:120ms"><img src="/assets/specialty/lee-su-geon.png" alt="이수건 원장" data-specialty-alt="leeSuGeon" width="1000" height="1500" loading="lazy"></li>
-        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:180ms"><img src="/assets/specialty/kim-se-hoon.png" alt="김세훈 원장" data-specialty-alt="kimSeHoon" width="1000" height="1500" loading="lazy"></li>
-        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:240ms"><img src="/assets/specialty/kim-jong-geun.png" alt="김종근 대표원장" data-specialty-alt="kimJongGeun" width="1000" height="1500" loading="lazy"></li>
-        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:300ms"><img src="/assets/specialty/kim-jun-sung.png" alt="김준성 원장" data-specialty-alt="kimJunSung" width="1000" height="1500" loading="lazy"></li>
-        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:360ms"><img src="/assets/specialty/lee-myung-chul.png" alt="이명철 명예원장" data-specialty-alt="leeMyungChul" width="1000" height="1500" loading="lazy"></li>
-        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:420ms"><img src="/assets/specialty/hwang-jae-yeon.png" alt="황재연 원장" data-specialty-alt="hwangJaeYeon" width="1494" height="3640" loading="lazy"></li>
-        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:480ms"><img src="/assets/specialty/jung-seung-jin.png" alt="정승진 원장" data-specialty-alt="jungSeungJin" width="1000" height="1500" loading="lazy"></li>
-        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:540ms"><img src="/assets/specialty/jung-seung-jin.png" alt="정승진 원장" data-specialty-alt="jungSeungJin" width="1000" height="1500" loading="lazy"></li>
+      <ul class="specialty-doctors" aria-label="흥K병원 의료진" data-i18n-label="specialty.doctorsLabel">
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:60ms"><img src="/assets/specialty/park-jin-hyung.png" alt="박진형 원장" data-specialty-alt="parkJinHyung" width="1000" height="1500" loading="lazy" data-i18n-alt="specialty.parkJinHyung"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:300ms"><img src="/assets/specialty/kim-jun-sung.png" alt="김준성 원장" data-specialty-alt="kimJunSung" width="1000" height="1500" loading="lazy" data-i18n-alt="specialty.kimJunSung"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:480ms"><img src="/assets/specialty/jung-seung-jin.png" alt="정승진 원장" data-specialty-alt="jungSeungJin" width="1000" height="1500" loading="lazy" data-i18n-alt="specialty.jungSeungJin"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:180ms"><img src="/assets/specialty/kim-se-hoon.png" alt="김세훈 원장" data-specialty-alt="kimSeHoon" width="1000" height="1500" loading="lazy" data-i18n-alt="specialty.kimSeHoon"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:360ms"><img src="/assets/specialty/lee-myung-chul.png" alt="이명철 명예원장" data-specialty-alt="leeMyungChul" width="1000" height="1500" loading="lazy" data-i18n-alt="specialty.leeMyungChul"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:240ms"><img src="/assets/specialty/kim-jong-geun.png" alt="김종근 대표원장" data-specialty-alt="kimJongGeun" width="1000" height="1500" loading="lazy" data-i18n-alt="specialty.kimJongGeun"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:120ms"><img src="/assets/specialty/lee-su-geon.png" alt="이수건 원장" data-specialty-alt="leeSuGeon" width="1000" height="1500" loading="lazy" data-i18n-alt="specialty.leeSuGeon"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:420ms"><img src="/assets/specialty/lee-jun-young.png" alt="이준영 원장" data-specialty-alt="hwangJaeYeon" width="1494" height="3640" loading="lazy" data-i18n-alt="specialty.hwangJaeYeon"></li>
+        <li class="specialty-doctor specialty-doctor--lee-kyung-hwa" data-specialty-reveal><img src="/assets/specialty/lee-kyung-hwa.png" alt="이경화 원장" data-specialty-alt="leeKyungHwa" width="1848" height="3316" loading="lazy" data-i18n-alt="specialty.leeKyungHwa"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:540ms"><img src="/assets/specialty/jo-nam-ik.png" alt="조남익 원장" data-specialty-alt="joNamIk" width="1000" height="1500" loading="lazy" data-i18n-alt="specialty.jungSeungJin"></li>
+        <li class="specialty-doctor" data-specialty-reveal style="--specialty-delay:540ms"><img src="/assets/specialty/yoon-sang-hoon.png" alt="윤상훈 원장" data-specialty-alt="yoonSangHoon" width="1000" height="1500" loading="lazy" data-i18n-alt="specialty.yoonSangHoon"></li>
       </ul>
     </section>
+
+    <!-- 무릎전담센터 배너: 이미지·문구는 이 HTML에서 직접 교체합니다. -->
+    <div class="specialty-centers" id="specialty-centers">
+      <section class="knee-center-banner" id="knee-center" aria-labelledby="knee-center-title" data-figma-node="666:984">
+        <div class="knee-center-stage">
+          <!-- 피그마 백업의 원본 이미지입니다. 장식은 보조기기에서 제외합니다. -->
+          <div class="knee-center-background" aria-hidden="true">
+            <!-- 원본 이미지를 40% 크기로 반복합니다. 격자 이미지 교체는 아래 href에서 합니다. -->
+            <svg class="knee-center-grid" width="1921" height="1243" aria-hidden="true" focusable="false">
+              <defs>
+                <pattern id="knee-center-grid-pattern" width="294.4" height="512" patternUnits="userSpaceOnUse">
+                  <image href="/assets/knee-center/bggrid.png" width="294.4" height="512" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#knee-center-grid-pattern)" />
+            </svg>
+            <img class="knee-center-surgery knee-center-surgery--right" src="/assets/knee-center/surgery-right.png" alt="" width="750" height="500" loading="lazy">
+            <img class="knee-center-surgery knee-center-surgery--left" src="/assets/knee-center/surgery-left.png" alt="" width="750" height="500" loading="lazy">
+            <img class="knee-center-texture" src="/assets/knee-center/blue-texture.png" alt="" width="1920" height="1674" loading="lazy">
+            <img class="knee-center-wave" src="/assets/knee-center/gold-wave.png" alt="" width="1200" height="600" loading="lazy">
+          </div>
+          <div class="knee-center-copy">
+            <div class="knee-center-title-wrap" data-knee-reveal>
+              <img class="knee-center-laurel knee-center-laurel--left" src="/assets/knee-center/laurel.png" alt="" width="1024" height="1536" loading="lazy">
+              <h2 class="knee-center-title" id="knee-center-title"><span data-knee="hospital">흥K병원</span><span data-knee="title">무릎전담센터</span></h2>
+              <img class="knee-center-laurel knee-center-laurel--right" src="/assets/knee-center/laurel.png" alt="" width="1024" height="1536" loading="lazy">
+            </div>
+            <div class="knee-center-description" data-knee-reveal>
+              <p data-knee="descriptionFirst">정밀 진단부터 비수술 치료, 고난도 수술과 재활까지.</p>
+              <p data-knee="descriptionSecond">무릎 질환에 특화된 진료 시스템으로 치료의 완성도를 높입니다.</p>
+            </div>
+            <ul class="knee-center-services" lang="en" data-knee-reveal>
+              <li data-knee="service1">Robot-Assisted MIS Total Knee Arthroplasty (MAKO system)</li>
+              <li data-knee="service2">knee Revision Surgery</li>
+              <li data-knee="service3">Stem Cell Cartilage Regeneration (CARTISTEM)</li>
+              <li data-knee="service4">Autologous Chondrocyte Implantation (CartiLife)</li>
+              <li data-knee="service5">Corrective Osteotomy</li>
+              <li data-knee="service6">Meniscus Surgery</li>
+              <li data-knee="service7">Cruciate Ligament Reconstruction and Revision Surgery (ACL / PCL)</li>
+              <li data-knee="service8">Sports Injury Diagnosis and Treatment</li>
+            </ul>
+          </div>
+          <!-- 반응형에서는 기사 뒤쪽 위, 의료진 앞쪽 아래로 겹치는 한 묶음입니다. -->
+          <div class="knee-center-visuals">
+            <!-- 의료진은 각각의 원본 PNG이며 인물별로 src·alt를 수정합니다. -->
+            <div class="knee-center-doctors">
+              <div class="knee-center-doctor" data-knee-reveal="up"><img src="/assets/knee-center/kim-jong-geun.png" alt="김종근 대표원장" width="1000" height="1500" loading="lazy" data-i18n-alt="header.imageAlt.kimJongGeun"></div>
+              <div class="knee-center-doctor" data-knee-reveal="up" style="--knee-delay:140ms"><img src="/assets/knee-center/lee-jun-young.png" alt="이준영 원장" width="1000" height="1500" loading="lazy" data-i18n-alt="header.imageAlt.leeJunYoung"></div>
+            </div>
+            <!-- 기사 검색 없이 시안의 기사 이미지 원본을 연결했습니다. 클릭하면 원본을 크게 봅니다. -->
+            <figure class="knee-center-press" data-knee-reveal="up">
+              <a href="/assets/knee-center/chosun-article.png" target="_blank" rel="noopener" aria-label="조선일보 기사 이미지 크게 보기 (새 창)" data-knee-label="articleOpen" data-i18n-label="knee.articleOpen">
+                <img src="/assets/knee-center/chosun-article.png" alt="조선일보 기사: 작게 절개하는 무릎 인공관절 수술, 통증 줄이고 회복 앞당겨" width="2896" height="4096" loading="lazy" data-i18n-alt="header.imageAlt.chosunArticle">
+              </a>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 공통 치료 박스: 다른 센터도 center-treatment 구조와 고유 id를 사용합니다. -->
+      <div class="center-treatment-list" aria-label="무릎전담센터 치료" data-i18n-label="centerTreatments.kneeLabel">
+        <article class="center-treatment" id="knee-mako" aria-labelledby="knee-mako-title" data-figma-node="995:5165">
+          <div class="center-treatment-hero">
+            <div class="center-treatment-copy">
+              <h3 class="center-treatment-title" id="knee-mako-title" lang="en" data-center-treatment="makoTitle">Robot-Assisted MIS Total Knee Arthroplasty (MAKO)</h3>
+              <p class="center-treatment-description" data-center-treatment="mako687_1179">로봇인공관절 수술 시스템으로 흥케이병원의 최소침습 전문성에 첨단기술을 더하다!</p>
+            </div>
+            <img class="center-treatment-image" src="/assets/knee-center/mako/mako-robot.webp" alt="MAKO 로봇 인공관절 수술 시스템" width="509" height="399" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.introRobotSystem">
+          </div>
+          <!-- details/summary는 JS가 없어도 마우스·키보드로 펼치고 접을 수 있습니다. -->
+          <details class="center-treatment-disclosure">
+            <summary class="center-treatment-toggle" aria-controls="knee-mako-panel">
+              <span class="center-treatment-toggle-context" data-center-treatment="makoToggleContext">MAKO 상세 내용 </span>
+              <span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span>
+              <span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="center-treatment-panel" id="knee-mako-panel">
+              <div class="center-treatment-content" data-figma-node="995:5012">
+                <div class="center-treatment-block center-treatment-intro">
+                  <img class="center-treatment-watermark" src="/assets/knee-center/mako/watermark.webp" alt="" width="628" height="565" loading="lazy">
+                  <h4 class="center-treatment-lead" data-center-treatment="mako995_5015">더 정확하게, 더 정밀하게, 더 안전하게</h4>
+                  <div class="center-treatment-intro-text"><p data-center-treatment="mako995_5017">로봇인공관절 수술은 의사의 수술 노하우와 로봇의 정확성이 결합된 최첨단 무릎 인공관절 수술입니다.</p><p data-center-treatment="mako995_5018">수술 CT 영상을 바탕으로 환자의 무릎 관절을 3차원으로 분석해 인공관절의 크기와 삽입 위치, 뼈 절삭 범위를 계획합니다. 수술 중에는 의료진이 관절 균형을 확인하면서 로봇팔을 직접 조작해 계획된 범위 안에서 뼈를 정밀하게 절삭하고 인공관절을 삽입합니다.</p></div>
+                  <div class="center-treatment-equation">
+                    <img src="/assets/knee-center/mako/doctor-experience.webp" alt="수술 중인 의료진" width="1584" height="1582" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.doctorExperience">
+                    <p><span><span data-center-treatment="makoDoctorPrefix">의사의 </span><strong class="center-treatment-emphasis" data-center-treatment="makoDoctorExperience">경험</strong></span><b aria-hidden="true">+</b><span><span data-center-treatment="makoRobotPrefix">로봇의 </span><strong class="center-treatment-emphasis center-treatment-emphasis--blue" data-center-treatment="makoRobotAccuracy">정확성</strong></span></p>
+                    <img src="/assets/knee-center/mako/mako-system.webp" alt="MAKO 로봇 수술 장비" width="1500" height="1506" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.makoSystem">
+                  </div>
+                </div>
+                <section class="center-treatment-block center-treatment-process">
+                  <h4 class="center-treatment-heading" data-center-treatment="mako995_5031">흥케이병원의 로봇 인공관절 수술 과정</h4>
+                  <ol class="center-treatment-steps">
+                    <li><div class="center-treatment-step-images"><img src="/assets/knee-center/mako/plan-ct.webp" alt="수술 전 검사 및 계획" width="237" height="158" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.planCt"><img src="/assets/knee-center/mako/plan-model.webp" alt="" width="234" height="160" loading="lazy"></div><h5 data-center-treatment="mako995_5038">수술 전 검사 및 계획</h5><p data-center-treatment="mako995_5039">수술 전 CT를 촬영해 환자의 무릎 관절을 3차원으로 구현합니다. 이를 바탕으로 인공관절의 크기와 삽입 위치, 뼈 절삭 범위를 계획합니다.</p></li>
+                    <li><svg class="center-treatment-flow-arrow" viewBox="0 0 60 60" aria-hidden="true" focusable="false"><path d="M7 21h26V10l22 20-22 20V39H7Z" fill="currentColor"/></svg><div class="center-treatment-step-images"><img src="/assets/knee-center/mako/custom-plan.webp" alt="환자 맞춤형 수술" width="234" height="159" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.customPlan"><img src="/assets/knee-center/mako/custom-balance.webp" alt="" width="235" height="159" loading="lazy"></div><h5 data-center-treatment="mako995_5047">환자 맞춤형 수술</h5><p data-center-treatment="mako995_5048">수술 중 환자의 변형 및 인대 상태를 고려하여 실시간으로 계획을 수정하고 정확도를 높입니다.</p></li>
+                    <li><svg class="center-treatment-flow-arrow" viewBox="0 0 60 60" aria-hidden="true" focusable="false"><path d="M7 21h26V10l22 20-22 20V39H7Z" fill="currentColor"/></svg><div class="center-treatment-step-images"><img src="/assets/knee-center/mako/safe-operation.webp" alt="안전한 수술 집도" width="234" height="157" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.safeOperation"><img src="/assets/knee-center/mako/safe-control.webp" alt="" width="226" height="157" loading="lazy"></div><h5 data-center-treatment="mako995_5056">안전한 수술 집도</h5><p data-center-treatment="mako995_5057">의료진이 로봇팔을 직접 조작해 계획된 범위 안에서 뼈를 정밀하게 절삭합니다. 햅틱 기술이 절삭 도구가 계획된 범위를 벗어나지 않도록 로봇팔의 움직임을 자동으로 제어하여 주변 혈관과 신경, 연부조직을 보호하는 데 도움을 줍니다.</p></li>
+                    <li><svg class="center-treatment-flow-arrow" viewBox="0 0 60 60" aria-hidden="true" focusable="false"><path d="M7 21h26V10l22 20-22 20V39H7Z" fill="currentColor"/></svg><div class="center-treatment-step-images"><img src="/assets/knee-center/mako/implant.webp" alt="최적의 인공 관절 삽입" width="502" height="695" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.implant"></div><h5 data-center-treatment="mako995_5063">최적의 인공 관절 삽입</h5><p data-center-treatment="mako995_5064">계획된 위치에 환자에게 가장 적합한 인공관절을 정확하게 삽입하여 수술을 마무리합니다.</p></li>
+                  </ol>
+                </section>
+                <div class="center-treatment-block">
+                  <div class="center-treatment-comparison">
+                    <figure><img src="/assets/knee-center/mako/before.webp" alt="수술 전 다리 정렬 X선 사진" width="456" height="717" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.before"><figcaption class="center-treatment-before" lang="en" data-i18n="centerTreatments.before">BEFORE</figcaption></figure>
+                    <figure><svg class="center-treatment-flow-arrow" viewBox="0 0 60 60" aria-hidden="true" focusable="false"><path d="M7 21h26V10l22 20-22 20V39H7Z" fill="currentColor"/></svg><div class="center-treatment-plan-pictures"><img src="/assets/knee-center/mako/planning.webp" alt="MAKO 수술 전 계획 화면" width="1920" height="1080" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.planning"><img src="/assets/knee-center/mako/operating.webp" alt="MAKO 로봇을 활용한 수술" width="1187" height="661" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.operating"></div><figcaption data-center-treatment="makoPrecisionCaption">마코 로봇을 활용한 정밀 수술</figcaption></figure>
+                    <figure><svg class="center-treatment-flow-arrow" viewBox="0 0 60 60" aria-hidden="true" focusable="false"><path d="M7 21h26V10l22 20-22 20V39H7Z" fill="currentColor"/></svg><img src="/assets/knee-center/mako/after.webp" alt="인공관절 수술 후 다리 정렬 X선 사진" width="448" height="705" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.after"><figcaption class="center-treatment-after" lang="en" data-i18n="centerTreatments.after">AFTER</figcaption></figure>
+                  </div>
+                </div>
+                <section class="center-treatment-block center-treatment-features">
+                  <h4 class="center-treatment-heading"><span class="center-treatment-emphasis" data-center-treatment="makoFeaturesLead">로봇 인공관절 수술,</span><br><span data-center-treatment="makoFeaturesQuestion">마코 로봇은 무엇이 다른가요?</span></h4>
+                  <div class="center-treatment-feature">
+                    <img src="/assets/knee-center/mako/accuracy.webp" alt="관절 간격과 각도를 확인하는 MAKO 수술 계획 화면" width="1660" height="948" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.accuracy">
+                    <div><span class="center-treatment-tag" data-center-treatment="mako995_5091">정확한 수술 계획</span><h5 data-center-treatment="mako995_5093">3D CT 영상으로 환자 개개인의 관절 상태에 맞추어 정확한 수술 계획 수립</h5><p data-center-treatment="mako995_5095">3D CT을 통해 환자마다 다른 무릎의 모양과 휜 정도를 세밀하게 분석합니다. 이를 바탕으로 뼈를 깎는 범위와 인공관절의 크기 및 삽입 위치를 환자에게 맞게 계획합니다.</p><p data-center-treatment="mako995_5096">수술 중에는 뼈를 깎는 범위와 관절 사이의 간격은 0.5mm 단위로, 각도는 0.5도 단위로 세밀하게 조절합니다. 이를 통해 휜 다리를 바르게 맞추고 무릎이 자연스럽게 움직일 수 있도록 돕습니다.</p></div>
+                  </div>
+                  <div class="center-treatment-feature">
+                    <img class="center-treatment-robot-detail" src="/assets/knee-center/mako/mako-robot.webp" alt="정밀한 절삭을 위한 MAKO 로봇팔" width="509" height="399" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.makoRobot">
+                    <div><span class="center-treatment-tag" data-center-treatment="mako995_5104">정밀한 절삭</span><h5 data-center-treatment="mako995_5106">로봇팔을 통한 정밀한 절삭</h5><p data-center-treatment="mako995_5108">계획한 위치 및 각도, 절삭량에 맞추어 정확하게 절삭합니다.</p></div>
+                  </div>
+                  <div class="center-treatment-feature center-treatment-feature--wide">
+                    <div class="center-treatment-pair"><img src="/assets/knee-center/mako/safety-arm.webp" alt="계획된 절삭 범위를 보여주는 MAKO 화면" width="1689" height="1287" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.safetyArm"><img src="/assets/knee-center/mako/safety-boundary.webp" alt="로봇팔의 햅틱 안전 범위 설명" width="1254" height="1254" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.safetyBoundary"></div>
+                    <div><span class="center-treatment-tag" data-center-treatment="mako995_5118">수술 안정성</span><h5 data-center-treatment="mako995_5120">수술 중 위험 감소</h5><p data-center-treatment="mako995_5122">마코의 햅틱 기술은 수술 계획에 따라 가상의 안전 범위를 설정하고, 절삭 도구가 이를 벗어나지 않도록 로봇팔의 움직임을 자동으로 제어합니다. 이를 통해 주변 혈관과 신경, 인대를 보호하고 불필요한 뼈 절삭을 줄이는 데 도움을 줍니다.</p></div>
+                  </div>
+                </section>
+                <section class="center-treatment-block center-treatment-dark center-treatment-minimal">
+                  <h4 class="center-treatment-lead"><span class="center-treatment-emphasis" data-center-treatment="makoMinimalHighlight">전세계에서 제일 작은</span> <span data-center-treatment="makoMinimalTitle">최소절개 로봇 인공관절 수술!</span></h4>
+                  <p class="center-treatment-subtitle" data-center-treatment="mako995_5129">흥K병원은 마코 로봇을 활용한 정밀한 뼈 절삭과 7–10cm 최소절개 수술을 시행합니다.</p><p class="center-treatment-supporting" data-center-treatment="mako995_5130">피부 절개를 줄이는 것은 물론, 주변 연부조직 손상까지 최소화해 환자의 빠른 회복을 돕습니다.</p>
+                  <!-- 사용자 제공 영상: 원본 썸네일을 누르면 YouTube에서 재생합니다. -->
+                  <figure class="center-treatment-video"><a href="https://youtu.be/r2AlMIRSTcY?si=PGj5Qrq_JS166PEJ" target="_blank" rel="noopener"><img src="/assets/knee-center/mako/minimal-incision.webp" alt="흥K병원 최소절개 로봇 인공관절 수술 안내 영상" width="1888" height="1057" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.minimalIncision"><span data-center-treatment="makoVideoLink">YouTube에서 영상 보기 (새 창)</span></a></figure>
+                  <h4 class="center-treatment-heading"><span data-center-treatment="makoPrecisionPrefix">로봇수술의 정밀함은 그대로, </span><span class="center-treatment-emphasis center-treatment-underline" data-center-treatment="makoPrecisionHighlight">절개 부담은 더 작게</span></h4>
+                  <div class="center-treatment-incisions">
+                    <figure><img src="/assets/knee-center/mako/incision-standard.webp" alt="일반적인 로봇 인공관절 수술 절개 길이 15–20cm" width="420" height="390" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.incisionStandard"><figcaption data-center-treatment="mako995_5137">일반적인 로봇 인공관절 수술의 절개길이</figcaption></figure>
+                    <figure><img src="/assets/knee-center/mako/incision-mako.webp" alt="흥K병원의 최소절개 로봇 인공관절 수술 절개 길이 7–9cm" width="420" height="390" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.incisionMako"><figcaption><span class="center-treatment-emphasis" data-center-treatment="makoIncisionHighlight">흥K병원 MAKO 최소침습 인공관절 수술</span><span data-center-treatment="makoIncisionSuffix">의 절개길이</span></figcaption></figure>
+                  </div>
+                </section>
+                <section class="center-treatment-block center-treatment-dark">
+                  <h4 class="center-treatment-heading" data-center-treatment="mako995_5144">흥K병원의 최소절개 로봇 인공관절 수술 사례</h4>
+                  <div class="center-treatment-cases">
+                    <figure class="center-treatment-case"><img src="/assets/knee-center/mako/case-75-combined.svg" alt="흥K병원 최소절개 로봇 인공관절 수술 사례, 절개 길이 7.5cm" width="400" height="400" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.case75Combined"></figure>
+                    <figure class="center-treatment-case"><img src="/assets/knee-center/mako/case-70-combined.svg" alt="흥K병원 최소절개 로봇 인공관절 수술 사례, 절개 길이 7cm" width="400" height="400" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.case70Combined"></figure>
+                  </div>
+                </section>
+                <section class="center-treatment-block center-treatment-benefits">
+                  <h4 class="center-treatment-heading"><span data-center-treatment="makoBenefitsPrefix">흥K병원 </span><span class="center-treatment-emphasis" data-center-treatment="makoBenefitsHighlight">최소절개 로봇 인공관절 수술</span><span data-center-treatment="makoBenefitsSuffix">의 장점</span></h4>
+                  <ul class="center-treatment-benefit-grid"><li><img src="/assets/treatment/tj1.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="makoBenefit1Title">수술 후 통증 감소</h5><p data-center-treatment="makoBenefit1Body">절개 범위를 최소화하여 주변 연부조직(근육, 인대 등)의 손상을 줄이므로, 수술 후 통증이 덜하고 진통제 사용도 감소합니다.</p></li>
+                    <li><img src="/assets/treatment/tj2.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="makoBenefit2Title" data-i18n-lines="">원활한 관절 운동
+조기보행 가능</h5><p data-center-treatment="makoBenefit2Body">조직 손상이 적어 관절내 유착이 적게 발생하여, 관절의 움직임이 보다 원활해지고 수술 후 빠른 보행이 가능합니다.</p></li>
+                    <li><img src="/assets/treatment/tj3.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="makoBenefit3Title">흉터 최소화</h5><p data-center-treatment="makoBenefit3Body">절개 범위를 최소화하여 수술 후 남는 흉터가 작고 눈에 덜 띕니다. 환자의 만족도를 높이는 데 도움이 됩니다.</p></li>
+                    <li><img src="/assets/treatment/tj4.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="makoBenefit4Title">입원 기간 단축 및 빠른 일상생활 복귀</h5><p data-center-treatment="makoBenefit4Body">수술 후 회복 속도가 빨라 입원기간이 짧아지고, 환자가 더 빠르게 일상으로 복귀할 수 있습니다.</p></li></ul>
+                </section>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- 카티스템: 공통 치료박스·번역·펼침/등장 효과를 재사용합니다. -->
+        <article class="center-treatment center-treatment--cartistem" id="knee-cartistem" aria-labelledby="knee-cartistem-title" data-figma-node="700:1764">
+          <div class="center-treatment-hero">
+            <div class="center-treatment-copy">
+              <h3 class="center-treatment-title" data-center-treatment="cartistemTitle" id="knee-cartistem-title" lang="en">Umbilical Cord–derived Stem Cell (CARTISTEM®)</h3>
+              <p class="center-treatment-description" data-center-treatment="cartistemDescription">환자의 무릎 연골결손 상태에 맞춘 체계적인 치료를 제공</p>
+            </div>
+            <img class="center-treatment-image" src="/assets/knee-center/cartistem/hero.webp" alt="카티스템 치료를 위해 관절경 화면을 확인하는 흥K병원 의료진" data-i18n-alt="centerTreatments.cartistemHeroAlt" width="1368" height="911" loading="lazy">
+          </div>
+          <details class="center-treatment-disclosure">
+            <summary class="center-treatment-toggle" aria-controls="knee-cartistem-panel">
+              <span class="center-treatment-toggle-context" data-center-treatment="cartistemToggleContext">카티스템 상세 내용 </span>
+              <span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span>
+              <span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="center-treatment-panel" id="knee-cartistem-panel">
+              <div class="center-treatment-content" data-figma-node="721:1868">
+                <div class="center-treatment-block">
+                  <div class="center-treatment-reading-copy">
+                    <h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="cartistemIntroTitle">카티스템은 기증된 제대혈에서 얻은 중간엽줄기세포를 이용한 무릎 연골결손 치료제입니다</h4>
+                    <p data-center-treatment="cartistemIntroFirst">줄기세포는 쉽게 말해 우리 몸의 여러 종류의 세포로 분화할 수 있는 ‘씨앗’과 같습니다.</p>
+                    <p data-center-treatment="cartistemIntroSecond">재생 능력이 떨어진 무릎 관절 부위에 이 건강한 씨앗을 심어주면, 이식된 줄기세포가 주변 조직과 상호작용하며 연골세포로 분화합니다. 동시에 다양한 성장인자와 신호물질을 분비하는 파라크라인 효과를 통해 염증을 줄이고 손상된 연골의 재생을 촉진하여, 건강하고 튼튼한 새 연골이 형성될 수 있도록 돕습니다.</p>
+                  </div>
+                </div>
+                <section class="center-treatment-block center-treatment-process center-treatment-row" aria-labelledby="cartistem-preparation-title">
+                  <h4 class="center-treatment-heading" data-center-treatment="cartistemPreparationTitle" id="cartistem-preparation-title">카티스템 준비과정</h4>
+                  <ol class="center-treatment-sequence center-treatment-sequence--preparation">
+                    <li>
+                      <div class="center-treatment-preparation-photo center-treatment-preparation-photo--1" data-center-treatment-reveal><img src="/assets/knee-center/cartistem/preparation.webp" alt="카티스템 확인 및 준비" data-i18n-alt="centerTreatments.cartistemPreparation1Title" width="2307" height="565" loading="lazy"></div>
+                      <h5 data-center-treatment="cartistemPreparation1Title">카티스템 확인 및 준비</h5>
+                      <p data-center-treatment="cartistemPreparation1Body">치료에 사용할 카티스템의 상태와 구성품을 확인</p>
+                    </li>
+                    <li>
+                      <span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span>
+                      <div class="center-treatment-preparation-photo center-treatment-preparation-photo--2" data-center-treatment-reveal><img src="/assets/knee-center/cartistem/preparation.webp" alt="무균 포장 개봉" data-i18n-alt="centerTreatments.cartistemPreparation2Title" width="2307" height="565" loading="lazy"></div>
+                      <h5 data-center-treatment="cartistemPreparation2Title">무균 포장 개봉</h5>
+                      <p data-center-treatment="cartistemPreparation2Body">무균 상태를 유지하며 치료 준비</p>
+                    </li>
+                    <li>
+                      <span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span>
+                      <div class="center-treatment-preparation-photo center-treatment-preparation-photo--3" data-center-treatment-reveal><img src="/assets/knee-center/cartistem/preparation.webp" alt="줄기세포 혼합" data-i18n-alt="centerTreatments.cartistemPreparation3Title" width="2307" height="565" loading="lazy"></div>
+                      <h5 data-center-treatment="cartistemPreparation3Title">줄기세포 혼합</h5>
+                      <p data-center-treatment="cartistemPreparation3Body">제대혈 유래 중간엽줄기세포와 히알루론산을 혼합</p>
+                    </li>
+                    <li>
+                      <span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span>
+                      <div class="center-treatment-preparation-photo center-treatment-preparation-photo--4" data-center-treatment-reveal><img src="/assets/knee-center/cartistem/preparation.webp" alt="이식 준비 완료" data-i18n-alt="centerTreatments.cartistemPreparation4Title" width="2307" height="565" loading="lazy"></div>
+                      <h5 data-center-treatment="cartistemPreparation4Title">이식 준비 완료</h5>
+                      <p data-center-treatment="cartistemPreparation4Body">연골 결손 부위에 적용할 수 있도록 최종 조제</p>
+                    </li>
+                  </ol>
+                </section>
+                <section class="center-treatment-block center-treatment-row" aria-labelledby="cartistem-benefits-title">
+                  <h4 class="center-treatment-heading" data-center-treatment="cartistemBenefitsTitle" id="cartistem-benefits-title">카티스템의 장점</h4>
+                  <ul class="center-treatment-icon-list">
+                    <li><img src="/assets/knee-center/cartistem/benefit-age.webp" alt="" width="1254" height="1254" loading="lazy"><p data-center-treatment="cartistemBenefit1">연령 제한 없이 넓은 연골 결손에도 적용 가능</p></li>
+                    <li><img src="/assets/knee-center/cartistem/benefit-once.webp" alt="" width="1254" height="1254" loading="lazy"><p data-center-treatment="cartistemBenefit2">1회의 치료로도 우수한 연골재생효과 기대</p></li>
+                    <li><img src="/assets/knee-center/cartistem/benefit-donor.webp" alt="" width="1254" height="1254" loading="lazy"><p data-center-treatment="cartistemBenefit3">환자 본인의 연골을 채취하지 않아 공여부위 손상 없음</p></li>
+                    <li><img src="/assets/knee-center/cartistem/benefit-arthroscopy.webp" alt="" width="1254" height="1254" loading="lazy"><p data-center-treatment="cartistemBenefit4">큰 절개없이 관절경을 이용해 최소침습으로 수술가능</p></li>
+                  </ul>
+                </section>
+                <section class="center-treatment-block center-treatment-section" aria-labelledby="cartistem-surgery-title">
+                  <h4 class="center-treatment-heading" data-center-treatment="cartistemSurgeryTitle" id="cartistem-surgery-title">카티스템의 수술과정</h4>
+                  <ol class="center-treatment-sequence center-treatment-sequence--surgery">
+                    <li>
+                      <figure><img src="/assets/knee-center/cartistem/surgery-1.webp" alt="관절경으로 연골 결손 부위 확인" data-i18n-alt="centerTreatments.cartistemSurgery1" width="1871" height="1865" loading="lazy"><figcaption data-center-treatment="cartistemSurgery1">관절경으로 연골 결손 부위 확인</figcaption></figure>
+                    </li>
+                    <li>
+                      <span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span>
+                      <figure><img src="/assets/knee-center/cartistem/surgery-2.webp" alt="연골 결손 부위 다듬기" data-i18n-alt="centerTreatments.cartistemSurgery2" width="2345" height="2203" loading="lazy"><figcaption data-center-treatment="cartistemSurgery2">연골 결손 부위 다듬기</figcaption></figure>
+                    </li>
+                    <li>
+                      <span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span>
+                      <figure><img src="/assets/knee-center/cartistem/surgery-3.webp" alt="연골 결손 부위에 3-5mm hole 만들기" data-i18n-alt="centerTreatments.cartistemSurgery3" width="2572" height="2452" loading="lazy"><figcaption data-center-treatment="cartistemSurgery3">연골 결손 부위에 3-5mm hole 만들기</figcaption></figure>
+                    </li>
+                    <li>
+                      <span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span>
+                      <figure><img src="/assets/knee-center/cartistem/surgery-4.webp" alt="카티스템 이식" data-i18n-alt="centerTreatments.cartistemSurgery4" width="2700" height="2635" loading="lazy"><figcaption data-center-treatment="cartistemSurgery4">카티스템 이식</figcaption></figure>
+                    </li>
+                  </ol>
+                </section>
+                <section class="center-treatment-block center-treatment-section" aria-labelledby="cartistem-results-title">
+                  <h4 class="center-treatment-heading" data-center-treatment="cartistemResultsTitle" id="cartistem-results-title">카티스템 전 후</h4>
+                  <div class="center-treatment-result-pair">
+                    <figure><img src="/assets/knee-center/cartistem/before.webp" alt="카티스템 치료 전 연골 결손 부위의 관절경 사진" data-i18n-alt="centerTreatments.cartistemBeforeAlt" width="1284" height="1230" loading="lazy"><figcaption class="center-treatment-result-before" data-center-treatment="cartistemBefore" lang="en">before</figcaption></figure>
+                    <figure><img src="/assets/knee-center/cartistem/after.webp" alt="카티스템 치료 1년 후 연골 부위의 관절경 사진" data-i18n-alt="centerTreatments.cartistemAfterAlt" width="1240" height="1123" loading="lazy"><figcaption class="center-treatment-result-after"><span data-center-treatment="cartistemAfter" lang="en">after</span><span class="center-treatment-result-time" data-center-treatment="cartistemAfterTime">치료 1년 후</span></figcaption></figure>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- 카티라이프: 이미지·문구는 HTML 원본, 동작은 공통 치료박스를 재사용합니다. -->
+        <article class="center-treatment center-treatment--cartilife" id="knee-cartilife" aria-labelledby="knee-cartilife-title" data-figma-node="700:1888">
+          <div class="center-treatment-hero">
+            <div class="center-treatment-copy">
+              <h3 class="center-treatment-title" data-center-treatment="cartilifeTitle" id="knee-cartilife-title" lang="en">Costal Autologous Chondrocyte Implantation (CartiLife®)</h3>
+              <p class="center-treatment-description" data-center-treatment="cartilifeDescription">무릎 연골 재생을 위한 전문적인 자가 늑연골 세포치료를 제공</p>
+            </div>
+            <div class="center-treatment-hero-photo"><img class="center-treatment-image" src="/assets/knee-center/cartilife/hero.webp" alt="카티라이프 관절경 수술 화면을 확인하는 흥K병원 의료진" data-i18n-alt="centerTreatments.cartilifeHeroAlt" width="691" height="724" loading="lazy"></div>
+          </div>
+          <details class="center-treatment-disclosure">
+            <summary class="center-treatment-toggle" aria-controls="knee-cartilife-panel">
+              <span class="center-treatment-toggle-context" data-center-treatment="cartilifeToggleContext">카티라이프 상세 내용 </span>
+              <span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span>
+              <span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="center-treatment-panel" id="knee-cartilife-panel">
+              <div class="center-treatment-content" data-figma-node="730:1561">
+                <div class="center-treatment-block">
+                  <div class="center-treatment-reading-copy center-treatment-reading-copy--compact">
+                    <h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="cartilifeIntroTitle">자가 늑연골 세포를 이용해 손상된 관절연골의 재생을 유도하는 첨단 연골재생 치료</h4>
+                    <p data-center-treatment="cartilifeIntroBody">환자 본인의 늑연골 조직(8~10번)을 채취한 뒤, 분리한 세포를 약 6~7주간 배양하여 작은 구슬 형태로 만들고 이를 무릎 연골결손 부위에 이식해 건강하고 기능적인 연골층이 재생되도록 하는 수술입니다.</p>
+                  </div>
+                </div>
+                <section class="center-treatment-block center-treatment-process center-treatment-stages" aria-labelledby="cartilife-process-title">
+                  <h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="cartilifeProcessTitle" id="cartilife-process-title">카티라이프 과정</h4>
+                  <ol class="center-treatment-stage-list">
+                    <li>
+                      <div class="center-treatment-photo-row center-treatment-photo-row--harvest">
+                        <div class="center-treatment-photo center-treatment-photo--harvest-1" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/harvest-1.webp" alt="자가 늑연골 조직 채취 수술" data-i18n-alt="centerTreatments.cartilifeHarvest1Alt" width="1210" height="1141" loading="lazy"></div>
+                        <div class="center-treatment-photo center-treatment-photo--harvest-2" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/harvest-2.webp" alt="갈비뼈의 늑연골 채취 위치를 보여주는 그림" data-i18n-alt="centerTreatments.cartilifeHarvest2Alt" width="1536" height="1024" loading="lazy"></div>
+                        <div class="center-treatment-photo center-treatment-photo--harvest-3" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/harvest-3.webp" alt="채취한 늑연골 조직" data-i18n-alt="centerTreatments.cartilifeHarvest3Alt" width="1499" height="1338" loading="lazy"></div>
+                        <div class="center-treatment-photo center-treatment-photo--harvest-4" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/harvest-4.webp" alt="채취한 늑연골 조직의 처리 과정" data-i18n-alt="centerTreatments.cartilifeHarvest4Alt" width="1276" height="1348" loading="lazy"></div>
+                      </div>
+                      <h5 data-center-treatment="cartilifeStep1">1단계</h5>
+                      <p data-center-treatment="cartilifeStep1Body">갈비뼈 8~10 늑연골에서 채취</p>
+                    </li>
+                    <li>
+                      <div class="center-treatment-stage-arrow" aria-hidden="true"><img src="/assets/knee-center/cartilife/flow-arrow.svg" alt="" width="39" height="40" loading="lazy"></div>
+                      <img class="center-treatment-stage-diagram" src="/assets/knee-center/cartilife/culture-diagram.webp" alt="세포 분리와 증식, 연골화 배양을 거쳐 구슬형 연골 조직을 만드는 과정" data-i18n-alt="centerTreatments.cartilifeCultureDiagramAlt" width="2172" height="724" loading="lazy">
+                      <div class="center-treatment-photo-row center-treatment-photo-row--culture">
+                        <div class="center-treatment-photo center-treatment-photo--culture-1" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/culture-1.webp" alt="배양한 연골세포의 이식 준비 도구" data-i18n-alt="centerTreatments.cartilifeCulture1Alt" width="498" height="685" loading="lazy"></div>
+                        <div class="center-treatment-photo center-treatment-photo--culture-2" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/culture-2.webp" alt="배양한 연골세포를 준비하는 모습" data-i18n-alt="centerTreatments.cartilifeCulture2Alt" width="1646" height="2245" loading="lazy"></div>
+                        <div class="center-treatment-photo center-treatment-photo--culture-3" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/culture-3.webp" alt="구슬형 연골세포 이식용 도구" data-i18n-alt="centerTreatments.cartilifeCulture3Alt" width="742" height="1026" loading="lazy"></div>
+                      </div>
+                      <h5 data-center-treatment="cartilifeStep2">2단계</h5>
+                      <p data-center-treatment="cartilifeStep2Body">세포분리 / 증식공정 - 연골화 배양공정 - 작은 구슬 형태로 연골 조직화 (직경 약 1.5mm)</p>
+                    </li>
+                    <li>
+                      <div class="center-treatment-stage-arrow" aria-hidden="true"><img src="/assets/knee-center/cartilife/flow-arrow.svg" alt="" width="39" height="40" loading="lazy"></div>
+                      <div class="center-treatment-photo-row center-treatment-photo-row--implant">
+                        <div class="center-treatment-photo center-treatment-photo--implant-1" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/implant-1.webp" alt="관절경 또는 절개술을 통한 자가 연골세포 이식 수술 그림" data-i18n-alt="centerTreatments.cartilifeImplant1Alt" width="1007" height="732" loading="lazy"></div>
+                        <div class="center-treatment-photo center-treatment-photo--implant-2" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/implant-2.webp" alt="연골 결손 부위에 구슬형 자가 연골세포를 이식하는 관절경 사진" data-i18n-alt="centerTreatments.cartilifeImplant2Alt" width="720" height="420" loading="lazy"></div>
+                      </div>
+                      <h5 data-center-treatment="cartilifeStep3">3단계</h5>
+                      <p data-center-treatment="cartilifeStep3Body">구슬형 자가 연골세포 이식술 시행</p>
+                    </li>
+                  </ol>
+                </section>
+                <section class="center-treatment-block center-treatment-results" aria-labelledby="cartilife-results-title">
+                  <h4 class="center-treatment-heading" data-center-treatment="cartilifeResultsTitle" id="cartilife-results-title">카티라이프 전 후</h4>
+                  <div class="center-treatment-result-pair center-treatment-result-pair--three">
+                    <figure>
+                      <div class="center-treatment-photo center-treatment-photo--before" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/before.webp" alt="카티라이프 치료 전 연골 결손 부위의 관절경 사진" data-i18n-alt="centerTreatments.cartilifeBeforeAlt" width="697" height="648" loading="lazy"></div>
+                      <figcaption class="center-treatment-result-before" data-center-treatment="cartilifeBefore" lang="en">before</figcaption>
+                    </figure>
+                    <figure>
+                      <div class="center-treatment-result-views">
+                        <div class="center-treatment-photo center-treatment-photo--after-1" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/after-1.webp" alt="카티라이프 치료 1년 후 재생된 연골의 첫 번째 관절경 사진" data-i18n-alt="centerTreatments.cartilifeAfter1Alt" width="657" height="610" loading="lazy"></div>
+                        <div class="center-treatment-photo center-treatment-photo--after-2" data-center-treatment-reveal><img src="/assets/knee-center/cartilife/after-2.webp" alt="카티라이프 치료 1년 후 재생된 연골의 두 번째 관절경 사진" data-i18n-alt="centerTreatments.cartilifeAfter2Alt" width="604" height="577" loading="lazy"></div>
+                      </div>
+                      <figcaption class="center-treatment-result-after"><span data-center-treatment="cartilifeAfter" lang="en">after</span><span class="center-treatment-result-time" data-center-treatment="cartilifeAfterTime">치료 1년 후</span></figcaption>
+                    </figure>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- 메가카티: 원본 사진 순서와 문구를 유지하며 공통 펼침·등장 효과를 재사용합니다. -->
+        <article class="center-treatment center-treatment--megacarti" id="knee-megacarti" aria-labelledby="knee-megacarti-title" data-figma-node="733:2891">
+          <div class="center-treatment-hero">
+            <div class="center-treatment-copy">
+              <h3 class="center-treatment-title" data-center-treatment="megacartiTitle" id="knee-megacarti-title" lang="en">Allocostal Cartilage (MegaCarti®)</h3>
+              <p class="center-treatment-description" data-center-treatment="megacartiDescription">연골 손상에 맞춘 세심한 치료, 흥케이병원의 미세천공술·메가카티 치료.</p>
+            </div>
+            <img class="center-treatment-image" src="/assets/knee-center/megacarti/hero.webp" alt="메가카티 관절경 수술을 시행하는 흥K병원 의료진" data-i18n-alt="centerTreatments.megacartiHeroAlt" width="1536" height="1024" loading="lazy">
+          </div>
+          <details class="center-treatment-disclosure">
+            <summary class="center-treatment-toggle" aria-controls="knee-megacarti-panel">
+              <span class="center-treatment-toggle-context" data-center-treatment="megacartiToggleContext">메가카티 상세 내용 </span>
+              <span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span>
+              <span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="center-treatment-panel" id="knee-megacarti-panel">
+              <div class="center-treatment-content" data-figma-node="733:2839">
+                <div class="center-treatment-block">
+                  <div class="center-treatment-reading-copy center-treatment-reading-copy--compact">
+                    <h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="megacartiIntroTitle">메가카티는 미세천공술 후 혈병을 보호하고 세포의 정착을 도와 연골 재생을 보조하는 연골 조직 보충재입니다.</h4>
+                    <p data-center-treatment="megacartiIntroFirst">미세천공술은 손상된 연골 아래 뼈에 미세한 구멍을 내어, 골수 속 줄기세포와 성장인자가 손상 부위로 나오도록 유도하는 연골재생술입니다. 피부에 새살이 돋는 것처럼 우리 몸의 자연 치유 능력을 이용하는 원리입니다. 다만 새롭게 형성되는 조직은 정상 관절의 초자연골보다 강도와 내구성이 낮은 섬유연골로 재생되는 한계가 있습니다.</p>
+                    <p data-center-treatment="megacartiIntroSecond">메가카티는 이러한 한계를 보완하기 위해 미세천공술 후 사용하는 연골 조직 보충재입니다. 제2형 콜라겐을 함유한 동종 늑연골 입자가 혈병을 보호하고 골수에서 나온 세포가 손상 부위에 안정적으로 머물도록 도와 연골 재생을 보조합니다.</p>
+                  </div>
+                </div>
+                <div class="center-treatment-block center-treatment-process">
+                  <ol class="center-treatment-gallery center-treatment-gallery--megacarti" aria-label="메가카티 수술 과정 사진" data-i18n-label="centerTreatments.megacartiGalleryLabel">
+                    <li><img src="/assets/knee-center/megacarti/surgery-1.webp" alt="연골 손상 부위를 확인하는 관절경 사진" data-i18n-alt="centerTreatments.megacartiSurgery1Alt" width="827" height="792" loading="lazy"></li>
+                    <li><img src="/assets/knee-center/megacarti/surgery-2.webp" alt="손상된 연골을 정리한 부위의 관절경 사진" data-i18n-alt="centerTreatments.megacartiSurgery2Alt" width="1017" height="969" loading="lazy"></li>
+                    <li><img src="/assets/knee-center/megacarti/surgery-3.webp" alt="미세천공술을 시행한 부위의 관절경 사진" data-i18n-alt="centerTreatments.megacartiSurgery3Alt" width="1266" height="1201" loading="lazy"></li>
+                    <li><img src="/assets/knee-center/megacarti/surgery-4.webp" alt="미세천공 부위에 메가카티를 적용하는 관절경 사진" data-i18n-alt="centerTreatments.megacartiSurgery4Alt" width="1230" height="1135" loading="lazy"></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- 십자인대: 전방·후방 수술사례와 치료 특징까지 공통 치료박스로 구성합니다. -->
+        <article class="center-treatment center-treatment--cruciate" id="knee-cruciate" aria-labelledby="knee-cruciate-title" data-figma-node="1200:2317">
+          <div class="center-treatment-hero">
+            <div class="center-treatment-copy">
+              <h3 class="center-treatment-title" data-center-treatment="cruciateTitle" id="knee-cruciate-title" lang="en">Cruciate Ligament Reconstruction (ACL/PCL)</h3>
+              <p class="center-treatment-description" data-center-treatment="cruciateDescription">잔존 인대를 최대한 보존하는 해부학적 정밀 십자인대 재건술</p>
+            </div>
+            <img class="center-treatment-image" src="/assets/knee-center/cruciate/hero.webp" alt="십자인대 관절경 수술을 시행하는 흥K병원 의료진" data-i18n-alt="centerTreatments.cruciateHeroAlt" width="4096" height="2731" loading="lazy">
+          </div>
+          <details class="center-treatment-disclosure">
+            <summary class="center-treatment-toggle" aria-controls="knee-cruciate-panel">
+              <span class="center-treatment-toggle-context" data-center-treatment="cruciateToggleContext">십자인대 재건술 상세 내용 </span>
+              <span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span>
+              <span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="center-treatment-panel" id="knee-cruciate-panel">
+              <div class="center-treatment-content" data-figma-node="1200:3403">
+                <div class="center-treatment-block">
+                  <div class="center-treatment-reading-copy">
+                    <h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="cruciateTitle" lang="en">Cruciate Ligament Reconstruction (ACL/PCL)</h4>
+                    <p data-center-treatment="cruciateIntroFirst">십자인대는 무릎이 앞뒤로 과도하게 움직이는 것을 막고, 회전 시 관절의 안정성을 유지하는 중요한 구조물입니다.</p>
+                    <p data-center-treatment="cruciateIntroSecond">십자인대 파열로 무릎 불안정성이 지속되는 경우, 관절의 안정성을 회복하고 반월상연골판과 무릎 연골의 추가 손상 위험을 줄이기 위해 재건술을 고려할 수 있습니다.</p>
+                  </div>
+                </div>
+                <section class="center-treatment-block center-treatment-process center-treatment-process--left" aria-labelledby="cruciate-process-title">
+                  <h4 class="center-treatment-heading" data-center-treatment="cruciateProcessTitle" id="cruciate-process-title">십자인대 재건술 과정</h4>
+                  <ol class="center-treatment-sequence center-treatment-sequence--three">
+                    <li>
+                      
+                      <div class="center-treatment-photo center-treatment-ligament-step center-treatment-ligament-step--1" data-center-treatment-reveal><img src="/assets/knee-center/cruciate/step-1.webp" alt="파열 상태 확인 및 잔존 인대 보존" data-i18n-alt="centerTreatments.cruciateStep1Body" width="422" height="719" loading="lazy"></div>
+                      <h5 data-center-treatment="cruciateStep1" lang="en">Step1</h5>
+                      <p data-center-treatment="cruciateStep1Body">파열 상태 확인 및 잔존 인대 보존</p>
+                    </li>
+                    <li>
+                      <span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span>
+                      <div class="center-treatment-photo center-treatment-ligament-step center-treatment-ligament-step--2" data-center-treatment-reveal><img src="/assets/knee-center/cruciate/step-2.webp" alt="이식건 준비 및 정확한 골터널 형성" data-i18n-alt="centerTreatments.cruciateStep2Body" width="244" height="184" loading="lazy"></div>
+                      <h5 data-center-treatment="cruciateStep2" lang="en">Step2</h5>
+                      <p data-center-treatment="cruciateStep2Body">이식건 준비 및 정확한 골터널 형성</p>
+                    </li>
+                    <li>
+                      <span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span>
+                      <div class="center-treatment-photo center-treatment-ligament-step center-treatment-ligament-step--3" data-center-treatment-reveal><img src="/assets/knee-center/cruciate/step-3.webp" alt="이식건 삽입 및 견고한 고정" data-i18n-alt="centerTreatments.cruciateStep3Body" width="195" height="325" loading="lazy"></div>
+                      <h5 data-center-treatment="cruciateStep3" lang="en">Step3</h5>
+                      <p data-center-treatment="cruciateStep3Body">이식건 삽입 및 견고한 고정</p>
+                    </li>
+                  </ol>
+                  <p class="center-treatment-process-description"><span class="center-treatment-emphasis center-treatment-emphasis--regular" data-center-treatment="cruciateHospital">흥K병원</span><span data-center-treatment="cruciateProcessBody">은 남아 있는 인대 조직을 최대한 보존하면서 정확한 위치에 작은 골터널을 만들고, 환자의 상태에 적합한 자가건 또는 동종건을 단단히 고정해 손상된 십자인대를 재건합니다. 이를 통해 무릎의 안정성과 기능 회복을 돕습니다.</span></p>
+                </section>
+                <section class="center-treatment-block center-treatment-section center-treatment-results" aria-labelledby="cruciate-acl-title">
+                  <h4 class="center-treatment-heading" data-center-treatment="cruciateAclTitle" id="cruciate-acl-title">전방십자인대 재건술 수술사례</h4>
+                  <div class="center-treatment-result-pair center-treatment-result-pair--acl">
+                    <figure>
+                      <div class="center-treatment-photo center-treatment-photo--acl-before" data-center-treatment-reveal><img src="/assets/knee-center/cruciate/acl-before.webp" alt="파열된 전방 십자인대 - 수술 전 관절경 사진" data-i18n-alt="centerTreatments.cruciateAclBeforeAlt" width="229" height="214" loading="lazy"></div>
+                      <figcaption class="center-treatment-result-before" data-center-treatment="cruciateAclBefore">파열된 전방 십자인대 - 수술 전</figcaption>
+                    </figure>
+                    <figure>
+                      <div class="center-treatment-photo center-treatment-photo--acl-after" data-center-treatment-reveal><img src="/assets/knee-center/cruciate/acl-after.webp" alt="재건된 전방 십자인대 - 수술 후 관절경 사진" data-i18n-alt="centerTreatments.cruciateAclAfterAlt" width="289" height="211" loading="lazy"></div>
+                      <figcaption class="center-treatment-result-after" data-center-treatment="cruciateAclAfter">재건된 전방 십자인대 - 수술 후</figcaption>
+                    </figure>
+                  </div>
+                </section>
+                <section class="center-treatment-block center-treatment-section center-treatment-results" aria-labelledby="cruciate-pcl-title">
+                  <h4 class="center-treatment-heading" data-center-treatment="cruciatePclTitle" id="cruciate-pcl-title">후방십자인대 재건술 수술사례</h4>
+                  <div class="center-treatment-result-pair center-treatment-result-pair--pcl">
+                    <figure>
+                      <div class="center-treatment-photo center-treatment-photo--pcl-before" data-center-treatment-reveal><img src="/assets/knee-center/cruciate/pcl-before.webp" alt="파열된 후방십자인대 - 수술 전 관절경 사진" data-i18n-alt="centerTreatments.cruciatePclBeforeAlt" width="234" height="227" loading="lazy"></div>
+                      <figcaption class="center-treatment-result-before" data-center-treatment="cruciatePclBefore">파열된 후방십자인대 - 수술 전</figcaption>
+                    </figure>
+                    <figure>
+                      <div class="center-treatment-photo center-treatment-photo--pcl-after" data-center-treatment-reveal><img src="/assets/knee-center/cruciate/pcl-after.webp" alt="재건된 후방십자인대 - 수술 후 관절경 사진" data-i18n-alt="centerTreatments.cruciatePclAfterAlt" width="246" height="235" loading="lazy"></div>
+                      <figcaption class="center-treatment-result-after" data-center-treatment="cruciatePclAfter">재건된 후방십자인대 - 수술 후</figcaption>
+                    </figure>
+                  </div>
+                </section>
+                <section class="center-treatment-block center-treatment-benefits" aria-labelledby="cruciate-benefits-title">
+                  <h4 class="center-treatment-heading" id="cruciate-benefits-title"><span class="center-treatment-emphasis" data-center-treatment="cruciateHospital">흥K병원</span><span data-center-treatment="cruciateBenefitsTitle"> 십자인대 재건술의 특징</span></h4>
+                  <ul class="center-treatment-benefit-grid center-treatment-benefit-grid--wrap">
+                    <li><img src="/assets/treatment/tj1.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="cruciateBenefit1Title">해부학적 정밀 재건</h5><p data-center-treatment="cruciateBenefit1Body">환자의 해부학적 구조를 고려해 정확한 위치에 골터널을 형성하여 무릎의 안정적인 기능 회복을 돕습니다.</p></li>
+                    <li><img src="/assets/knee-center/cruciate/benefit-preserve.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="cruciateBenefit2Title">잔존 인대 보존</h5><p data-center-treatment="cruciateBenefit2Body">보존 가능한 인대 조직을 최대한 유지하여 무릎의 고유 감각 회복과 이식건의 안정적인 정착을 돕습니다.</p></li>
+                    <li><img src="/assets/treatment/tj3.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="cruciateBenefit3Title">최소절개 관절경 수술</h5><p data-center-treatment="cruciateBenefit3Body">작은 절개를 통해 관절 내부를 확인하고 수술하여 주변 조직의 손상과 흉터 부담을 줄입니다.</p></li>
+                    <li><img src="/assets/knee-center/cruciate/benefit-combined.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="cruciateBenefit4Title">전외측인대 동시 재건</h5><p data-center-treatment="cruciateBenefit4Body">심한 회전 불안정성이 있거나 재파열 위험이 높은 경우, 전방십자인대와 함께 전외측인대를 재건하여 회전 안정성을 보강합니다.</p></li>
+                    <li><img src="/assets/knee-center/cruciate/benefit-revision.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="cruciateBenefit5Title">고난도 십자인대 재수술</h5><p data-center-treatment="cruciateBenefit5Body">재파열되거나 이전 수술 후 불안정성이 지속되는 경우, 기존 골터널과 이식건 상태를 정밀하게 분석해 맞춤형 재수술을 시행합니다.</p></li>
+                    <li><img src="/assets/treatment/tj4.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="cruciateBenefit6Title">국가대표 스포츠 의료진의 전문 재활</h5><p data-center-treatment="cruciateBenefit6Body">국가대표 선수 치료 경험을 바탕으로 환자 상태에 맞춘 단계별 재활을 시행하여 안전한 일상생활과 스포츠 복귀를 돕습니다.</p></li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </details>
+        </article>
+      </div>
+      <!-- 어깨전담센터 배너: 문구·사진·학회 로고는 이 HTML에서 편집합니다. -->
+      <section class="center-banner" id="shoulder-center" aria-labelledby="shoulder-center-title" data-figma-node="733:3192">
+        <div class="center-banner-stage">
+          <div class="center-banner-background" aria-hidden="true">
+            <svg class="center-banner-grid" width="1921" height="920" aria-hidden="true" focusable="false">
+              <defs><pattern id="center-banner-grid-pattern" width="294.4" height="512" patternUnits="userSpaceOnUse"><image href="/assets/knee-center/bggrid.png" width="294.4" height="512" /></pattern></defs>
+              <rect width="100%" height="100%" fill="url(#center-banner-grid-pattern)" />
+            </svg>
+            <img class="center-banner-wave" src="/assets/knee-center/gold-wave.png" alt="" width="1200" height="600" loading="lazy">
+            <img class="center-banner-texture" src="/assets/knee-center/blue-texture.png" alt="" width="1920" height="1674" loading="lazy">
+            <img class="center-banner-surgery center-banner-surgery--right" src="/assets/shoulder-center/surgery-right.webp" alt="" width="1000" height="667" loading="lazy">
+            <img class="center-banner-surgery center-banner-surgery--left" src="/assets/shoulder-center/surgery-left.webp" alt="" width="1000" height="750" loading="lazy">
+          </div>
+          <div class="center-banner-copy">
+            <div class="center-banner-title-wrap" data-center-banner-reveal>
+              <img class="center-banner-laurel center-banner-laurel--left" src="/assets/knee-center/laurel.png" alt="" width="1024" height="1536" loading="lazy">
+              <h2 class="center-banner-title" id="shoulder-center-title"><span data-i18n="shoulder.hospital">흥K병원</span><span data-i18n="shoulder.title">어깨전담센터</span></h2>
+              <img class="center-banner-laurel center-banner-laurel--right" src="/assets/knee-center/laurel.png" alt="" width="1024" height="1536" loading="lazy">
+            </div>
+            <div class="center-banner-description" data-center-banner-reveal>
+              <p data-i18n="shoulder.description1">정밀 진단부터 비수술 치료, 고난도 수술과 재활까지.</p>
+              <p data-i18n="shoulder.description2">어깨 질환에 특화된 진료 시스템으로 치료의 완성도를 높입니다.</p>
+            </div>
+            <ul class="center-banner-services" lang="en" data-center-banner-reveal>
+              <li data-i18n="shoulder.service1">Rotator cuff tear and Tendinopathy</li>
+              <li data-i18n="shoulder.service2">Shoulder instability and recurrent dislocation</li>
+              <li data-i18n="shoulder.service3">Frozen shoulder (adhesive capsulitis)</li>
+              <li data-i18n="shoulder.service4">Shoulder impingement syndrome</li>
+              <li data-i18n="shoulder.service5">Calcific tendinitis of the shoulder</li>
+              <li data-i18n="shoulder.service6">Sports-related shoulder injuries</li>
+            </ul>
+            <figure class="center-banner-affiliation" data-center-banner-reveal>
+              <div class="center-banner-logos">
+                <img src="/assets/shoulder-center/aac.webp" alt="아시아 관절경학회 AAC 로고" data-i18n-alt="shoulder.aacAlt" width="1600" height="1840" loading="lazy">
+                <img src="/assets/shoulder-center/kossm.webp" alt="대한정형외과 스포츠의학회 KOSSM 로고" data-i18n-alt="shoulder.kossmAlt" width="1600" height="1613" loading="lazy">
+              </div>
+              <figcaption lang="en" data-i18n="shoulder.affiliation" data-i18n-lines>Asia Arthroscopy Congress (AAC)<br>Member of the Promotion &amp; Finance Committee</figcaption>
+            </figure>
+          </div>
+          <div class="center-banner-doctor" data-center-banner-reveal="up">
+            <img src="/assets/shoulder-center/doctor.webp" alt="이수건 원장" data-i18n-alt="shoulder.doctorAlt" width="1000" height="1500" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <div class="center-treatment-list" aria-label="어깨전담센터 치료" data-i18n-label="centerTreatments.rotatorListLabel">
+        <!-- 회전근개: 관절내시경 봉합술·패치 보강술·PRP를 한 치료박스에 구성합니다. -->
+        <article class="center-treatment" id="shoulder-rotator-cuff" aria-labelledby="shoulder-rotator-cuff-title" data-figma-node="752:1884">
+          <div class="center-treatment-hero">
+            <div class="center-treatment-copy">
+              <h3 class="center-treatment-title" data-center-treatment="rotatorTitle" id="shoulder-rotator-cuff-title" lang="en">Rotator Cuff Tear Surgery</h3>
+              <p class="center-treatment-description" data-center-treatment="rotatorDescription">관절내시경의 특수 장비 및 내시경카메라를 삽입하여 관절 내부를 직접 관찰하면서 수술</p>
+            </div>
+            <img class="center-treatment-image" src="/assets/shoulder-center/rotator-cuff/hero.webp" alt="회전근개 관절내시경 수술을 시행하는 흥K병원 의료진" data-i18n-alt="centerTreatments.rotatorHeroAlt" width="4096" height="2731" loading="lazy">
+          </div>
+          <details class="center-treatment-disclosure">
+            <summary class="center-treatment-toggle" aria-controls="shoulder-rotator-cuff-panel">
+              <span class="center-treatment-toggle-context" data-center-treatment="rotatorToggleContext">회전근개 파열 수술 상세 내용 </span>
+              <span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span>
+              <span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="center-treatment-panel" id="shoulder-rotator-cuff-panel">
+              <div class="center-treatment-content" data-figma-node="752:1775">
+                <div class="center-treatment-chapter">
+                  <img class="center-treatment-watermark" src="/assets/knee-center/mako/watermark.webp" alt="" width="628" height="565" loading="lazy" aria-hidden="true">
+                  <div class="center-treatment-block"><div class="center-treatment-reading-copy center-treatment-reading-copy--compact"><h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="rotatorRepairTitle" lang="en">Arthroscopic Rotator Cuff Repair</h4><p data-center-treatment="rotatorRepairBody1">병변 부위에 5~7mm의 작은 절개 2~3개를 통해 관절내시경의 특수 장비 및 내시경카메라를 삽입하여 관절 내부를 직접 관찰하면서 수술하는 방식으로 손상된 부위를 진단함과 동시에 치료할 수 있습니다.</p><p data-center-treatment="rotatorRepairBody2">절개 범위가 아주 적어 수술 후 통증이 적고, 흉터 및 출혈, 감염 등에 대한 우려가 적어 수술 후 회복 시간을 상당히 단축시킬 수 있습니다.</p></div></div>
+                  <section class="center-treatment-block center-treatment-section center-treatment-results" aria-labelledby="rotator-repair-cases"><h5 class="center-treatment-heading center-treatment-heading--small" data-center-treatment="rotatorCasesTitle" id="rotator-repair-cases">흥K병원의 전 후 수술 사례</h5><div class="center-treatment-result-pair center-treatment-result-pair--grouped" style="--result-width:1238.7116999999998px;--before-share:618.6378fr;--after-share:612.0739fr"><figure><div class="center-treatment-result-images" style="--image-columns:365.7227fr 252.9152fr;--image-ratio:618.6379 / 350" data-center-treatment-reveal><img src="/assets/shoulder-center/rotator-cuff/repair-before-1.webp" alt="회전근개 봉합술 전 파열 부위의 관절내시경 사진" data-i18n-alt="centerTreatments.rotatorRepairBefore1Alt" width="535" height="512" loading="lazy"><img src="/assets/shoulder-center/rotator-cuff/repair-before-2.webp" alt="회전근개 봉합술 전 어깨 MRI 영상" data-i18n-alt="centerTreatments.rotatorRepairBefore2Alt" width="409" height="566" loading="lazy"></div><figcaption class="center-treatment-result-before" data-center-treatment="rotatorBefore">수술 전</figcaption></figure><figure><div class="center-treatment-result-images" style="--image-columns:359.1172fr 252.9566fr;--image-ratio:612.0738 / 350" data-center-treatment-reveal><img src="/assets/shoulder-center/rotator-cuff/repair-after-1.webp" alt="회전근개 봉합술 후 봉합 부위의 관절내시경 사진" data-i18n-alt="centerTreatments.rotatorRepairAfter1Alt" width="709" height="691" loading="lazy"><img src="/assets/shoulder-center/rotator-cuff/repair-after-2.webp" alt="회전근개 봉합술 후 어깨 MRI 영상" data-i18n-alt="centerTreatments.rotatorRepairAfter2Alt" width="550" height="761" loading="lazy"></div><figcaption class="center-treatment-result-after" data-center-treatment="rotatorAfter">수술 후</figcaption></figure></div></section>
+                </div>
+                <div class="center-treatment-chapter">
+                  <img class="center-treatment-watermark" src="/assets/knee-center/mako/watermark.webp" alt="" width="628" height="565" loading="lazy" aria-hidden="true">
+                  <div class="center-treatment-block"><div class="center-treatment-reading-copy center-treatment-reading-copy--compact"><h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="rotatorPatchTitle" lang="en">Patch-Augmented Rotator Cuff Repair</h4><p data-center-treatment="rotatorRepairBody1">병변 부위에 5~7mm의 작은 절개 2~3개를 통해 관절내시경의 특수 장비 및 내시경카메라를 삽입하여 관절 내부를 직접 관찰하면서 수술하는 방식으로 손상된 부위를 진단함과 동시에 치료할 수 있습니다.</p><p data-center-treatment="rotatorRepairBody2">절개 범위가 아주 적어 수술 후 통증이 적고, 흉터 및 출혈, 감염 등에 대한 우려가 적어 수술 후 회복 시간을 상당히 단축시킬 수 있습니다.</p></div></div>
+                  <div class="center-treatment-block center-treatment-media-copy">
+                    <img class="center-treatment-media-photo" src="/assets/shoulder-center/rotator-cuff/patch.webp" alt="회전근개 봉합 부위에 패치를 덧대어 보강하는 그림" data-i18n-alt="centerTreatments.rotatorPatchAlt" width="546" height="554" loading="lazy">
+                    <div>
+                      <h5 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="rotatorPatchLead">약해진 회전근개에 패치 보강을 더해 봉합의 안정성을 높이고 재파열 위험을 줄이는 치료입니다.</h5>
+                      <p data-center-treatment="rotatorPatchBody1">회전근개 파열 범위가 크거나 힘줄 조직이 약해 단순 봉합만으로 충분한 안정성을 확보하기 어려운 경우, 관절내시경으로 파열된 힘줄을 봉합한 뒤 인체 유래 동종진피 패치나 콜라겐 패치를 덧대어 봉합 부위를 보강합니다.</p>
+                      <p data-center-treatment="rotatorPatchBody2">이러한 패치는 약해진 힘줄을 지지하고 봉합 부위에 가해지는 부담을 줄이는 동시에 조직 재생을 도와, 봉합한 힘줄이 안정적으로 회복될 수 있도록 합니다. 특히 광범위 회전근개 파열이나 힘줄 조직의 퇴행성 변화가 심해 재파열 위험이 높은 경우에 고려할 수 있습니다.</p>
+                    </div>
+                  </div>
+                  <section class="center-treatment-block center-treatment-section center-treatment-results" aria-labelledby="rotator-patch-cases"><h5 class="center-treatment-heading" data-center-treatment="rotatorCasesTitle" id="rotator-patch-cases">흥K병원의 전 후 수술 사례</h5><div class="center-treatment-result-pair center-treatment-result-pair--grouped" style="--result-width:1264.4087px;--before-share:614.4995fr;--after-share:641.9092fr"><figure><div class="center-treatment-result-images" style="--image-columns:273.1993fr 341.3002fr;--image-ratio:614.4995 / 350" data-center-treatment-reveal><img src="/assets/shoulder-center/rotator-cuff/patch-before-1.webp" alt="패치 보강술 전 어깨 MRI 영상" data-i18n-alt="centerTreatments.rotatorPatchBefore1Alt" width="466" height="597" loading="lazy"><img src="/assets/shoulder-center/rotator-cuff/patch-before-2.webp" alt="패치 보강술 전 회전근개 관절내시경 사진" data-i18n-alt="centerTreatments.rotatorPatchBefore2Alt" width="510" height="523" loading="lazy"></div><figcaption class="center-treatment-result-before" data-center-treatment="rotatorBefore">수술 전</figcaption></figure><figure><div class="center-treatment-result-images" style="--image-columns:270.3204fr 371.5888fr;--image-ratio:641.9092 / 350" data-center-treatment-reveal><img src="/assets/shoulder-center/rotator-cuff/patch-after-1.webp" alt="패치 보강술 후 어깨 MRI 영상" data-i18n-alt="centerTreatments.rotatorPatchAfter1Alt" width="458" height="593" loading="lazy"><img src="/assets/shoulder-center/rotator-cuff/patch-after-2.webp" alt="패치로 보강한 회전근개 봉합 부위의 관절내시경 사진" data-i18n-alt="centerTreatments.rotatorPatchAfter2Alt" width="568" height="535" loading="lazy"></div><figcaption class="center-treatment-result-after" data-center-treatment="rotatorAfter">수술 후</figcaption></figure></div></section>
+                </div>
+                <div class="center-treatment-chapter">
+                  <img class="center-treatment-watermark" src="/assets/knee-center/mako/watermark.webp" alt="" width="628" height="565" loading="lazy" aria-hidden="true">
+                  <div class="center-treatment-block">
+                    <div class="center-treatment-reading-copy center-treatment-reading-copy--compact">
+                      <h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="rotatorPrpTitle" lang="en">Platelet-Rich Plasma (PRP) Therapy</h4>
+                      <h5 class="center-treatment-subheading" data-center-treatment="rotatorPrpLead">약해진 회전근개에 패치 보강을 더해 봉합의 안정성을 높이고 재파열 위험을 줄이는 치료입니다.</h5>
+                      <p data-center-treatment="rotatorPrpBody1">회전근개 봉합술 시 환자 본인의 혈액을 채취해 혈소판이 풍부한 혈장(PRP)을 분리한 뒤, 회전근개 봉합 부위에 적용합니다.</p>
+                      <p data-center-treatment="rotatorPrpBody2">PRP에는 조직 치유에 관여하는 다양한 성장인자가 풍부하게 포함되어 있어, 손상된 힘줄의 재생과 봉합 부위의 회복을 돕습니다. 환자의 파열 크기와 힘줄 상태에 따라 패치 보강술과 함께 시행할 수 있습니다.</p>
+                    </div>
+                  </div>
+                  <section class="center-treatment-block center-treatment-process center-treatment-row" aria-labelledby="rotator-prp-process">
+                    <h5 class="center-treatment-heading" data-center-treatment="rotatorPrpProcessTitle" id="rotator-prp-process">PRP 준비과정</h5>
+                    <ol class="center-treatment-sequence center-treatment-sequence--preparation">
+                      <li><div class="center-treatment-photo center-treatment-prp-photo center-treatment-prp-photo--1" data-center-treatment-reveal><img src="/assets/shoulder-center/rotator-cuff/prp.webp" alt="PRP 준비를 위한 혈액 채취" data-i18n-alt="centerTreatments.rotatorPrp1Alt" width="1626" height="422" loading="lazy"></div><h6 class="center-treatment-step-title" data-center-treatment="rotatorPrpStep1">1단계</h6><p data-center-treatment="rotatorPrpStep1Body">PRP 준비과정</p></li>
+<li><span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span><div class="center-treatment-photo center-treatment-prp-photo center-treatment-prp-photo--2" data-center-treatment-reveal><img src="/assets/shoulder-center/rotator-cuff/prp.webp" alt="채취한 혈액을 원심분리하는 장비" data-i18n-alt="centerTreatments.rotatorPrp2Alt" width="1626" height="422" loading="lazy"></div><h6 class="center-treatment-step-title" data-center-treatment="rotatorPrpStep2">2단계</h6><p data-center-treatment="rotatorPrpStep2Body">원심분리</p></li>
+<li><span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span><div class="center-treatment-photo center-treatment-prp-photo center-treatment-prp-photo--3" data-center-treatment-reveal><img src="/assets/shoulder-center/rotator-cuff/prp.webp" alt="분리한 혈액에서 PRP를 추출하는 과정" data-i18n-alt="centerTreatments.rotatorPrp3Alt" width="1626" height="422" loading="lazy"></div><h6 class="center-treatment-step-title" data-center-treatment="rotatorPrpStep3">3단계</h6><p data-center-treatment="rotatorPrpStep3Body">PRP 추출</p></li>
+<li><span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span><div class="center-treatment-photo center-treatment-prp-photo center-treatment-prp-photo--4" data-center-treatment-reveal><img src="/assets/shoulder-center/rotator-cuff/prp.webp" alt="수술에 사용할 준비가 완료된 PRP" data-i18n-alt="centerTreatments.rotatorPrp4Alt" width="1626" height="422" loading="lazy"></div><h6 class="center-treatment-step-title" data-center-treatment="rotatorPrpStep4">4단계</h6><p data-center-treatment="rotatorPrpStep4Body">PRP 준비 완료</p></li>
+
+                    </ol>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- 어깨 인공관절: TSA·RSA 설명과 각각의 수술 전후 사례. -->
+        <article class="center-treatment" id="shoulder-arthroplasty" aria-labelledby="shoulder-arthroplasty-title" data-figma-node="757:2921">
+          <div class="center-treatment-hero">
+            <div class="center-treatment-copy">
+              <h3 class="center-treatment-title" data-center-treatment="arthroplastyTitle" id="shoulder-arthroplasty-title" lang="en">Shoulder Arthroplasty</h3>
+              <p class="center-treatment-description" data-center-treatment="arthroplastyDescription">어깨 관절의 뼈와 연골이 심하게 손상되거나 회전근개의 기능이 저하되어 어깨 관절이 제 기능을 하지 못할 때, 손상된 관절면을 제거하고 인공관절을 삽입하는 수술</p>
+            </div>
+            <img class="center-treatment-image" src="/assets/shoulder-center/arthroplasty/hero.webp" alt="어깨 인공관절 수술을 시행하는 흥K병원 의료진" data-i18n-alt="centerTreatments.arthroplastyHeroAlt" width="3840" height="2724" loading="lazy">
+          </div>
+          <details class="center-treatment-disclosure">
+            <summary class="center-treatment-toggle" aria-controls="shoulder-arthroplasty-panel">
+              <span class="center-treatment-toggle-context" data-center-treatment="arthroplastyToggleContext">어깨 인공관절 수술 상세 내용 </span>
+              <span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span>
+              <span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="center-treatment-panel" id="shoulder-arthroplasty-panel">
+              <div class="center-treatment-content" data-figma-node="757:2896">
+                <div class="center-treatment-chapter">
+                  <img class="center-treatment-watermark" src="/assets/knee-center/mako/watermark.webp" alt="" width="628" height="565" loading="lazy" aria-hidden="true">
+                  <div class="center-treatment-block">
+                    <div class="center-treatment-reading-copy" style="max-width:803px">
+                      <h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="arthroplastyTsaTitle" lang="en">Total Shoulder Arthroplasty (TSA)</h4>
+                      <h5 class="center-treatment-subheading" data-center-treatment="arthroplastyTsaLead">통증은 줄이고, 자연스러운 회복!</h5>
+                      <p data-center-treatment="arthroplastyTsaBody1">관절의 해부학적 구조를 유지하는 방식으로 인공관절을 삽입하여, 관절면의 마모나 손상으로 인한 통증을 줄이고 어깨의 움직임을 회복시키는 수술입니다.</p>
+                      <p data-center-treatment="arthroplastyTsaBody2">주로 중증의 퇴행성 관절염이나 골절로 인해 관절면이 심하게 손상된 경우 시행되며, 통증 완화와 함께 어깨의 기본적인 기능 회복을 기대할 수 있습니다.</p>
+                    </div>
+                  </div>
+                  <section class="center-treatment-block center-treatment-section center-treatment-results" aria-labelledby="arthroplasty-tsa-cases">
+                    <h5 class="center-treatment-heading center-treatment-heading--small" data-center-treatment="arthroplastyTsaCasesTitle" id="arthroplasty-tsa-cases">해부학적 어깨 인공관절 치환술</h5>
+                    <div class="center-treatment-result-pair center-treatment-result-pair--grouped center-treatment-result-pair--original" style="--result-width:1125px;--before-share:559fr;--after-share:558fr">
+                      <figure style="--result-frame-width:559px">
+                        <div class="center-treatment-result-images" style="--image-columns:minmax(0, 1fr);--image-ratio:559 / 350" data-center-treatment-reveal>
+                          <img src="/assets/shoulder-center/arthroplasty/tsa-before.webp" alt="해부학적 어깨 인공관절 치환술 전 어깨 엑스레이 영상" data-i18n-alt="centerTreatments.arthroplastyTsaBeforeAlt" width="720" height="451" loading="lazy">
+                        </div>
+                        <figcaption class="center-treatment-result-before" data-center-treatment="arthroplastyBefore">수술 전</figcaption>
+                      </figure>
+                      <figure style="--result-frame-width:558px">
+                        <div class="center-treatment-result-images" style="--image-columns:minmax(0, 1fr);--image-ratio:558 / 350" data-center-treatment-reveal>
+                          <img src="/assets/shoulder-center/arthroplasty/tsa-after.webp" alt="해부학적 어깨 인공관절 치환술 후 어깨 엑스레이 영상" data-i18n-alt="centerTreatments.arthroplastyTsaAfterAlt" width="720" height="452" loading="lazy">
+                        </div>
+                        <figcaption class="center-treatment-result-after" data-center-treatment="arthroplastyAfter">수술 후</figcaption>
+                      </figure>
+                    </div>
+                  </section>
+                </div>
+                <div class="center-treatment-chapter">
+                  <img class="center-treatment-watermark" src="/assets/knee-center/mako/watermark.webp" alt="" width="628" height="565" loading="lazy" aria-hidden="true">
+                  <div class="center-treatment-block">
+                    <div class="center-treatment-reading-copy" style="max-width:833px">
+                      <h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="arthroplastyRsaTitle" lang="en">Reverse Shoulder Arthroplasty (RSA)</h4>
+                      <h5 class="center-treatment-subheading" data-center-treatment="arthroplastyRsaLead">손상된 회전근개를 대신해 삼각근의 힘을 활용하여 어깨 기능과 움직임 회복을 돕는 정교한 인공관절 수술입니다.</h5>
+                      <p data-center-treatment="arthroplastyRsaBody1">어깨 관절의 볼과 소켓 위치를 반대로 바꾼 인공관절을 삽입하여, 손상된 회전근개 대신 삼각근을 이용해 팔을 들어 올릴 수 있도록 돕는 수술입니다.</p>
+                      <p data-center-treatment="arthroplastyRsaBody2">최근 많이 시행되는 어깨 인공관절 수술법 중 하나로, 관절내시경으로도 회복이 어렵거나 회전근개 파열로 어깨 기능이 완전히 상실된 경우, 특히 팔이 올라가지 않는 가성 마비상태에서 시행되며, 기존의 어깨 인공관절에 비해 가동 범위가 넓고 움직임이 더 자유롭다는 장점이 있습니다.</p>
+                    </div>
+                  </div>
+                  <section class="center-treatment-block center-treatment-section center-treatment-results" aria-labelledby="arthroplasty-rsa-cases">
+                    <h5 class="center-treatment-heading" data-center-treatment="arthroplastyRsaCasesTitle" id="arthroplasty-rsa-cases">흥K병원의 전 후 수술 사례</h5>
+                    <div class="center-treatment-result-pair center-treatment-result-pair--grouped center-treatment-result-pair--original" style="--result-width:562px;--before-share:284fr;--after-share:270fr">
+                      <figure style="--result-frame-width:284px">
+                        <div class="center-treatment-result-images" style="--image-columns:minmax(0, 1fr);--image-ratio:284 / 350" data-center-treatment-reveal>
+                          <img src="/assets/shoulder-center/arthroplasty/rsa-before.webp" alt="역행성 어깨 인공관절 치환술 전 어깨 엑스레이 영상" data-i18n-alt="centerTreatments.arthroplastyRsaBeforeAlt" width="546" height="673" loading="lazy">
+                        </div>
+                        <figcaption class="center-treatment-result-before" data-center-treatment="arthroplastyBefore">수술 전</figcaption>
+                      </figure>
+                      <figure style="--result-frame-width:270px">
+                        <div class="center-treatment-result-images" style="--image-columns:minmax(0, 1fr);--image-ratio:270 / 350" data-center-treatment-reveal>
+                          <img src="/assets/shoulder-center/arthroplasty/rsa-after.webp" alt="역행성 어깨 인공관절 치환술 후 어깨 엑스레이 영상" data-i18n-alt="centerTreatments.arthroplastyRsaAfterAlt" width="438" height="568" loading="lazy">
+                        </div>
+                        <figcaption class="center-treatment-result-after" data-center-treatment="arthroplastyAfter">수술 후</figcaption>
+                      </figure>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+      </div>
+      <!-- 손발 전담센터 배너: 문구·사진·진료 목록은 이 HTML에서 편집합니다. -->
+      <section class="center-banner hand-foot-center-banner" id="hand-foot-center" aria-labelledby="hand-foot-center-title" data-figma-node="817:3599">
+        <div class="center-banner-stage">
+          <div class="center-banner-background" aria-hidden="true">
+            <svg class="center-banner-grid" width="1921" height="846" aria-hidden="true" focusable="false">
+              <defs><pattern id="hand-foot-center-grid-pattern" width="294.4" height="512" patternUnits="userSpaceOnUse"><image href="/assets/knee-center/bggrid.png" width="294.4" height="512" /></pattern></defs>
+              <rect width="100%" height="100%" fill="url(#hand-foot-center-grid-pattern)" />
+            </svg>
+            <img class="center-banner-wave" src="/assets/knee-center/gold-wave.png" alt="" width="1200" height="600" loading="lazy">
+            <img class="center-banner-texture" src="/assets/knee-center/blue-texture.png" alt="" width="1920" height="1674" loading="lazy">
+            <img class="center-banner-surgery center-banner-surgery--right" src="/assets/hand-foot-center/surgery-right.webp" alt="" width="619" height="413" loading="lazy">
+            <img class="center-banner-surgery center-banner-surgery--left" src="/assets/hand-foot-center/surgery-left.webp" alt="" width="539" height="355" loading="lazy">
+          </div>
+          <div class="center-banner-copy">
+            <div class="center-banner-title-wrap" data-center-banner-reveal>
+              <img class="center-banner-laurel center-banner-laurel--left" src="/assets/knee-center/laurel.png" alt="" width="1024" height="1536" loading="lazy">
+              <h2 class="center-banner-title" id="hand-foot-center-title"><span data-i18n="handFoot.hospital">흥K병원</span><span data-i18n="handFoot.title">손 발 전담센터</span></h2>
+              <img class="center-banner-laurel center-banner-laurel--right" src="/assets/knee-center/laurel.png" alt="" width="1024" height="1536" loading="lazy">
+            </div>
+            <div class="center-banner-description" data-center-banner-reveal>
+              <p data-i18n="handFoot.description1">정밀 진단부터 비수술 치료, 고난도 수술과 재활까지.</p>
+              <p data-i18n="handFoot.description2">손 과 발 질환에 특화된 진료 시스템으로 치료의 완성도를 높입니다.</p>
+            </div>
+            <ul class="center-banner-services" lang="en" data-center-banner-reveal>
+              <li data-i18n="handFoot.service1">Hallux valgus (bunion) correction</li>
+              <li data-i18n="handFoot.service2">Ankle Sprain and Ligament Reconstruction</li>
+              <li data-i18n="handFoot.service3">Achilles tendon rupture and tendinopathy</li>
+              <li data-i18n="handFoot.service4">Plantar Fasciitis and Heel Pain</li>
+              <li data-i18n="handFoot.service5">Carpal Tunnel Syndrome</li>
+              <li data-i18n="handFoot.service6">TFCC Tears and Wrist Instability</li>
+              <li data-i18n="handFoot.service7">Trigger Finger</li>
+            </ul>
+
+          </div>
+          <div class="center-banner-doctor" data-center-banner-reveal="up">
+            <img src="/assets/hand-foot-center/doctor.webp" alt="김세훈 원장" data-i18n-alt="handFoot.doctorAlt" width="1000" height="1500" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <div class="center-treatment-list" aria-label="손발 전담센터 치료" data-i18n-label="centerTreatments.arthroscopyListLabel">
+        <article class="center-treatment" id="hand-foot-mica" aria-labelledby="hand-foot-mica-title" data-figma-node="1207:5596">
+          <div class="center-treatment-hero"><div class="center-treatment-copy"><h3 class="center-treatment-title" data-center-treatment="micaTitle" id="hand-foot-mica-title" lang="en">Minimally Invasive Hallux Valgus Surgery (MICA)</h3><p class="center-treatment-description" data-center-treatment="micaDescription">최소 절개로 변형된 발을 정밀하게 교정하는 무지외반증 수술입니다.</p></div><img class="center-treatment-image" src="/assets/hand-foot-center/mica/hero.webp" alt="최소침습 무지외반증 수술을 시행하는 흥K병원 의료진" data-i18n-alt="centerTreatments.micaHeroAlt" width="4096" height="2731" loading="lazy"></div>
+          <details class="center-treatment-disclosure"><summary class="center-treatment-toggle" aria-controls="hand-foot-mica-panel"><span class="center-treatment-toggle-context" data-center-treatment="micaToggleContext">최소침습 무지외반증 수술 MICA 상세 내용 </span><span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span><span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span><svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+          <div class="center-treatment-panel" id="hand-foot-mica-panel"><div class="center-treatment-content" data-figma-node="1207:5503"><div class="center-treatment-chapter">
+<img class="center-treatment-watermark" src="/assets/knee-center/mako/watermark.webp" alt="" width="628" height="565" loading="lazy" aria-hidden="true">
+<div class="center-treatment-block"><div class="center-treatment-reading-copy center-treatment-reading-copy--compact"><h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="micaLead">2~3mm의 최소 절개를 통해 변형된 발의 뼈를 정밀하게 교정하여 통증 부담은 줄이고 빠른 회복을 돕는 최소침습 무지외반증 수술입니다.</h4><p data-center-treatment="micaBody1">MICA 수술은 무지외반증을 교정하기 위한 최소침습 수술로, 부분마취 하에 피부에 2~3mm 크기의 절개(구멍 3-5개 정도)를 시행한 뒤, 실시간 방사선 영상장치를 보면서 특수 기구를 삽입해 변형된 뼈를 세밀하게 절골하고, 올바른 배열로 교정하는 방식입니다.</p><p data-center-treatment="micaBody2">이후 튀어나온 일부 뼈를 제거하고, 특수 나사를 이용해 단단히 고정하여 마무리합니다.</p></div></div></div>
+<section class="center-treatment-block" aria-labelledby="mica-steps"><h4 class="center-treatment-heading" data-center-treatment="micaStepsHeading" id="mica-steps">MICA 수술과정</h4><ol class="center-treatment-sequence center-treatment-sequence--five"><li><figure><img src="/assets/hand-foot-center/mica/step-1.webp" alt="" width="1536" height="1024" loading="lazy"><figcaption class="center-treatment-step-caption" data-center-treatment="micaStep1">최소 침습으로 교정이 필요한 부위에 접근</figcaption></figure></li>
+<li><span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span><figure><img src="/assets/hand-foot-center/mica/step-2.webp" alt="" width="1536" height="1024" loading="lazy"><figcaption class="center-treatment-step-caption" data-center-treatment="micaStep2">실시간 C-arm 촬영을 통해 세밀하게 중족골을 절골</figcaption></figure></li>
+<li><span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span><figure><img src="/assets/hand-foot-center/mica/step-3.webp" alt="" width="1536" height="1024" loading="lazy"><figcaption class="center-treatment-step-caption" data-center-treatment="micaStep3">절골한 뼈를 올바른 배열로 배치</figcaption></figure></li>
+<li><span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span><figure><img src="/assets/hand-foot-center/mica/step-4.webp" alt="" width="1536" height="1024" loading="lazy"><figcaption class="center-treatment-step-caption" data-center-treatment="micaStep4">튀어나온 일부 뼈를 삭제</figcaption></figure></li>
+<li><span class="center-treatment-sequence-arrow" aria-hidden="true"><img src="/assets/knee-center/cartistem/flow-arrow.svg" alt="" width="43.5" height="45" loading="lazy"></span><figure><img src="/assets/hand-foot-center/mica/step-5.webp" alt="" width="1536" height="1024" loading="lazy"><figcaption class="center-treatment-step-caption" data-center-treatment="micaStep5">특수나사를 활용해 해당 부분을 단단하게 고정</figcaption></figure></li>
+</ol></section>
+<section class="center-treatment-block center-treatment-row center-treatment-row--comparison" aria-labelledby="mica-comparison"><h4 class="center-treatment-heading" data-center-treatment="micaComparisonHeading" id="mica-comparison">기존 개방형 수술과의 비교</h4>
+<table class="center-treatment-comparison-matrix" aria-labelledby="mica-comparison"><thead><tr><th scope="col"><span data-center-treatment="micaOpenHeading">기존 개방형 수술</span></th><td></td><th scope="col"><span data-center-treatment="micaMicaHeading">MICA 수술</span></th></tr></thead><tbody>
+<tr data-center-treatment-reveal><td><div class="center-treatment-comparison-photo center-treatment-comparison-photo--open"><img src="/assets/hand-foot-center/mica/open-surgery.webp" alt="기존 개방형 수술의 절개 부위를 나타낸 발 그림" data-i18n-alt="centerTreatments.micaOpenAlt" width="1928" height="816" loading="lazy" data-center-treatment-reveal="none"></div></td><th scope="row"><span data-center-treatment="micaPhotosLabel">비교사진</span></th><td><div class="center-treatment-comparison-photo center-treatment-comparison-photo--mica"><img src="/assets/hand-foot-center/mica/open-surgery.webp" alt="MICA 수술의 작은 절개 부위를 나타낸 발 그림" data-i18n-alt="centerTreatments.micaMicaAlt" width="1928" height="816" loading="lazy" data-center-treatment-reveal="none"></div></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="micaCompare1Open">평균 4~10cm 절개하여 수술</span></td><th scope="row"><span data-center-treatment="micaCompare1Label">절개범위</span></th><td><span data-center-treatment="micaCompare1Mica">약 2mm의 미세한 구멍을 내어 최소침습 수술</span></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="micaCompare2Open">40~50분 소요</span></td><th scope="row"><span data-center-treatment="micaCompare2Label">수술시간</span></th><td><span data-center-treatment="micaCompare2Mica">15~20분 이내</span></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="micaCompare3Open">수술 시 출혈, 부작용</span></td><th scope="row"><span data-center-treatment="micaCompare3Label">출혈 및 부작용</span></th><td><span data-center-treatment="micaCompare3Mica">수술 시 출혈, 부작용 최소화</span></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="micaCompare4Open">수술 후 통증</span></td><th scope="row"><span data-center-treatment="micaCompare4Label">통증</span></th><td><span data-center-treatment="micaCompare4Mica">수술 후 통증 최소화</span></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="micaCompare5Open">수술 후 흉터 발생</span></td><th scope="row"><span data-center-treatment="micaCompare5Label">수술 후 흉터</span></th><td><span data-center-treatment="micaCompare5Mica">수술 후 흉터 거의 없음</span></td></tr>
+</tbody></table></section>
+<section class="center-treatment-block center-treatment-results" aria-labelledby="mica-cases"><h4 class="center-treatment-heading" data-center-treatment="micaCasesHeading" id="mica-cases">MICA 수술 전 후</h4><div class="center-treatment-result-pair center-treatment-result-pair--mica"><figure><div class="center-treatment-annotated-photo" style="--image-ratio:384/568" data-center-treatment-reveal><img src="/assets/hand-foot-center/mica/before-xray.webp" alt="MICA 수술 전 무지외반증 엑스레이와 붉은 정렬 안내선" data-i18n-alt="centerTreatments.micaBeforeXrayAlt" width="384" height="568" loading="lazy" data-center-treatment-reveal="none"><img class="center-treatment-photo-guide" src="/assets/hand-foot-center/mica/before-xray-guide.svg" alt="" width="384" height="568" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-before" data-center-treatment="micaBefore">수술 전</figcaption></figure><figure><div class="center-treatment-annotated-photo" style="--image-ratio:385/568" data-center-treatment-reveal><img src="/assets/hand-foot-center/mica/after-xray.webp" alt="MICA 수술 후 교정된 발의 엑스레이와 민트색 정렬 안내선" data-i18n-alt="centerTreatments.micaAfterXrayAlt" width="385" height="568" loading="lazy" data-center-treatment-reveal="none"><img class="center-treatment-photo-guide" src="/assets/hand-foot-center/mica/after-xray-guide.svg" alt="" width="385" height="568" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-after" data-center-treatment="micaAfter">수술 후</figcaption></figure></div>
+<div class="center-treatment-result-pair center-treatment-result-pair--mica"><figure><div class="center-treatment-annotated-photo" style="--image-ratio:384/312" data-center-treatment-reveal><img src="/assets/hand-foot-center/mica/before-photo.webp" alt="MICA 수술 전 양쪽 발의 엑스레이와 붉은 정렬 안내선" data-i18n-alt="centerTreatments.micaBeforePhotoAlt" width="484" height="401" loading="lazy" data-center-treatment-reveal="none"><img class="center-treatment-photo-guide" src="/assets/hand-foot-center/mica/before-photo-guide.svg" alt="" width="384" height="312" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-before" data-center-treatment="micaBefore">수술 전</figcaption></figure><figure><div class="center-treatment-annotated-photo" style="--image-ratio:384/312" data-center-treatment-reveal><img src="/assets/hand-foot-center/mica/after-photo.webp" alt="MICA 수술 후 양쪽 발의 엑스레이와 민트색 정렬 안내선" data-i18n-alt="centerTreatments.micaAfterPhotoAlt" width="941" height="694" loading="lazy" data-center-treatment-reveal="none"><img class="center-treatment-photo-guide" src="/assets/hand-foot-center/mica/after-photo-guide.svg" alt="" width="384" height="312" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-after" data-center-treatment="micaAfter">수술 후</figcaption></figure></div>
+</section></div></div></details>
+        </article>
+        <article class="center-treatment" id="hand-foot-arthroscopy" aria-labelledby="hand-foot-arthroscopy-title" data-figma-node="817:3657">
+          <div class="center-treatment-hero">
+            <div class="center-treatment-copy">
+              <h3 class="center-treatment-title" data-center-treatment="arthroscopyTitle" id="hand-foot-arthroscopy-title" lang="en">Wrist &amp; Ankle Arthroscopy</h3>
+              <p class="center-treatment-description" data-center-treatment="arthroscopyDescription">작은 절개를 통해 손목과 발목 관절 내부를 직접 확인하고 미세한 병변을 정밀하게 진단 및 치료하는 관절경 수술입니다.</p>
+            </div>
+            <img class="center-treatment-image" src="/assets/hand-foot-center/arthroscopy/hero.webp" alt="손목·발목 관절경 수술을 시행하는 흥K병원 의료진" data-i18n-alt="centerTreatments.arthroscopyHeroAlt" width="4096" height="2731" loading="lazy">
+          </div>
+          <details class="center-treatment-disclosure">
+            <summary class="center-treatment-toggle" aria-controls="hand-foot-arthroscopy-panel">
+              <span class="center-treatment-toggle-context" data-center-treatment="arthroscopyToggleContext">손목·발목 관절경 수술 상세 내용 </span>
+              <span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span>
+              <span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span>
+              <svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="center-treatment-panel" id="hand-foot-arthroscopy-panel">
+              <div class="center-treatment-content" data-figma-node="817:3659">
+                <div class="center-treatment-chapter">
+                  <img class="center-treatment-watermark" src="/assets/knee-center/mako/watermark.webp" alt="" width="628" height="565" loading="lazy" aria-hidden="true">
+                  <div class="center-treatment-block center-treatment-media-copy center-treatment-media-copy--wrist">
+                    <img class="center-treatment-media-photo" src="/assets/hand-foot-center/arthroscopy/wrist.webp" alt="손목 관절 내부를 확인하는 관절경 수술 그림" data-i18n-alt="centerTreatments.arthroscopyWristAlt" width="1670" height="942" loading="lazy">
+                    <div>
+                      <h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="arthroscopyWristLead">손목 관절내시경 수술은 손목 관절 내부를 직접 관찰하면서 동시에 치료까지 할 수 있는 최소 침습 수술 방법입니다.</h4>
+                      <p data-center-treatment="arthroscopyWristBody1">기존에는 손상 부위를 확인하거나 치료하기 위해 비교적 큰 절개가 필요했지만, 최근에는 약 5mm~1cm 이하의 작은 절개를 통해 내시경을 삽입하고, 고해상도 영상으로 관절 내부 구조를 실시간으로 확인하며 수술이 가능합니다.</p>
+                      <p data-center-treatment="arthroscopyWristBody2">이를 통해 정확한 진단과 동시에 인대, 연골, 삼각섬유연골복합체(TFCC) 등의 손상 부위를 치료할 수 있습니다.</p>
+                    </div>
+                  </div>
+                  <section class="center-treatment-block center-treatment-benefits" aria-labelledby="arthroscopy-wristindications">
+                    <h4 class="center-treatment-heading center-treatment-heading--neutral" id="arthroscopy-wristindications"><span data-center-treatment="arthroscopyWristIndicationsPrefix">어떤 경우에 </span><span class="center-treatment-emphasis" data-center-treatment="arthroscopyWristIndicationsEmphasis">손목 관절 내시경</span><span data-center-treatment="arthroscopyWristIndicationsSuffix">이 필요할까요?</span></h4>
+                    <ul class="center-treatment-benefit-grid center-treatment-benefit-grid--five">
+                    <li><img src="/assets/hand-foot-center/arthroscopy/wrist-icon-1.webp" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyWrist1Title">삼각섬유연골복합체(TFCC) 손상</h5><p data-center-treatment="arthroscopyWrist1Body">손목의 새끼손가락 쪽을 지지하는 조직이 손상되어 통증이나 움직임의 불편함이 생기는 질환입니다.</p></li>
+                    <li><img src="/assets/hand-foot-center/arthroscopy/wrist-icon-2.webp" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyWrist2Title">손목 인대 파열 및 불안정성</h5><p data-center-treatment="arthroscopyWrist2Body">손목을 잡아주는 인대가 손상되어 통증이 생기고 손목이 흔들리거나 불안정해지는 상태입니다.</p></li>
+                    <li><img src="/assets/hand-foot-center/arthroscopy/wrist-icon-3.webp" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyWrist3Title">초기 손목 관절염</h5><p data-center-treatment="arthroscopyWrist3Body">손목 관절의 연골이 닳기 시작하면서 통증과 뻣뻣함, 움직임의 불편함이 나타나는 상태입니다.</p></li>
+                    <li><img src="/assets/hand-foot-center/arthroscopy/wrist-icon-4.webp" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyWrist4Title">관절 내 유리체(조각) 제거</h5><p data-center-treatment="arthroscopyWrist4Body">손목 관절 안에 생긴 작은 뼈나 연골 조각으로 인한 통증과 걸림을 제거하는 치료입니다.</p></li>
+                    <li><img src="/assets/hand-foot-center/arthroscopy/wrist-icon-5.webp" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyWrist5Title">명확한 원인이 확인되지 않는 만성 손목 통증</h5><p data-center-treatment="arthroscopyWrist5Body">특별한 원인을 찾기 어려워도 지속되는 손목 통증의 원인을 찾아 증상을 개선하는 치료입니다.</p></li>
+                    </ul>
+                  </section>
+                </div>
+                <div class="center-treatment-chapter">
+                  
+                  <div class="center-treatment-block center-treatment-media-copy center-treatment-media-copy--ankle">
+                    <img class="center-treatment-media-photo" src="/assets/hand-foot-center/arthroscopy/ankle.webp" alt="발목 관절 내부를 확인하는 관절경 수술 그림" data-i18n-alt="centerTreatments.arthroscopyAnkleAlt" width="809" height="650" loading="lazy">
+                    <div>
+                      <h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="arthroscopyAnkleLead">발목에 작은 절개를 내고 관절경을 삽입해, 관절 내부의 질환을 직접 확인하고 치료하는 최소침습 수술입니다.</h4>
+                      <p data-center-treatment="arthroscopyAnkleBody1">발목 관절내시경 수술은 관절 부위에 1cm 미만의 최소 절개를 가한 뒤, 관절경과 특수 수술 기구를 삽입하여 질환을 진단하고 치료하는 최소침습 수술입니다.</p>
+                      <p data-center-treatment="arthroscopyAnkleBody2">발목 관절은 무릎이나 어깨에 비해 구조가 작고 정밀한 조작이 요구되기 때문에, 2.5mm 크기의 소관절 전용 내시경을 사용하여 치료합니다.</p>
+                    </div>
+                  </div>
+                  <section class="center-treatment-block center-treatment-benefits" aria-labelledby="arthroscopy-ankleindications">
+                    <h4 class="center-treatment-heading center-treatment-heading--neutral" id="arthroscopy-ankleindications"><span data-center-treatment="arthroscopyAnkleIndicationsPrefix">어떤 경우에 </span><span class="center-treatment-emphasis" data-center-treatment="arthroscopyAnkleIndicationsEmphasis">발목 관절 내시경</span><span data-center-treatment="arthroscopyAnkleIndicationsSuffix">이 필요할까요?</span></h4>
+                    <ul class="center-treatment-benefit-grid center-treatment-benefit-grid--five">
+                    <li><img src="/assets/hand-foot-center/arthroscopy/ankle-icon-1.webp" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyAnkle1Title">발목 염좌 후 만성 통증 지속</h5><p data-center-treatment="arthroscopyAnkle1Body">발목을 삔 후에도 통증이나 불편함이 오래 지속되는 경우, 관절 내부의 손상 여부를 확인하고 치료합니다.</p></li>
+                    <li><img src="/assets/hand-foot-center/arthroscopy/ankle-icon-2.webp" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyAnkle2Title">연골 손상 및 박리성 골연골염 (OCD)</h5><p data-center-treatment="arthroscopyAnkle2Body">발목 관절의 연골과 뼈가 손상되어 통증이나 움직임의 제한이 생기는 상태를 확인하고 치료합니다.</p></li>
+                    <li><img src="/assets/hand-foot-center/arthroscopy/ankle-icon-3.webp" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyAnkle3Title">관절 내 유리체</h5><p data-center-treatment="arthroscopyAnkle3Body">관절 안에 생긴 작은 뼈나 연골 조각으로 인해 통증이나 걸림이 발생하는 경우 이를 제거합니다.</p></li>
+                    <li><img src="/assets/hand-foot-center/arthroscopy/ankle-icon-4.webp" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyAnkle4Title">충돌 증후군</h5><p data-center-treatment="arthroscopyAnkle4Body">발목을 움직일 때 관절 주변 조직이나 뼈가 서로 부딪혀 통증이 발생하는 상태를 확인하고 치료합니다.</p></li>
+                    <li><img src="/assets/hand-foot-center/arthroscopy/ankle-icon-5.webp" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyAnkle5Title">발목 불안정증 진단 보조</h5><p data-center-treatment="arthroscopyAnkle5Body">발목이 자주 접질리거나 흔들리는 경우 관절 내부를 확인하여 불안정성의 원인을 파악하는 데 도움을 줍니다.</p></li>
+                    </ul>
+                  </section>
+                </div>
+                <section class="center-treatment-block center-treatment-benefits" aria-labelledby="arthroscopy-benefitsheading">
+                  <h4 class="center-treatment-heading center-treatment-heading--neutral" id="arthroscopy-benefitsheading"><span class="center-treatment-emphasis" data-center-treatment="arthroscopyBenefitsHeadingEmphasis">흥K병원</span><span data-center-treatment="arthroscopyBenefitsHeadingSuffix">의 손목 발목 관절 내시경 치료, 무엇이 다를까요?</span></h4>
+                  <ul class="center-treatment-benefit-grid center-treatment-benefit-grid--five center-treatment-benefit-grid--full">
+                    <li><img src="/assets/hand-foot-center/arthroscopy/benefit-precision.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyBenefits1Title">정밀한 진단과 치료</h5><p data-center-treatment="arthroscopyBenefits1Body">MRI나 X-ray 등 영상검사에서 확인하기 어려운 미세한 인대·연골 손상까지 직접 확인하고 치료합니다.</p></li>
+                    <li><img src="/assets/knee-center/cruciate/benefit-preserve.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyBenefits2Title">관절 기능 보존</h5><p data-center-treatment="arthroscopyBenefits2Body">정상 조직은 최대한 보존하고 병변만 선택적으로 치료합니다.</p></li>
+                    <li><img src="/assets/treatment/tj3.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyBenefits3Title">작은 절개, 통증과 흉터 최소화</h5><p data-center-treatment="arthroscopyBenefits3Body">약 0.5~1cm의 작은 절개로 피부 흉터 부담이 적고 주변 조직 손상이 거의 없어 통증과 출혈도 최소화됩니다.</p></li>
+                    <li><img src="/assets/hand-foot-center/arthroscopy/benefit-safe.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyBenefits4Title">수술 후 합병증 위험 감소</h5><p data-center-treatment="arthroscopyBenefits4Body">불필요한 조직 손상이 거의 없는 정밀 수술로, 감염과 염증 등 수술 후 합병증 위험이 낮고 빠르고 안전한 회복이 가능합니다.</p></li>
+                    <li><img src="/assets/treatment/tj4.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="arthroscopyBenefits5Title">빠른 회복과 일상 복귀 가능</h5><p data-center-treatment="arthroscopyBenefits5Body">수술 시간이 짧고 회복이 빠르기 때문에, 빠르게 일상으로 복귀할 수 있습니다.</p></li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </details>
+        </article>
+      </div>
+
+      <!-- 척추 전담센터 배너: 문구·사진·진료 목록은 이 HTML에서 편집합니다. -->
+      <section class="center-banner spine-center-banner" id="spine-center" aria-labelledby="spine-center-title" data-figma-node="817:4307">
+        <div class="center-banner-stage">
+          <div class="center-banner-background" aria-hidden="true">
+            <svg class="center-banner-grid" width="1919" height="846" aria-hidden="true" focusable="false">
+              <defs><pattern id="spine-center-grid-pattern" width="294.4" height="512" patternUnits="userSpaceOnUse"><image href="/assets/knee-center/bggrid.png" width="294.4" height="512" /></pattern></defs>
+              <rect width="100%" height="100%" fill="url(#spine-center-grid-pattern)" />
+            </svg>
+            <img class="center-banner-wave" src="/assets/knee-center/gold-wave.png" alt="" width="1200" height="600" loading="lazy">
+            <img class="center-banner-texture" src="/assets/knee-center/blue-texture.png" alt="" width="1920" height="1674" loading="lazy">
+            <img class="center-banner-surgery center-banner-surgery--right" src="/assets/spine-center/background-right.webp" alt="" width="881" height="600" loading="lazy">
+            <img class="center-banner-surgery center-banner-surgery--left" src="/assets/spine-center/background-left.webp" alt="" width="900" height="600" loading="lazy">
+          </div>
+          <div class="center-banner-copy">
+            <div class="center-banner-title-wrap" data-center-banner-reveal>
+              <img class="center-banner-laurel center-banner-laurel--left" src="/assets/knee-center/laurel.png" alt="" width="1024" height="1536" loading="lazy">
+              <h2 class="center-banner-title" id="spine-center-title"><span data-i18n="spine.hospital">흥K병원</span><span data-i18n="spine.title">척추 전담센터</span></h2>
+              <img class="center-banner-laurel center-banner-laurel--right" src="/assets/knee-center/laurel.png" alt="" width="1024" height="1536" loading="lazy">
+            </div>
+            <div class="center-banner-description" data-center-banner-reveal>
+              <p data-i18n="spine.description1">정밀 진단부터 비수술 치료, 고난도 수술과 재활까지.</p>
+              <p data-i18n="spine.description2">척추 질환에 특화된 진료 시스템으로 치료의 완성도를 높입니다.</p>
+            </div>
+            <ul class="center-banner-services" lang="en" data-center-banner-reveal>
+              <li data-i18n="spine.service1">Cervical and Lumbar Disc Herniation</li>
+              <li data-i18n="spine.service2">Spinal Stenosis</li>
+              <li data-i18n="spine.service3">Chronic Neck and Low Back Pain</li>
+              <li data-i18n="spine.service4">Spondylolisthesis</li>
+              <li data-i18n="spine.service5">Spinal Compression Fractures</li>
+              <li data-i18n="spine.service6">Biportal Endoscopic Spine Surgery (BESS)</li>
+              <li data-i18n="spine.service7">Minimally Invasive Spinal Fusion</li>
+            </ul>
+
+          </div>
+          <div class="spine-center-doctors">
+            <div class="center-banner-doctor spine-center-doctor--left" data-center-banner-reveal="up">
+              <img src="/assets/spine-center/doctor-cho.webp" alt="조남익 원장" data-i18n-alt="spine.doctorChoAlt" width="1024" height="1536" loading="lazy">
+            </div>
+            <div class="center-banner-doctor spine-center-doctor--right" data-center-banner-reveal="up">
+              <img src="/assets/spine-center/doctor-yoon.webp" alt="윤상훈 원장" data-i18n-alt="spine.doctorYoonAlt" width="1024" height="1536" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="center-treatment-list" aria-label="척추 전담센터 치료" data-i18n-label="centerTreatments.bessListLabel">
+        <article class="center-treatment" id="spine-bess" aria-labelledby="spine-bess-title" data-figma-node="817:4629">
+          <div class="center-treatment-hero"><div class="center-treatment-copy"><h3 class="center-treatment-title" data-center-treatment="bessTitle" id="spine-bess-title" lang="en">Biportal Endoscopic Spine Surgery (BESS)</h3><p class="center-treatment-description" data-center-treatment="bessDescription">확대된 내시경 시야를 바탕으로 신경 압박 병변을 정밀하게 제거하는 척추 수술입니다.</p></div><div class="center-treatment-hero-photo center-treatment-hero-photo--bess"><img class="center-treatment-image" src="/assets/spine-center/bess/hero.webp" alt="내시경 화면을 보며 시행하는 양방향 척추 내시경 수술" data-i18n-alt="centerTreatments.bessHeroAlt" width="1480" height="1062" loading="lazy"></div></div>
+          <details class="center-treatment-disclosure"><summary class="center-treatment-toggle" aria-controls="spine-bess-panel"><span class="center-treatment-toggle-context" data-center-treatment="bessToggleContext">양방향 척추 내시경 수술 BESS 상세 내용 </span><span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span><span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span><svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="center-treatment-panel" id="spine-bess-panel"><div class="center-treatment-content" data-figma-node="817:4541"><div class="center-treatment-chapter"><img class="center-treatment-watermark" src="/assets/knee-center/mako/watermark.webp" alt="" width="628" height="565" loading="lazy" aria-hidden="true"><div class="center-treatment-block center-treatment-media-copy center-treatment-media-copy--halves"><div><h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="bessLead">두 개의 작은 절개로 넓은 시야와 정교한 치료를 구현하는 최소침습 척추 내시경 수술입니다.</h4><div class="center-treatment-reading-copy center-treatment-reading-copy--narrow"><p data-center-treatment="bessBody1">양방향 척추 내시경 수술(BESS)은 두 개의 작은 절개창을 통해 한쪽에는 내시경을, 다른 한쪽에는 수술 기구를 삽입하여 신경을 압박하는 병변을 제거하는 최소침습 척추수술입니다.</p><p data-center-treatment="bessBody2">내시경과 수술 기구가 각각 독립적으로 움직이기 때문에 넓고 확대된 시야를 확보하면서 정교한 수술이 가능합니다.</p></div></div><div class="center-treatment-incision-photo"><div class="center-treatment-annotated-photo" style="--image-ratio:353 / 454" data-center-treatment-reveal><img src="/assets/spine-center/bess/intro.webp" alt="BESS 수술 후 9mm와 7mm 절개 크기가 표시된 사진" data-i18n-alt="centerTreatments.bessIntroAlt" width="353" height="454" loading="lazy" data-center-treatment-reveal="none"><img class="center-treatment-photo-guide" src="/assets/spine-center/bess/intro-guide.svg" alt="" width="353" height="454" loading="lazy" data-center-treatment-reveal="none"></div></div></div></div>
+<section class="center-treatment-block center-treatment-benefits" aria-labelledby="bess-benefits"><h4 class="center-treatment-heading" data-center-treatment="bessBenefitsHeading" id="bess-benefits">BESS의 장점</h4><ul class="center-treatment-benefit-grid center-treatment-benefit-grid--four-spaced"><li><img src="/assets/spine-center/bess/benefit-minimal.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="bessBenefit1Title">최소 침습적 수술</h5><p data-center-treatment="bessBenefit1Body">약 0.7cm 최소 절개만으로 진행되므로 근육손상과 통증, 수술 후 염증 가능성을 최소화 할 수 있습니다.</p></li>
+<li><img src="/assets/hand-foot-center/arthroscopy/benefit-precision.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="bessBenefit2Title">정확한 진단과 치료</h5><p data-center-treatment="bessBenefit2Body">고해상도 내시경 카메라로 척추 내부 상태를 정밀하게 관찰하기 때문에 진단과 치료가 가능합니다.</p></li>
+<li><img src="/assets/hand-foot-center/arthroscopy/benefit-safe.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="bessBenefit3Title">합병증 위험 감소</h5><p data-center-treatment="bessBenefit3Body">주변 정상 부위를 최대한 보호하면서 병변 부위만 정교히 치료하므로 수술 후 합병증 발생 확률이 낮습니다.</p></li>
+<li><img src="/assets/treatment/tj4.svg" alt="" width="100" height="100" loading="lazy"><h5 data-center-treatment="bessBenefit4Title">빠른 회복과 일상 복귀</h5><p data-center-treatment="bessBenefit4Body">조직 손상이 최소화되어 회복 속도가 빠르고, 일상으로의 복귀가 원활하게 이루어집니다.</p></li>
+</ul></section>
+<section class="center-treatment-block center-treatment-results" aria-labelledby="bess-cases"><h4 class="center-treatment-heading" data-center-treatment="bessCasesHeading" id="bess-cases">BESS 수술 전 후</h4><div class="center-treatment-result-pair center-treatment-result-pair--grouped center-treatment-result-pair--original" style="--result-width:781px;--result-frame-width:387px"><figure><div class="center-treatment-annotated-photo" style="--image-ratio:387 / 360" data-center-treatment-reveal><img src="/assets/spine-center/bess/before-1.webp" alt="BESS 수술 전 신경 압박 부위의 MRI 영상" data-i18n-alt="centerTreatments.bessBefore1Alt" width="418" height="389" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-before" data-center-treatment="bessBefore">수술 전</figcaption></figure><figure><div class="center-treatment-annotated-photo" style="--image-ratio:387 / 360" data-center-treatment-reveal><img src="/assets/spine-center/bess/after-1.webp" alt="BESS 수술 후 신경 감압 부위가 표시된 MRI 영상" data-i18n-alt="centerTreatments.bessAfter1Alt" width="418" height="389" loading="lazy" data-center-treatment-reveal="none"><img class="center-treatment-photo-guide" src="/assets/spine-center/bess/after-1-guide.svg" alt="" width="418" height="389" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-after" data-center-treatment="bessAfter">수술 후</figcaption></figure></div>
+<div class="center-treatment-result-pair center-treatment-result-pair--grouped center-treatment-result-pair--original" style="--result-width:781px;--result-frame-width:387px"><figure><div class="center-treatment-annotated-photo" style="--image-ratio:387 / 360" data-center-treatment-reveal><img src="/assets/spine-center/bess/before-2.webp" alt="BESS 수술 전 병변 부위의 내시경 영상" data-i18n-alt="centerTreatments.bessBefore2Alt" width="403" height="387" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-before" data-center-treatment="bessBefore">수술 전</figcaption></figure><figure><div class="center-treatment-annotated-photo" style="--image-ratio:387 / 360" data-center-treatment-reveal><img src="/assets/spine-center/bess/after-2.webp" alt="BESS 수술 후 치료 부위의 내시경 영상" data-i18n-alt="centerTreatments.bessAfter2Alt" width="407" height="387" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-after" data-center-treatment="bessAfter">수술 후</figcaption></figure></div>
+</section></div></div></details>
+        </article>
+        <article class="center-treatment" id="spine-fusion" aria-labelledby="spine-fusion-title" data-figma-node="1223:9796">
+          <div class="center-treatment-hero"><div class="center-treatment-copy"><h3 class="center-treatment-title" data-center-treatment="fusionTitle" id="spine-fusion-title" lang="en">Minimally Invasive Spinal Fusion</h3><p class="center-treatment-description" data-center-treatment="fusionDescription">작은 절개를 통해 신경 감압과 척추 고정을 동시에 시행하는 최소침습 척추 수술입니다.</p></div><img class="center-treatment-image" src="/assets/spine-center/fusion/hero.webp" alt="최소침습 척추유합술을 시행하는 흥K병원 의료진" data-i18n-alt="centerTreatments.fusionHeroAlt" width="4096" height="2731" loading="lazy"></div>
+          <details class="center-treatment-disclosure"><summary class="center-treatment-toggle" aria-controls="spine-fusion-panel"><span class="center-treatment-toggle-context" data-center-treatment="fusionToggleContext">최소침습 척추유합술 상세 내용 </span><span class="center-treatment-more" lang="en" data-center-treatment="seeMore">SEE MORE</span><span class="center-treatment-less" lang="en" data-center-treatment="seeLess">SEE LESS</span><svg viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="center-treatment-panel" id="spine-fusion-panel"><div class="center-treatment-content" data-figma-node="1223:9797"><div class="center-treatment-chapter"><img class="center-treatment-watermark" src="/assets/knee-center/mako/watermark.webp" alt="" width="628" height="565" loading="lazy" aria-hidden="true"><div class="center-treatment-block center-treatment-media-copy center-treatment-media-copy--halves"><div><h4 class="center-treatment-heading center-treatment-heading--plain" data-center-treatment="fusionLead">인공 디스크와 나사못으로 척추를 안정적으로 고정하는 최소침습 척추유합술입니다.</h4><div class="center-treatment-reading-copy center-treatment-reading-copy--narrow"><p data-center-treatment="fusionBody1">허리에 미세한 구멍 4개를 뚫어 통증의 원인이 되는 손상된 뼈와 인대 조직을 제거해 신경 압박을 풀어주고 문제가 되는 디스크를 제거한 뒤, 인공 디스크를 넣어 지지하고 척추 뼈가 불안정하게 흔들리지 않도록 특수 기구를 이용해 나사못으로 척추 뼈를 고정하는 수술입니다.</p><p data-center-treatment="fusionBody2">기존 개방형 척추유합술보다 절개 범위와 주변 조직 손상을 줄인 최소침습 치료법으로, 척추전방전위증이나 척추 불안정성을 동반한 심한 척추관협착증, 감압술만으로 척추의 안정성을 유지하기 어려운 경우 등에 시행할 수 있습니다.</p></div></div><img class="center-treatment-diagram-photo" src="/assets/spine-center/fusion/intro.webp" alt="척추 뼈를 지지하는 케이지와 고정 나사못의 구조 그림" data-i18n-alt="centerTreatments.fusionIntroAlt" width="400" height="400" loading="lazy"></div></div>
+<section class="center-treatment-block center-treatment-benefits" aria-labelledby="fusion-benefits"><h4 class="center-treatment-heading" data-center-treatment="fusionBenefitsHeading" id="fusion-benefits">양방향 내시경 척추 유합술 장점</h4><ul class="center-treatment-benefit-grid center-treatment-benefit-grid--four-spaced"><li><img src="/assets/spine-center/fusion/benefit-precision.svg" alt="" width="100" height="100" loading="lazy"><h5 data-i18n-static="항목 순번">01</h5><p data-center-treatment="fusionBenefit1Body">미세현미경, 척추내시경 등 특수 정밀 기구를 사용하여 정확도가 매우 우수함</p></li>
+<li><img src="/assets/spine-center/bess/benefit-minimal.svg" alt="" width="100" height="100" loading="lazy"><h5 data-i18n-static="항목 순번">02</h5><p data-center-treatment="fusionBenefit2Body">기존 수술법에 비해 신체 손상이 적고 재발 위험이 극히 낮음</p></li>
+<li><img src="/assets/treatment/tj4.svg" alt="" width="100" height="100" loading="lazy"><h5 data-i18n-static="항목 순번">03</h5><p data-center-treatment="fusionBenefit3Body">입원 및 재활 치료 기간이 짧아 신속한 일상 복귀 가능함</p></li>
+<li><img src="/assets/hand-foot-center/arthroscopy/benefit-precision.svg" alt="" width="100" height="100" loading="lazy"><h5 data-i18n-static="항목 순번">04</h5><p data-center-treatment="fusionBenefit4Body">기존 수술보다 시야 확보가 좋아 세밀한 부분 치료가 수월함</p></li>
+</ul></section>
+<section class="center-treatment-block center-treatment-results" aria-labelledby="fusion-comparison"><h4 class="center-treatment-heading" data-center-treatment="fusionComparisonHeading" id="fusion-comparison">기존 나사못 수술과의 비교</h4><table class="center-treatment-comparison-matrix center-treatment-comparison-matrix--badges" aria-labelledby="fusion-comparison"><thead><tr><th scope="col"><span data-center-treatment="fusionOpenHeading">기존 나사못 수술</span></th><td></td><th scope="col"><span class="center-treatment-emphasis" data-center-treatment="fusionFusionHeading">양방향 내시경 척추 유합술</span></th></tr></thead><tbody><tr data-center-treatment-reveal><td><span data-center-treatment="fusionCompare1Open">20cm</span></td><th scope="row"><span class="center-treatment-comparison-badge" data-center-treatment="fusionCompare1Label">절개범위</span></th><td><span data-center-treatment="fusionCompare1Fusion">2~3cm</span></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="fusionCompare2Open">근육인대조직 영구손상 유발</span></td><th scope="row"><span class="center-treatment-comparison-badge" data-center-treatment="fusionCompare2Label">근육손상</span></th><td><span data-center-treatment="fusionCompare2Fusion">근육 손상 최소화</span></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="fusionCompare3Open">피부절개가 커 감염 및 합병증 발생률 높음</span></td><th scope="row"><span class="center-treatment-comparison-badge" data-center-treatment="fusionCompare3Label">부작용</span></th><td><span data-center-treatment="fusionCompare3Fusion">감염, 합병증 부작용 발생 현저히 낮음</span></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="fusionCompare4Open">수술 후 통증이 심해 상당한 약물 복용 필요</span></td><th scope="row"><span class="center-treatment-comparison-badge" data-center-treatment="fusionCompare4Label">통증</span></th><td><span data-center-treatment="fusionCompare4Fusion">수술 후 통증이 적어 진통제 등 복용 기간이 짧음</span></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="fusionCompare5Open">혈액 손실이 많아 수혈이 필요</span></td><th scope="row"><span class="center-treatment-comparison-badge" data-center-treatment="fusionCompare5Label">출혈</span></th><td><span data-center-treatment="fusionCompare5Fusion">상처 최소화, 혈액 손실 적음</span></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="fusionCompare6Open">퇴원 후 1년 재활 치료 필요, 일상생활 복귀 지연</span></td><th scope="row"><span class="center-treatment-comparison-badge" data-center-treatment="fusionCompare6Label">회복기간</span></th><td><span data-center-treatment="fusionCompare6Fusion">수술 6개월 후 활동적인 운동 가능</span></td></tr>
+<tr data-center-treatment-reveal><td><span data-center-treatment="fusionCompare7Open">4시간</span></td><th scope="row"><span class="center-treatment-comparison-badge" data-center-treatment="fusionCompare7Label">수술기간</span></th><td><span data-center-treatment="fusionCompare7Fusion">2~3시간</span></td></tr>
+</tbody></table></section>
+<section class="center-treatment-block center-treatment-results" aria-labelledby="fusion-cases"><h4 class="center-treatment-heading" data-center-treatment="fusionCasesHeading" id="fusion-cases">양방향 내시경 척추 유합술 치료 사례</h4><div class="center-treatment-result-pair center-treatment-result-pair--grouped center-treatment-result-pair--original" style="--result-width:710px;--before-share:350fr;--after-share:352fr"><figure style="--result-frame-width:350px"><div class="center-treatment-annotated-photo" style="--image-ratio:350/500" data-center-treatment-reveal><img src="/assets/spine-center/fusion/before-1.webp" alt="척추유합술 전 허리뼈의 측면 엑스레이" data-i18n-alt="centerTreatments.fusionBefore1Alt" width="1007" height="1438" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-before" data-center-treatment="fusionBefore">수술 전</figcaption></figure><figure style="--result-frame-width:352px"><div class="center-treatment-annotated-photo" style="--image-ratio:352/500" data-center-treatment-reveal><img src="/assets/spine-center/fusion/after-1.webp" alt="척추유합술 후 고정 기구가 보이는 허리뼈의 측면 엑스레이" data-i18n-alt="centerTreatments.fusionAfter1Alt" width="1061" height="1506" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-after" data-center-treatment="fusionAfter">수술 후</figcaption></figure></div>
+<div class="center-treatment-result-pair center-treatment-result-pair--grouped center-treatment-result-pair--original" style="--result-width:558px;--before-share:287fr;--after-share:263fr"><figure style="--result-frame-width:287px"><div class="center-treatment-annotated-photo" style="--image-ratio:287/400" data-center-treatment-reveal><img src="/assets/spine-center/fusion/before-2.webp" alt="척추유합술 전 허리뼈의 정면 엑스레이" data-i18n-alt="centerTreatments.fusionBefore2Alt" width="508" height="708" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-before" data-center-treatment="fusionBefore">수술 전</figcaption></figure><figure style="--result-frame-width:263px"><div class="center-treatment-annotated-photo" style="--image-ratio:263/400" data-center-treatment-reveal><img src="/assets/spine-center/fusion/after-2.webp" alt="척추유합술 후 고정 기구가 보이는 허리뼈의 정면 엑스레이" data-i18n-alt="centerTreatments.fusionAfter2Alt" width="288" height="438" loading="lazy" data-center-treatment-reveal="none"></div><figcaption class="center-treatment-result-after" data-center-treatment="fusionAfter">수술 후</figcaption></figure></div>
+</section></div></div></details>
+        </article>
+      </div>
+    </div>
 
   </main>
 </body>

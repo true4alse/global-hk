@@ -1,11 +1,7 @@
 // 콘텐츠를 만들거나 복제하지 않고, 기존 HTML의 번역과 등장 효과만 연결합니다.
-export function renderSpecialty(content = {}) {
+export function renderSpecialty() {
   const section = document.querySelector('#specialty-center');
   if (!section) return;
-  section.querySelectorAll('[data-specialty-alt]').forEach(image => {
-    const text = content[image.dataset.specialtyAlt];
-    if (typeof text === 'string') image.alt = text;
-  });
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   if (motion.matches || !('IntersectionObserver' in window)) return;
   const targets = [...section.querySelectorAll('[data-specialty-reveal]')];

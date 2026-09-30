@@ -1,0 +1,85 @@
+/* 손발 전담센터 시안 817:3599 (1921 × 846)의 차이만 지정합니다. */
+.hand-foot-center-banner {
+  /* background: linear-gradient(180deg, #103a5b, #103a5b 33.75%, #003380 63.59%, #003380); */
+}
+
+.hand-foot-center-banner .center-banner-stage {
+  aspect-ratio: 1921 / 846;
+}
+
+.hand-foot-center-banner .center-banner-copy {
+  padding-top: 3.69599cqw;
+}
+
+.hand-foot-center-banner .center-banner-services {
+  width: 16.60593cqw;
+}
+
+.hand-foot-center-banner .center-banner-wave {
+  top: 7.82582cqw;
+}
+
+.hand-foot-center-banner .center-banner-texture {
+  top: -5.15356cqw;
+}
+
+.hand-foot-center-banner .center-banner-doctor {
+  left: 63.56065%;
+  bottom: 0;
+}
+
+.hand-foot-center-banner .center-banner-surgery--left {
+  top: 16.85442cqw;
+  left: 1.92608%;
+  width: 33.26393%;
+  opacity: .68;
+}
+
+.hand-foot-center-banner .center-banner-surgery--right {
+  top: 4.2563cqw;
+  left: 67.46486%;
+  width: 32.2228%;
+  opacity: .7;
+  transform: none;
+}
+
+@media (max-width: 1200px) {
+  .hand-foot-center-banner .center-banner-stage {
+    aspect-ratio: auto;
+  }
+
+  .hand-foot-center-banner .center-banner-copy {
+    padding-top: 0;
+  }
+
+  .hand-foot-center-banner .center-banner-services {
+    width: fit-content;
+  }
+
+  .hand-foot-center-banner .center-banner-doctor {
+    left: auto;
+  }
+
+  .hand-foot-center-banner .center-banner-surgery--right {
+    top: 0;
+    left: 38%;
+    width: 90%;
+    opacity: .3;
+  }
+
+  .hand-foot-center-banner .center-banner-surgery--left {
+    top: auto;
+    bottom: 0;
+    left: -15%;
+    width: 75%;
+    opacity: .5;
+  }
+
+  .hand-foot-center-banner .center-banner-texture {
+    top: 0;
+  }
+
+  .hand-foot-center-banner .center-banner-wave {
+    top: 400px;
+  }
+}

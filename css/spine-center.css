@@ -1,0 +1,122 @@
+/* 척추 전담센터 시안 817:4307 (1919 × 846)의 배치 차이. */
+.spine-center-banner {
+  /* background: linear-gradient(180deg, #103a5b, #103a5b 33.75%, #003380 63.59%, #003380); */
+}
+
+.spine-center-banner .center-banner-stage {
+  aspect-ratio: 1919 / 846;
+}
+
+.spine-center-banner .center-banner-copy {
+  width: 37.20688%;
+  margin-left: 31.73528%;
+  padding-top: 3.69984cqw;
+}
+
+.spine-center-banner .center-banner-services {
+  width: 16.62324cqw;
+}
+
+.spine-center-banner .center-banner-wave {
+  top: 7.83397cqw;
+  left: 88.32454%;
+}
+
+.spine-center-banner .center-banner-texture {
+  top: -5.159cqw;
+  width: 100.05211%;
+}
+
+.spine-center-banner .center-banner-doctor {
+  bottom: -.18727cqw;
+  width: 19.43721%;
+}
+
+.spine-center-banner .spine-center-doctor--left {
+  left: 16.25847%;
+}
+
+.spine-center-banner .spine-center-doctor--right {
+  left: 62.01146%;
+}
+
+.spine-center-banner .center-banner-surgery--left {
+  top: 3.26179cqw;
+  left: -.57322%;
+  width: 40.2814%;
+  opacity: 1;
+  mix-blend-mode: hard-light;
+}
+
+.spine-center-banner .center-banner-surgery--right {
+  top: 9.3066cqw;
+  left: 63.83533%;
+  width: 39.08286%;
+  opacity: 1;
+  transform: scaleX(-1);
+  mix-blend-mode: hard-light;
+}
+
+@media (max-width: 1200px) {
+  .spine-center-banner .center-banner-stage {
+    aspect-ratio: auto;
+  }
+
+  .spine-center-banner .center-banner-copy {
+    width: min(714px, 100%);
+    margin-inline: auto;
+    padding-top: 0;
+  }
+
+  .spine-center-banner .center-banner-services {
+    width: fit-content;
+  }
+
+  .spine-center-doctors {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    max-width: 680px;
+    margin: 30px auto 0;
+  }
+
+  .spine-center-banner .center-banner-doctor {
+    left: auto;
+    bottom: auto;
+    width: 50%;
+    margin: 0;
+  }
+
+  .spine-center-banner .center-banner-surgery--right {
+    top: 0;
+    left: 38%;
+    width: 90%;
+    opacity: .3;
+  }
+
+  .spine-center-banner .center-banner-surgery--left {
+    top: auto;
+    bottom: 0;
+    left: -15%;
+    width: 75%;
+    opacity: .5;
+  }
+
+  .spine-center-banner .center-banner-texture {
+    top: 0;
+    width: 100%;
+  }
+
+  .spine-center-banner .center-banner-wave {
+    top: 400px;
+    left: 140%;
+  }
+}
+
+@media (max-width: 600px) {
+  .spine-center-doctors {
+    margin-top: 24px;
+    margin-inline: -12px;
+  }
+}

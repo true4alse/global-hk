@@ -1,11 +1,7 @@
 // 콘텐츠 DOM을 만들지 않습니다. 번역, Swiper 동작, 화면 진입 애니메이션만 연결합니다.
-export function renderResearch(content = {}) {
+export function renderResearch() {
   const section = document.querySelector('#research');
   if (!section) return;
-  section.querySelectorAll('[data-research]').forEach(element => {
-    const value = content[element.dataset.research];
-    if (typeof value === 'string') element.textContent = value;
-  });
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const targets = [...section.querySelectorAll('[data-research-reveal]')];
   let revealObserver;
@@ -48,19 +44,19 @@ export function renderResearch(content = {}) {
       if (!shouldPlay && swiper.autoplay.running) swiper.autoplay.stop();
     }
   }
-  function toggleLabel(button, paused, kind) {
+  function toggleLabel(button, paused) {
     button.setAttribute('aria-pressed', String(paused));
     const state = paused ? 'play' : 'pause';
-    button.textContent = content[`${kind}${paused ? 'Play' : 'Pause'}`] || button.dataset[state];
+    button.textContent = button.dataset[state];
   }
   photoToggle.addEventListener('click', () => {
     photoPaused = !photoPaused;
-    toggleLabel(photoToggle, photoPaused, 'photo');
+    toggleLabel(photoToggle, photoPaused);
     syncMotion();
   });
   marqueeToggle.addEventListener('click', () => {
     marqueePaused = !marqueePaused;
-    toggleLabel(marqueeToggle, marqueePaused, 'marquee');
+    toggleLabel(marqueeToggle, marqueePaused);
     syncMotion();
   });
   slider.addEventListener('focusin', () => { focused = true; syncMotion(); });

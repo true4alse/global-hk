@@ -1,11 +1,7 @@
 // 이미지와 본문 구조는 HTML에 두고, 번역과 화면 진입 효과만 연결합니다.
-export function renderTreatment(content = {}) {
+export function renderTreatment() {
   const section = document.querySelector('.treatment');
   if (!section) return;
-  section.querySelectorAll('[data-treatment]').forEach(element => {
-    const translated = content[element.dataset.treatment];
-    if (typeof translated === 'string') element.textContent = translated;
-  });
   connectTreatmentLabels(section);
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   if (motion.matches || !('IntersectionObserver' in window)) return;

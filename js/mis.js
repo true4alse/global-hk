@@ -1,11 +1,7 @@
 // HTML 원본 콘텐츠에 번역·화면 진입 효과만 연결합니다.
-export function renderMis(content = {}) {
+export function renderMis() {
   const section = document.querySelector('.mis-tka');
   if (!section) return;
-  section.querySelectorAll('[data-mis]').forEach(element => {
-    const translation = content[element.dataset.mis];
-    if (typeof translation === 'string') element.textContent = translation;
-  });
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const targets = [...section.querySelectorAll('[data-mis-reveal], [data-mis-blur]')];
   const sequence = section.querySelector('[data-mis-sequence]');

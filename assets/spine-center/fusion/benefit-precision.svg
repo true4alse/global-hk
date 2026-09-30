@@ -1,0 +1,51 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+@keyframes kf_Group_3_transform_0 {
+  0% {
+    transform: translateX(61.25px) translateY(38.594px) translateX(-33.25px) translateY(22.406px);
+  }
+  16.93% {
+    transform: translateX(61.25px) translateY(38.594px) translateX(-59.25px) translateY(-14.594px);
+  }
+  34.8% {
+    transform: translateX(61.25px) translateY(38.594px) translateX(-4.25px) translateY(-25.594px);
+  }
+  57.72% {
+    transform: translateX(61.25px) translateY(38.594px) translateX(-3.25px) translateY(12.406px);
+  }
+  80.37% {
+    transform: translateX(61.25px) translateY(38.594px) translateX(-59.25px) translateY(-14.594px);
+  }
+  100% {
+    transform: translateX(61.25px) translateY(38.594px) translateX(-59.25px) translateY(-14.594px);
+  }
+}
+#Group_3 {
+  transform-origin: 0 0;
+  animation: kf_Group_3_transform_0 2s linear infinite;
+}
+</style>
+<g id="MIS_TKA_______________________________________1" clip-path="url(#clip0_1220_9000)">
+<path id="Vector" opacity="0.06" transform="translate(4.6875 4.6875)" d="M45.3125 90.625C70.3379 90.625 90.625 70.3379 90.625 45.3125C90.625 20.2871 70.3379 0 45.3125 0C20.2871 0 0 20.2871 0 45.3125C0 70.3379 20.2871 90.625 45.3125 90.625Z" fill="#277FB9"/>
+<g id="Group" transform="translate(32.8125 8.59375)">
+<path id="Vector_2" d="M0 0H34.375V17.5C34.375 26.25 30.3125 32.8125 24.0625 36.4062C21.875 37.6562 19.5312 38.2812 17.1875 38.2812C14.8438 38.2812 12.5 37.6562 10.3125 36.4062C4.0625 32.8125 0 26.25 0 17.5V0Z" fill="white" stroke="#277FB9" stroke-width="2.15" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" transform="translate(0.624999 57.3438)" d="M3.4375 0H29.6875C31.5625 0 33.125 1.5625 33.125 3.4375V25.4687H0V3.4375C0 1.5625 1.5625 0 3.4375 0Z" fill="white" stroke="#277FB9" stroke-width="2.15" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path id="Vector_4" transform="translate(30.3125 42.3438)" d="M3.59375 0C8.4375 5.3125 13.9063 7.96875 19.6875 7.96875C25.4688 7.96875 30.9375 5.3125 35.7813 0L39.375 5.625C33.5938 12.3438 27.0313 15.625 19.6875 15.625C12.3438 15.625 5.78125 12.3438 0 5.625L3.59375 0Z" fill="#3DBABC" stroke="#277FB9" stroke-width="1.7" stroke-linejoin="round"/>
+<path id="Vector_5" transform="translate(31.25 61.0937)" d="M0 0H37.5V7.34375H0V0Z" fill="#3DBABC" stroke="#277FB9" stroke-width="1.7" stroke-linejoin="round"/>
+<path id="Vector_6" transform="translate(47.6562 68.4375)" d="M0 0H4.6875V13.75H0V0Z" fill="#3DBABC" stroke="#277FB9" stroke-width="1.7"/>
+<g id="Group_3" transform="translate(61.25 38.5938)">
+<g id="Group_2">
+<path id="Vector_7" transform="translate(4.84375 4.84375)" d="M9.6875 19.375C15.0378 19.375 19.375 15.0378 19.375 9.6875C19.375 4.33724 15.0378 0 9.6875 0C4.33724 0 0 4.33724 0 9.6875C0 15.0378 4.33724 19.375 9.6875 19.375Z" stroke="#277FB9" stroke-width="1.65" stroke-linecap="round"/>
+<path id="Vector_8" d="M14.5312 0V6.40625M14.5312 22.6562V29.0625M0 14.5312H6.40625M22.6562 14.5312H29.0625" stroke="#277FB9" stroke-width="1.65" stroke-linecap="round"/>
+</g>
+<path id="Vector_9" transform="translate(11.25 11.25)" d="M3.28125 6.5625C5.09343 6.5625 6.5625 5.09343 6.5625 3.28125C6.5625 1.46907 5.09343 0 3.28125 0C1.46906 0 0 1.46907 0 3.28125C0 5.09343 1.46906 6.5625 3.28125 6.5625Z" fill="#3DBABC"/>
+<path id="Vector_10" transform="translate(11.875 12.2656)" d="M0 2.26563L1.875 4.21875L5.625 0" stroke="white" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_1220_9000">
+<rect width="100" height="100" fill="white"/>
+</clipPath>
+</defs>
+</svg>

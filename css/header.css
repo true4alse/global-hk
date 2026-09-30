@@ -3,56 +3,313 @@
   --header-blue: #267fb9;
   --pill-shadow: 2px 2px 9.3px rgb(0 0 0 / 5%);
 }
-* { box-sizing: border-box; }
-html { scroll-padding-top: calc(var(--header-height, 93px) + 16px); }
-body { padding-top: var(--header-height, 93px); margin: 0; font-family: var(--font-ui); background: #fff; color: #000; }
-button, a { -webkit-tap-highlight-color: transparent; }
-button { font: inherit; }
-button:focus-visible, a:focus-visible { outline: 3px solid #003380; outline-offset: 4px; }
-[hidden] { display: none !important; }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: calc(var(--header-height, 93px) + 16px);
+}
+
+body {
+  padding-top: var(--header-height, 93px);
+  margin: 0;
+  font-family: var(--font-ui);
+  background: #fff;
+  color: #000;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #003380;
+  outline-offset: 4px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* 번역 문자열의 줄바꿈을 원래 HTML의 br처럼 표시합니다. */
+[data-i18n-lines] {
+  white-space: pre-line;
+}
+
 /* 1층을 위로 숨겨도 2층 메뉴는 화면 상단에 고정됩니다. 높이는 header.js에서 실제 크기로 측정합니다. */
-.site-header { position: fixed; inset: 0 0 auto; z-index: 100; background: #fff; transition: transform .3s ease; }
-.site-header.is-compact { transform: translateY(calc(-1 * var(--header-top-height, 60px))); }
-.site-header.is-compact .header-top { visibility: hidden; transition: visibility 0s .3s; }
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  background: #fff;
+  transition: transform .3s ease;
+}
+
+.site-header.is-compact {
+  transform: translateY(calc(-1 * var(--header-top-height, 60px)));
+}
+
+.site-header.is-compact .header-top {
+  visibility: hidden;
+  transition: visibility 0s .3s;
+}
+
 .header-top {
-  display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center;
-  gap: 24px; min-height: 60px; padding: 10px 48px;
-  background: linear-gradient(90deg, #fff 40.865%, rgb(255 255 255 / 70%) 100%);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+    min-height: 60px;
+    padding: 24px 48px;
+    background: linear-gradient(90deg, #fff 40.865%, rgb(255 255 255 / 70%) 100%);
 }
-.pill { border: 0; border-radius: 68px; background: #fff; box-shadow: var(--pill-shadow); font-size: 16px; font-weight: 700; line-height: 20px; white-space: nowrap; }
-.language-picker { position: relative; justify-self: start; }
-.language-toggle { display: flex; align-items: center; gap: 4px; padding: 10px 20px; color: #000; cursor: pointer; }
-.globe { position: relative; display: block; width: 20px; height: 20px; overflow: hidden; }
-.globe img { position: absolute; inset: 5.05% 5% 5.12% 5.17%; width: 89.83%; height: 89.83%; animation: globe-spin 2s linear infinite; }
-@property --rotate-transform { syntax: '<angle>'; initial-value: 0rad; inherits: false; }
-@keyframes globe-spin { 0% { --rotate-transform: 0rad; } 100% { --rotate-transform: 6.283rad; } }
-.globe img { transform: rotate(var(--rotate-transform, 0rad)); }
+
+.pill {
+  border: 0;
+  border-radius: 68px;
+  background: #fff;
+  box-shadow: var(--pill-shadow);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.language-picker {
+  position: relative;
+  justify-self: start;
+}
+
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 20px;
+  color: #000;
+  cursor: pointer;
+}
+
+.globe {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.globe img {
+  position: absolute;
+  inset: 5.05% 5% 5.12% 5.17%;
+  width: 89.83%;
+  height: 89.83%;
+  animation: globe-spin 2s linear infinite;
+}
+
+@property --rotate-transform {
+  syntax: '<angle>';
+  initial-value: 0rad;
+  inherits: false;
+}
+
+@keyframes globe-spin {
+  0% {
+    --rotate-transform: 0rad;
+  }
+
+  100% {
+    --rotate-transform: 6.283rad;
+  }
+}
+
+.globe img {
+  transform: rotate(var(--rotate-transform, 0rad));
+}
+
 /* 좌우 버튼 폭이 달라도 새 로고는 화면 정중앙에 놓고 원본 비율을 유지합니다. */
-.hospital-logo { position: relative; display: block; justify-self: center; width: clamp(240px,24vw,306px); aspect-ratio: 553 / 80; direction: ltr; }
-.hospital-logo img { display: block; }
-.logo-main { width: 100%; height: 100%; object-fit: contain; }
-.header-phone { justify-self: end; padding: 10px 19px; }
-.header-nav a { text-decoration: none; }
-.header-nav { display: flex; justify-content: center; align-items: center; gap: 100px; padding: 0 48px; background: linear-gradient(90deg, var(--header-blue) 49.519%, rgb(63 187 189 / 74%) 100%); }
-.header-nav :is(a, button) { border: 0; padding: 8px 0; background: transparent; color: white; font-size: 14px; font-weight: 700; line-height: 17px; white-space: nowrap; cursor: default; }
-.header-nav :is(a, button):focus-visible { outline-color: #fff; }
-.language-options { position: absolute; inset-block-start: calc(100% + 12px); inset-inline-start: 0; width: 244px; max-width: calc(100vw - 32px); padding: 18px; border: 1px solid #e1e7ed; border-radius: 16px; background: #fff; box-shadow: 0 8px 24px #0033801a; }
-.language-options p { margin: 0 0 10px; font-weight: 700; }
-.language-options ul { list-style: none; margin: 0; padding: 0; }
-.language-options button { width: 100%; min-height: 40px; text-align: start; border: 0; border-radius: 6px; padding: 8px; background: none; color: #003380; cursor: pointer; }
-.language-options button[aria-current] { background: #eff7fc; font-weight: 700; }
-.language-options button:disabled { color: #72777c; cursor: default; }
-.language-options small { display: block; margin-block-start: 12px; line-height: 1.5; color: #59636b; }
-@media (max-width: 1200px) { .header-nav { gap: clamp(20px, 5vw, 70px); padding-inline: 24px; } }
-@media (min-width: 761px) and (max-width: 1000px) { .header-top { padding-inline: 24px; gap: 16px; } }
-@media (max-width: 760px) {
-  .header-top { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px 16px; }
-  .hospital-logo { grid-column: 1 / -1; grid-row: 1; justify-self: center; width: 280px; max-width: 100%; }
-  .language-picker { justify-self: start; }
-  .header-phone { justify-self: end; }
-  .pill { font-size: 13px; }
-  .language-toggle, .header-phone { padding: 8px 12px; }
-  .header-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 8px; padding: 4px 12px; }
-  .header-nav :is(a, button) { min-height: 44px; white-space: normal; overflow-wrap: anywhere; font-size: 11px; line-height: 1.4; }
+.hospital-logo {
+    position: relative;
+    display: block;
+    justify-self: center;
+    width: clamp(240px, 24vw, 400px);
+    aspect-ratio: 553 / 80;
+    direction: ltr;
 }
-@media (prefers-reduced-motion: reduce) { .globe img { animation: none; } .site-header, .site-header.is-compact .header-top { transition: none; } }
+
+.hospital-logo img {
+  display: block;
+}
+
+.logo-main {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.header-phone {
+  justify-self: end;
+  padding: 10px 19px;
+}
+
+.header-nav a {
+  text-decoration: none;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 0 48px;
+  background: linear-gradient(90deg, var(--header-blue) 49.519%, rgb(63 187 189 / 74%) 100%);
+}
+
+.header-nav :is(a, button) {
+    border: 0;
+    padding: 8px 0;
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 17px;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.header-nav :is(a, button):focus-visible {
+  outline-color: #fff;
+}
+
+.language-options {
+  position: absolute;
+  inset-block-start: calc(100% + 12px);
+  inset-inline-start: 0;
+  width: 244px;
+  max-width: calc(100vw - 32px);
+  padding: 18px;
+  border: 1px solid #e1e7ed;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px #0033801a;
+}
+
+.language-options p {
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.language-options ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.language-options button {
+  width: 100%;
+  min-height: 40px;
+  text-align: start;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px;
+  background: none;
+  color: #003380;
+  cursor: pointer;
+}
+
+.language-options button[aria-current] {
+  background: #eff7fc;
+  font-weight: 700;
+}
+
+.language-options button:disabled {
+  color: #72777c;
+  cursor: default;
+}
+
+.language-options small {
+  display: block;
+  margin-block-start: 12px;
+  line-height: 1.5;
+  color: #59636b;
+}
+
+@media (max-width: 1200px) {
+  .header-nav {
+    gap: clamp(20px, 5vw, 70px);
+    padding-inline: 24px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1000px) {
+  .header-top {
+    padding-inline: 24px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  .hospital-logo {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: center;
+    width: 280px;
+    max-width: 100%;
+  }
+
+  .language-picker {
+    justify-self: start;
+  }
+
+  .header-phone {
+    justify-self: end;
+  }
+
+  .pill {
+    font-size: 13px;
+  }
+
+  .language-toggle,
+  .header-phone {
+    padding: 8px 12px;
+  }
+
+  .header-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 8px;
+    padding: 4px 12px;
+  }
+
+  .header-nav :is(a, button) {
+    min-height: 44px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .globe img {
+    animation: none;
+  }
+
+  .site-header,
+  .site-header.is-compact .header-top {
+    transition: none;
+  }
+}

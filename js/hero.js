@@ -5,10 +5,6 @@ export function renderHero(content) {
   const hero = document.querySelector('.hero');
   if (!hero || !content) return;
   activeAnimations.get(hero)?.();
-  hero.querySelectorAll('[data-hero]').forEach(element => {
-    const value = content[element.dataset.hero];
-    if (typeof value === 'string') element.textContent = value;
-  });
   const number = hero.querySelector('.hero-number');
   number.dataset.target ||= number.textContent.replaceAll(',', '').trim();
   const count = new Intl.NumberFormat(document.documentElement.lang || 'ko').format(Number(number.dataset.target));

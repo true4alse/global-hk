@@ -1,11 +1,7 @@
 // 콘텐츠를 생성하지 않고 HTML에 있는 요소의 번역과 동작만 연결합니다.
-export function renderGlobal(content = {}) {
+export function renderGlobal() {
   const section = document.querySelector('.global-excellence');
   if (!section) return;
-  section.querySelectorAll('[data-global]').forEach(element => {
-    const text = content[element.dataset.global];
-    if (typeof text === 'string') element.textContent = text;
-  });
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const watermark = section.querySelector('.global-watermark');
   const stage = section.querySelector('.global-stage');

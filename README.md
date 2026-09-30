@@ -2,6 +2,12 @@
 
 Figma `4cetoACzx20LgtH4pVaVsc`, 페이지 `30:731`, 헤더 `30:736` 기준입니다. 본문 섹션은 아직 구현하지 않았습니다. sources/ 원본은 변경하지 않았습니다.
 
+## 현재 편집 기준 (2026-09-27)
+
+현재는 헤더부터 무릎전담센터의 MAKO 상세까지 퍼블리싱되어 있습니다. 아래 단계별 기록은 당시의 이력입니다. 최신 작업지침은 `AGENTS.md`, 수정 방법은 `EDITING.md`를 우선합니다.
+
+기본 한국어는 `index.html`에 남기고 `locales/ko.js`에 같은 문구를 함께 등록합니다. 제목·본문·사진 alt·버튼 상태·접근성 이름을 포함합니다. `js/translations.js`에서 문구만 연결하며 이미지 경로·통계 숫자·구조는 HTML에서 관리합니다. 변경 후 `python scripts/check_locales.py`와 `node --test scripts/translations.test.mjs`를 실행하고 브라우저에서 확인합니다.
+
 ## 실행
 
 이 폴더에서 `node server.cjs`를 실행하고 http://127.0.0.1:4173/ko/ 를 엽니다. index.html을 직접 더블클릭하는 방식이 아닌 로컬 서버를 사용합니다.
