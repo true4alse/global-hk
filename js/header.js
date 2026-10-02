@@ -1,3 +1,7 @@
+import { renderService360 } from './service-360.js';
+import { renderFacilities } from './facilities.js';
+import { renderDoctors } from './doctors.js';
+import { renderApkass } from './apkass.js';
 import { renderCenterBanners } from './center-banner.js';
 import { renderCenterTreatments } from './center-treatment.js';
 import { renderKneeCenter } from './knee-center.js';
@@ -27,6 +31,10 @@ renderSpecialty();
 renderKneeCenter();
 renderCenterBanners();
 renderCenterTreatments();
+renderDoctors();
+renderApkass();
+renderFacilities();
+renderService360();
 const toggle = document.querySelector('.language-toggle');
 const panel = document.querySelector('.language-options');
 toggle.disabled = false;

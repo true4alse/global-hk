@@ -328,6 +328,9 @@
     line-height: 17px;
     padding-block: 8px;
     white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 1400px) {

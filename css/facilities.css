@@ -1,0 +1,65 @@
+/* 시설 사진·층별 문구·추가 사진은 index.html의 #facilities에서 관리합니다. */
+.facilities { padding: clamp(72px,6.46vw,124px) 3.906% clamp(72px,8.75vw,168px); background: #003380 url('/assets/facilities/background.webp') center top / 100% 100% no-repeat; background-blend-mode:color-burn; color:#fff; font-family:'HK Pretendard',var(--font-ui); }
+.facilities-heading { text-align:center; }
+.facilities-kicker { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; height:80px; box-sizing:border-box; padding-block:10px; margin:0; color:#3dbabc; font-size:16px; line-height:23px; }
+.facilities-kicker > span:first-child { font-size:24px; line-height:29px; font-weight:700; }
+.facilities-heading h2 { margin:39px 0; font-size:clamp(32px,2.813vw,54px); line-height:1.2; letter-spacing:-.035em; }
+.facilities-heading > p:last-child { margin:0; font-size:16px; line-height:23px; word-break:keep-all; }
+.facilities-gallery { position:relative; max-width:1770px; margin:83px auto 0; padding:46px 0 0; }
+.facilities-floor-title { display:flex; align-items:center; gap:16px; margin:0 0 28px; font-size:24px; font-weight:700; line-height:29px; text-align:center; }
+.facilities-floor-title::before,.facilities-floor-title::after { content:''; height:1px; background:#d9d9d9; flex:1; }
+.facilities-thumbnail-wrap { position:relative; margin-bottom:29px; }
+.facilities-thumbnails { display:flex; gap:16px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x proximity; scrollbar-width:none; }
+.facilities-thumbnails::-webkit-scrollbar { display:none; }
+.facilities-thumbnail { flex:0 0 auto; position:relative; display:block; height:100px; aspect-ratio:var(--thumbnail-ratio,1.5); scroll-snap-align:start; border-radius:8px; overflow:hidden; color:#fff; text-decoration:none; opacity:.5; transition:opacity .2s; }
+.facilities-thumbnail img { display:block; width:100%; height:100%; object-fit:cover; }
+.facilities-thumbnail[aria-current] { opacity:1; }
+.facilities-thumbnail:hover { opacity:1; }
+.facilities-scroll { position:absolute; top:28px; z-index:2; display:grid; place-items:center; width:44px; height:44px; border:1px solid #ffffff80; border-radius:50%; background:#002d6be6; color:#fff; cursor:pointer; }
+.facilities-scroll[data-scroll=prev] { left:8px; }
+.facilities-scroll[data-scroll=next] { right:8px; }
+.facilities-scroll { opacity:0; pointer-events:none; transition:opacity .2s; }
+.facilities-thumbnail-wrap:hover .facilities-scroll:not(:disabled), .facilities-thumbnail-wrap:focus-within .facilities-scroll:not(:disabled) { opacity:1; pointer-events:auto; }
+.facilities-scroll:disabled { visibility:hidden; }
+.facilities-floors { display:flex; flex-direction:column; gap:8px; margin-bottom:32px; }
+.facilities-floor { display:flex; gap:clamp(20px,2.5vw,48px); align-items:flex-end; padding:8px 0; border-bottom:1px solid #fff; color:#fff; text-decoration:none; opacity:.36; }
+.facilities-floor strong { width:clamp(72px,6.25vw,120px); font-size:clamp(46px,4.22vw,81px); line-height:1; font-weight:700; color:#fff; flex-shrink:0; }
+.facilities-floor > span { font-size:clamp(13px,.833vw,16px); line-height:1.45; word-break:keep-all; }
+.facilities-floor[aria-current] { opacity:1; }
+.facilities.is-ready .facilities-floors { position:absolute; left:0; top:232px; width:30.791%; z-index:1; padding-top:clamp(20px,1.667vw,32px); gap:clamp(5px,.417vw,8px); }
+.facilities.is-ready .facilities-floor { min-height:clamp(58px,5.104vw,98px); box-sizing:border-box; }
+.facilities.is-ready .facilities-viewer { margin-left:31.808%; }
+.facilities-viewer { overflow:hidden; border-radius:8px; background:#103a5b; }
+.facilities-viewer figure { position:relative; margin:0; border-radius:8px; overflow:hidden; }
+.facilities-viewer img { width:100%; height:auto; aspect-ratio:1207 / 679; display:block; object-fit:cover; background:#07294d; }
+.facilities [hidden] { display:none!important; }
+.facilities :is(a,button):focus-visible { outline:2px solid #3dbabc; outline-offset:3px; }
+@media (max-width:1100px) {
+ .facilities { padding-inline:24px; }
+ .facilities-gallery { margin-top:48px; padding-top:24px; }
+ .facilities.is-ready .facilities-floors { position:relative; top:auto; width:auto; padding:0; flex-direction:row; overflow-x:auto; gap:12px; scrollbar-width:thin; scrollbar-color:#3dbabc #ffffff20; }
+ .facilities-floor { flex:1 0 130px; flex-direction:column; align-items:flex-start; gap:12px; padding:12px; border-bottom:2px solid #ffffff40; }
+ .facilities-floor[aria-current] { border-color:#fff; }
+ .facilities.is-ready .facilities-floor { min-height:0; }
+ .facilities-floor > span { font-size:12px; }
+ .facilities.is-ready .facilities-viewer { margin-left:0; }
+ .facilities-heading h2 { margin-block:28px; }
+ .facilities-heading > p:last-child { font-size:16px; }
+ .facilities-floor-title { font-size:20px; }
+}
+@media (max-width:600px) {
+ .facilities { padding-inline:16px; }
+ .facilities-kicker { font-size:14px; }
+ .facilities-kicker > span:first-child { font-size:28px; }
+ .facilities-heading > p:last-child { font-size:14px; }
+ .facilities.is-ready .facilities-floors { gap:6px; }
+ .facilities-floor { flex:1 0 0; padding:12px 4px; align-items:center; }
+ .facilities-floor strong { width:auto; font-size:32px; }
+ .facilities-floor > span { display:none; }
+ .facilities-floor-title { font-size:16px; gap:10px; }
+ .facilities-thumbnail { height:72px; }
+ .facilities-thumbnails { gap:8px; }
+ .facilities-scroll { top:14px; width:36px; height:36px; }
+}
+@media (hover:none) { .facilities-scroll:not(:disabled) { opacity:1; pointer-events:auto; } }
+@media (prefers-reduced-motion:reduce) { .facilities-thumbnail { transition:none; } }

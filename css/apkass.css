@@ -1,0 +1,562 @@
+@font-face {
+  font-family: 'HK Playfair Regular';
+  src: url('/assets/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HK Playfair Regular';
+  src: url('/assets/PlayfairDisplay-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+.apkass {
+  container-type: inline-size;
+  color: #fff;
+  background: #071724;
+  font-family: 'HK Pretendard', var(--font-ui);
+  scroll-margin-top: 110px;
+  overflow: hidden;
+}
+
+.apkass-canvas {
+  --u: 1cqw;
+  position: relative;
+  isolation: isolate;
+  /* max-width: 1920px; */
+  margin: auto;
+  padding-bottom: calc(var(--u) * 12.08);
+  background: linear-gradient(150deg, #0d1218 1.44%, #003380 47.6%, #030e16);
+}
+
+.apkass img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.apkass-texture,
+.apkass-light {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.apkass-texture {
+  width: 56.667%;
+  max-width: none !important;
+  height: auto;
+  transform: rotate(-90deg);
+  transform-origin: 0 0;
+  mix-blend-mode: lighten;
+}
+
+.apkass-texture--top {
+  top: calc(var(--u) * 62.45);
+  left: 0;
+  opacity: .3;
+}
+
+.apkass-texture--middle {
+  top: calc(var(--u) * 121.35);
+  left: 0;
+  opacity: .47;
+}
+
+.apkass-texture--bottom {
+  top: calc(var(--u) * 169.63);
+  left: -.73%;
+  transform: rotate(90deg) scaleY(-1);
+}
+
+.apkass-light {
+  width: 38.333%;
+  mix-blend-mode: screen;
+  z-index: 3;
+}
+
+.apkass-light--left {
+  left: -5.57%;
+  top: calc(var(--u) * 37.91);
+  transform-origin: 0 0;
+  transform: rotate(-23.1deg);
+}
+
+.apkass-light--right {
+  right: -5%;
+  top: calc(var(--u) * 69.87);
+  transform: scaleX(-1) rotate(-15deg);
+}
+
+.apkass-intro {
+  position: relative;
+  min-height: calc(var(--u) * 49.635);
+}
+
+.apkass-skyline {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 84.688%;
+  opacity: .8;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.apkass-intro-copy {
+  position: relative;
+  padding: calc(var(--u) * 18.333) 5.781% calc(var(--u) * 3.54);
+}
+
+.apkass-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: calc(var(--u) * 1.302);
+}
+
+.apkass-logos>img,
+.apkass-kas-logo {
+  width: calc(var(--u) * 3.229);
+  height: calc(var(--u) * 3.229);
+}
+
+.apkass-kas-logo {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.apkass-kas-logo img {
+  position: absolute;
+  width: 301.61%;
+  max-width: none;
+  height: 127.42%;
+  left: 4.84%;
+  top: -12.9%;
+}
+
+.apkass-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 1.2);
+  margin-bottom: calc(var(--u) * 1.3);
+}
+
+.apkass-eyebrow>p {
+  margin: 0;
+  font-size: clamp(14px, 1.146vw, 22px);
+}
+
+.apkass .apkass-rule-label {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 1.04);
+  font-size: clamp(10px, .833vw, 16px);
+  letter-spacing: .7em;
+  line-height: 1.5;
+}
+
+.apkass-rule-label::before {
+  content: '';
+  display: block;
+  flex: 0 0 calc(var(--u) * 7.76);
+  height: 1px;
+  background: #efece9;
+}
+
+.apkass h2 {
+  margin: 0;
+  font-family: 'HK Playfair Regular', Georgia, serif;
+  font-size: clamp(62px, 6.5625vw, 126px);
+  font-weight: 400;
+  line-height: .8;
+}
+
+.apkass h2 em {
+  font-weight: 500;
+}
+
+.apkass h2 br {
+  display: block;
+}
+
+.apkass-mint {
+  color: #45d9db;
+}
+
+.apkass h2 > span:nth-of-type(3) { color: #3dbabc; }
+.apkass h2 .apkass-mint { color: #3dbabc; }
+.apkass-eyebrow .apkass-rule-label,
+.apkass-founder-word {
+  background: linear-gradient(141deg, #e2a443 5.94%, #ecd2aa 25.58%, #cb9c51 44.73%, #f4c560 62.86%, #c99035 82.01%, #efce9a 101.15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.apkass-eyebrow .apkass-rule-label {
+  background-image: linear-gradient(172.386deg, #e2a443 5.94%, #ecd2aa 25.58%, #cb9c51 44.73%, #f4c560 62.86%, #c99035 82.01%, #efce9a 101.15%);
+}
+.apkass-eyebrow .apkass-rule-label::before {
+  background: linear-gradient(90deg, #e2a443, #efce9a);
+}
+
+.apkass-description {
+  max-width: 707px;
+  width: 42%;
+  margin: calc(var(--u) * 4.635) 0 0;
+  font-size: clamp(20px, 1.771vw, 34px);
+  line-height: 1.44;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.apkass-founder-photos {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(var(--u) * .833);
+  width: 78.958%;
+  margin-left: 16.354%;
+}
+
+.apkass-founder-photos img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.apkass-founder-copy {
+  position: relative;
+  z-index: 2;
+  width: 81.979%;
+  margin: calc(var(--u) * 1.302) 0 0 13.333%;
+}
+
+.apkass-founder-copy h3 {
+  margin: 0;
+  font-size: clamp(38px, 5.208vw, 100px);
+  font-weight: 700;
+  line-height: 1.19;
+  letter-spacing: -.04em;
+  word-break: keep-all;
+}
+
+.apkass-founder-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--u) * 2.083);
+  margin-top: calc(var(--u) * .625);
+}
+
+.apkass-founder-line p {
+  margin: 0;
+}
+
+.apkass-founder-word {
+  font-family: 'HK Playfair Regular', Georgia, serif;
+  font-size: calc(var(--u) * 7.604);
+  line-height: .8;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.apkass-founder-line .apkass-rule-label { white-space: nowrap; letter-spacing: .7em; flex-shrink: 0; font-size: calc(var(--u) * .8333); }
+.apkass-founder-photos img, .apkass-session-photos img, .apkass-gallery img { border-radius: 16px; }
+
+.apkass-session {
+  position: relative;
+  min-height: calc(var(--u) * 53.07);
+  margin-top: calc(var(--u) * -3.333);
+}
+
+.apkass-chairperson {
+  position: absolute;
+  left: -12.8125%;
+  top: 0;
+  width: 93.75%;
+  mix-blend-mode: lighten;
+}
+
+.apkass-session-copy {
+  position: relative;
+  width: 50.26%;
+  margin-left: 46.823%;
+  padding-top: calc(var(--u) * 22.708);
+}
+
+.apkass-person {
+  margin: 0;
+  font-size: clamp(20px, 1.771vw, 34px);
+}
+
+.apkass-person strong {
+  font-size: clamp(30px, 2.604vw, 50px);
+  margin-right: 8px;
+}
+
+.apkass-session h3 {
+  margin: 10px 0 28px;
+  color: #3dbabc;
+  font-size: clamp(23px, 2.083vw, 40px);
+  font-weight: 500;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+.apkass-session-photos {
+  display: grid;
+  grid-template-columns: 450fr 491fr;
+  gap: calc(var(--u) * 1.25);
+}
+
+.apkass-session-photos img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.apkass-gallery {
+  position: relative;
+  width: 94.792%;
+  margin-inline: auto;
+}
+
+.apkass-gallery-row {
+  display: grid;
+  gap: calc(var(--u) * .833);
+}
+
+.apkass-gallery-row+.apkass-gallery-row {
+  margin-top: calc(var(--u) * 1.042);
+}
+
+.apkass-gallery-row--four {
+  grid-template-columns: 452fr 464fr 448fr 408fr;
+}
+
+.apkass-gallery-row--three {
+  grid-template-columns: 761fr 517fr 510fr;
+}
+
+.apkass-gallery-row img {
+  width: 100%;
+  height: calc(var(--u) * 17.708);
+  object-fit: cover;
+}
+
+.apkass-reveal-pending {
+  opacity: 0;
+  translate: -36px 0;
+}
+
+.apkass-reveal-shown {
+  opacity: 1;
+  translate: 0 0;
+  transition: opacity 1.1s ease, translate 1.1s cubic-bezier(.22, 1, .36, 1);
+}
+
+@media (max-width: 1100px) {
+  .apkass-intro-copy {
+    padding: 180px 6% 56px;
+  }
+
+  .apkass-logos>img,
+  .apkass-kas-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .apkass-logos {
+    margin-bottom: 24px;
+  }
+
+  .apkass-eyebrow {
+    display: block;
+    margin-bottom: 28px;
+  }
+
+  .apkass-eyebrow>p {
+    font-size: 18px;
+  }
+
+  .apkass .apkass-rule-label {
+    font-size: 11px;
+    letter-spacing: .32em;
+  }
+
+  .apkass-eyebrow .apkass-rule-label {
+    margin-top: 12px;
+  }
+
+  .apkass h2 {
+    font-size: clamp(48px, 7.4vw, 81px);
+    line-height: 1.08;
+  }
+
+  .apkass-description {
+    width: 80%;
+    margin-top: 32px;
+    font-size: 22px;
+  }
+
+  .apkass-founder-photos,
+  .apkass-founder-copy {
+    width: 88%;
+    margin-inline: auto;
+  }
+
+  .apkass-founder-copy {
+    margin-top: 28px;
+  }
+
+  .apkass-founder-copy h3 {
+    font-size: clamp(30px, 4.8vw, 50px);
+  }
+
+  .apkass-founder-line {
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .apkass-founder-word {
+    margin-left: auto !important;
+    font-size: 64px;
+  }
+
+  .apkass-session {
+    margin-top: 48px;
+    padding-top: 40%;
+  }
+
+  .apkass-chairperson {
+    left: -8%;
+    width: 100%;
+  }
+
+  .apkass-session-copy {
+    width: 88%;
+    margin-inline: auto;
+    padding: 0 0 48px;
+  }
+
+  .apkass-session-photos {
+    gap: 16px;
+  }
+
+  .apkass-gallery {
+    width: 88%;
+  }
+
+  .apkass-gallery-row--four,
+  .apkass-gallery-row--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .apkass-gallery-row img {
+    height: auto;
+    aspect-ratio: 1.5;
+  }
+
+  .apkass-gallery-row--three img:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 2.238;
+  }
+
+  .apkass-gallery-row+.apkass-gallery-row {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .apkass-intro-copy {
+    padding: 115px 20px 40px;
+  }
+
+  .apkass-eyebrow>p {
+    font-size: 15px;
+  }
+
+  .apkass .apkass-rule-label {
+    font-size: 9px;
+    letter-spacing: .2em;
+  }
+
+  .apkass-rule-label::before {
+    flex-basis: 24px;
+  }
+
+  .apkass h2 {
+    font-size: clamp(26px, 7.4vw, 44px);
+    line-height: 1.25;
+  }
+
+  .apkass-description {
+    width: 100%;
+    font-size: 17px;
+    line-height: 1.65;
+    margin-top: 24px;
+  }
+
+  .apkass-founder-photos {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .apkass-founder-copy h3 {
+    font-size: 30px;
+    line-height: 1.4;
+  }
+
+  .apkass-founder-word {
+    font-size: 48px;
+  }
+
+  .apkass-founder-line {
+    gap: 20px;
+  }
+
+  .apkass-session h3 {
+    font-size: 22px;
+  }
+
+  .apkass-session-photos {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .apkass-gallery-row {
+    gap: 8px;
+  }
+
+  .apkass-gallery-row+.apkass-gallery-row {
+    margin-top: 8px;
+  }
+
+  .apkass-gallery-row img {
+    aspect-ratio: 1.25;
+  }
+
+  .apkass-light {
+    opacity: .6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .apkass-reveal-pending,
+  .apkass-reveal-shown {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+}

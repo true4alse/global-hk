@@ -19,6 +19,6 @@ export function renderSpecialty() {
   motion.addEventListener('change', () => {
     if (!motion.matches) return;
     observer.disconnect();
-    targets.forEach(target => target.classList.remove('specialty-pending','specialty-shown'));
+    targets.forEach(target => target.classList.remove('specialty-pending', 'specialty-shown'));
   });
 }

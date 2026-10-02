@@ -76,19 +76,26 @@
   min-height: 29vw;
 }
 
-.treatment-patent-frame {
-  position: absolute;
-  left: 3.4%;
-  top: -24.5vw;
-  width: 37.5%;
-  margin: 0;
-}
+  .treatment-patent-frame {
+    position: absolute;
+    left: 5.729%;
+    top: -20.677vw;
+    width: 32.708%;
+    margin: 0;
+    aspect-ratio: 628 / 862;
+    overflow: hidden;
+  }
 
-.treatment-patent-frame>img {
-  display: block;
-  width: 100%;
-  height: auto;
-  clip-path: inset(8% 6.3% 6.8%);
+  .treatment-patent-frame>img {
+    display: block;
+    position: absolute;
+    /* 시안 이미지 채우기 좌표: 여백만 제외하고 액자 네 모서리를 보존한다. */
+    left: -6.752%;
+    top: -9.191%;
+    width: 113.653%;
+    max-width: none;
+    height: 117.203%;
+    object-fit: fill;
 }
 
 .treatment-patent-copy {
@@ -111,6 +118,10 @@
 
 .treatment-patent-copy h3 strong {
   color: #b48b3f;
+  background: linear-gradient(110deg, #e2a443, #ecd2aa 19%, #cb9c51 37%, #f4c560 54%, #c99035 73%, #efce9a 91%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .treatment-patent-copy p {
@@ -395,7 +406,7 @@
 
   .treatment-patent {
     min-height: 0;
-    padding: 0 24px 40px;
+      padding: 1px 24px 40px;
   }
 
   .treatment-patent-frame {
@@ -403,12 +414,11 @@
     top: auto;
     left: auto;
     width: min(90%, 430px);
-    margin: 0 auto;
-    padding-top: 1px;
+      margin: -160px auto 0;
   }
 
   .treatment-patent-frame img {
-    margin-top: -160px;
+      margin-top: 0;
   }
 
   .treatment-patent-copy {

@@ -1,0 +1,505 @@
+@font-face {
+  font-family:'HK Service Playfair';
+  src:url('/assets/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-style:italic;
+  font-weight:100 900;
+  font-display:swap;
+}
+.service360 {
+  --service-mint:#3dbabc;
+  --service-blue:#277fb9;
+  container-type:inline-size;
+  position:relative;
+  overflow:clip;
+  background:#fff;
+  color:#111;
+  font-family:'HK Pretendard',var(--font-ui);
+  scroll-margin-top:110px;
+  padding:3.15% 0 22.7%;
+}
+.service360 :is(h2,h3,h4,p,figure) {
+  margin:0;
+}
+.service360 img {
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+.service360-mint {
+  color:var(--service-mint);
+}
+.service360-blue {
+  color:var(--service-blue);
+}
+.service360-intro {
+  text-align:center;
+}
+.service360-kicker {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  padding:10px;
+  color:var(--service-mint);
+  font-size:16px;
+  line-height:1.2;
+}
+.service360-kicker b {
+  font-size:24px;
+}
+.service360 .service360-all {
+  margin-top:7.85cqw;
+  font-size:clamp(14px,1.042cqw,24px);
+  font-weight:500;
+  letter-spacing:1.8em;
+  text-indent:1.8em;
+  line-height:1.45;
+}
+.service360-wordmark {
+  width:69.53%;
+  height:auto;
+  margin:1.66cqw auto 0;
+  transform:translateX(-1.3cqw);
+}
+.service360 .service360-title {
+  margin:3.38cqw auto 0;
+  padding:0 5%;
+  font-size:clamp(25px,2.813cqw,68px);
+  font-weight:700;
+  line-height:1.2;
+  word-break:keep-all;
+}
+.service360-underline {
+  text-decoration:underline;
+  text-underline-offset:.13em;
+  text-decoration-thickness:.055em;
+}
+.service360 .service360-description {
+  max-width:42.14cqw;
+  margin:4cqw auto 0;
+  font-size:clamp(17px,1.25cqw,30px);
+  line-height:1.45;
+  word-break:keep-all;
+}
+.service360-body {
+  position:relative;
+  isolation:isolate;
+}
+.service360-grid {
+  position:absolute;
+  z-index:-1;
+  inset:29cqw 0 auto;
+  height:110.6cqw;
+  pointer-events:none;
+  background-image:linear-gradient(#3dbabc5e .45px,transparent .45px),linear-gradient(90deg,#3dbabc5e .45px,transparent .45px);
+  background-size:2.648cqw 2.648cqw;
+  mask-image:linear-gradient(transparent,#000 12%,#000 85%,transparent);
+}
+.service360-overview {
+  position:relative;
+  padding-top:8.55cqw;
+  text-align:center;
+  isolation:isolate;
+}
+.service360-watermark {
+  position:absolute;
+  z-index:-1;
+  width:57%;
+  height:auto;
+  top:17.3cqw;
+  left:21.5%;
+  pointer-events:none;
+}
+.service360 .service360-bubble {
+  position:relative;
+  display:table;
+  margin:0 auto;
+  padding:8px 32px;
+  border-radius:100px;
+  background:var(--service-mint);
+  color:#fff;
+  font-size:clamp(18px,1.25cqw,30px);
+  line-height:1.2;
+}
+.service360-bubble:after {
+  content:'';
+  position:absolute;
+  left:50%;
+  top:100%;
+  transform:translateX(-50%);
+  border-left:14px solid transparent;
+  border-right:14px solid transparent;
+  border-top:17.5px solid var(--service-mint);
+}
+.service360-overview h3 {
+  margin:1.7cqw 5% 0;
+  font-size:clamp(32px,4.22cqw,96px);
+  font-weight:700;
+  line-height:1.2;
+  word-break:keep-all;
+}
+.service360-overview .service360-description {
+  margin-top:2.5cqw;
+}
+.service360-steps {
+  display:grid;
+  grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:2.5cqw;
+  list-style:none;
+  padding:0;
+  margin:6cqw 6.1% 0;
+}
+.service360-steps img {
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:8px;
+}
+.service360-steps p {
+  margin-top:16px;
+  font-size:clamp(12px,.834cqw,20px);
+  line-height:1.2;
+  word-break:keep-all;
+}
+.service360 .service360-cost {
+  margin-top:5.72cqw;
+  font-size:11px;
+  line-height:16px;
+}
+.service360-inner {
+  width:88.2%;
+  margin-inline:auto;
+}
+.service360-pickup {
+  display:grid;
+  grid-template-columns:44% 42.86%;
+  align-items:start;
+  margin-top:15.85cqw;
+}
+.service360-pickup-copy {
+  position:relative;
+  z-index:1;
+}
+.service360 .service360-number {
+  font-family:'HK Service Playfair',serif;
+  font-weight:700;
+  font-style:italic;
+  font-size:10.68cqw;
+  line-height:1;
+  color:#353535;
+}
+.service360-number span {
+  color:var(--service-mint);
+}
+.service360-pickup h3 {
+  margin-top:2.6cqw;
+  white-space:nowrap;
+}
+.service360 :is(.service360-pickup,.service360-accommodation) h3 {
+  font-size:clamp(24px,2.813cqw,68px);
+  font-weight:700;
+  line-height:1.2;
+}
+.service360 :is(.service360-pickup,.service360-accommodation) h4 {
+  color:var(--service-mint);
+  font-size:clamp(23px,1.875cqw,44px);
+  font-weight:600;
+  line-height:1.2;
+  word-break:keep-all;
+}
+.service360-pickup h4 {
+  margin-top:.84cqw;
+}
+.service360 .service360-body-copy {
+  margin-top:.42cqw;
+  font-size:clamp(16px,1.25cqw,30px);
+  line-height:1.45;
+  word-break:keep-all;
+}
+.service360 .service360-pill {
+  display:table;
+  margin-top:1.15cqw;
+  padding:16px 32px;
+  border:1px solid var(--service-mint);
+  border-radius:333px;
+  font-size:16px;
+  line-height:19px;
+}
+.service360-pickup figure {
+  position:relative;
+  z-index:0;
+}
+.service360-pickup img {
+  width:100%;
+  aspect-ratio:726/569;
+  object-fit:cover;
+  border-radius:8px;
+}
+.service360-accommodation {
+  margin-top:15cqw;
+}
+.service360-accommodation-head {
+  display:grid;
+  grid-template-columns:17.4% 32.9% 1fr;
+  gap:2.6%;
+  align-items:start;
+}
+.service360-accommodation-head .service360-number {
+  line-height:.4;
+}
+.service360-accommodation .service360-pill {
+  color:var(--service-mint);
+}
+.service360-hotels {
+  margin-top:3.8cqw;
+  overflow-x:auto;
+  overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  cursor:grab;
+}
+.service360-hotels::-webkit-scrollbar {
+  display:none;
+}
+.service360-hotels:focus-visible {
+  outline:2px solid var(--service-mint);
+  outline-offset:6px;
+}
+.service360-hotel-track {
+  display:flex;
+  gap:1.667cqw;
+  width:max-content;
+  padding-inline:calc(50cqw - 11.71875cqw);
+}
+.service360-hotel {
+  width:23.4375cqw;
+  flex:none;
+  scroll-snap-align:center;
+}
+.service360-hotel img {
+  width:100%;
+  aspect-ratio:450/550;
+  object-fit:cover;
+  border-radius:8px;
+}
+.service360-hotel figcaption {
+  margin-top:1.667cqw;
+  font-size:clamp(14px,1.25cqw,30px);
+  line-height:1.2;
+  text-align:center;
+  word-break:normal;
+}
+[data-service360-reveal] {
+  transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.22,.61,.36,1);
+}
+.service360-reveal-pending {
+  opacity:0;
+  transform:translateX(-36px);
+}
+@media(max-width:1100px) {
+  .service360 {
+    padding-top:60px;
+    padding-bottom:150px;
+  }
+  .service360 .service360-description {
+    max-width:680px;
+    width:86%;
+  }
+  .service360-overview {
+    padding-top:110px;
+  }
+  .service360-overview h3 {
+    margin-top:40px;
+  }
+  .service360-steps {
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:32px 24px;
+    margin-top:60px;
+  }
+  .service360-steps p {
+    font-size:14px;
+  }
+  .service360 .service360-cost {
+    margin-top:55px;
+  }
+  .service360-pickup {
+    grid-template-columns:1.15fr 1fr;
+    gap:30px;
+    margin-top:130px;
+  }
+  .service360-pickup h3 {
+    white-space:normal;
+    margin-top:30px;
+  }
+  .service360-pickup h4 {
+    margin-top:20px;
+  }
+  .service360 .service360-body-copy {
+    margin-top:12px;
+  }
+  .service360 .service360-pill {
+    margin-top:24px;
+    padding:13px 20px;
+    font-size:13px;
+  }
+  .service360-accommodation {
+    margin-top:130px;
+  }
+  .service360-accommodation-head {
+    grid-template-columns:100px 1fr;
+    gap:30px;
+  }
+  .service360-accommodation-head .service360-number {
+    line-height:1;
+    grid-row:span 2;
+  }
+  .service360-accommodation-head>div {
+    grid-column:2;
+  }
+  .service360-hotels {
+    margin-top:50px;
+  }
+  .service360-grid {
+    top:420px;
+    height:calc(100% - 620px);
+    background-size:40px 40px;
+  }
+  .service360-hotel {
+    width:34cqw;
+  }
+  .service360-hotel-track {
+    gap:24px;
+    padding-inline:33cqw;
+  }
+  .service360-hotel figcaption {
+    margin-top:24px;
+  }
+}
+@media(max-width:600px) {
+  .service360 {
+    padding-bottom:100px;
+  }
+  .service360 .service360-all {
+    margin-top:65px;
+    letter-spacing:1.1em;
+    text-indent:1.1em;
+  }
+  .service360-wordmark {
+    width:88%;
+    margin-top:25px;
+    transform:none;
+  }
+  .service360 .service360-title {
+    margin-top:34px;
+    line-height:1.5;
+    padding-inline:7%;
+  }
+  .service360 .service360-description {
+    margin-top:28px;
+    font-size:17px;
+    line-height:1.65;
+  }
+  .service360-overview {
+    padding-top:95px;
+  }
+  .service360-overview h3 {
+    font-size:34px;
+    line-height:1.35;
+    margin-inline:7%;
+  }
+  .service360-overview .service360-description {
+    margin-top:24px;
+  }
+  .service360-watermark {
+    width:95%;
+    max-width:none!important;
+    left:2.5%;
+    top:310px;
+  }
+  .service360-steps {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:28px 20px;
+    margin:42px 7% 0;
+  }
+  .service360-steps li:last-child {
+    grid-column:1 / -1;
+    width:calc(50% - 10px);
+    justify-self:center;
+  }
+  .service360-steps p {
+    margin-top:12px;
+    line-height:1.4;
+  }
+  .service360 .service360-cost {
+    margin-top:36px;
+  }
+  .service360-pickup {
+    display:flex;
+    flex-direction:column;
+    margin-top:90px;
+    gap:32px;
+    width:86%;
+  }
+  .service360 .service360-number {
+    font-size:100px;
+  }
+  .service360-pickup h3 {
+    margin-top:24px;
+  }
+  .service360-pickup h4 {
+    margin-top:20px;
+  }
+  .service360-pickup figure {
+    width:100%;
+  }
+  .service360 .service360-body-copy br {
+    display:none;
+  }
+  .service360-accommodation {
+    margin-top:90px;
+  }
+  .service360-accommodation-head {
+    display:block;
+    width:86%;
+  }
+  .service360-accommodation-head h3 {
+    margin-top:24px;
+  }
+  .service360-accommodation-head h4 {
+    margin-top:20px;
+  }
+  .service360-hotel {
+    width:72cqw;
+  }
+  .service360-hotel-track {
+    gap:20px;
+    padding-inline:14cqw;
+  }
+  .service360-hotel figcaption {
+    font-size:15px;
+    line-height:1.4;
+  }
+  .service360-grid {
+    top:450px;
+    height:calc(100% - 650px);
+    opacity:.55;
+  }
+  .service360 .service360-pill {
+    font-size:12px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  [data-service360-reveal] {
+    transition:none;
+    transform:none;
+    opacity:1;
+  }
+  .service360-hotels {
+    scroll-behavior:auto;
+  }
+}
+.service360-hotels.is-dragging {
+  scroll-snap-type:none;
+  cursor:grabbing;
+  user-select:none;
+}
