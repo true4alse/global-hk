@@ -1,5 +1,5 @@
 /* 시설 사진·층별 문구·추가 사진은 index.html의 #facilities에서 관리합니다. */
-.facilities { padding: clamp(72px,6.46vw,124px) 3.906% clamp(72px,8.75vw,168px); background: #003380 url('/assets/facilities/background.webp') center top / 100% 100% no-repeat; background-blend-mode:color-burn; color:#fff; font-family:'HK Pretendard',var(--font-ui); }
+.facilities { padding: clamp(72px,6.46vw,124px) 3.906% clamp(72px,8.75vw,168px); background: #003380 url('../assets/facilities/background.webp') center top / 100% 100% no-repeat; background-blend-mode:color-burn; color:#fff; font-family:'HK Pretendard',var(--font-ui); }
 .facilities-heading { text-align:center; }
 .facilities-kicker { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; height:80px; box-sizing:border-box; padding-block:10px; margin:0; color:#3dbabc; font-size:16px; line-height:23px; }
 .facilities-kicker > span:first-child { font-size:24px; line-height:29px; font-weight:700; }

@@ -112,3 +112,15 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 // 키보드로 헤더에 접근할 때 로고와 언어 메뉴도 함께 사용할 수 있게 합니다.
 header.addEventListener('focusin', () => showHeaderTop(true));
+
+// A base URL must not turn same-page section links into a navigation to the site root.
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href^="#"]');
+  if (!link || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  const hash = link.getAttribute('href');
+  const target = document.getElementById(hash.slice(1));
+  if (!target) return;
+  event.preventDefault();
+  history.pushState(null, '', location.pathname + location.search + hash);
+  target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+});

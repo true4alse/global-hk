@@ -1,5 +1,5 @@
-@font-face { font-family: 'HK Pretendard'; src: url('/assets/PretendardVariable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Playfair Display'; src: url('/assets/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 400 900; font-style: italic; font-display: swap; }
+@font-face { font-family: 'HK Pretendard'; src: url('../assets/PretendardVariable.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Playfair Display'; src: url('../assets/PlayfairDisplay-Italic.ttf') format('truetype'); font-weight: 400 900; font-style: italic; font-display: swap; }
 /* PC에서는 고정 헤더가 히어로 배경 위에 겹쳐집니다. */
 @media (min-width: 761px) { body:has(.hero) { padding-top: 0; } }
 .hero { position: relative; isolation: isolate; min-height: 971px; padding-block: 428px 120px; color: #fff; overflow: hidden; background: #041a2b; font-family: 'HK Pretendard', var(--font-ui); }

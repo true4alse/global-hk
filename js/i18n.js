@@ -1,3 +1,4 @@
+import { localeHref, requestedLocale } from './site-paths.js';
 import ko from '../locales/ko.js';
 
 export const languages = [
@@ -13,21 +14,17 @@ export const languages = [
 
 // URL을 우선하고 쿠키는 언어 없는 최초 진입에만 사용합니다.
 export function localeUrl(code, url = new URL(location.href)) {
-  const parts = url.pathname.split('/').filter(Boolean);
-  if (languages.some(language => language.code === parts[0])) parts.shift();
-  if (parts[0] === 'index.html') parts.shift();
-  url.pathname = '/' + [code, ...parts].join('/') + (parts.length ? '' : '/');
-  return url.pathname + url.search + url.hash;
+  return localeHref(code, url, document.baseURI, languages.map(language => language.code));
 }
 
 export function initializeLocale() {
-  const requested = location.pathname.split('/')[1];
+  const requested = requestedLocale(new URL(location.href), document.baseURI, languages.map(language => language.code));
   const cookie = document.cookie.split('; ').find(value => value.startsWith('site_language='))?.split('=')[1];
   const selected = languages.find(language => language.code === (requested || cookie) && language.content) || languages[0];
   document.documentElement.lang = selected.code;
   document.documentElement.dir = selected.dir;
   document.body.className = `lang-${selected.code}`;
-  document.cookie = `site_language=${selected.code}; Max-Age=31536000; Path=/; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
+  document.cookie = `site_language=${selected.code}; Max-Age=31536000; Path=${new URL(document.baseURI).pathname}; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
   const canonical = localeUrl(selected.code);
   if (canonical !== location.pathname + location.search + location.hash) history.replaceState(null, '', canonical);
   return selected;

@@ -3,11 +3,19 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const root = __dirname;
+// Optional subfolder preview: node server.cjs --port 4174 --base /global-hk/
+const argument = name => process.argv[process.argv.indexOf(name) + 1];
+const port = process.argv.includes('--port') ? Number(argument('--port')) : 4173;
+const basePath = process.argv.includes('--base') ? '/' + argument('--base').split('/').filter(Boolean).join('/') + '/' : '/';
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.woff2': 'font/woff2', '.ttf': 'font/ttf' };
 http.createServer((req, res) => {
   let pathname;
   try { pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); }
   catch { res.writeHead(400).end(); return; }
+  if (basePath !== '/') {
+    if (!pathname.startsWith(basePath)) { res.writeHead(404).end(); return; }
+    pathname = '/' + pathname.slice(basePath.length);
+  }
   if (pathname === '/' || /^\/(ko|en|zh|ja|ru|mn|hi|ar)\/?$/.test(pathname)) pathname = '/index.html';
   const file = path.resolve(root, '.' + pathname);
   if (!file.startsWith(root + path.sep) || !types[path.extname(file)]) { res.writeHead(404).end(); return; }
@@ -15,5 +23,5 @@ http.createServer((req, res) => {
     if (error) { res.writeHead(404).end(); return; }
     res.writeHead(200, { 'Content-Type': types[path.extname(file)] }); res.end(data);
   });
-}).listen(4173, '127.0.0.1', () => console.log('Preview: http://127.0.0.1:4173/ko/'));
+}).listen(port, '127.0.0.1', () => console.log(`Preview: http://127.0.0.1:${port}${basePath}ko/`));
 
