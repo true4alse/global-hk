@@ -23,43 +23,44 @@ export function renderService360() {
   }
   motion.addEventListener('change', reveal);
   reveal();
+  initHotelMarquee(section, motion);
+}
+
+function initHotelMarquee(section, motion) {
+  if (!window.Swiper) return;
   const gallery = section.querySelector('.service360-hotels');
-  const cards = [...gallery.querySelectorAll('.service360-hotel')];
-  let active = 2;
-  function centerCard(behavior = 'instant') {
-    const card = cards[active];
-    gallery.scrollTo({ left: card.offsetLeft - gallery.offsetLeft - (gallery.clientWidth - card.clientWidth) / 2, behavior });
+  let paused = false;
+  const swiper = new window.Swiper(gallery, {
+    slidesPerView: 'auto', spaceBetween: 24, loop: true,
+    speed: 10000, initialSlide: 2, centeredSlides: true,
+    loopAdditionalSlides: 2, a11y: false, grabCursor: true,
+    autoplay: { delay: 0, disableOnInteraction: false, waitForTransition: true },
+    breakpoints: { 601: { spaceBetween: 24 }, 1101: { spaceBetween: 32 } }
+  });
+  function freeze() {
+    const position = swiper.getTranslate();
+    swiper.autoplay.stop();
+    swiper.setTransition(0);
+    swiper.setTranslate(position);
+    swiper.updateProgress(position);
   }
+  function sync() {
+    if (paused || motion.matches || document.hidden) freeze();
+    else if (!swiper.autoplay.running) swiper.autoplay.start();
+  }
+  gallery.addEventListener('mouseenter', () => { paused = true; sync(); });
+  gallery.addEventListener('mouseleave', () => { paused = gallery.contains(document.activeElement); sync(); });
+  gallery.addEventListener('focusin', () => { paused = true; sync(); });
+  gallery.addEventListener('focusout', () => { paused = false; sync(); });
   gallery.addEventListener('keydown', event => {
-    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
     event.preventDefault();
-    active = event.key === 'Home' ? 0 : event.key === 'End' ? cards.length - 1 : Math.max(0, Math.min(cards.length - 1, active + (event.key === 'ArrowRight' ? 1 : -1)));
-    centerCard(motion.matches ? 'instant' : 'smooth');
+    paused = true;
+    sync();
+    if (event.key === 'ArrowRight') swiper.slideNext(motion.matches ? 0 : 500);
+    else swiper.slidePrev(motion.matches ? 0 : 500);
   });
-  gallery.addEventListener('scrollend', () => {
-    const middle = gallery.getBoundingClientRect().left + gallery.clientWidth / 2;
-    active = cards.reduce((best, card, index) => Math.abs(card.getBoundingClientRect().left + card.clientWidth / 2 - middle) < Math.abs(cards[best].getBoundingClientRect().left + cards[best].clientWidth / 2 - middle) ? index : best, 0);
-  });
-  let drag;
-  gallery.addEventListener('pointerdown', event => {
-    if (event.pointerType !== 'mouse' || event.button !== 0) return;
-    drag = { x: event.clientX, left: gallery.scrollLeft };
-    gallery.setPointerCapture(event.pointerId);
-    gallery.classList.add('is-dragging');
-  });
-  gallery.addEventListener('pointermove', event => {
-    if (!drag) return;
-    gallery.scrollLeft = drag.left - (event.clientX - drag.x);
-  });
-  function endDrag() {
-    if (!drag) return;
-    drag = null;
-    gallery.classList.remove('is-dragging');
-  }
-  gallery.addEventListener('pointerup', endDrag);
-  gallery.addEventListener('pointercancel', endDrag);
-  gallery.addEventListener('lostpointercapture', endDrag);
-  gallery.addEventListener('dragstart', event => event.preventDefault());
-  // Native horizontal scrolling works with touch, trackpads and keyboard, without duplicated cards.
-  new ResizeObserver(() => centerCard()).observe(gallery);
+  motion.addEventListener('change', sync);
+  document.addEventListener('visibilitychange', sync);
+  sync();
 }

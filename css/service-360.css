@@ -345,10 +345,10 @@
   .service360-accommodation {
     margin-top:130px;
   }
-  .service360-accommodation-head {
-    grid-template-columns:100px 1fr;
-    gap:30px;
-  }
+.service360-accommodation-head {
+    grid-template-columns: 120px 1fr;
+    gap: 30px;
+}
   .service360-accommodation-head .service360-number {
     line-height:1;
     grid-row:span 2;
@@ -503,3 +503,11 @@
   cursor:grabbing;
   user-select:none;
 }
+
+/* Sticky decoration stays behind the overview content and stops at its boundary. */
+.service360-watermark-layer { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.service360 .service360-watermark { position: sticky; top: calc(50dvh - min(20.33cqw, 35dvh)); left: auto; width: 57%; height: min(40.66cqw, 70dvh); margin: 0 auto; object-fit: contain; }
+.service360-hotels.swiper-initialized { overflow: hidden; scroll-snap-type: none; }
+.service360-hotels.swiper-initialized .service360-hotel-track { width: 100%; gap: 0; padding: 0; transition-timing-function: linear !important; }
+.service360-hotels:not(.swiper-initialized) [data-hotel-repeat] { display: none; }
+@media(max-width:600px) { .service360 .service360-watermark { width: 95%; height: min(67.8cqw, 70dvh); top: calc(50dvh - min(33.9cqw, 35dvh)); } }

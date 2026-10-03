@@ -1,0 +1,54 @@
+.reservation { --reservation-mint:#3dbabc; --reservation-blue:#277fb9; container-type:inline-size; padding:83px 0; background:#fff; color:#353535; font-family:'HK Pretendard',var(--font-ui); scroll-margin-top:110px; }
+.reservation :is(h2,h3,p,fieldset) { margin:0; }
+.reservation fieldset { min-width:0; border:0; padding:0; }
+.reservation-header { text-align:center; }
+.reservation-kicker { display:flex; flex-direction:column; gap:8px; align-items:center; padding:10px; color:var(--reservation-mint); font-size:16px; line-height:1.45; }
+.reservation-kicker b { font-size:24px; }
+.reservation-header h2 { margin-top:49px; font-size:clamp(40px,4.22cqw,81px); line-height:1.2; font-weight:700; }
+.reservation-header>p:last-child { margin:49px 24px; font-size:clamp(17px,1.25cqw,24px); line-height:1.45; word-break:keep-all; }
+.reservation-sr { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.reservation .reservation-pain { padding:80px 5%; color:#fff; background:var(--reservation-mint); }
+.reservation h3 { display:flex; justify-content:center; gap:16px; font-size:clamp(24px,1.875cqw,36px); line-height:1.2; font-weight:500; text-align:center; }
+.reservation h3>span:first-child { font-weight:700; white-space:nowrap; }
+.reservation-pain-options { display:grid; grid-template-columns:repeat(5,minmax(0,200px)); justify-content:center; gap:clamp(24px,3.33cqw,64px); margin-top:32px; }
+.reservation-pain-option { position:relative; display:block; cursor:pointer; }
+.reservation-pain-option>input { position:absolute; width:1px; height:1px; opacity:0; }
+.reservation-pain-option img { display:block; width:100%; height:auto; aspect-ratio:1; object-fit:cover; border-radius:8px; transition:box-shadow .2s; }
+.reservation-choice { display:flex; justify-content:center; align-items:center; gap:8px; margin-top:16px; font-size:16px; line-height:1.4; }
+.reservation-choice i { flex:none; width:16px; height:16px; border:1px solid #fff; border-radius:50%; background:#fff; box-sizing:border-box; }
+.reservation-pain-option input:checked~.reservation-choice i { background:var(--reservation-blue); box-shadow:inset 0 0 0 3px #fff; }
+.reservation-pain-option input:checked+img { box-shadow:0 0 0 3px #fff,0 0 0 6px var(--reservation-blue); }
+.reservation-pain-option input:focus-visible+img { outline:3px solid #173d63; outline-offset:5px; }
+.reservation .reservation-patient { padding:80px 3.33%; margin-top:49px; }
+.reservation-patient h3>span:first-child { color:var(--reservation-blue); }
+.reservation-fields { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:78px; }
+.reservation-column { display:flex; flex-direction:column; gap:16px; min-width:0; }
+.reservation-field { display:grid; grid-template-columns:minmax(85px,150px) minmax(0,1fr); align-items:center; gap:16px; font-size:16px; line-height:1.45; }
+.reservation :is(input,textarea,button) { font:inherit; }
+.reservation-field :is(input,textarea) { width:100%; box-sizing:border-box; min-width:0; border:1px solid transparent; border-radius:8px; background:#f6f6f6; color:#353535; padding:14px 16px; min-height:56px; }
+.reservation-field textarea { min-height:156px; resize:vertical; }
+.reservation-symptoms { align-items:start; }
+.reservation-symptoms>span { padding-top:14px; }
+.reservation-field :is(input,textarea):focus { outline:2px solid var(--reservation-mint); outline-offset:2px; }
+.reservation .reservation-insurance { display:grid; grid-template-columns:minmax(85px,150px) 1fr; column-gap:16px; min-height:51.5px; }
+.reservation-insurance legend { float:left; width:150px; font-size:16px; }
+.reservation-insurance-options { display:flex; flex-wrap:wrap; align-content:start; gap:12px 24px; }
+.reservation-insurance-options label { display:flex; align-items:center; gap:8px; font-size:16px; cursor:pointer; }
+.reservation :is(input[type=radio],input[type=checkbox]) { accent-color:var(--reservation-mint); width:16px; height:16px; margin:0; flex:none; }
+.reservation-actions { text-align:center; margin:0 24px; }
+.reservation-consent { display:flex; justify-content:center; align-items:center; gap:8px; font-size:24px; line-height:1.4; cursor:pointer; }
+.reservation-submit { margin-top:49px; border:0; border-radius:1000px; padding:16px 64px; background:var(--reservation-mint); color:#fff; font-size:36px!important; font-weight:700!important; cursor:pointer; }
+.reservation-submit:focus-visible { outline:3px solid var(--reservation-blue); outline-offset:5px; }
+.reservation .reservation-status { max-width:680px; margin:24px auto 0; font-size:16px; line-height:1.5; }
+@media(max-width:1100px) { .reservation-field { grid-template-columns:90px minmax(0,1fr); gap:12px; } .reservation-fields { gap:28px; } .reservation .reservation-insurance { grid-template-columns:90px 1fr; gap:12px; } .reservation-insurance legend { width:90px; } .reservation-consent { font-size:18px; } }
+@media(max-width:700px) {
+ .reservation { padding:60px 0; } .reservation-header h2 { margin-top:28px; } .reservation-header>p:last-child { margin:28px 24px 40px; }
+ .reservation .reservation-pain { padding:44px 7%; } .reservation h3 { flex-direction:column; gap:8px; font-size:25px; }
+ .reservation-pain-options { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 20px; } .reservation-pain-option:last-child { grid-column:1/-1; width:calc(50% - 10px); justify-self:center; }
+ .reservation-choice { font-size:15px; } .reservation .reservation-patient { margin-top:0; padding:56px 7%; }
+ .reservation-fields { grid-template-columns:1fr; gap:16px; margin-top:36px; } .reservation-column { gap:16px; }
+ .reservation-field { grid-template-columns:76px minmax(0,1fr); gap:12px; } .reservation-field :is(input,textarea) { font-size:16px; padding:12px; }
+ .reservation .reservation-insurance { grid-template-columns:76px 1fr; } .reservation-insurance legend { width:76px; }
+ .reservation-consent { font-size:15px; text-align:left; } .reservation-submit { margin-top:28px; padding:16px 48px; font-size:24px!important; }
+}
+@media(prefers-reduced-motion:reduce) { .reservation-pain-option img { transition:none; } }

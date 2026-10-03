@@ -55,7 +55,7 @@ function initDoctorSlider(section, reduced) {
   const swiper = new window.Swiper(slider, {
 
     slidesPerView: 1, spaceBetween: 0, loop: true, rewind: true,
-    autoHeight: true, speed: reduced.matches ? 0 : 650,
+    autoHeight: false, speed: reduced.matches ? 0 : 650,
     autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true, waitForTransition: false },
     navigation: { prevEl: region.querySelector('.doctor-previous'), nextEl: region.querySelector('.doctor-next'), addIcons: false },
     a11y: false,
@@ -88,9 +88,7 @@ function initDoctorSlider(section, reduced) {
   } else visible = true;
   reduced.addEventListener('change', sync);
   document.addEventListener('visibilitychange', sync);
-  // Refresh height after responsive reflow or an image/font finishes loading.
-  const resize = new ResizeObserver(() => swiper.updateAutoHeight(0));
-  slides.forEach(slide => resize.observe(slide));
+  // Flex stretch keeps every profile as tall as the longest profile at this viewport.
   slides.forEach((slide, i) => { slide.inert = i !== 0; slide.setAttribute('aria-hidden', String(i !== 0)); });
   region.querySelector('.doctor-slider-controls').hidden = false;
   initDoctorModals(section, open => { modalOpen = open; sync(); });

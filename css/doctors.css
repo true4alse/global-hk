@@ -169,3 +169,7 @@
   .doctors-reveal-pending, .doctors-reveal-shown { opacity: 1; transform: none; transition: none; }
   .doctor-slider-controls .doctor-dot, .doctor-dot span { transition: none; }
 }
+
+/* Keep the longest profile height for every slide, including responsive reflow. */
+.doctor-slider.swiper-initialized > .swiper-wrapper { height: auto; align-items: stretch; }
+.doctor-slider.swiper-initialized .doctor-profile { height: auto; flex-shrink: 0; }

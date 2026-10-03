@@ -1,3 +1,4 @@
+import { renderReservation } from './reservation.js';
 import { renderService360 } from './service-360.js';
 import { renderFacilities } from './facilities.js';
 import { renderDoctors } from './doctors.js';
@@ -35,6 +36,7 @@ renderDoctors();
 renderApkass();
 renderFacilities();
 renderService360();
+renderReservation();
 const toggle = document.querySelector('.language-toggle');
 const panel = document.querySelector('.language-options');
 toggle.disabled = false;
