@@ -1,3 +1,5 @@
+import { renderContact } from './contact.js';
+import { renderCustomerCenter } from './customer-center.js';
 import { renderReservation } from './reservation.js';
 import { renderService360 } from './service-360.js';
 import { renderFacilities } from './facilities.js';
@@ -37,6 +39,8 @@ renderApkass();
 renderFacilities();
 renderService360();
 renderReservation();
+renderCustomerCenter();
+renderContact();
 const toggle = document.querySelector('.language-toggle');
 const panel = document.querySelector('.language-options');
 toggle.disabled = false;

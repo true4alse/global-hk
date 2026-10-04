@@ -15,6 +15,7 @@ export const sectionAttributes = {
 
 export const translatedAttributes = {
   'data-i18n-alt': 'alt',
+  'data-i18n-title': 'title',
   'data-i18n-label': 'aria-label',
   'data-i18n-role-description': 'aria-roledescription',
   'data-i18n-pause': 'data-pause',
