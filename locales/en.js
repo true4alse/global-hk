@@ -7,7 +7,7 @@
 // 한국어 문구 변경 시 index.html도 함께 수정합니다.(외국어x) 이미지 경로·통계 숫자는 HTML에서 관리합니다.
 
 // ── 01. 페이지 제목 ──
-const pageTitle = "흥K병원 | 한국어 홈페이지";
+const pageTitle = "Heung-K Hospital | English Homepage";
 
 // ── 02. 언어 메뉴 제목 ──
 const languageLabel = "Select language";
