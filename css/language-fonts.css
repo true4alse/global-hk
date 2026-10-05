@@ -1,0 +1,64 @@
+/* 외부 폰트 서버 없이 사이트와 함께 제공하는 가변 폰트입니다. */
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('../assets/fonts/noto/NotoSans.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  src: url('../assets/fonts/noto/NotoSansArabic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans Devanagari';
+  src: url('../assets/fonts/noto/NotoSansDevanagari.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url('../assets/fonts/noto/NotoSansJP.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('../assets/fonts/noto/NotoSansSC.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+/* 한국어·영어의 기존 디자인은 유지하고 다른 언어는 문자별 Noto Sans를 사용합니다. */
+html:is([lang="ru"], [lang="mn"], [lang="vi"]) {
+  --language-font: 'Noto Sans', 'HK Pretendard', sans-serif;
+}
+html[lang="zh"] {
+  --language-font: 'Noto Sans SC', 'Noto Sans', 'HK Pretendard', sans-serif;
+}
+html[lang="ja"] {
+  --language-font: 'Noto Sans JP', 'Noto Sans', 'HK Pretendard', sans-serif;
+}
+html[lang="hi"] {
+  --language-font: 'Noto Sans Devanagari', 'Noto Sans', 'HK Pretendard', sans-serif;
+}
+html[lang="ar"] {
+  --language-font: 'Noto Sans Arabic', 'Noto Sans', 'HK Pretendard', sans-serif;
+}
+html:is([lang="zh"], [lang="ja"], [lang="ru"], [lang="mn"], [lang="hi"], [lang="ar"], [lang="vi"]) body,
+html:is([lang="zh"], [lang="ja"], [lang="ru"], [lang="mn"], [lang="hi"], [lang="ar"], [lang="vi"]) body *:not(:where(
+  .hero-number,
+  .global-title, .global-title *,
+  .global-years, .global-unit,
+  #apkass-title, #apkass-title *, .apkass-founder-word,
+  .specialty-title, .specialty-title *
+)) {
+  font-family: var(--language-font);
+}
+/* 위 디자인 타이틀·숫자는 각 섹션의 원래 Playfair 세리프를 상속합니다.
+   global-title의 민트색 H/S/S는 기존 산세리프 규칙을 그대로 유지합니다. */

@@ -1,7 +1,7 @@
 .about {
     position: relative;
     isolation: isolate;
-    overflow: hidden;
+    overflow: clip;
     color: #080d10;
     background: #fff;
     font-family: 'HK Pretendard', var(--font-ui);
@@ -237,7 +237,7 @@
 }
 
 .about-marquee+.about-marquee {
-    margin-top: 2px;
+    margin-top: 0;
 }
 
 .about-marquee-track {
@@ -251,7 +251,7 @@
     width: clamp(220px, 20.3125vw, 390px);
     height: clamp(147px, 13.5417vw, 260px);
     object-fit: cover;
-    border-inline-end: 2px solid white;
+    border:0;
 }
 
 .marquee-ready .about-marquee-track {
@@ -541,3 +541,5 @@
 .about-backdrop {
     opacity: .18;
 }
+.about-marquee img { object-fit:contain; }
+.marquee-ready img { width:var(--individual-photo-width,var(--photo-width)); }

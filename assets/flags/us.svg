@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <path fill="#fff" d="M0 0h640v480H0z"/>
+  <path stroke="#b22234" stroke-width="36.923" d="M0 18.462h640M0 92.308h640M0 166.154h640M0 240h640M0 313.846h640M0 387.692h640M0 461.538h640"/>
+  <path fill="#3c3b6e" d="M0 0h296v258.462H0z"/>
+  <defs>
+    <path id="s" fill="#fff" d="m0-10 2.245 6.91h7.266L3.633 1.18l2.245 6.91L0 3.82-5.878 8.09l2.245-6.91-5.878-4.27h7.266z"/>
+    <g id="six"><use href="#s" x="24.667"/><use href="#s" x="74"/><use href="#s" x="123.333"/><use href="#s" x="172.667"/><use href="#s" x="222"/><use href="#s" x="271.333"/></g>
+    <g id="five"><use href="#s" x="49.333"/><use href="#s" x="98.667"/><use href="#s" x="148"/><use href="#s" x="197.333"/><use href="#s" x="246.667"/></g>
+  </defs>
+  <use href="#six" y="25.846"/><use href="#five" y="51.692"/><use href="#six" y="77.538"/><use href="#five" y="103.385"/><use href="#six" y="129.231"/><use href="#five" y="155.077"/><use href="#six" y="180.923"/><use href="#five" y="206.769"/><use href="#six" y="232.615"/>
+</svg>

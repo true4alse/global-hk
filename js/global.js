@@ -5,6 +5,19 @@ export function renderGlobal() {
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const watermark = section.querySelector('.global-watermark');
   const stage = section.querySelector('.global-stage');
+  if (!motion.matches && 'IntersectionObserver' in window) {
+    watermark.classList.add('letters-pending');
+    const lettersObserver = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      watermark.classList.remove('letters-pending');
+      watermark.classList.add('letters-shown');
+      lettersObserver.disconnect();
+    }, { threshold:.15 });
+    lettersObserver.observe(watermark);
+    motion.addEventListener('change', () => {
+      if (motion.matches) { lettersObserver.disconnect(); watermark.classList.remove('letters-pending'); }
+    });
+  }
   let fadeFrame = 0;
   // 스티키 시작 시 100%, HSS 소개·의료 교류 끝이 화면 하단에 닿으면 15%.
   // 제목 위 여백은 진행률에서 제외하고, 위로 스크롤하면 다시 진해집니다.

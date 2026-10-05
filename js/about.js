@@ -3,7 +3,7 @@ export function renderAbout() {
   const section = document.querySelector('.about');
   if (!section) return;
   cleanups.get(section)?.();
-  const formatter = new Intl.NumberFormat(document.documentElement.lang || 'ko');
+  const formatter = new Intl.NumberFormat('en-US');
   const counters = [...section.querySelectorAll('.about-stat-value')];
   counters.forEach(element => {
     // 최종 숫자는 HTML에서 읽고, 애니메이션 재초기화에도 유지합니다.
@@ -24,32 +24,39 @@ export function renderAbout() {
       const width = Math.max(220, Math.min(innerWidth * .203125,390), row.clientWidth / (photos.length-1) + 1);
       track.style.setProperty('--photo-width', width + 'px');
       track.style.setProperty('--photo-height', width * 2/3 + 'px');
-      track.style.setProperty('--marquee-distance', width * photos.length + 'px');
-      track.style.setProperty('--marquee-duration', width * photos.length/16 + 's');
+      const height = width * 2/3;
+      const widths = photos.map(img => height * (img.naturalWidth && img.naturalHeight ? img.naturalWidth / img.naturalHeight : 1.5));
+      const distance = widths.reduce((sum, value) => sum + value, 0);
+      track.style.setProperty('--marquee-distance', distance + 'px');
+      track.style.setProperty('--marquee-duration', distance/16 + 's');
+      let offset = 0;
       photos.forEach((img,i)=>{
-        const steps = row.dataset.direction === 'left' ? photos.length-1-i : i+1;
-        img.style.animationDelay = -steps*width/16 + 's';
+        img.style.setProperty('--individual-photo-width', widths[i] + 'px');
+        offset += widths[i];
+        img.style.animationDelay = -(row.dataset.direction === 'left' ? distance-offset : offset)/16 + 's';
       });
       row.classList.add('marquee-ready');
     };
     layout();
+    photos.forEach(img => { if (!img.complete) img.addEventListener('load', layout, { once:true }); });
     const resize = new ResizeObserver(layout); resize.observe(row); resizers.push(resize);
   });
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const frames = new Set();
+  const counterFrames = new Map();
   let observer;
   const reveals = [...section.querySelectorAll('[data-about-reveal]')];
   const toggle = section.querySelector('.about-motion-toggle');
   let paused = false;
-  toggle.hidden = reduced.matches;
-  toggle.textContent = toggle.dataset.pause;
+  if (toggle) { toggle.hidden = reduced.matches; toggle.textContent = toggle.dataset.pause; }
   function onToggle() {
     paused = !paused;
     rows.forEach(row => row.classList.toggle('is-paused', paused));
     toggle.textContent = paused ? toggle.dataset.play : toggle.dataset.pause;
   }
-  toggle.addEventListener('click',onToggle);
+  toggle?.addEventListener('click',onToggle);
   function count(element) {
+    stopCount(element);
     const target = Number(element.dataset.target);
     let start;
     function tick(now) {
@@ -57,12 +64,18 @@ export function renderAbout() {
       start ??= now;
       const progress = Math.min((now-start)/2400,1);
       element.textContent = formatter.format(Math.round(target*(1-Math.pow(1-progress,3))));
-      if(progress < 1) { id=requestAnimationFrame(tick); frames.add(id); }
+      if(progress < 1) { id=requestAnimationFrame(tick); frames.add(id); counterFrames.set(element,id); }
+      else counterFrames.delete(element);
     }
-    let id=requestAnimationFrame(tick); frames.add(id);
+    element.textContent = '0';
+    let id=requestAnimationFrame(tick); frames.add(id); counterFrames.set(element,id);
+  }
+  function stopCount(element) {
+    const id = counterFrames.get(element);
+    if (id !== undefined) { cancelAnimationFrame(id); frames.delete(id); counterFrames.delete(element); }
   }
   function showFinal() {
-    frames.forEach(cancelAnimationFrame); frames.clear();
+    frames.forEach(cancelAnimationFrame); frames.clear(); counterFrames.clear();
     counters.forEach(element => element.textContent = formatter.format(Number(element.dataset.target)));
     reveals.forEach(element => { element.classList.remove('about-pending'); element.classList.add('about-shown'); });
   }
@@ -74,15 +87,19 @@ export function renderAbout() {
       if (element.classList.contains('about-marquee')) {
         element.classList.toggle('is-in-view',entry.isIntersecting); return;
       }
+      if (element.classList.contains('about-stat-value')) {
+        if (entry.isIntersecting) count(element);
+        else { stopCount(element); element.textContent = '0'; }
+        return;
+      }
       if (!entry.isIntersecting) return;
       observer.unobserve(element);
-      if(element.classList.contains('about-stat-value')) count(element);
-      else element.classList.add('about-shown');
+      element.classList.add('about-shown');
     }),{threshold:.15});
     [...reveals,...counters,...rows].forEach(element => observer.observe(element));
   } else showFinal();
   function onReducedChange() {
-    toggle.hidden = reduced.matches;
+    if (toggle) toggle.hidden = reduced.matches;
     if(reduced.matches) { showFinal(); observer?.disconnect(); rows.forEach(row => row.classList.remove('is-in-view')); }
     // 동작 줄이기를 해제한 경우에도 숫자·문구는 다시 숨기지 않습니다.
     else rows.forEach(row => row.classList.add('is-in-view'));
@@ -90,6 +107,6 @@ export function renderAbout() {
   reduced.addEventListener('change',onReducedChange);
   cleanups.set(section,()=>{
     observer?.disconnect(); frames.forEach(cancelAnimationFrame); resizers.forEach(r=>r.disconnect());
-    toggle.removeEventListener('click',onToggle); reduced.removeEventListener('change',onReducedChange);
+    toggle?.removeEventListener('click',onToggle); reduced.removeEventListener('change',onReducedChange);
   });
 }

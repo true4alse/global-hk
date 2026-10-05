@@ -124,7 +124,7 @@ def check():
                 continue
             if target == 'aria-label' and 'data-i18n-dynamic-label' in item.attrs:
                 continue
-            if binding not in item.attrs:
+            if binding not in item.attrs and 'data-i18n-static' not in item.attrs:
                 errors.append(f'<{item.tag}> {target} 번역 키 누락: {value[:90]}')
     if errors:
         print('\n'.join(errors))

@@ -24,12 +24,12 @@
 .reservation-fields { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:78px; }
 .reservation-column { display:flex; flex-direction:column; gap:16px; min-width:0; }
 .reservation-field { display:grid; grid-template-columns:minmax(85px,150px) minmax(0,1fr); align-items:center; gap:16px; font-size:16px; line-height:1.45; }
-.reservation :is(input,textarea,button) { font:inherit; }
-.reservation-field :is(input,textarea) { width:100%; box-sizing:border-box; min-width:0; border:1px solid transparent; border-radius:8px; background:#f6f6f6; color:#353535; padding:14px 16px; min-height:56px; }
+.reservation :is(input,select,textarea,button) { font:inherit; }
+.reservation-field :is(input,select,textarea) { width:100%; box-sizing:border-box; min-width:0; border:1px solid transparent; border-radius:8px; background:#f6f6f6; color:#353535; padding:14px 16px; min-height:56px; }
 .reservation-field textarea { min-height:156px; resize:vertical; }
 .reservation-symptoms { align-items:start; }
 .reservation-symptoms>span { padding-top:14px; }
-.reservation-field :is(input,textarea):focus { outline:2px solid var(--reservation-mint); outline-offset:2px; }
+.reservation-field :is(input,select,textarea):focus { outline:2px solid var(--reservation-mint); outline-offset:2px; }
 .reservation .reservation-insurance { display:grid; grid-template-columns:minmax(85px,150px) 1fr; column-gap:16px; min-height:51.5px; }
 .reservation-insurance legend { float:left; width:150px; font-size:16px; }
 .reservation-insurance-options { display:flex; flex-wrap:wrap; align-content:start; gap:12px 24px; }
@@ -44,10 +44,10 @@
 @media(max-width:700px) {
  .reservation { padding:60px 0; } .reservation-header h2 { margin-top:28px; } .reservation-header>p:last-child { margin:28px 24px 40px; }
  .reservation .reservation-pain { padding:44px 7%; } .reservation h3 { flex-direction:column; gap:8px; font-size:25px; }
- .reservation-pain-options { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 20px; } .reservation-pain-option:last-child { grid-column:1/-1; width:calc(50% - 10px); justify-self:center; }
+ .reservation-pain-options { grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px 14px; } 
  .reservation-choice { font-size:15px; } .reservation .reservation-patient { margin-top:0; padding:56px 7%; }
  .reservation-fields { grid-template-columns:1fr; gap:16px; margin-top:36px; } .reservation-column { gap:16px; }
- .reservation-field { grid-template-columns:76px minmax(0,1fr); gap:12px; } .reservation-field :is(input,textarea) { font-size:16px; padding:12px; }
+ .reservation-field { grid-template-columns:76px minmax(0,1fr); gap:12px; } .reservation-field :is(input,select,textarea) { font-size:16px; padding:12px; }
  .reservation .reservation-insurance { grid-template-columns:76px 1fr; } .reservation-insurance legend { width:76px; }
  .reservation-consent { font-size:15px; text-align:left; } .reservation-submit { margin-top:28px; padding:16px 48px; font-size:24px!important; }
 }

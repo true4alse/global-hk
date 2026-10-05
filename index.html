@@ -8,7 +8,7 @@
     // Keep asset paths relative to the site folder, including /ko/ and GitHub Pages /repository/.
     (() => {
       const path = location.pathname;
-      const root = path.replace(/\/(ko|en|zh|ja|ru|mn|hi|ar)(?:\/index\.html)?\/?$/, '/');
+      const root = path.replace(/\/(ko|en|zh|ja|ru|mn|hi|ar|vi)(?:\/index\.html)?\/?$/, '/');
       document.querySelector('base').setAttribute('href', root !== path ? root : path.slice(0, path.lastIndexOf('/') + 1));
     })();
   </script>
@@ -40,7 +40,10 @@
   <link rel="stylesheet" href="./css/service-360.css">
   <link rel="stylesheet" href="./css/reservation.css">
   <link rel="stylesheet" href="./css/customer-center.css">
-<link rel="stylesheet" href="./css/contact.css">
+  <link rel="stylesheet" href="./css/contact.css">
+  <link rel="stylesheet" href="./css/center-menu.css">
+<link rel="stylesheet" href="./css/section-rails.css">
+  <link rel="stylesheet" href="./css/language-fonts.css">
 </head>
 
 <body class="lang-ko">
@@ -48,31 +51,53 @@
     <div class="header-top">
       <div class="language-picker">
         <button class="language-toggle pill" type="button" aria-expanded="false" aria-controls="language-options"
-          aria-label="언어 선택" disabled data-i18n-label="languageLabel">
+          aria-label="언어 선택" aria-describedby="current-language-name" disabled data-i18n-label="languageLabel">
           <span class="globe"><img src="./assets/globe.svg" alt="" width="18" height="18"></span>
           <span data-i18n="header.languageButton">global</span>
+          <bdi class="current-language-name" id="current-language-name" lang="ko" data-i18n-static="현재 언어의 자국어 이름">한국어</bdi>
+          <span class="current-language-flag" aria-hidden="true">
+            <img data-current-flag="ko" src="./assets/flags/kr.svg" width="24" height="18" alt="">
+            <img data-current-flag="en" src="./assets/flags/us.svg" width="24" height="18" alt="">
+            <img data-current-flag="zh" src="./assets/flags/cn.svg" width="24" height="18" alt="">
+            <img data-current-flag="ja" src="./assets/flags/jp.svg" width="24" height="18" alt="">
+            <img data-current-flag="ru" src="./assets/flags/ru.svg" width="24" height="18" alt="">
+            <img data-current-flag="mn" src="./assets/flags/mn.svg" width="24" height="18" alt="">
+            <img data-current-flag="hi" src="./assets/flags/in.svg" width="24" height="18" alt="">
+            <img data-current-flag="ar" src="./assets/flags/ae.svg" width="24" height="18" alt="">
+            <img data-current-flag="vi" src="./assets/flags/vn.svg" width="24" height="18" alt="">
+          </span>
         </button>
         <div class="language-options" id="language-options" hidden>
           <p data-i18n="languageLabel">언어 선택</p>
           <ul>
-            <li><button type="button" data-language="ko" lang="ko" dir="ltr" aria-current="true"
-                data-i18n-static="언어 자국어 표기">한국어</button></li>
-            <li><button type="button" data-language="en" lang="en" dir="ltr" disabled
-                data-i18n-static="언어 자국어 표기">English</button></li>
-            <li><button type="button" data-language="zh" lang="zh" dir="ltr" disabled
-                data-i18n-static="언어 자국어 표기">中文</button></li>
-            <li><button type="button" data-language="ja" lang="ja" dir="ltr" disabled
-                data-i18n-static="언어 자국어 표기">日本語</button></li>
-            <li><button type="button" data-language="ru" lang="ru" dir="ltr" disabled
-                data-i18n-static="언어 자국어 표기">Русский</button></li>
-            <li><button type="button" data-language="mn" lang="mn" dir="ltr" disabled
-                data-i18n-static="언어 자국어 표기">Монгол</button></li>
-            <li><button type="button" data-language="hi" lang="hi" dir="ltr" disabled
-                data-i18n-static="언어 자국어 표기">हिन्दी</button></li>
-            <li><button type="button" data-language="ar" lang="ar" dir="rtl" disabled
-                data-i18n-static="언어 자국어 표기">العربية</button></li>
+            <li><button type="button" data-language="ko" dir="ltr" aria-current="true" aria-label="한국어"
+                data-i18n-label="languageNames.ko"><img src="./assets/flags/kr.svg" width="28" height="21" alt=""><span
+                  lang="en" data-i18n-static="언어 영문 3글자 표기">KOR</span></button></li>
+            <li><button type="button" data-language="en" dir="ltr" disabled aria-label="영어"
+                data-i18n-label="languageNames.en"><img src="./assets/flags/us.svg" width="28" height="21" alt=""><span
+                  lang="en" data-i18n-static="언어 영문 3글자 표기">ENG</span></button></li>
+            <li><button type="button" data-language="zh" dir="ltr" disabled aria-label="중국어"
+                data-i18n-label="languageNames.zh"><img src="./assets/flags/cn.svg" width="28" height="21" alt=""><span
+                  lang="en" data-i18n-static="언어 영문 3글자 표기">CHN</span></button></li>
+            <li><button type="button" data-language="ja" dir="ltr" disabled aria-label="일본어"
+                data-i18n-label="languageNames.ja"><img src="./assets/flags/jp.svg" width="28" height="21" alt=""><span
+                  lang="en" data-i18n-static="언어 영문 3글자 표기">JPN</span></button></li>
+            <li><button type="button" data-language="ru" dir="ltr" disabled aria-label="러시아어"
+                data-i18n-label="languageNames.ru"><img src="./assets/flags/ru.svg" width="28" height="21" alt=""><span
+                  lang="en" data-i18n-static="언어 영문 3글자 표기">RUS</span></button></li>
+            <li><button type="button" data-language="mn" dir="ltr" disabled aria-label="몽골어"
+                data-i18n-label="languageNames.mn"><img src="./assets/flags/mn.svg" width="28" height="21" alt=""><span
+                  lang="en" data-i18n-static="언어 영문 3글자 표기">MON</span></button></li>
+            <li><button type="button" data-language="hi" dir="ltr" disabled aria-label="힌디어"
+                data-i18n-label="languageNames.hi"><img src="./assets/flags/in.svg" width="28" height="21" alt=""><span
+                  lang="en" data-i18n-static="언어 영문 3글자 표기">HIN</span></button></li>
+            <li><button type="button" data-language="ar" dir="ltr" disabled aria-label="아랍어"
+                data-i18n-label="languageNames.ar"><img src="./assets/flags/ae.svg" width="28" height="21" alt=""><span
+                  lang="en" data-i18n-static="언어 영문 3글자 표기">ARA</span></button></li>
+            <li><button type="button" data-language="vi" dir="ltr" disabled aria-label="베트남어"
+                data-i18n-label="languageNames.vi"><img src="./assets/flags/vn.svg" width="28" height="21" alt=""><span
+                  lang="en" data-i18n-static="언어 영문 3글자 표기">VIE</span></button></li>
           </ul>
-          <small data-i18n="header.translationPending">한국어 외 언어는 번역 준비 중입니다.</small>
         </div>
       </div>
       <a class="hospital-logo" href="./" aria-label="흥K병원 홈" data-i18n-label="homeLabel">
@@ -94,7 +119,8 @@
   </header>
   <main id="main-content">
     <section class="hero" aria-labelledby="hero-title" data-figma-node="30:732">
-      <img class="hero-background" src="./assets/hero-surgery.png" alt="" width="1920" height="971" fetchpriority="high">
+      <img class="hero-background" src="./assets/hero-surgery.png" alt="" width="1920" height="971"
+        fetchpriority="high">
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-statistic" aria-label="연간 7,208례" data-i18n-dynamic-label="HTML 숫자와 hero.period/unit로 조합">
         <img class="hero-rule" src="./assets/hero-line-start.svg" alt="" width="741" height="1">
@@ -115,6 +141,8 @@
       </div>
     </section>
     <section class="about" id="about" aria-labelledby="about-title" data-figma-node="887:4613">
+      <div class="section-side-rail"><span class="about-side-label" aria-hidden="true"><strong>1</strong><span
+            data-about="kicker">About HEUNG-K</span></span></div>
       <div class="about-intro">
         <img class="about-backdrop" src="./assets/about/background.png" alt="" width="1920" height="959" loading="lazy">
         <div class="about-heading">
@@ -177,10 +205,10 @@
               <img src="./assets/about/vector4.svg" class="stethoscope-tips" alt="" width="50" height="50">
               <img src="./assets/about/group12.svg" class="stethoscope-head" alt="" width="50" height="50">
             </span>
-            <span class="about-stat-value">7,200</span>
+            <span class="about-stat-value">7,208</span>
           </li>
         </ul>
-        <span class="about-side-label" aria-hidden="true">1　<span data-about="kicker">About HEUNG-K</span></span>
+
         <img class="about-ribbon about-ribbon-top" src="./assets/about/ribbon.png" alt="" width="692" height="292"
           loading="lazy">
       </div>
@@ -225,8 +253,7 @@
         </div>
         <img class="about-ribbon about-ribbon-bottom" src="./assets/about/extra2.png" alt="" width="692" height="292"
           loading="lazy">
-        <button class="about-motion-toggle" type="button" hidden data-i18n="about.pause" data-pause="사진 움직임 멈추기"
-          data-play="사진 움직임 재생" data-i18n-pause="about.pause" data-i18n-play="about.resume">사진 움직임 멈추기</button>
+
       </div>
     </section>
     <!-- GLOBAL EXCELLENCE: 이미지 src와 화관 안의 숫자는 이 영역에서 수정합니다. -->
@@ -235,7 +262,12 @@
       <!-- 다음 HSS 콘텐츠도 이 stage 안에 추가하면 배경 문구의 sticky 구간이 이어집니다. -->
       <div class="global-stage">
         <div class="global-sticky-layer" aria-hidden="true">
-          <p class="global-watermark" data-i18n="global.watermark">HSS IN KOREA</p>
+          <p class="global-watermark" data-i18n-static="HSS IN KOREA 브랜드 표기"><span class="global-watermark-line"><span
+                style="--letter:0">H</span><span style="--letter:1">S</span><span style="--letter:2">S</span><span
+                style="--letter:3">&#160;</span><span style="--letter:4">I</span><span
+                style="--letter:5">N</span></span> <span class="global-watermark-line"><span
+                style="--letter:6">K</span><span style="--letter:7">O</span><span style="--letter:8">R</span><span
+                style="--letter:9">E</span><span style="--letter:10">A</span></span></p>
         </div>
         <div class="global-intro">
           <div class="global-photo" data-global-photo aria-hidden="true">
@@ -251,7 +283,7 @@
               <span data-global-reveal><b>S</b>urgery</span>
             </h2>
             <p class="global-description" data-global-reveal data-global="description" data-i18n-lines="">세계적인 의료 현장에서
-              배우고, 우리의 경험을 다시 세계와 나누며.<br>흥K는 관절·척추 전문병원으로서 더 나은 치료를 향해 나아갑니다.</p>
+              배우고, 우리의 경험을 다시 세계와 나누며,<br>흥K는 관절·척추 전문병원으로서 더 나은 치료를 향해 나아갑니다.</p>
           </div>
           <ul class="global-awards" aria-label="HSS 정형외과 평가 이력" data-i18n-label="global.awardsLabel">
             <li class="global-award">
@@ -342,8 +374,8 @@
           src="./assets/apkass/light.png" width="736" height="736" alt="" aria-hidden="true" loading="lazy"><img
           class="apkass-light apkass-light--right" src="./assets/apkass/light.png" width="736" height="736" alt=""
           aria-hidden="true" loading="lazy">
-        <div class="apkass-intro"><img class="apkass-skyline" src="./assets/apkass/skyline.png" width="1916" height="716"
-            alt="" aria-hidden="true" loading="lazy">
+        <div class="apkass-intro"><img class="apkass-skyline" src="./assets/apkass/skyline.png" width="1916"
+            height="716" alt="" aria-hidden="true" loading="lazy">
           <div class="apkass-intro-copy">
             <div class="apkass-logos" data-apkass-reveal><span class="apkass-kas-logo"><img class=""
                   src="./assets/apkass/logo-kas.png" width="187" height="79" alt="대한관절경학회 로고"
@@ -461,14 +493,14 @@
                 <img src="./assets/mis/icon-mis1.svg" alt="" width="100" height="100" loading="lazy">
                 <div>
                   <h5 data-mis="benefit1Title">절개 부담을 최소화한 수술</h5>
-                  <p data-mis="benefit1Description" data-i18n-lines="">허벅지 부위 절개 없이<br>정강이 부위 절개 최소화</p>
+                  <p data-mis="benefit1Description" data-i18n-lines="">허벅지 부위 절개 없이<br>정강이 부위 절개 최소화합니다.</p>
                 </div>
               </li>
               <li data-mis-reveal>
                 <img src="./assets/mis/icon-mis2.svg" alt="" width="100" height="100" loading="lazy">
                 <div>
                   <h5 data-mis="benefit2Title">꼭 필요한 만큼만 절개</h5>
-                  <p data-mis="benefit2Description" data-i18n-lines="">위·아래 각각 약 3~4cm 절개<br>필요한 부위에 최소한으로 접근하여</p>
+                  <p data-mis="benefit2Description" data-i18n-lines="">위·아래 각각 약 3~4cm 절개<br>필요한 부위에 최소한으로 접근합니다.</p>
                 </div>
               </li>
               <li data-mis-reveal>
@@ -674,6 +706,10 @@
 
     <!-- CADAVER 워크숍: 문구·사진은 HTML에서 수정합니다. 범위는 아래 트로피까지입니다. -->
     <section class="cadaver" id="cadaver" aria-labelledby="cadaver-title">
+      <div class="section-side-rail">
+        <p class="cadaver-side-label" aria-hidden="true"><strong>4</strong><span lang="en"
+            data-i18n="cadaver.kicker">MIS TKA · CADAVER WORKSHOP</span></p>
+      </div>
       <div class="cadaver-stage">
         <img class="cadaver-spotlight" src="./assets/cadaver/spotlight.png" alt="" width="1122" height="1402"
           loading="lazy">
@@ -684,8 +720,8 @@
             height="320" loading="lazy"></div>
         <img class="cadaver-wave cadaver-wave-left" src="./assets/cadaver/gold-wave.png" alt="" width="368" height="368"
           loading="lazy">
-        <img class="cadaver-wave cadaver-wave-right" src="./assets/cadaver/gold-wave.png" alt="" width="368" height="368"
-          loading="lazy">
+        <img class="cadaver-wave cadaver-wave-right" src="./assets/cadaver/gold-wave.png" alt="" width="368"
+          height="368" loading="lazy">
         <div class="cadaver-copy">
           <p class="cadaver-kicker" data-cadaver-reveal><strong>4</strong><span lang="en" data-i18n="cadaver.kicker">MIS
               TKA · CADAVER WORKSHOP</span></p>
@@ -707,16 +743,15 @@
               이어가고 있습니다.</p>
           </div>
         </div>
-        <p class="cadaver-side-label" aria-hidden="true"><strong>4</strong><span lang="en"
-            data-i18n="cadaver.kicker">MIS TKA · CADAVER WORKSHOP</span></p>
+
       </div>
       <div class="cadaver-gallery">
         <!-- 사진과 액자를 합친 완성 이미지입니다. 각 SVG 안에 모든 원본 사진이 내장되어 있습니다. -->
         <div class="cadaver-frames">
           <img src="./assets/cadaver/workshop-group-framed.svg" alt="금빛 액자 안의 카데바 워크샵 참가 의료진 단체 사진" width="960"
             height="624" loading="lazy" data-i18n-alt="cadaver.imageAlt.workshopGroupFramed">
-          <img src="./assets/cadaver/workshop-collage-framed.svg" alt="금빛 액자 안에 모은 카데바 워크샵 강의, 실습, 의료진 교류 사진" width="960"
-            height="624" loading="lazy" data-i18n-alt="cadaver.imageAlt.workshopCollageFramed">
+          <img src="./assets/cadaver/workshop-collage-framed.svg" alt="금빛 액자 안에 모은 카데바 워크샵 강의, 실습, 의료진 교류 사진"
+            width="960" height="624" loading="lazy" data-i18n-alt="cadaver.imageAlt.workshopCollageFramed">
         </div>
         <!-- 위치를 잡는 바깥 요소와 올라오는 안쪽 이미지를 분리해 애니메이션 중 중심이 흔들리지 않습니다. -->
         <div class="cadaver-trophy"><img src="./assets/cadaver/trophy.png" alt="카데바 워크샵 영역을 장식하는 금빛 손 모양 트로피"
@@ -739,8 +774,10 @@
             연구 성과를 공유합니다.</p>
         </div>
       </div>
-      <p class="research-side-label" aria-hidden="true"><strong>5</strong><span lang="en"
-          data-i18n="research.kicker">RESEARCH &amp; PUBLICATIONS</span></p>
+      <div class="section-side-rail">
+        <p class="research-side-label" aria-hidden="true"><strong>5</strong><span lang="en"
+            data-i18n="research.kicker">RESEARCH &amp; PUBLICATIONS</span></p>
+      </div>
       <div class="research-slider-area">
         <div class="swiper research-slider" aria-label="의료진 학술 활동 사진" aria-roledescription="carousel" tabindex="0"
           data-i18n-role-description="research.carouselRole" data-i18n-label="research.sliderLabel">
@@ -884,6 +921,22 @@
 
     <!-- 무릎전담센터 배너: 이미지·문구는 이 HTML에서 직접 교체합니다. -->
     <div class="specialty-centers" id="specialty-centers">
+      <div class="center-menu-layer">
+        <nav class="center-menu" aria-label="전담센터 바로가기" data-i18n-label="centerMenu.label">
+          <p data-i18n="centerMenu.title" data-i18n-lines>QUICK<br>MENU</p><a href="#knee-center"
+            aria-label="무릎전담센터로 이동" data-i18n-label="centerMenu.kneeLabel"><img src="./assets/center-menu/knee.webp"
+              width="74" height="111" alt=""><span data-i18n="centerMenu.knee"
+              data-i18n-lines>KNEE<br>CENTER</span></a><a href="#shoulder-center" aria-label="어깨전담센터로 이동"
+            data-i18n-label="centerMenu.shoulderLabel"><img src="./assets/center-menu/shoulder.webp" width="74"
+              height="111" alt=""><span data-i18n="centerMenu.shoulder" data-i18n-lines>SHOULDER<br>CENTER</span></a><a
+            href="#hand-foot-center" aria-label="손발전담센터로 이동" data-i18n-label="centerMenu.hand-footLabel"><img
+              src="./assets/center-menu/hand-foot.webp" width="74" height="111" alt=""><span
+              data-i18n="centerMenu.hand-foot" data-i18n-lines>HAND & FOOT<br>CENTER</span></a><a href="#spine-center"
+            aria-label="척추전담센터로 이동" data-i18n-label="centerMenu.spineLabel"><img src="./assets/center-menu/spine.webp"
+              width="74" height="111" alt=""><span data-i18n="centerMenu.spine"
+              data-i18n-lines>SPINE<br>CENTER</span></a>
+        </nav>
+      </div>
       <section class="knee-center-banner" id="knee-center" aria-labelledby="knee-center-title"
         data-figma-node="666:984">
         <div class="knee-center-stage">
@@ -900,8 +953,8 @@
             </svg>
             <img class="knee-center-surgery knee-center-surgery--right" src="./assets/knee-center/surgery-right.png"
               alt="" width="750" height="500" loading="lazy">
-            <img class="knee-center-surgery knee-center-surgery--left" src="./assets/knee-center/surgery-left.png" alt=""
-              width="750" height="500" loading="lazy">
+            <img class="knee-center-surgery knee-center-surgery--left" src="./assets/knee-center/surgery-left.png"
+              alt="" width="750" height="500" loading="lazy">
             <img class="knee-center-texture" src="./assets/knee-center/blue-texture.png" alt="" width="1920"
               height="1674" loading="lazy">
             <img class="knee-center-wave" src="./assets/knee-center/gold-wave.png" alt="" width="1200" height="600"
@@ -936,18 +989,18 @@
             <!-- 의료진은 각각의 원본 PNG이며 인물별로 src·alt를 수정합니다. -->
             <div class="knee-center-doctors">
               <div class="knee-center-doctor" data-knee-reveal="up"><img src="./assets/knee-center/kim-jong-geun.png"
-                  alt="김종근 대표원장" width="1000" height="1500" loading="lazy" data-i18n-alt="header.imageAlt.kimJongGeun">
+                  alt="김종근 대표원장" width="1000" height="1500" loading="lazy" data-i18n-alt="knee.imageAlt.kimJongGeun">
               </div>
               <div class="knee-center-doctor" data-knee-reveal="up" style="--knee-delay:140ms"><img
                   src="./assets/knee-center/lee-jun-young.png" alt="이준영 원장" width="1000" height="1500" loading="lazy"
-                  data-i18n-alt="header.imageAlt.leeJunYoung"></div>
+                  data-i18n-alt="knee.imageAlt.leeJunYoung"></div>
             </div>
             <!-- 기사 검색 없이 시안의 기사 이미지 원본을 연결했습니다. 클릭하면 원본을 크게 봅니다. -->
             <figure class="knee-center-press" data-knee-reveal="up">
               <a href="./assets/knee-center/chosun-article.png" target="_blank" rel="noopener"
                 aria-label="조선일보 기사 이미지 크게 보기 (새 창)" data-knee-label="articleOpen" data-i18n-label="knee.articleOpen">
                 <img src="./assets/knee-center/chosun-article.png" alt="조선일보 기사: 작게 절개하는 무릎 인공관절 수술, 통증 줄이고 회복 앞당겨"
-                  width="2896" height="4096" loading="lazy" data-i18n-alt="header.imageAlt.chosunArticle">
+                  width="2896" height="4096" loading="lazy" data-i18n-alt="knee.imageAlt.chosunArticle">
               </a>
             </figure>
           </div>
@@ -964,8 +1017,9 @@
               <p class="center-treatment-description" data-center-treatment="mako687_1179">로봇인공관절 수술 시스템으로 흥케이병원의 최소침습
                 전문성에 첨단기술을 더하다!</p>
             </div>
-            <img class="center-treatment-image" src="./assets/knee-center/mako/mako-robot.webp" alt="MAKO 로봇 인공관절 수술 시스템"
-              width="509" height="399" loading="lazy" data-i18n-alt="centerTreatments.imageAlt.introRobotSystem">
+            <img class="center-treatment-image" src="./assets/knee-center/mako/mako-robot.webp"
+              alt="MAKO 로봇 인공관절 수술 시스템" width="509" height="399" loading="lazy"
+              data-i18n-alt="centerTreatments.imageAlt.introRobotSystem">
           </div>
           <!-- details/summary는 JS가 없어도 마우스·키보드로 펼치고 접을 수 있습니다. -->
           <details class="center-treatment-disclosure">
@@ -1009,7 +1063,8 @@
                       <div class="center-treatment-step-images"><img src="./assets/knee-center/mako/plan-ct.webp"
                           alt="수술 전 검사 및 계획" width="237" height="158" loading="lazy"
                           data-i18n-alt="centerTreatments.imageAlt.planCt"><img
-                          src="./assets/knee-center/mako/plan-model.webp" alt="" width="234" height="160" loading="lazy">
+                          src="./assets/knee-center/mako/plan-model.webp" alt="" width="234" height="160"
+                          loading="lazy">
                       </div>
                       <h5 data-center-treatment="mako995_5038">수술 전 검사 및 계획</h5>
                       <p data-center-treatment="mako995_5039">수술 전 CT를 촬영해 환자의 무릎 관절을 3차원으로 구현합니다. 이를 바탕으로 인공관절의 크기와 삽입
@@ -2171,7 +2226,7 @@
             </div>
             <div class="center-banner-description" data-center-banner-reveal>
               <p data-i18n="handFoot.description1">정밀 진단부터 비수술 치료, 고난도 수술과 재활까지.</p>
-              <p data-i18n="handFoot.description2">손 과 발 질환에 특화된 진료 시스템으로 치료의 완성도를 높입니다.</p>
+              <p data-i18n="handFoot.description2">손과 발 질환에 특화된 진료 시스템으로 치료의 완성도를 높입니다.</p>
             </div>
             <ul class="center-banner-services" lang="en" data-center-banner-reveal>
               <li data-i18n="handFoot.service1">Hallux valgus (bunion) correction</li>
@@ -2185,8 +2240,8 @@
 
           </div>
           <div class="center-banner-doctor" data-center-banner-reveal="up">
-            <img src="./assets/hand-foot-center/doctor.webp" alt="김세훈 원장" data-i18n-alt="handFoot.doctorAlt" width="1000"
-              height="1500" loading="lazy">
+            <img src="./assets/hand-foot-center/doctor.webp" alt="김세훈 원장" data-i18n-alt="handFoot.doctorAlt"
+              width="1000" height="1500" loading="lazy">
           </div>
         </div>
       </section>
@@ -2225,7 +2280,7 @@
                         data-center-treatment="micaLead">2~3mm의 최소 절개를 통해 변형된 발의 뼈를 정밀하게 교정하여 통증 부담은 줄이고 빠른 회복을 돕는 최소침습
                         무지외반증 수술입니다.</h4>
                       <p data-center-treatment="micaBody1">MICA 수술은 무지외반증을 교정하기 위한 최소침습 수술로, 부분마취 하에 피부에 2~3mm 크기의 절개(구멍
-                        3-5개 정도)를 시행한 뒤, 실시간 방사선 영상장치를 보면서 특수 기구를 삽입해 변형된 뼈를 세밀하게 절골하고, 올바른 배열로 교정하는 방식입니다.</p>
+                        3~5개 정도)를 시행한 뒤, 실시간 방사선 영상장치를 보면서 특수 기구를 삽입해 변형된 뼈를 세밀하게 절골하고, 올바른 배열로 교정하는 방식입니다.</p>
                       <p data-center-treatment="micaBody2">이후 튀어나온 일부 뼈를 제거하고, 특수 나사를 이용해 단단히 고정하여 마무리합니다.</p>
                     </div>
                   </div>
@@ -2344,8 +2399,9 @@
                         data-center-treatment-reveal><img src="./assets/hand-foot-center/mica/before-xray.webp"
                           alt="MICA 수술 전 무지외반증 엑스레이와 붉은 정렬 안내선" data-i18n-alt="centerTreatments.micaBeforeXrayAlt"
                           width="384" height="568" loading="lazy" data-center-treatment-reveal="none"><img
-                          class="center-treatment-photo-guide" src="./assets/hand-foot-center/mica/before-xray-guide.svg"
-                          alt="" width="384" height="568" loading="lazy" data-center-treatment-reveal="none"></div>
+                          class="center-treatment-photo-guide"
+                          src="./assets/hand-foot-center/mica/before-xray-guide.svg" alt="" width="384" height="568"
+                          loading="lazy" data-center-treatment-reveal="none"></div>
                       <figcaption class="center-treatment-result-before" data-center-treatment="micaBefore">수술 전
                       </figcaption>
                     </figure>
@@ -2377,8 +2433,9 @@
                         data-center-treatment-reveal><img src="./assets/hand-foot-center/mica/after-photo.webp"
                           alt="MICA 수술 후 양쪽 발의 엑스레이와 민트색 정렬 안내선" data-i18n-alt="centerTreatments.micaAfterPhotoAlt"
                           width="941" height="694" loading="lazy" data-center-treatment-reveal="none"><img
-                          class="center-treatment-photo-guide" src="./assets/hand-foot-center/mica/after-photo-guide.svg"
-                          alt="" width="384" height="312" loading="lazy" data-center-treatment-reveal="none"></div>
+                          class="center-treatment-photo-guide"
+                          src="./assets/hand-foot-center/mica/after-photo-guide.svg" alt="" width="384" height="312"
+                          loading="lazy" data-center-treatment-reveal="none"></div>
                       <figcaption class="center-treatment-result-after" data-center-treatment="micaAfter">수술 후
                       </figcaption>
                     </figure>
@@ -2555,8 +2612,8 @@
                       <p data-center-treatment="arthroscopyBenefits3Body">약 0.5~1cm의 작은 절개로 피부 흉터 부담이 적고 주변 조직 손상이 거의 없어
                         통증과 출혈도 최소화됩니다.</p>
                     </li>
-                    <li><img src="./assets/hand-foot-center/arthroscopy/benefit-safe.svg" alt="" width="100" height="100"
-                        loading="lazy">
+                    <li><img src="./assets/hand-foot-center/arthroscopy/benefit-safe.svg" alt="" width="100"
+                        height="100" loading="lazy">
                       <h5 data-center-treatment="arthroscopyBenefits4Title">수술 후 합병증 위험 감소</h5>
                       <p data-center-treatment="arthroscopyBenefits4Body">불필요한 조직 손상이 거의 없는 정밀 수술로, 감염과 염증 등 수술 후 합병증
                         위험이 낮고 빠르고 안전한 회복이 가능합니다.</p>
@@ -2698,8 +2755,8 @@
                       <p data-center-treatment="bessBenefit2Body">고해상도 내시경 카메라로 척추 내부 상태를 정밀하게 관찰하기 때문에 진단과 치료가 가능합니다.
                       </p>
                     </li>
-                    <li><img src="./assets/hand-foot-center/arthroscopy/benefit-safe.svg" alt="" width="100" height="100"
-                        loading="lazy">
+                    <li><img src="./assets/hand-foot-center/arthroscopy/benefit-safe.svg" alt="" width="100"
+                        height="100" loading="lazy">
                       <h5 data-center-treatment="bessBenefit3Title">합병증 위험 감소</h5>
                       <p data-center-treatment="bessBenefit3Body">주변 정상 부위를 최대한 보호하면서 병변 부위만 정교히 치료하므로 수술 후 합병증 발생 확률이
                         낮습니다.</p>
@@ -4176,21 +4233,23 @@
       </div>
       <div class="facilities-gallery">
         <nav class="facilities-floors" aria-label="층별 시설 선택" data-i18n-label="facilities.floorsLabel">
-          <a class="facilities-floor" href="#facilities-floor-5" data-floor="5"
-            aria-controls="facilities-floor-5"><strong data-i18n-static="층 번호">5F</strong><span
-              data-i18n="facilities.floors.5.description">관절 · 척추센터, 영상의학센터 (X-ray, MRI-1, CT), 재활 · 도수치료센터</span></a>
-          <a class="facilities-floor" href="#facilities-floor-6" data-floor="6"
-            aria-controls="facilities-floor-6"><strong data-i18n-static="층 번호">6F</strong><span
-              data-i18n="facilities.floors.6.description">내과센터, 건강검진센터, 중앙수술센터, 성장클리닉센터, 내시경센터</span></a>
-          <a class="facilities-floor" href="#facilities-floor-7" data-floor="7"
-            aria-controls="facilities-floor-7"><strong data-i18n-static="층 번호">7F</strong><span
-              data-i18n="facilities.floors.7.description">입원병동</span></a>
-          <a class="facilities-floor" href="#facilities-floor-8" data-floor="8"
-            aria-controls="facilities-floor-8"><strong data-i18n-static="층 번호">8F</strong><span
-              data-i18n="facilities.floors.8.description">입원병동, MRI-2, 진단검사의학센터, 대회의실, 행정사무실</span></a>
           <a class="facilities-floor" href="#facilities-floor-9" data-floor="9"
             aria-controls="facilities-floor-9"><strong data-i18n-static="층 번호">9F</strong><span
               data-i18n="facilities.floors.9.description">옥상정원</span></a>
+          <a class="facilities-floor" href="#facilities-floor-8" data-floor="8"
+            aria-controls="facilities-floor-8"><strong data-i18n-static="층 번호">8F</strong><span
+              data-i18n="facilities.floors.8.description">입원병동, MRI-2, 진단검사의학센터, 대회의실, 행정사무실</span></a>
+          <a class="facilities-floor" href="#facilities-floor-7" data-floor="7"
+            aria-controls="facilities-floor-7"><strong data-i18n-static="층 번호">7F</strong><span
+              data-i18n="facilities.floors.7.description">입원병동</span></a>
+          <a class="facilities-floor" href="#facilities-floor-6" data-floor="6"
+            aria-controls="facilities-floor-6"><strong data-i18n-static="층 번호">6F</strong><span
+              data-i18n="facilities.floors.6.description">내과센터, 건강검진센터, 중앙수술센터, 성장클리닉센터, 내시경센터</span></a>
+          <a class="facilities-floor" href="#facilities-floor-5" data-floor="5"
+            aria-controls="facilities-floor-5"><strong data-i18n-static="층 번호">5F</strong><span
+              data-i18n="facilities.floors.5.description">관절 · 척추센터, 영상의학센터 (X-ray, MRI-1, CT), 재활 · 도수치료센터</span></a>
+
+
         </nav>
         <section class="facilities-panel" id="facilities-floor-5" data-floor-panel="5"
           aria-labelledby="facilities-floor-title-5">
@@ -4204,34 +4263,55 @@
             <div class="facilities-thumbnails" aria-label="사진 목록" data-i18n-label="facilities.thumbnails">
               <a class="facilities-thumbnail" href="#facilities-photo-5-1" data-photo="1"
                 aria-controls="facilities-photo-5-1" aria-label="5층 접수데스크 사진 보기"
-                data-i18n-label="facilities.floors.5.photos.1.select" style="--thumbnail-ratio:1532 / 972"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:1532 / 972"><img
                   src="./assets/facilities/5f-01.webp" alt="흥K병원 5층 접수데스크"
-                  data-i18n-alt="facilities.floors.5.photos.1.alt" width="1532" height="972" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1532" height="972" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-5-2" data-photo="2"
                 aria-controls="facilities-photo-5-2" aria-label="5층 진료실 대기실 사진 보기"
-                data-i18n-label="facilities.floors.5.photos.2.select" style="--thumbnail-ratio:1532 / 1021"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:1532 / 1021"><img
                   src="./assets/facilities/5f-02.webp" alt="흥K병원 5층 진료실 대기실"
-                  data-i18n-alt="facilities.floors.5.photos.2.alt" width="1532" height="1021" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1532" height="1021" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-5-3" data-photo="3"
                 aria-controls="facilities-photo-5-3" aria-label="5층 X-ray 검사실 사진 보기"
-                data-i18n-label="facilities.floors.5.photos.3.select" style="--thumbnail-ratio:1536 / 1024"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:1536 / 1024"><img
                   src="./assets/facilities/5f-03.webp" alt="흥K병원 5층 X-ray 검사실"
-                  data-i18n-alt="facilities.floors.5.photos.3.alt" width="1536" height="1024" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1536" height="1024" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-5-4" data-photo="4"
                 aria-controls="facilities-photo-5-4" aria-label="5층 MRI 검사실 사진 보기"
-                data-i18n-label="facilities.floors.5.photos.4.select" style="--thumbnail-ratio:2000 / 1333"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:2000 / 1333"><img
                   src="./assets/facilities/5f-04.webp" alt="흥K병원 5층 MRI 검사실"
-                  data-i18n-alt="facilities.floors.5.photos.4.alt" width="2000" height="1333" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-5-5" data-photo="5"
                 aria-controls="facilities-photo-5-5" aria-label="5층 CT 검사실 사진 보기"
-                data-i18n-label="facilities.floors.5.photos.5.select" style="--thumbnail-ratio:2000 / 1333"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:2000 / 1333"><img
                   src="./assets/facilities/5f-05.webp" alt="흥K병원 5층 CT 검사실"
-                  data-i18n-alt="facilities.floors.5.photos.5.alt" width="2000" height="1333" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333" loading="lazy"
                   decoding="async"></a>
+              <a class="facilities-thumbnail" href="#facilities-photo-5-6" data-photo="6"
+                aria-controls="facilities-photo-5-6" aria-label="5층 CT 검사실 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:2000 / 1333"><img
+                  src="./assets/facilities/5f-06.webp" alt="흥K병원 5층 CT 검사실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333" loading="lazy"
+                  decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-5-7" data-photo="7"
+                aria-controls="facilities-photo-5-7" aria-label="5층 CT 검사실 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:2000 / 1333"><img
+                  src="./assets/facilities/5f-07.webp" alt="흥K병원 5층 CT 검사실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333" loading="lazy"
+                  decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-5-8" data-photo="8"
+                aria-controls="facilities-photo-5-8" aria-label="5층 CT 검사실 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:2000 / 1333"><img
+                  src="./assets/facilities/5f-08.webp" alt="흥K병원 5층 CT 검사실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333" loading="lazy"
+                  decoding="async"></a>
+
             </div><button class="facilities-scroll" type="button" data-scroll="next" hidden aria-label="다음 사진 목록"
               data-i18n-label="facilities.next"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -4239,19 +4319,31 @@
           </div>
           <div class="facilities-viewer" aria-live="polite" aria-atomic="true">
             <figure id="facilities-photo-5-1" data-facilities-photo="1"><img src="./assets/facilities/5f-01.webp"
-                alt="흥K병원 5층 접수데스크" data-i18n-alt="facilities.floors.5.photos.1.alt" width="1532" height="972"
+                alt="흥K병원 5층 접수데스크" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1532" height="972"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-5-2" data-facilities-photo="2"><img src="./assets/facilities/5f-02.webp"
-                alt="흥K병원 5층 진료실 대기실" data-i18n-alt="facilities.floors.5.photos.2.alt" width="1532" height="1021"
+                alt="흥K병원 5층 진료실 대기실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1532" height="1021"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-5-3" data-facilities-photo="3"><img src="./assets/facilities/5f-03.webp"
-                alt="흥K병원 5층 X-ray 검사실" data-i18n-alt="facilities.floors.5.photos.3.alt" width="1536" height="1024"
+                alt="흥K병원 5층 X-ray 검사실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1536" height="1024"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-5-4" data-facilities-photo="4"><img src="./assets/facilities/5f-04.webp"
-                alt="흥K병원 5층 MRI 검사실" data-i18n-alt="facilities.floors.5.photos.4.alt" width="2000" height="1333"
+                alt="흥K병원 5층 MRI 검사실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-5-5" data-facilities-photo="5"><img src="./assets/facilities/5f-05.webp"
-                alt="흥K병원 5층 CT 검사실" data-i18n-alt="facilities.floors.5.photos.5.alt" width="2000" height="1333"
+                alt="흥K병원 5층 CT 검사실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333"
+                loading="lazy" decoding="async"></figure>
+
+            <figure id="facilities-photo-5-6" data-facilities-photo="6"><img src="./assets/facilities/5f-06.webp"
+                alt="흥K병원 5층 CT 검사실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333"
+                loading="lazy" decoding="async"></figure>
+
+            <figure id="facilities-photo-5-7" data-facilities-photo="7"><img src="./assets/facilities/5f-07.webp"
+                alt="흥K병원 5층 CT 검사실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333"
+                loading="lazy" decoding="async"></figure>
+
+            <figure id="facilities-photo-5-8" data-facilities-photo="8"><img src="./assets/facilities/5f-08.webp"
+                alt="흥K병원 5층 CT 검사실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333"
                 loading="lazy" decoding="async"></figure>
           </div>
         </section>
@@ -4267,68 +4359,69 @@
             <div class="facilities-thumbnails" aria-label="사진 목록" data-i18n-label="facilities.thumbnails">
               <a class="facilities-thumbnail" href="#facilities-photo-6-2" data-photo="2"
                 aria-controls="facilities-photo-6-2" aria-label="6층 검진센터 대기실 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.2.select" style="--thumbnail-ratio:140 / 100"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:140 / 100"><img
                   src="./assets/facilities/6f-02.webp" alt="흥K병원 6층 검진센터 대기실"
-                  data-i18n-alt="facilities.floors.6.photos.2.alt" width="1532" height="1096" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1532" height="1096" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-3" data-photo="3"
                 aria-controls="facilities-photo-6-3" aria-label="6층 시설 사진 3 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.3.select" style="--thumbnail-ratio:133 / 100"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:133 / 100"><img
                   src="./assets/facilities/6f-03.webp" alt="흥K병원 6층 시설 사진 3"
-                  data-i18n-alt="facilities.floors.6.photos.3.alt" width="2000" height="1506" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1506" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-4" data-photo="4"
                 aria-controls="facilities-photo-6-4" aria-label="6층 중앙수술센터 입구 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.4.select" style="--thumbnail-ratio:134 / 100"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:134 / 100"><img
                   src="./assets/facilities/6f-04.webp" alt="흥K병원 6층 중앙수술센터 입구"
-                  data-i18n-alt="facilities.floors.6.photos.4.alt" width="2000" height="1500" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1500" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-5" data-photo="5"
                 aria-controls="facilities-photo-6-5" aria-label="6층 내과 · 검진센터 데스크 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.5.select" style="--thumbnail-ratio:152 / 100"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:152 / 100"><img
                   src="./assets/facilities/6f-05.webp" alt="흥K병원 6층 내과 · 검진센터 데스크"
-                  data-i18n-alt="facilities.floors.6.photos.5.alt" width="1532" height="1002" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1532" height="1002" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-6" data-photo="6"
                 aria-controls="facilities-photo-6-6" aria-label="6층 6층 시설 사진 6 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.6.select" style="--thumbnail-ratio:178 / 100"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:178 / 100"><img
                   src="./assets/facilities/6f-06.webp" alt="흥K병원 6층 6층 시설 사진 6"
-                  data-i18n-alt="facilities.floors.6.photos.6.alt" width="1184" height="668" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1184" height="668" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-7" data-photo="7"
                 aria-controls="facilities-photo-6-7" aria-label="6층 6층 시설 사진 7 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.7.select" style="--thumbnail-ratio:180 / 100"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:180 / 100"><img
                   src="./assets/facilities/6f-07.webp" alt="흥K병원 6층 6층 시설 사진 7"
-                  data-i18n-alt="facilities.floors.6.photos.7.alt" width="1192" height="661" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1192" height="661" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-8" data-photo="8"
                 aria-controls="facilities-photo-6-8" aria-label="6층 6층 시설 사진 8 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.8.select" style="--thumbnail-ratio:176 / 100"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:176 / 100"><img
                   src="./assets/facilities/6f-08.webp" alt="흥K병원 6층 6층 시설 사진 8"
-                  data-i18n-alt="facilities.floors.6.photos.8.alt" width="1184" height="670" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1184" height="670" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-1" data-photo="1"
                 aria-controls="facilities-photo-6-1" aria-label="6층 중앙수술센터 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.1.select" style="--thumbnail-ratio:178 / 100"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:178 / 100"><img
                   src="./assets/facilities/6f-01.webp" alt="흥K병원 6층 중앙수술센터"
-                  data-i18n-alt="facilities.floors.6.photos.1.alt" width="2000" height="1125" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1125" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-9" data-photo="9"
                 aria-controls="facilities-photo-6-9" aria-label="6층 수술실 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.9.select" style="--thumbnail-ratio:150 / 100"><img
-                  src="./assets/facilities/6f-09.webp" alt="흥K병원 6층 수술실" data-i18n-alt="facilities.floors.6.photos.9.alt"
-                  width="1536" height="1024" loading="lazy" decoding="async"></a>
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:150 / 100"><img
+                  src="./assets/facilities/6f-09.webp" alt="흥K병원 6층 수술실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1536" height="1024" loading="lazy"
+                  decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-10" data-photo="10"
                 aria-controls="facilities-photo-6-10" aria-label="6층 6층 시설 사진 10 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.10.select" style="--thumbnail-ratio:150 / 100"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:150 / 100"><img
                   src="./assets/facilities/6f-10.webp" alt="흥K병원 6층 6층 시설 사진 10"
-                  data-i18n-alt="facilities.floors.6.photos.10.alt" width="2000" height="1333" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-11" data-photo="11"
                 aria-controls="facilities-photo-6-11" aria-label="6층 6층 시설 사진 11 사진 보기"
-                data-i18n-label="facilities.floors.6.photos.11.select" style="--thumbnail-ratio:178 / 100"><img
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:178 / 100"><img
                   src="./assets/facilities/6f-11.webp" alt="흥K병원 6층 6층 시설 사진 11"
-                  data-i18n-alt="facilities.floors.6.photos.11.alt" width="1181" height="663" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1181" height="663" loading="lazy"
                   decoding="async"></a>
             </div><button class="facilities-scroll" type="button" data-scroll="next" hidden aria-label="다음 사진 목록"
               data-i18n-label="facilities.next"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
@@ -4337,37 +4430,37 @@
           </div>
           <div class="facilities-viewer" aria-live="polite" aria-atomic="true">
             <figure id="facilities-photo-6-1" data-facilities-photo="1"><img src="./assets/facilities/6f-01.webp"
-                alt="흥K병원 6층 중앙수술센터" data-i18n-alt="facilities.floors.6.photos.1.alt" width="2000" height="1125"
+                alt="흥K병원 6층 중앙수술센터" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1125"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-2" data-facilities-photo="2"><img src="./assets/facilities/6f-02.webp"
-                alt="흥K병원 6층 검진센터 대기실" data-i18n-alt="facilities.floors.6.photos.2.alt" width="1532" height="1096"
+                alt="흥K병원 6층 검진센터 대기실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1532" height="1096"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-3" data-facilities-photo="3"><img src="./assets/facilities/6f-03.webp"
-                alt="흥K병원 6층 시설 사진 3" data-i18n-alt="facilities.floors.6.photos.3.alt" width="2000" height="1506"
+                alt="흥K병원 6층 시설 사진 3" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1506"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-4" data-facilities-photo="4"><img src="./assets/facilities/6f-04.webp"
-                alt="흥K병원 6층 중앙수술센터 입구" data-i18n-alt="facilities.floors.6.photos.4.alt" width="2000" height="1500"
+                alt="흥K병원 6층 중앙수술센터 입구" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1500"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-5" data-facilities-photo="5"><img src="./assets/facilities/6f-05.webp"
-                alt="흥K병원 6층 내과 · 검진센터 데스크" data-i18n-alt="facilities.floors.6.photos.5.alt" width="1532" height="1002"
+                alt="흥K병원 6층 내과 · 검진센터 데스크" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1532" height="1002"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-6" data-facilities-photo="6"><img src="./assets/facilities/6f-06.webp"
-                alt="흥K병원 6층 6층 시설 사진 6" data-i18n-alt="facilities.floors.6.photos.6.alt" width="1184" height="668"
+                alt="흥K병원 6층 6층 시설 사진 6" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1184" height="668"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-7" data-facilities-photo="7"><img src="./assets/facilities/6f-07.webp"
-                alt="흥K병원 6층 6층 시설 사진 7" data-i18n-alt="facilities.floors.6.photos.7.alt" width="1192" height="661"
+                alt="흥K병원 6층 6층 시설 사진 7" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1192" height="661"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-8" data-facilities-photo="8"><img src="./assets/facilities/6f-08.webp"
-                alt="흥K병원 6층 6층 시설 사진 8" data-i18n-alt="facilities.floors.6.photos.8.alt" width="1184" height="670"
+                alt="흥K병원 6층 6층 시설 사진 8" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1184" height="670"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-9" data-facilities-photo="9"><img src="./assets/facilities/6f-09.webp"
-                alt="흥K병원 6층 수술실" data-i18n-alt="facilities.floors.6.photos.9.alt" width="1536" height="1024"
+                alt="흥K병원 6층 수술실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1536" height="1024"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-10" data-facilities-photo="10"><img src="./assets/facilities/6f-10.webp"
-                alt="흥K병원 6층 6층 시설 사진 10" data-i18n-alt="facilities.floors.6.photos.10.alt" width="2000" height="1333"
+                alt="흥K병원 6층 6층 시설 사진 10" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1333"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-11" data-facilities-photo="11"><img src="./assets/facilities/6f-11.webp"
-                alt="흥K병원 6층 6층 시설 사진 11" data-i18n-alt="facilities.floors.6.photos.11.alt" width="1181" height="663"
+                alt="흥K병원 6층 6층 시설 사진 11" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1181" height="663"
                 loading="lazy" decoding="async"></figure>
           </div>
         </section>
@@ -4383,16 +4476,45 @@
             <div class="facilities-thumbnails" aria-label="사진 목록" data-i18n-label="facilities.thumbnails">
               <a class="facilities-thumbnail" href="#facilities-photo-7-1" data-photo="1"
                 aria-controls="facilities-photo-7-1" aria-label="7층 입원병동 사진 1 사진 보기"
-                data-i18n-label="facilities.floors.7.photos.1.select" data-photo-pending
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
                 style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/7f-01.webp" alt="흥K병원 7층 입원병동 사진 1"
-                  data-i18n-alt="facilities.floors.7.photos.1.alt" width="1600" height="900" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-7-2" data-photo="2"
                 aria-controls="facilities-photo-7-2" aria-label="7층 입원병동 사진 2 사진 보기"
-                data-i18n-label="facilities.floors.7.photos.2.select" data-photo-pending
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
                 style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/7f-02.webp" alt="흥K병원 7층 입원병동 사진 2"
-                  data-i18n-alt="facilities.floors.7.photos.2.alt" width="1600" height="900" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                   decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-7-3" data-photo="3"
+                aria-controls="facilities-photo-7-3" aria-label="7층 입원병동 사진 2 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/7f-03.webp" alt="흥K병원 7층 입원병동 사진 2"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-7-4" data-photo="4"
+                aria-controls="facilities-photo-7-4" aria-label="7층 입원병동 사진 2 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/7f-04.webp" alt="흥K병원 7층 입원병동 사진 2"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-7-5" data-photo="5"
+                aria-controls="facilities-photo-7-5" aria-label="7층 입원병동 사진 2 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/7f-05.webp" alt="흥K병원 7층 입원병동 사진 2"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-7-6" data-photo="6"
+                aria-controls="facilities-photo-7-6" aria-label="7층 입원병동 사진 2 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/7f-06.webp" alt="흥K병원 7층 입원병동 사진 2"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
             </div><button class="facilities-scroll" type="button" data-scroll="next" hidden aria-label="다음 사진 목록"
               data-i18n-label="facilities.next"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -4401,11 +4523,31 @@
           <div class="facilities-viewer" aria-live="polite" aria-atomic="true">
             <figure id="facilities-photo-7-1" data-facilities-photo="1" data-photo-pending><img
                 src="./assets/facilities/7f-01.webp" alt="흥K병원 7층 입원병동 사진 1"
-                data-i18n-alt="facilities.floors.7.photos.1.alt" width="1600" height="900" loading="lazy"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                 decoding="async"></figure>
             <figure id="facilities-photo-7-2" data-facilities-photo="2" data-photo-pending><img
                 src="./assets/facilities/7f-02.webp" alt="흥K병원 7층 입원병동 사진 2"
-                data-i18n-alt="facilities.floors.7.photos.2.alt" width="1600" height="900" loading="lazy"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                decoding="async"></figure>
+
+            <figure id="facilities-photo-7-3" data-facilities-photo="3" data-photo-pending><img
+                src="./assets/facilities/7f-03.webp" alt="흥K병원 7층 입원병동 사진 2"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                decoding="async"></figure>
+
+            <figure id="facilities-photo-7-4" data-facilities-photo="4" data-photo-pending><img
+                src="./assets/facilities/7f-04.webp" alt="흥K병원 7층 입원병동 사진 2"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                decoding="async"></figure>
+
+            <figure id="facilities-photo-7-5" data-facilities-photo="5" data-photo-pending><img
+                src="./assets/facilities/7f-05.webp" alt="흥K병원 7층 입원병동 사진 2"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                decoding="async"></figure>
+
+            <figure id="facilities-photo-7-6" data-facilities-photo="6" data-photo-pending><img
+                src="./assets/facilities/7f-06.webp" alt="흥K병원 7층 입원병동 사진 2"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                 decoding="async"></figure>
           </div>
         </section>
@@ -4421,22 +4563,61 @@
             <div class="facilities-thumbnails" aria-label="사진 목록" data-i18n-label="facilities.thumbnails">
               <a class="facilities-thumbnail" href="#facilities-photo-8-1" data-photo="1"
                 aria-controls="facilities-photo-8-1" aria-label="8층 입원병동 사진 보기"
-                data-i18n-label="facilities.floors.8.photos.1.select" data-photo-pending
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
                 style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/8f-01.webp" alt="흥K병원 8층 입원병동"
-                  data-i18n-alt="facilities.floors.8.photos.1.alt" width="1600" height="900" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-8-2" data-photo="2"
                 aria-controls="facilities-photo-8-2" aria-label="8층 MRI 검사실 사진 보기"
-                data-i18n-label="facilities.floors.8.photos.2.select" data-photo-pending
-                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/8f-02.webp" alt="흥K병원 8층 MRI 검사실"
-                  data-i18n-alt="facilities.floors.8.photos.2.alt" width="1600" height="900" loading="lazy"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/8f-02.jfif" alt="흥K병원 8층 MRI 검사실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-8-3" data-photo="3"
                 aria-controls="facilities-photo-8-3" aria-label="8층 대회의실 사진 보기"
-                data-i18n-label="facilities.floors.8.photos.3.select" data-photo-pending
-                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/8f-03.webp" alt="흥K병원 8층 대회의실"
-                  data-i18n-alt="facilities.floors.8.photos.3.alt" width="1600" height="900" loading="lazy"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/8f-03.jfif" alt="흥K병원 8층 대회의실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                   decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-8-4" data-photo="4"
+                aria-controls="facilities-photo-8-4" aria-label="8층 대회의실 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/8f-04.jfif" alt="흥K병원 8층 대회의실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-8-5" data-photo="5"
+                aria-controls="facilities-photo-8-3" aria-label="8층 대회의실 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/8f-05.jfif" alt="흥K병원 8층 대회의실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-8-6" data-photo="6"
+                aria-controls="facilities-photo-8-3" aria-label="8층 대회의실 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/8f-06.jfif" alt="흥K병원 8층 대회의실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-8-7" data-photo="7"
+                aria-controls="facilities-photo-8-3" aria-label="8층 대회의실 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/8f-07.jfif" alt="흥K병원 8층 대회의실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-8-8" data-photo="8"
+                aria-controls="facilities-photo-8-3" aria-label="8층 대회의실 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/8f-08.jfif" alt="흥K병원 8층 대회의실"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
+
+
+
             </div><button class="facilities-scroll" type="button" data-scroll="next" hidden aria-label="다음 사진 목록"
               data-i18n-label="facilities.next"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -4444,14 +4625,34 @@
           </div>
           <div class="facilities-viewer" aria-live="polite" aria-atomic="true">
             <figure id="facilities-photo-8-1" data-facilities-photo="1" data-photo-pending><img
-                src="./assets/facilities/8f-01.webp" alt="흥K병원 8층 입원병동" data-i18n-alt="facilities.floors.8.photos.1.alt"
+                src="./assets/facilities/8f-01.webp" alt="흥K병원 8층 입원병동" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외"
                 width="1600" height="900" loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-8-2" data-facilities-photo="2" data-photo-pending><img
-                src="./assets/facilities/8f-02.webp" alt="흥K병원 8층 MRI 검사실"
-                data-i18n-alt="facilities.floors.8.photos.2.alt" width="1600" height="900" loading="lazy"
+                src="./assets/facilities/8f-02.jfif" alt="흥K병원 8층 MRI 검사실"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                 decoding="async"></figure>
             <figure id="facilities-photo-8-3" data-facilities-photo="3" data-photo-pending><img
-                src="./assets/facilities/8f-03.webp" alt="흥K병원 8층 대회의실" data-i18n-alt="facilities.floors.8.photos.3.alt"
+                src="./assets/facilities/8f-03.jfif" alt="흥K병원 8층 대회의실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외"
+                width="1600" height="900" loading="lazy" decoding="async"></figure>
+
+            <figure id="facilities-photo-8-4" data-facilities-photo="4" data-photo-pending><img
+                src="./assets/facilities/8f-04.jfif" alt="흥K병원 8층 대회의실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외"
+                width="1600" height="900" loading="lazy" decoding="async"></figure>
+
+            <figure id="facilities-photo-8-5" data-facilities-photo="5" data-photo-pending><img
+                src="./assets/facilities/8f-05.jfif" alt="흥K병원 8층 대회의실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외"
+                width="1600" height="900" loading="lazy" decoding="async"></figure>
+
+            <figure id="facilities-photo-8-6" data-facilities-photo="6" data-photo-pending><img
+                src="./assets/facilities/8f-06.jfif" alt="흥K병원 8층 대회의실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외"
+                width="1600" height="900" loading="lazy" decoding="async"></figure>
+
+            <figure id="facilities-photo-8-7" data-facilities-photo="7" data-photo-pending><img
+                src="./assets/facilities/8f-07.jfif" alt="흥K병원 8층 대회의실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외"
+                width="1600" height="900" loading="lazy" decoding="async"></figure>
+
+            <figure id="facilities-photo-8-8" data-facilities-photo="8" data-photo-pending><img
+                src="./assets/facilities/8f-08.jfif" alt="흥K병원 8층 대회의실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외"
                 width="1600" height="900" loading="lazy" decoding="async"></figure>
           </div>
         </section>
@@ -4467,16 +4668,31 @@
             <div class="facilities-thumbnails" aria-label="사진 목록" data-i18n-label="facilities.thumbnails">
               <a class="facilities-thumbnail" href="#facilities-photo-9-1" data-photo="1"
                 aria-controls="facilities-photo-9-1" aria-label="9층 옥상정원 사진 1 사진 보기"
-                data-i18n-label="facilities.floors.9.photos.1.select" data-photo-pending
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
                 style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/9f-01.webp" alt="흥K병원 9층 옥상정원 사진 1"
-                  data-i18n-alt="facilities.floors.9.photos.1.alt" width="1600" height="900" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                   decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-9-2" data-photo="2"
                 aria-controls="facilities-photo-9-2" aria-label="9층 옥상정원 사진 2 사진 보기"
-                data-i18n-label="facilities.floors.9.photos.2.select" data-photo-pending
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
                 style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/9f-02.webp" alt="흥K병원 9층 옥상정원 사진 2"
-                  data-i18n-alt="facilities.floors.9.photos.2.alt" width="1600" height="900" loading="lazy"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                   decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-9-3" data-photo="3"
+                aria-controls="facilities-photo-9-2" aria-label="9층 옥상정원 사진 2 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/9f-03.webp" alt="흥K병원 9층 옥상정원 사진 2"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
+              <a class="facilities-thumbnail" href="#facilities-photo-9-4" data-photo="4"
+                aria-controls="facilities-photo-9-2" aria-label="9층 옥상정원 사진 2 사진 보기"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" data-photo-pending
+                style="--thumbnail-ratio:1600 / 900"><img src="./assets/facilities/9f-04.webp" alt="흥K병원 9층 옥상정원 사진 2"
+                  data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                  decoding="async"></a>
+
             </div><button class="facilities-scroll" type="button" data-scroll="next" hidden aria-label="다음 사진 목록"
               data-i18n-label="facilities.next"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -4485,11 +4701,21 @@
           <div class="facilities-viewer" aria-live="polite" aria-atomic="true">
             <figure id="facilities-photo-9-1" data-facilities-photo="1" data-photo-pending><img
                 src="./assets/facilities/9f-01.webp" alt="흥K병원 9층 옥상정원 사진 1"
-                data-i18n-alt="facilities.floors.9.photos.1.alt" width="1600" height="900" loading="lazy"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                 decoding="async"></figure>
             <figure id="facilities-photo-9-2" data-facilities-photo="2" data-photo-pending><img
                 src="./assets/facilities/9f-02.webp" alt="흥K병원 9층 옥상정원 사진 2"
-                data-i18n-alt="facilities.floors.9.photos.2.alt" width="1600" height="900" loading="lazy"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                decoding="async"></figure>
+
+            <figure id="facilities-photo-9-3" data-facilities-photo="3" data-photo-pending><img
+                src="./assets/facilities/9f-03.webp" alt="흥K병원 9층 옥상정원 사진 2"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
+                decoding="async"></figure>
+
+            <figure id="facilities-photo-9-4" data-facilities-photo="4" data-photo-pending><img
+                src="./assets/facilities/9f-04.webp" alt="흥K병원 9층 옥상정원 사진 2"
+                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
                 decoding="async"></figure>
           </div>
         </section>
@@ -4565,8 +4791,9 @@
               방문할 수 있도록<br>인천국제공항 픽업 서비스를 제공합니다.</p>
             <p class="service360-pill" data-i18n="service360.advanceReservation">ADVANCE RESERVATION REQUIRED</p>
           </div>
-          <figure data-service360-reveal><img src="./assets/service-360/airport-pickup.webp" alt="공항에서 차량으로 이동하는 환자와 보호자"
-              data-i18n-alt="service360.pickupAlt" width="1254" height="982" loading="lazy" decoding="async"></figure>
+          <figure data-service360-reveal><img src="./assets/service-360/airport-pickup.webp"
+              alt="공항에서 차량으로 이동하는 환자와 보호자" data-i18n-alt="service360.pickupAlt" width="1254" height="982" loading="lazy"
+              decoding="async"></figure>
         </section>
         <section class="service360-accommodation" aria-labelledby="service360-accommodation-title">
           <div class="service360-accommodation-head service360-inner" data-service360-reveal>
@@ -4613,8 +4840,8 @@
                 <figcaption data-i18n-static="호텔 고유 영문명">PARADISE CITY</figcaption>
               </figure>
               <figure class="service360-hotel swiper-slide" data-hotel-repeat aria-hidden="true" inert><img
-                  src="./assets/service-360/hotel-sheraton.webp" alt="쉐라톤 그랜드 인천 호텔" data-i18n-alt="service360.hotel2Alt"
-                  width="900" height="1100" loading="lazy" decoding="async">
+                  src="./assets/service-360/hotel-sheraton.webp" alt="쉐라톤 그랜드 인천 호텔"
+                  data-i18n-alt="service360.hotel2Alt" width="900" height="1100" loading="lazy" decoding="async">
                 <figcaption data-i18n-static="호텔 고유 영문명">SHERATON GRAND INCHEON HOTEL</figcaption>
               </figure>
               <figure class="service360-hotel swiper-slide" data-hotel-repeat aria-hidden="true" inert><img
@@ -4683,17 +4910,34 @@
                   required></label><label class="reservation-field" for="reservation-birthday"><span
                   data-i18n="reservation.birthday">생일</span><input id="reservation-birthday" name="birthday" type="date"
                   autocomplete="bday"></label><label class="reservation-field" for="reservation-gender"><span
-                  data-i18n="reservation.gender">성별</span><input id="reservation-gender" name="gender" type="text"
-                  autocomplete="sex"></label><label class="reservation-field reservation-symptoms"
-                for="reservation-symptoms"><span data-i18n="reservation.symptoms">증상</span><textarea
-                  id="reservation-symptoms" name="symptoms" rows="5"></textarea></label></div>
+                  data-i18n="reservation.gender">성별</span><select id="reservation-gender" name="gender"
+                  autocomplete="sex">
+                  <option value="" data-i18n="reviewOptions.genderChoose">선택해주세요</option>
+                  <option value="male" data-i18n="reviewOptions.male">남성</option>
+                  <option value="female" data-i18n="reviewOptions.female">여성</option>
+                  <option value="unspecified" data-i18n="reviewOptions.unspecified">응답하지 않음</option>
+                </select></label><label class="reservation-field reservation-symptoms" for="reservation-symptoms"><span
+                  data-i18n="reservation.symptoms">증상</span><textarea id="reservation-symptoms" name="symptoms"
+                  rows="5"></textarea></label></div>
             <div class="reservation-column"><label class="reservation-field" for="reservation-nationality"><span
-                  data-i18n="reservation.nationality">국적</span><input id="reservation-nationality" name="nationality"
-                  type="text" autocomplete="country-name"></label><label class="reservation-field"
-                for="reservation-email"><span data-i18n="reservation.email">이메일</span><input id="reservation-email"
-                  name="email" type="email" autocomplete="email" required></label><label class="reservation-field"
-                for="reservation-phone"><span data-i18n="reservation.phone">연락처</span><input id="reservation-phone"
-                  name="phone" type="tel" autocomplete="tel" required></label><label class="reservation-field"
+                  data-i18n="reservation.nationality">국적</span><select id="reservation-nationality" name="nationality">
+                  <option value="" data-i18n="reviewOptions.nationalityChoose">선택해주세요</option>
+                  <option value="KR" data-i18n="reviewOptions.korea">대한민국</option>
+                  <option value="US" data-i18n="reviewOptions.usa">미국</option>
+                  <option value="GB" data-i18n="reviewOptions.uk">영국</option>
+                  <option value="CN" data-i18n="reviewOptions.china">중국</option>
+                  <option value="JP" data-i18n="reviewOptions.japan">일본</option>
+                  <option value="RU" data-i18n="reviewOptions.russia">러시아</option>
+                  <option value="MN" data-i18n="reviewOptions.mongolia">몽골</option>
+                  <option value="IN" data-i18n="reviewOptions.india">인도</option>
+                  <option value="SA" data-i18n="reviewOptions.saudi">사우디아라비아</option>
+                  <option value="VN" data-i18n="reviewOptions.vietnam">베트남</option>
+                  <option value="OTHER" data-i18n="reviewOptions.other">기타</option>
+                </select></label><label class="reservation-field" for="reservation-email"><span
+                  data-i18n="reservation.email">이메일</span><input id="reservation-email" name="email" type="email"
+                  autocomplete="email" required></label><label class="reservation-field" for="reservation-phone"><span
+                  data-i18n="reservation.phone">연락처</span><input id="reservation-phone" name="phone" type="tel"
+                  autocomplete="tel" required></label><label class="reservation-field"
                 for="reservation-appointmentDate"><span data-i18n="reservation.appointmentDate">희망 진료일</span><input
                   id="reservation-appointmentDate" name="appointmentDate" type="date"></label>
               <fieldset class="reservation-insurance">
@@ -4719,12 +4963,186 @@
       </form>
     </section>
 
-<section id="customer-center" class="customer-center" aria-labelledby="customer-center-title">
-<img class="customer-background" src="./assets/customer-center/reception.webp" width="1532" height="972" loading="lazy" alt="" aria-hidden="true">
-<header class="customer-header"><p class="customer-kicker" data-customer-reveal><b>11</b><span data-i18n="customerCenter.kicker" >CS CENTER</span></p><h2 data-i18n="customerCenter.title" id="customer-center-title" data-customer-reveal>고객문의센터</h2><p data-i18n="customerCenter.description" class="customer-description" data-customer-reveal data-i18n-lines>진료 및 예약, 입원과 치료 전반에 대한 문의를 보다 신속하고 정확하게 안내해드립니다.<br>흥K병원 고객센터는 환자 한 분 한 분의 상황을 세심하게 살피며 품격 있는 상담 서비스를 제공합니다.</p></header><section class="customer-hours" aria-labelledby="customer-hours-title"><div class="customer-hours-heading" data-customer-reveal><h3 data-i18n="customerCenter.hours" id="customer-hours-title">진료시간표</h3><p data-i18n="customerCenter.closed" >일요일 공휴일은 휴진</p></div><dl><div class="customer-hour-row" data-customer-reveal><dt data-i18n="customerCenter.day0" >평일 월-금</dt><dd><time>09:00</time><span aria-hidden="true">–</span><time>18:00</time></dd></div><div class="customer-hour-row" data-customer-reveal><dt data-i18n="customerCenter.day1" >평일 야간</dt><dd><time>18:00</time><span aria-hidden="true">–</span><time>20:00</time></dd></div><div class="customer-hour-row" data-customer-reveal><dt data-i18n="customerCenter.day2" >토요일</dt><dd><time>09:00</time><span aria-hidden="true">–</span><time>13:00</time></dd></div><div class="customer-hour-row" data-customer-reveal><dt data-i18n="customerCenter.day3" >점심시간</dt><dd><time>12:30</time><span aria-hidden="true">–</span><time>13:30</time></dd></div></dl></section><div class="customer-map-wrap" id="customer-map"><div class="customer-address" data-customer-reveal><span data-i18n="customerCenter.address" id="customer-address-text">경기 시흥시 능곡번영길 22 5층 ~ 8층 흥K병원</span><button class="customer-copy" type="button" data-copy-target="customer-address-text" aria-label="병원 주소 복사" data-i18n-label="customerCenter.copyAddress"><img src="./assets/customer-center/copy.svg" width="24" height="24" alt=""></button></div><iframe class="customer-map" src="https://www.google.com/maps?q=%ED%9D%A5%EC%BC%80%EC%9D%B4%EB%B3%91%EC%9B%90%20%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%EB%8A%A5%EA%B3%A1%EB%B2%88%EC%98%81%EA%B8%B8%2022&amp;z=16&amp;output=embed" title="흥K병원 위치 구글 지도" data-i18n-title="customerCenter.mapTitle" width="1632" height="514" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe><a class="customer-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%ED%9D%A5%EC%BC%80%EC%9D%B4%EB%B3%91%EC%9B%90%20%EB%8A%A5%EA%B3%A1%EB%B2%88%EC%98%81%EA%B8%B8%2022" target="_blank" rel="noopener noreferrer"><span data-i18n="customerCenter.openMap" >구글맵에서 보기</span></a></div><div class="customer-contacts"><article class="customer-contact" data-customer-reveal><div><h3 data-i18n="customerCenter.phone" >문의 전화</h3><button class="customer-copy" type="button" data-copy-target="customer-phone" aria-label="문의 전화 복사" data-i18n-label="customerCenter.copyPhone"><img src="./assets/customer-center/copy.svg" width="24" height="24" alt=""></button></div><a href="tel:15511119" id="customer-phone" class="customer-contact-value" data-i18n-static="연락처 고유 정보">1551-1119</a></article><article class="customer-contact" data-customer-reveal><div><h3 data-i18n="customerCenter.fax" >팩스</h3><button class="customer-copy" type="button" data-copy-target="customer-fax" aria-label="팩스 복사" data-i18n-label="customerCenter.copyFax"><img src="./assets/customer-center/copy.svg" width="24" height="24" alt=""></button></div><p id="customer-fax" class="customer-contact-value" data-i18n-static="연락처 고유 정보">031-314-7579</p></article><article class="customer-contact" data-customer-reveal><div><h3 data-i18n="customerCenter.email" >이메일</h3><button class="customer-copy" type="button" data-copy-target="customer-email" aria-label="이메일 복사" data-i18n-label="customerCenter.copyEmail"><img src="./assets/customer-center/copy.svg" width="24" height="24" alt=""></button></div><a href="mailto:heung-k@naver.com" id="customer-email" class="customer-contact-value" data-i18n-static="연락처 고유 정보">heung-k@naver.com</a></article></div><p data-i18n="customerCenter.copyDone" class="customer-copy-status" role="status" hidden>복사했습니다.</p><p data-i18n="customerCenter.copyFailed" class="customer-copy-error" role="status" hidden>복사할 내용을 길게 누르거나 선택해서 복사해 주세요.</p></section>
-<section id="contact" class="contact-section" aria-labelledby="contact-title"><header class="contact-header" data-contact-reveal><p class="contact-kicker"><b>12</b><span data-i18n="contact.kicker" >CONTACT</span></p><h2 data-i18n="contact.title" id="contact-title">오시는 길</h2></header><div class="contact-routes"><article class="contact-route"><img class="contact-airport" src="./assets/contact/incheon.webp" width="1536" height="1024" alt="인천국제공항 전경" data-i18n-alt="contact.incheonAlt" loading="lazy" data-contact-reveal><div class="contact-route-copy"><div class="contact-route-heading" data-contact-reveal><h3 data-i18n="contact.incheon" >인천국제공항</h3><div class="contact-duration"><span class="contact-line" aria-hidden="true"></span><img src="./assets/contact/car.svg" width="32" height="32" alt=""><span data-i18n="contact.incheonTime" class="contact-time">25분</span></div></div><div class="contact-method" data-contact-reveal><h4 data-i18n="contact.carLabel" >차량 택시 이용시</h4><p data-i18n="contact.carDescription" >내비게이션에서 ‘흥K병원’을 검색하거나 아래 주소 입력</p><a class="contact-address" href="#customer-map"><img src="./assets/contact/map-pin.svg" width="18" height="16" alt=""><span data-i18n="contact.address" >경기도 시흥시 능곡번영길 22</span></a></div><div class="contact-method" data-contact-reveal><h4 data-i18n="contact.subwayLabel" >지하철 이용시</h4><p data-i18n="contact.incheonRail" >인천공항 제1터미널 또는 제2터미널에서 공항철도 일반열차 이용</p><ol class="contact-steps"><li data-i18n="contact.incheonStep0" >김포공항역 하차</li><li data-i18n="contact.incheonStep1" >원시 방면 서해선으로 환승</li><li data-i18n="contact.incheonStep2" >시흥능곡역 하차 후 3번 출구 이용</li></ol></div></div></article><article class="contact-route"><img class="contact-airport" src="./assets/contact/gimpo.webp" width="1536" height="1024" alt="김포국제공항 전경" data-i18n-alt="contact.gimpoAlt" loading="lazy" data-contact-reveal><div class="contact-route-copy"><div class="contact-route-heading" data-contact-reveal><h3 data-i18n="contact.gimpo" >김포국제공항</h3><div class="contact-duration"><span class="contact-line" aria-hidden="true"></span><img src="./assets/contact/subway.svg" width="32" height="32" alt=""><span data-i18n="contact.gimpoTime" class="contact-time">30분</span></div></div><div class="contact-method" data-contact-reveal><h4 data-i18n="contact.carLabel" >차량 택시 이용시</h4><p data-i18n="contact.carDescription" >내비게이션에서 ‘흥K병원’을 검색하거나 아래 주소 입력</p><a class="contact-address" href="#customer-map"><img src="./assets/contact/map-pin.svg" width="18" height="16" alt=""><span data-i18n="contact.address" >경기도 시흥시 능곡번영길 22</span></a></div><div class="contact-method" data-contact-reveal><h4 data-i18n="contact.subwayLabel" >지하철 이용시</h4><ol class="contact-steps"><li data-i18n="contact.gimpoStep0" >김포공항역에서 원시 방면 서해선 이용</li><li data-i18n="contact.gimpoStep1" >9개 역 이동 후 시흥능곡역 하차</li><li data-i18n="contact.gimpoStep2" >시흥능곡역 하차 후 3번 출구 이용</li></ol></div></div></article></div></section>
+    <section id="customer-center" class="customer-center" aria-labelledby="customer-center-title">
+      <img class="customer-background" src="./assets/customer-center/reception.webp" width="1532" height="972"
+        loading="lazy" alt="" aria-hidden="true">
+      <header class="customer-header">
+        <p class="customer-kicker" data-customer-reveal><b>11</b><span data-i18n="customerCenter.kicker">CS
+            CENTER</span></p>
+        <h2 data-i18n="customerCenter.title" id="customer-center-title" data-customer-reveal>고객문의센터</h2>
+        <p data-i18n="customerCenter.description" class="customer-description" data-customer-reveal data-i18n-lines>진료 및
+          예약, 입원과 치료 전반에 대한 문의를 보다 신속하고 정확하게 안내해드립니다.<br>흥K병원 고객센터는 환자 한 분 한 분의 상황을 세심하게 살피며 품격 있는 상담 서비스를 제공합니다.</p>
+      </header>
+      <section class="customer-hours" aria-labelledby="customer-hours-title">
+        <div class="customer-hours-heading" data-customer-reveal>
+          <h3 data-i18n="customerCenter.hours" id="customer-hours-title">진료시간표</h3>
+          <p data-i18n="customerCenter.closed">일요일 공휴일은 휴진</p>
+        </div>
+        <dl>
+          <div class="customer-hour-row" data-customer-reveal>
+            <dt data-i18n="customerCenter.day0">평일 월-금</dt>
+            <dd><time>09:00</time><span aria-hidden="true">–</span><time>18:00</time></dd>
+          </div>
+          <div class="customer-hour-row" data-customer-reveal>
+            <dt data-i18n="customerCenter.day1">평일 야간</dt>
+            <dd><time>18:00</time><span aria-hidden="true">–</span><time>20:00</time></dd>
+          </div>
+          <div class="customer-hour-row" data-customer-reveal>
+            <dt data-i18n="customerCenter.day2">토요일</dt>
+            <dd><time>09:00</time><span aria-hidden="true">–</span><time>13:00</time></dd>
+          </div>
+          <div class="customer-hour-row" data-customer-reveal>
+            <dt data-i18n="customerCenter.day3">점심시간</dt>
+            <dd><time>12:30</time><span aria-hidden="true">–</span><time>13:30</time></dd>
+          </div>
+        </dl>
+      </section>
+      <div class="customer-map-wrap" id="customer-map">
+        <div class="customer-address" data-customer-reveal><span data-i18n="customerCenter.address"
+            id="customer-address-text">경기 시흥시 능곡번영길 22 5층 ~ 8층 흥K병원</span><button class="customer-copy" type="button"
+            data-copy-target="customer-address-text" aria-label="병원 주소 복사"
+            data-i18n-label="customerCenter.copyAddress"><img src="./assets/customer-center/copy.svg" width="24"
+              height="24" alt=""></button></div><iframe class="customer-map"
+          src="https://www.google.com/maps?q=%ED%9D%A5%EC%BC%80%EC%9D%B4%EB%B3%91%EC%9B%90%20%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%EB%8A%A5%EA%B3%A1%EB%B2%88%EC%98%81%EA%B8%B8%2022&amp;z=16&amp;output=embed"
+          title="흥K병원 위치 구글 지도" data-i18n-title="customerCenter.mapTitle" width="1632" height="514" loading="lazy"
+          allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <div class="customer-contacts">
+        <article class="customer-contact" data-customer-reveal>
+          <div>
+            <h3 data-i18n="customerCenter.phone">문의 전화</h3><button class="customer-copy" type="button"
+              data-copy-target="customer-phone" aria-label="문의 전화 복사" data-i18n-label="customerCenter.copyPhone"><img
+                src="./assets/customer-center/copy.svg" width="24" height="24" alt=""></button>
+          </div><a href="tel:15511119" id="customer-phone" class="customer-contact-value"
+            data-i18n-static="연락처 고유 정보">1551-1119</a>
+        </article>
+        <article class="customer-contact" data-customer-reveal>
+          <div>
+            <h3 data-i18n="customerCenter.fax">팩스</h3><button class="customer-copy" type="button"
+              data-copy-target="customer-fax" aria-label="팩스 복사" data-i18n-label="customerCenter.copyFax"><img
+                src="./assets/customer-center/copy.svg" width="24" height="24" alt=""></button>
+          </div>
+          <p id="customer-fax" class="customer-contact-value" data-i18n-static="연락처 고유 정보">031-314-7579</p>
+        </article>
+        <article class="customer-contact" data-customer-reveal>
+          <div>
+            <h3 data-i18n="customerCenter.email">이메일</h3><button class="customer-copy" type="button"
+              data-copy-target="customer-email" aria-label="이메일 복사" data-i18n-label="customerCenter.copyEmail"><img
+                src="./assets/customer-center/copy.svg" width="24" height="24" alt=""></button>
+          </div><a href="mailto:heung-k@naver.com" id="customer-email" class="customer-contact-value"
+            data-i18n-static="연락처 고유 정보">heung-k@naver.com</a>
+        </article>
+      </div>
+      <p data-i18n="customerCenter.copyDone" class="customer-copy-status" role="status" hidden>복사했습니다.</p>
+      <p data-i18n="customerCenter.copyFailed" class="customer-copy-error" role="status" hidden>복사할 내용을 길게 누르거나 선택해서 복사해
+        주세요.</p>
+    </section>
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <header class="contact-header" data-contact-reveal>
+        <p class="contact-kicker"><b>12</b><span data-i18n="contact.kicker">CONTACT</span></p>
+        <h2 data-i18n="contact.title" id="contact-title">오시는 길</h2>
+      </header>
+      <div class="contact-routes">
+        <article class="contact-route"><img class="contact-airport" src="./assets/contact/incheon.webp" width="1536"
+            height="1024" alt="인천국제공항 전경" data-i18n-alt="contact.incheonAlt" loading="lazy" data-contact-reveal>
+          <div class="contact-route-copy">
+            <div class="contact-route-heading" data-contact-reveal>
+              <h3 data-i18n="contact.incheon">인천국제공항</h3>
+              <div class="contact-duration"><span class="contact-line" aria-hidden="true"></span><img
+                  src="./assets/contact/car.svg" width="32" height="32" alt=""><span data-i18n="contact.incheonTime"
+                  class="contact-time">25분</span></div>
+            </div>
+            <div class="contact-method" data-contact-reveal>
+              <h4 data-i18n="contact.carLabel">차량 택시 이용시</h4>
+              <p data-i18n="contact.carDescription">내비게이션에서 ‘흥K병원’을 검색하거나 아래 주소 입력</p><a class="contact-address"
+                href="#customer-map"><img src="./assets/contact/map-pin.svg" width="18" height="16" alt=""><span
+                  data-i18n="contact.address">경기도 시흥시 능곡번영길 22</span></a>
+            </div>
+            <div class="contact-method" data-contact-reveal>
+              <h4 data-i18n="contact.subwayLabel">지하철 이용시</h4>
+              <p data-i18n="contact.incheonRail">인천공항 제1터미널 또는 제2터미널에서 공항철도 일반열차 이용</p>
+              <ol class="contact-steps">
+                <li><span data-i18n="contact.incheonStep0">김포공항역 하차</span><img class="contact-step-icon"
+                    src="./assets/contact/step-next.svg" width="16" height="16" alt=""></li>
+                <li><span data-i18n="contact.incheonStep1">원시 방면 서해선으로 환승</span><img class="contact-step-icon"
+                    src="./assets/contact/step-next.svg" width="16" height="16" alt=""></li>
+                <li data-i18n="contact.incheonStep2">시흥능곡역 하차 후 3번 출구 이용</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+        <article class="contact-route"><img class="contact-airport" src="./assets/contact/gimpo.webp" width="1536"
+            height="1024" alt="김포국제공항 전경" data-i18n-alt="contact.gimpoAlt" loading="lazy" data-contact-reveal>
+          <div class="contact-route-copy">
+            <div class="contact-route-heading" data-contact-reveal>
+              <h3 data-i18n="contact.gimpo">김포국제공항</h3>
+              <div class="contact-duration"><span class="contact-line" aria-hidden="true"></span><img
+                  src="./assets/contact/subway.svg" width="32" height="32" alt=""><span data-i18n="contact.gimpoTime"
+                  class="contact-time">30분</span></div>
+            </div>
+            <div class="contact-method" data-contact-reveal>
+              <h4 data-i18n="contact.carLabel">차량 택시 이용시</h4>
+              <p data-i18n="contact.carDescription">내비게이션에서 ‘흥K병원’을 검색하거나 아래 주소 입력</p><a class="contact-address"
+                href="#customer-map"><img src="./assets/contact/map-pin.svg" width="18" height="16" alt=""><span
+                  data-i18n="contact.address">경기도 시흥시 능곡번영길 22</span></a>
+            </div>
+            <div class="contact-method" data-contact-reveal>
+              <h4 data-i18n="contact.subwayLabel">지하철 이용시</h4>
+              <p data-i18n="contact.gimpoRail">인천공항 제1터미널 또는 제2터미널에서 공항철도 일반열차 이용</p>
+              <ol class="contact-steps">
+                <li><span data-i18n="contact.gimpoStep0">김포공항역에서 원시 방면 서해선 이용</span><img class="contact-step-icon"
+                    src="./assets/contact/step-next.svg" width="16" height="16" alt=""></li>
+                <li><span data-i18n="contact.gimpoStep1">9개 역 이동 후 시흥능곡역 하차</span><img class="contact-step-icon"
+                    src="./assets/contact/step-next.svg" width="16" height="16" alt=""></li>
+                <li data-i18n="contact.gimpoStep2">시흥능곡역 하차 후 3번 출구 이용</li>
+              </ol>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
   </main>
-<footer class="site-footer"><img class="footer-logo" src="./assets/contact/footer-logo.svg" width="719" height="94" alt="흥K병원" data-i18n-alt="contact.logoAlt" loading="lazy"><dl class="footer-info" data-contact-reveal><div><dt data-i18n="contact.footerLabel0" >흥K병원 대표원장</dt><dd><span data-i18n="contact.footerValue0" >김종근</span></dd></div><div><dt data-i18n="contact.footerLabel1" >사업자등록번호</dt><dd><span data-i18n-static="사업자 번호 및 연락처 고유 정보">815-99-01458</span></dd></div><div><dt data-i18n="contact.footerLabel2" >주소</dt><dd><a href="#customer-map"><span data-i18n="contact.footerValue2" >14999 ) 경기 시흥시 능곡번영길 22 5층 ~ 8층 흥K병원</span></a></dd></div><div><dt data-i18n="contact.footerLabel3" >TEL</dt><dd><a href="tel:15511119"><span data-i18n-static="사업자 번호 및 연락처 고유 정보">1551-1119</span></a></dd></div><div><dt data-i18n="contact.footerLabel4" >FAX</dt><dd><span data-i18n-static="사업자 번호 및 연락처 고유 정보">031-314-7579</span></dd></div><div><dt data-i18n="contact.footerLabel5" >E.MAIL</dt><dd><a href="mailto:heung-k@naver.com"><span data-i18n-static="사업자 번호 및 연락처 고유 정보">heung-k@naver.com</span></a></dd></div></dl><div class="footer-social"><a href="https://blog.naver.com/heung-k" target="_blank" rel="noopener noreferrer" aria-label="흥K병원 네이버 블로그" data-i18n-label="contact.blogLabel"><img src="./assets/contact/blog.png" width="30" height="30" alt=""></a><a href="https://pf.kakao.com/_eGxoxmb" target="_blank" rel="noopener noreferrer" aria-label="흥K병원 카카오톡 채널" data-i18n-label="contact.kakaoLabel"><img src="./assets/contact/kakao.png" width="30" height="30" alt=""></a><a href="https://www.youtube.com/@Heung_K" target="_blank" rel="noopener noreferrer" aria-label="흥K병원 유튜브" data-i18n-label="contact.youtubeLabel"><img src="./assets/contact/youtube.png" width="30" height="30" alt=""></a><span role="img" aria-disabled="true" aria-label="흥K병원 인스타그램 (연결 준비 중)" data-i18n-label="contact.instagramLabel"><img src="./assets/contact/instagram.png" width="30" height="30" alt=""></span></div><p data-i18n="contact.copyright" class="footer-copyright">Copyright(C) 2024 흥K병원. All rights reserved.</p></footer>
+  <footer class="site-footer"><img class="footer-logo" src="./assets/contact/footer-logo.svg" width="719" height="94"
+      alt="흥K병원" data-i18n-alt="contact.logoAlt" loading="lazy">
+    <dl class="footer-info" data-contact-reveal>
+      <div>
+        <dt data-i18n="contact.footerLabel0">흥K병원 대표원장</dt>
+        <dd><span data-i18n="contact.footerValue0">김종근</span></dd>
+      </div>
+      <div>
+        <dt data-i18n="contact.footerLabel1">사업자등록번호</dt>
+        <dd><span data-i18n-static="사업자 번호 및 연락처 고유 정보">815-99-01458</span></dd>
+      </div>
+      <div>
+        <dt data-i18n="contact.footerLabel2">주소</dt>
+        <dd><a href="#customer-map"><span data-i18n="contact.footerValue2">14999 ) 경기 시흥시 능곡번영길 22 5층 ~ 8층
+              흥K병원</span></a></dd>
+      </div>
+      <div>
+        <dt data-i18n="contact.footerLabel3">TEL</dt>
+        <dd><a href="tel:15511119"><span data-i18n-static="사업자 번호 및 연락처 고유 정보">1551-1119</span></a></dd>
+      </div>
+      <div>
+        <dt data-i18n="contact.footerLabel4">FAX</dt>
+        <dd><span data-i18n-static="사업자 번호 및 연락처 고유 정보">031-314-7579</span></dd>
+      </div>
+      <div>
+        <dt data-i18n="contact.footerLabel5">E.MAIL</dt>
+        <dd><a href="mailto:heung-k@naver.com"><span data-i18n-static="사업자 번호 및 연락처 고유 정보">heung-k@naver.com</span></a>
+        </dd>
+      </div>
+    </dl>
+    <div class="footer-social"><a href="https://blog.naver.com/heung-k" target="_blank" rel="noopener noreferrer"
+        aria-label="흥K병원 네이버 블로그" data-i18n-label="contact.blogLabel"><img src="./assets/contact/blog.png" width="30"
+          height="30" alt=""></a><a href="https://pf.kakao.com/_eGxoxmb" target="_blank" rel="noopener noreferrer"
+        aria-label="흥K병원 카카오톡 채널" data-i18n-label="contact.kakaoLabel"><img src="./assets/contact/kakao.png" width="30"
+          height="30" alt=""></a><a href="https://www.youtube.com/@Heung_K" target="_blank" rel="noopener noreferrer"
+        aria-label="흥K병원 유튜브" data-i18n-label="contact.youtubeLabel"><img src="./assets/contact/youtube.png" width="30"
+          height="30" alt=""></a><span role="img" aria-disabled="true" aria-label="흥K병원 인스타그램 (연결 준비 중)"
+        data-i18n-label="contact.instagramLabel"><img src="./assets/contact/instagram.png" width="30" height="30"
+          alt=""></span></div>
+    <p data-i18n="contact.copyright" class="footer-copyright">Copyright(C) 2024 흥K병원. All rights reserved.</p>
+  </footer>
 </body>
 
 </html>

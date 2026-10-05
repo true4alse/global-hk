@@ -7,8 +7,9 @@ export function renderHero(content) {
   activeAnimations.get(hero)?.();
   const number = hero.querySelector('.hero-number');
   number.dataset.target ||= number.textContent.replaceAll(',', '').trim();
-  const count = new Intl.NumberFormat(document.documentElement.lang || 'ko').format(Number(number.dataset.target));
-  const animationContent = { ...content, count };
+  const target = Number(number.dataset.target);
+  const count = new Intl.NumberFormat('en-US').format(target);
+  const animationContent = { ...content, count, target };
   hero.querySelector('.hero-statistic')?.setAttribute('aria-label', content.period.replaceAll(' ', '') + ' ' + count + content.unit);
   activeAnimations.set(hero, animateHero(hero, animationContent));
 }
@@ -18,8 +19,9 @@ function animateHero(hero, content) {
   const statistic = hero.querySelector('.hero-statistic');
   const number = hero.querySelector('.hero-number');
   const texts = [...hero.querySelectorAll('.hero-period, .hero-unit, .hero-title, .hero-description p')];
-  const target = Number(content.count.replaceAll(',', ''));
-  const formatter = new Intl.NumberFormat(document.documentElement.lang || 'ko');
+  // 표시 문자열을 숫자로 다시 해석하지 않습니다. 언어별 구분자와 무관하게 HTML의 원본 수치를 사용합니다.
+  const target = content.target;
+  const formatter = new Intl.NumberFormat('en-US');
   let frame = 0;
   let observer;
   let disposed = false;
