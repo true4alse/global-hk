@@ -16,7 +16,7 @@ const languageLabel = "Select language";
 const header = {
   "languageButton": "global",
   "phoneLabel": "시안용 임시 전화번호(수정안해도 됨 일단)",
-  "navLabel": "주 메뉴"
+  "navLabel": "Main Menu"
 };
 
 // ── 04. 언어 선택 ──
@@ -47,8 +47,8 @@ const nav = {
 
 // ── 07. 메인 비주얼 ──
 const hero = {
-  "period": "연 간",
-  "unit": "례",
+  "period": "Annally",
+  "unit": "cases",
   "title": "어려운 관절 수술일수록, 경험이 중요합니다",
   "descriptionFirst": "흥K병원은 축적된 수술 경험과 지속적인 글로벌 의료 교류를 바탕으로 고난도 관절 수술부터 인공관절 재수술까지 전문적으로 시행합니다.",
   "descriptionSecond": "환자의 상태와 이전 치료 경험까지 세심하게 살피고, 더 어려운 수술에도 최선의 치료 방법을 찾을 수 있도록 관절 치료의 전문성을 끊임없이 높여갑니다."
