@@ -1,7 +1,7 @@
 import { renderCenterMenu } from './center-menu.js';
 import { renderContact } from './contact.js';
 import { renderCustomerCenter } from './customer-center.js';
-import { renderReservation } from './reservation.js';
+import { renderReservation } from './reservation.js?v=20261007';
 import { renderService360 } from './service-360.js';
 import { renderFacilities } from './facilities.js';
 import { renderDoctors } from './doctors.js';

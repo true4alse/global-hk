@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS reservations (
+ id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ request_id CHAR(36) NOT NULL UNIQUE,
+ payload_hash CHAR(64) NOT NULL,
+ screen_language VARCHAR(5) NOT NULL,
+ pain_area VARCHAR(16) NOT NULL,
+ given_name VARCHAR(100) NOT NULL,
+ family_name VARCHAR(100) NOT NULL,
+ birthday DATE NULL,
+ gender VARCHAR(16) NULL,
+ symptoms_original TEXT NOT NULL,
+ nationality VARCHAR(8) NULL,
+ email VARCHAR(254) NOT NULL,
+ phone VARCHAR(50) NOT NULL,
+ appointment_date DATE NULL,
+ insurance VARCHAR(16) NULL,
+ other_insurance VARCHAR(200) NOT NULL,
+ consent_at DATETIME NOT NULL,
+ status VARCHAR(20) NOT NULL DEFAULT 'received',
+ created_at DATETIME NOT NULL,
+ updated_at DATETIME NOT NULL,
+ INDEX reservations_status_created (status, created_at)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

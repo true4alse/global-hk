@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="./css/doctors.css">
   <link rel="stylesheet" href="./css/facilities.css">
   <script defer src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script type="module" src="./js/header.js"></script>
+  <script type="module" src="./js/header.js?v=20261007"></script>
   <link rel="stylesheet" href="./css/service-360.css">
   <link rel="stylesheet" href="./css/reservation.css">
   <link rel="stylesheet" href="./css/customer-center.css">
@@ -4871,7 +4871,7 @@
         <h2 data-i18n="reservation.title" id="reservation-title">진료 예약</h2>
         <p data-i18n="reservation.description">환자 정보는 여권에 기재된 대로 입력해주세요.</p>
       </header>
-      <form class="reservation-form" method="dialog">
+      <form class="reservation-form" method="post" action="./api/reservations.php">
         <fieldset class="reservation-pain">
           <legend class="reservation-sr"><span data-i18n="reservation.painLegend">통증 부위 선택</span></legend>
           <h3><span data-i18n-static="단계 번호">STEP 1</span><span data-i18n="reservation.painTitle">통증부위는 어디인가요?</span>
@@ -4903,10 +4903,10 @@
               입력해주세요</span></h3>
           <div class="reservation-fields">
             <div class="reservation-column"><label class="reservation-field" for="reservation-givenName"><span
-                  data-i18n="reservation.givenName">이름</span><input id="reservation-givenName" name="givenName"
+                  data-i18n="reservation.givenName">이름</span><input id="reservation-givenName" name="givenName" maxlength="100"
                   type="text" autocomplete="given-name" required></label><label class="reservation-field"
                 for="reservation-familyName"><span data-i18n="reservation.familyName">성</span><input
-                  id="reservation-familyName" name="familyName" type="text" autocomplete="family-name"
+                  id="reservation-familyName" name="familyName" maxlength="100" type="text" autocomplete="family-name"
                   required></label><label class="reservation-field" for="reservation-birthday"><span
                   data-i18n="reservation.birthday">생일</span><input id="reservation-birthday" name="birthday" type="date"
                   autocomplete="bday"></label><label class="reservation-field" for="reservation-gender"><span
@@ -4917,7 +4917,7 @@
                   <option value="female" data-i18n="reviewOptions.female">여성</option>
                   <option value="unspecified" data-i18n="reviewOptions.unspecified">응답하지 않음</option>
                 </select></label><label class="reservation-field reservation-symptoms" for="reservation-symptoms"><span
-                  data-i18n="reservation.symptoms">증상</span><textarea id="reservation-symptoms" name="symptoms"
+                  data-i18n="reservation.symptoms">증상</span><textarea id="reservation-symptoms" name="symptoms" maxlength="5000"
                   rows="5"></textarea></label></div>
             <div class="reservation-column"><label class="reservation-field" for="reservation-nationality"><span
                   data-i18n="reservation.nationality">국적</span><select id="reservation-nationality" name="nationality">
@@ -4934,9 +4934,9 @@
                   <option value="VN" data-i18n="reviewOptions.vietnam">베트남</option>
                   <option value="OTHER" data-i18n="reviewOptions.other">기타</option>
                 </select></label><label class="reservation-field" for="reservation-email"><span
-                  data-i18n="reservation.email">이메일</span><input id="reservation-email" name="email" type="email"
+                  data-i18n="reservation.email">이메일</span><input id="reservation-email" name="email" maxlength="254" type="email"
                   autocomplete="email" required></label><label class="reservation-field" for="reservation-phone"><span
-                  data-i18n="reservation.phone">연락처</span><input id="reservation-phone" name="phone" type="tel"
+                  data-i18n="reservation.phone">연락처</span><input id="reservation-phone" name="phone" maxlength="50" type="tel"
                   autocomplete="tel" required></label><label class="reservation-field"
                 for="reservation-appointmentDate"><span data-i18n="reservation.appointmentDate">희망 진료일</span><input
                   id="reservation-appointmentDate" name="appointmentDate" type="date"></label>
@@ -4950,15 +4950,20 @@
                       name="insurance" value="none"><span data-i18n="reservation.insuranceNone">없음</span></label></div>
               </fieldset><label class="reservation-field" for="reservation-otherInsurance"><span
                   data-i18n="reservation.otherInsurance">기타보험</span><input id="reservation-otherInsurance"
-                  name="otherInsurance" type="text"></label>
+                  name="otherInsurance" maxlength="200" type="text"></label>
             </div>
           </div>
         </fieldset>
         <div class="reservation-actions"><label class="reservation-consent"><input type="checkbox" name="consent"
               required><span data-i18n="reservation.consent">개인정보의 수집 및 이용에 동의합니다.</span></label><button
-            class="reservation-submit" type="button"><span data-i18n="reservation.submit">예약 신청하기</span></button>
-          <p data-i18n="reservation.unavailable" class="reservation-status" role="status" hidden>현재 온라인 예약 접수를 준비 중입니다.
-            병원으로 문의해 주세요.</p>
+            class="reservation-submit" type="submit"><span data-i18n="reservation.submit">예약 신청하기</span></button>
+          <div class="reservation-status" role="status" hidden>
+            <p data-reservation-state="sending" data-i18n="reservation.sending" hidden>예약 신청을 접수하고 있습니다.</p>
+            <p data-reservation-state="success" data-i18n="reservation.success" hidden>예약 신청이 접수되었습니다. 아직 예약 확정은 아니며, 담당자가 확인 후 연락드립니다.</p>
+            <p data-reservation-state="invalid" data-i18n="reservation.invalid" hidden>입력 내용을 확인해주세요. 생일과 희망 진료일, 이메일 형식을 확인해주세요.</p>
+            <p data-reservation-state="rate" data-i18n="reservation.rate" hidden>잠시 후 다시 신청해주세요.</p>
+            <p data-reservation-state="error" data-i18n="reservation.error" hidden>접수 결과를 확인하지 못했습니다. 입력 내용은 유지됩니다. 잠시 후 다시 시도하거나 병원으로 문의해주세요.</p>
+          </div>
         </div>
       </form>
     </section>
