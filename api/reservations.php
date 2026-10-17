@@ -34,6 +34,13 @@ try {
     $now = gmdate('Y-m-d H:i:s');
     $query = $db->prepare('INSERT INTO reservations (request_id,payload_hash,screen_language,pain_area,given_name,family_name,birthday,gender,symptoms_original,nationality,email,phone,appointment_date,insurance,other_insurance,consent_at,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
     $query->execute([$data['requestId'],$hash,$data['screenLanguage'],$data['painArea'],$data['givenName'],$data['familyName'],$data['birthday'] ?: null,$data['gender'] ?: null,$data['symptoms'],$data['nationality'] ?: null,$data['email'],$data['phone'],$data['appointmentDate'] ?: null,$data['insurance'] ?: null,$data['otherInsurance'],$now,$now,$now]);
+    // Reservation persistence is independent of provider availability.
+    try {
+        require dirname(__DIR__).'/php/sms.php';
+        smsQueue($db,(int)$db->lastInsertId(),smsConfig());
+    } catch(Throwable $notificationError) {
+        error_log('HK SMS queue failed after reservation save; inspect recent reservations.');
+    }
     $_SESSION['last_reservation'] = time();
     respond(201, ['ok'=>true]);
 } catch (InvalidArgumentException | JsonException $error) {

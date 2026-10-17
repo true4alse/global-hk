@@ -14,6 +14,13 @@ try {
             $q->execute([$first]);
         }
     }
+    if (!database()->query("SHOW COLUMNS FROM admin_users LIKE 'notification_phone'")->fetch()) {
+        database()->exec("ALTER TABLE admin_users ADD notification_phone VARCHAR(11) NOT NULL DEFAULT ''");
+    }
+    if (!database()->query("SHOW COLUMNS FROM admin_users LIKE 'notify_new_reservations'")->fetch()) {
+        database()->exec("ALTER TABLE admin_users ADD notify_new_reservations TINYINT NOT NULL DEFAULT 0");
+    }
+    database()->exec(file_get_contents(dirname(__DIR__) . '/database/003_sms.sql'));
     echo "Reservation table ready.\n";
 } catch (Throwable $error) {
     fwrite(STDERR, "Migration failed. Check database configuration and permissions.\n");

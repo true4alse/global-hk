@@ -25,13 +25,34 @@ try:
  assert '이미 사용한 아이디' in req(a,'accounts.php',payload)[1]
  info=json.loads(sql('$q=database()->prepare("SELECT id,role FROM admin_users WHERE username=?");$q->execute(['+lit(name)+']);echo json_encode($q->fetch());'))
  assert info['role']=='admin'
+ def settings():
+  return json.loads(sql('$q=database()->prepare("SELECT notification_phone,notify_new_reservations FROM admin_users WHERE username=?");$q->execute(['+lit(name)+']);echo json_encode($q->fetch());'))
+ assert settings()['notification_phone']=='' and int(settings()['notify_new_reservations'])==0
+ notification=dict(csrf=csrf,action='notifications',id=info['id'],notification_phone='010-0000-0000',notify_new_reservations='1')
+ assert req(a,'accounts.php',dict(notification,csrf='bad'))[0]==403
+ assert '번호가 필요합니다' in req(a,'accounts.php',dict(notification,notification_phone=''))[1]
+ assert '11자리' in req(a,'accounts.php',dict(notification,notification_phone='0212345678'))[1]
+ assert '알림 설정을 저장했습니다' in req(a,'accounts.php',notification)[1]
+ assert settings()['notification_phone']=='01000000000' and int(settings()['notify_new_reservations'])==1
+ saved=req(a,'accounts.php')[1]
+ assert '010-0000-0000' in saved and '알림 설정 연결 해제' in saved
+ disconnect=dict(csrf=csrf,action='disconnect_notifications',id=info['id'])
+ assert req(a,'accounts.php',dict(disconnect,csrf='bad'))[0]==403
+ assert '알림 설정 연결을 해제했습니다' in req(a,'accounts.php',disconnect)[1]
+ assert settings()['notification_phone']=='' and int(settings()['notify_new_reservations'])==0
+ req(a,'accounts.php',notification)
+ assert '알림 설정을 저장했습니다' in req(a,'accounts.php',dict(notification,notify_new_reservations=''))[1]
+ assert int(settings()['notify_new_reservations'])==0
+ req(a,'accounts.php',notification)
  r=login(b,name,pw); assert r[0]==200 and '관리자 계정 관리' not in r[1]
  assert req(b,'accounts.php')[0]==403
- csrf_b=token(req(b,'index.php')[1]); assert req(b,'accounts.php',dict(payload,csrf=csrf_b))[0]==403
+ csrf_b=token(req(b,'index.php')[1]); assert req(b,'accounts.php',dict(notification,csrf=csrf_b))[0]==403; assert req(b,'accounts.php',dict(disconnect,csrf=csrf_b))[0]==403; assert req(b,'accounts.php',dict(payload,csrf=csrf_b))[0]==403
  superid=json.loads(sql('$q=database()->prepare("SELECT id FROM admin_users WHERE username=?");$q->execute(['+lit(supername)+']);echo json_encode($q->fetchColumn());'))
  assert '본인 계정은 삭제할 수 없습니다.' in req(a,'accounts.php',dict(csrf=csrf,action='delete',id=superid,confirmed='yes'))[1]
  assert '삭제 확인' in req(a,'accounts.php',dict(csrf=csrf,action='delete',id=info['id']))[1]
  assert '계정을 삭제했습니다.' in req(a,'accounts.php',dict(csrf=csrf,action='delete',id=info['id'],confirmed='yes'))[1]
+ assert int(settings()['notify_new_reservations'])==0
+ assert '사용 중인 계정만' in req(a,'accounts.php',notification)[1]
  assert req(b,'index.php')[2].endswith('login.php')
  assert login(b,name,pw)[2].endswith('login.php')
  print('PASS: role gating, CSRF, staff creation, role tampering, duplicate IDs, self protection, deletion confirmation, session revocation')

@@ -46,7 +46,7 @@ function koreanTime(?string $value): string {
     return (new DateTimeImmutable($value,new DateTimeZone('UTC')))->setTimezone(new DateTimeZone('Asia/Seoul'))->format('Y.m.d H:i');
 }
 function pageStart(string $title, ?array $user=null): void { ?>
-<!doctype html><html lang="ko" data-i18n-static="관리자 전용 한국어 화면"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title><?=e($title)?> | 흥K병원 예약 관리</title><link rel="stylesheet" href="./admin.css?v=20261009-popup"></head><body>
+<!doctype html><html lang="ko" data-i18n-static="관리자 전용 한국어 화면"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title><?=e($title)?> | 흥K병원 예약 관리</title><link rel="stylesheet" href="./admin.css?v=20261009-create-dialog"></head><body>
 <header class="top"><a class="brand" href="index.php">HEUNG-K <span>예약 관리</span></a><?php if($user): ?><div class="account"><?php if($user['role']==='superadmin'): ?><a class="quiet" href="accounts.php">관리자 계정 관리</a><?php endif; ?><span><?=e($user['display_name'])?> 담당자</span><form action="logout.php" method="post"><?php csrf(); ?><button class="quiet">로그아웃</button></form></div><?php endif; ?></header><main>
 <?php }
 function pageEnd(): void { echo '</main><footer>흥K병원 · 관계자 전용</footer></body></html>'; }
