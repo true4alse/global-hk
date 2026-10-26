@@ -177,8 +177,7 @@
   animation-play-state: running;
 }
 
-.research.is-paused .research-marquee-track,
-.research-marquee:hover .research-marquee-track {
+.research.is-paused .research-marquee-track {
   animation-play-state: paused;
 }
 
@@ -238,7 +237,7 @@
 .research-pending {
   opacity: 0;
   transform: translateX(-36px);
-  transition: opacity 1.1s ease var(--research-delay, 0ms), transform 1.1s cubic-bezier(.22, 1, .36, 1) var(--research-delay, 0ms);
+  transition: opacity 1.6s ease var(--research-delay, 0ms), transform 1.6s cubic-bezier(.22, 1, .36, 1) var(--research-delay, 0ms);
 }
 
 .research-shown {

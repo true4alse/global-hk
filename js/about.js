@@ -95,7 +95,7 @@ export function renderAbout() {
       if (!entry.isIntersecting) return;
       observer.unobserve(element);
       element.classList.add('about-shown');
-    }),{threshold:.15});
+    }),{threshold:.15, rootMargin: '0px 0px -96px 0px' });
     [...reveals,...counters,...rows].forEach(element => observer.observe(element));
   } else showFinal();
   function onReducedChange() {

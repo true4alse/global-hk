@@ -68,34 +68,29 @@
   height: 100%;
   object-fit: cover;
   opacity: .4;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 140px, #000 calc(100% - 180px), transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 140px, #000 calc(100% - 180px), transparent);
   pointer-events: none;
 }
 
 .treatment-patent {
   position: relative;
+  z-index: 1;
   min-height: 29vw;
 }
 
-  .treatment-patent-frame {
-    position: absolute;
-    left: 5.729%;
-    top: -20.677vw;
-    width: 32.708%;
-    margin: 0;
-    aspect-ratio: 628 / 862;
-    overflow: hidden;
-  }
+.treatment-patent-frame {
+  position: absolute;
+  left: 5.729%;
+  top: -20.677vw;
+  width: 32.708%;
+  margin: 0;
+}
 
-  .treatment-patent-frame>img {
-    display: block;
-    position: absolute;
-    /* 시안 이미지 채우기 좌표: 여백만 제외하고 액자 네 모서리를 보존한다. */
-    left: -6.752%;
-    top: -9.191%;
-    width: 113.653%;
-    max-width: none;
-    height: 117.203%;
-    object-fit: fill;
+.treatment-patent-frame > img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .treatment-patent-copy {
@@ -311,7 +306,7 @@
 .treatment-shown[data-treatment-reveal] {
   opacity: 1;
   transform: translate(0);
-  transition: opacity 1.1s ease, transform 1.1s cubic-bezier(.22, .61, .36, 1);
+  transition: opacity 1.6s ease, transform 1.6s cubic-bezier(.22, .61, .36, 1);
 }
 
 .treatment-banner-copy p.treatment-shown,

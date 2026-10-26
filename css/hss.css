@@ -56,11 +56,11 @@
 .hss-story .global-pending[data-hss-image] {
   opacity: 0;
   transform: translateX(var(--hss-enter-x));
-  transition: opacity 1.1s ease var(--hss-delay), transform 1.1s cubic-bezier(.22,.61,.36,1) var(--hss-delay);
+  transition: opacity 1.6s ease var(--hss-delay), transform 1.6s cubic-bezier(.22,.61,.36,1) var(--hss-delay);
 }
 .hss-story .global-shown[data-hss-image] { opacity: 1; transform: translateX(0); }
 /* 제목 → 첫 설명 → 다음 설명 순으로 부드럽게 등장합니다. */
-.hss-story [data-global-reveal] { transition-duration: 1.1s; }
+.hss-story [data-global-reveal] { transition-duration: 1.6s; }
 .hss-heading p[data-global-reveal], .hss-exchange-copy p[data-global-reveal] { transition-delay: 140ms; }
 .hss-exchange-copy p + p[data-global-reveal] { transition-delay: 280ms; }
 @media (max-width: 600px) {

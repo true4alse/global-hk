@@ -1,0 +1,33 @@
+/* Pointer feedback only; do not replace transforms used by sliders or reveals. */
+.header-nav a { position: relative; cursor: pointer; }
+.header-nav a::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 3px;
+  height: 2px; background: #fff; transform: scaleX(0);
+  transform-origin: left; transition: transform .25s ease;
+}
+:is(.pill, .language-options button, .center-menu a, .center-treatment-toggle,
+  .reservation-submit, .customer-copy, .facilities-scroll, .doctors-motion-toggle,
+  .research-photo-toggle, .research-marquee-toggle, .about-marquee-toggle) {
+  transition: background-color .25s ease, color .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+.header-nav a:focus-visible::after { transform: scaleX(1); }
+@media (hover: hover) and (pointer: fine) {
+  .header-nav a:hover::after { transform: scaleX(1); }
+  .pill:not(:disabled):hover { background-color: #eef9fa; box-shadow: 0 5px 18px #277fb926; }
+  .language-options button:not(:disabled):hover { background-color: #e6f5f6; color: #167f91; }
+  .center-menu a:hover { background-color: #fff9; border-radius: 12px; box-shadow: 0 3px 10px #167f911a; }
+  .center-treatment-toggle:hover, .reservation-submit:not(:disabled):hover {
+    background-color: #168c9d; box-shadow: 0 5px 14px #167f9133;
+  }
+  :is(.customer-copy, .facilities-scroll, .doctors-motion-toggle,
+    .research-photo-toggle, .research-marquee-toggle, .about-marquee-toggle):not(:disabled):hover {
+    filter: brightness(.9); box-shadow: 0 3px 10px #167f9126;
+  }
+  .contact-address:hover { text-decoration: underline; text-underline-offset: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header-nav a::after,
+  :is(.pill, .language-options button, .center-menu a, .center-treatment-toggle,
+    .reservation-submit, .customer-copy, .facilities-scroll, .doctors-motion-toggle,
+    .research-photo-toggle, .research-marquee-toggle, .about-marquee-toggle) { transition: none; }
+}

@@ -1,3 +1,4 @@
+import { renderScrollMotion } from './scroll-motion.js';
 import { renderCenterMenu } from './center-menu.js';
 import { renderContact } from './contact.js';
 import { renderCustomerCenter } from './customer-center.js';
@@ -43,6 +44,7 @@ renderReservation();
 renderCustomerCenter();
 renderContact();
 renderCenterMenu();
+renderScrollMotion();
 const toggle = document.querySelector('.language-toggle');
 const panel = document.querySelector('.language-options');
 const currentLanguageName = document.querySelector('.current-language-name');

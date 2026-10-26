@@ -26,9 +26,17 @@ function lookup(content, key) {
   return key.split('.').reduce((value, part) => value?.[part], content);
 }
 
+// Keep explicitly marked Korean corrections in HTML while translators edit locale files.
+const koreanHtmlText = new WeakMap();
+
 export function applyTranslations(content, root = document) {
   function translateText(element, key) {
-    const value = lookup(content, key);
+    const useHtmlSource = element.getAttribute('data-i18n-ko-source') === 'html';
+    if (useHtmlSource && !koreanHtmlText.has(element)) koreanHtmlText.set(element, element.textContent);
+    const language = root.documentElement?.lang || root.ownerDocument?.documentElement?.lang;
+    const value = useHtmlSource && language === 'ko'
+      ? koreanHtmlText.get(element)
+      : lookup(content, key);
     // 누락된 키는 HTML 원문을 유지합니다. 강조·아이콘을 포함한 부모는 덮어쓰지 않습니다.
     if (typeof value !== 'string' || [...element.children].some(child => child.tagName !== 'BR')) return;
     element.textContent = value;

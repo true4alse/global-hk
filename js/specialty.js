@@ -11,7 +11,7 @@ export function renderSpecialty() {
       entry.target.classList.add('specialty-shown');
       observer.unobserve(entry.target);
     });
-  }, { threshold: .1 });
+  }, { threshold: .1, rootMargin: '0px 0px -96px 0px' });
   targets.forEach(target => {
     target.classList.add('specialty-pending');
     observer.observe(target);

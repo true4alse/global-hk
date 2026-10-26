@@ -44,6 +44,8 @@
   <link rel="stylesheet" href="./css/center-menu.css">
 <link rel="stylesheet" href="./css/section-rails.css">
   <link rel="stylesheet" href="./css/language-fonts.css">
+  <link rel="stylesheet" href="./css/scroll-motion.css">
+  <link rel="stylesheet" href="./css/interactions.css">
 </head>
 
 <body class="lang-ko">
@@ -389,7 +391,7 @@
             <h2 id="apkass-title" data-apkass-reveal><span data-i18n="apkass.apkass">APKASS</span> <em
                 data-i18n="apkass.year">2026</em> <span data-i18n="apkass.korea">KOREA</span><br><span
                 data-i18n="apkass.ickas">ICKAS</span> <em class="apkass-mint" data-i18n="apkass.year">2026</em></h2>
-            <p class="apkass-description" data-i18n="apkass.description">아시아·태평양을 넘어 세계 각국의 전문가들이 모여 최신 연구와 치료 지견을 공유하는
+            <p class="apkass-description" data-scroll-reveal data-i18n="apkass.description">아시아·태평양을 넘어 세계 각국의 전문가들이 모여 최신 연구와 치료 지견을 공유하는
               국제 학술대회</p>
           </div>
         </div>
@@ -532,9 +534,9 @@
         <img class="treatment-detail-background" src="./assets/treatment/light-background.png" alt="" width="1920"
           height="1674" loading="lazy">
         <div class="treatment-patent">
-          <!-- 액자는 화면 진입 시 아래에서 위로 등장합니다. 원본의 바깥 여백만 CSS로 잘라냅니다. -->
+          <!-- 액자는 원본 비율로 전체를 표시하고 화면 진입 시 아래에서 위로 등장합니다. -->
           <figure class="treatment-patent-frame" data-figma-node="237:491" data-treatment-reveal="up">
-            <img src="./assets/treatment/patent-frame.png" alt="최소침습식 인공무릎관절 전치환술용 경골 사이즈 측정 수기구 특허증, 제10-2622418호"
+            <img src="./assets/treatment/patent-frame-transparent.png" alt="최소침습식 인공무릎관절 전치환술용 경골 사이즈 측정 수기구 특허증, 제10-2622418호"
               width="1054" height="1492" loading="lazy" data-i18n-alt="treatment.imageAlt.patentFrame">
           </figure>
           <img class="treatment-ribbon treatment-ribbon-left" src="./assets/about/ribbon.png" alt="" width="692"
@@ -3082,7 +3084,7 @@
       <h2 class="doctors-title" id="doctors-title" data-doctors-reveal><span data-i18n="doctors.hospital">흥K병원</span>
         <span data-i18n="doctors.title">의료진 소개</span>
       </h2>
-      <div class="doctor-carousel" role="region" aria-label="흥K병원 의료진 소개 슬라이드" data-i18n-label="doctors.carouselLabel">
+      <div class="doctor-carousel" data-scroll-reveal role="region" aria-label="흥K병원 의료진 소개 슬라이드" data-i18n-label="doctors.carouselLabel">
         <div class="doctor-slider swiper">
           <div class="swiper-wrapper">
             <article class="doctor-profile swiper-slide" role="group" aria-label="김종근 대표원장 소개"
@@ -4225,14 +4227,14 @@
     </section>
     <section class="facilities" id="facilities" aria-labelledby="facilities-title" data-figma-node="642:1367">
       <div class="facilities-heading">
-        <p class="facilities-kicker"><span data-i18n-static="섹션 번호">8</span><span
+        <p class="facilities-kicker" data-scroll-reveal><span data-i18n-static="섹션 번호">8</span><span
             data-i18n="facilities.kicker">FACILITIES</span></p>
-        <h2 id="facilities-title" data-i18n="facilities.title">흥K병원 둘러보기</h2>
-        <p data-i18n="facilities.description" data-i18n-lines>환자를 최우선의 가치로 생각하며,<br>더 나은 치료를 넘어 환자의 일상까지 회복할 수 있도록
+        <h2 id="facilities-title" data-scroll-reveal data-i18n="facilities.title">흥K병원 둘러보기</h2>
+        <p data-scroll-reveal data-i18n="facilities.description" data-i18n-lines>환자를 최우선의 가치로 생각하며,<br>더 나은 치료를 넘어 환자의 일상까지 회복할 수 있도록
           노력합니다.</p>
       </div>
       <div class="facilities-gallery">
-        <nav class="facilities-floors" aria-label="층별 시설 선택" data-i18n-label="facilities.floorsLabel">
+        <nav class="facilities-floors" data-scroll-reveal aria-label="층별 시설 선택" data-i18n-label="facilities.floorsLabel">
           <a class="facilities-floor" href="#facilities-floor-9" data-floor="9"
             aria-controls="facilities-floor-9"><strong data-i18n-static="층 번호">9F</strong><span
               data-i18n="facilities.floors.9.description">옥상정원</span></a>
@@ -4253,9 +4255,9 @@
         </nav>
         <section class="facilities-panel" id="facilities-floor-5" data-floor-panel="5"
           aria-labelledby="facilities-floor-title-5">
-          <h3 id="facilities-floor-title-5" class="facilities-floor-title"><span
+          <h3 id="facilities-floor-title-5" class="facilities-floor-title" data-scroll-reveal><span
               data-i18n="facilities.floors.5.heading">5F - 관절 · 척추센터</span></h3>
-          <div class="facilities-thumbnail-wrap"><button class="facilities-scroll" type="button" data-scroll="prev"
+          <div class="facilities-thumbnail-wrap" data-scroll-reveal><button class="facilities-scroll" type="button" data-scroll="prev"
               hidden aria-label="이전 사진 목록" data-i18n-label="facilities.previous"><svg width="20" height="20"
                 viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -4317,7 +4319,7 @@
                 <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
               </svg></button>
           </div>
-          <div class="facilities-viewer" aria-live="polite" aria-atomic="true">
+          <div class="facilities-viewer" data-scroll-reveal aria-live="polite" aria-atomic="true">
             <figure id="facilities-photo-5-1" data-facilities-photo="1"><img src="./assets/facilities/5f-01.webp"
                 alt="흥K병원 5층 접수데스크" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1532" height="972"
                 loading="lazy" decoding="async"></figure>
@@ -4349,9 +4351,9 @@
         </section>
         <section class="facilities-panel" id="facilities-floor-6" data-floor-panel="6"
           aria-labelledby="facilities-floor-title-6">
-          <h3 id="facilities-floor-title-6" class="facilities-floor-title"><span
+          <h3 id="facilities-floor-title-6" class="facilities-floor-title" data-scroll-reveal><span
               data-i18n="facilities.floors.6.heading">6F - 중앙수술센터</span></h3>
-          <div class="facilities-thumbnail-wrap"><button class="facilities-scroll" type="button" data-scroll="prev"
+          <div class="facilities-thumbnail-wrap" data-scroll-reveal><button class="facilities-scroll" type="button" data-scroll="prev"
               hidden aria-label="이전 사진 목록" data-i18n-label="facilities.previous"><svg width="20" height="20"
                 viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -4428,7 +4430,7 @@
                 <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
               </svg></button>
           </div>
-          <div class="facilities-viewer" aria-live="polite" aria-atomic="true">
+          <div class="facilities-viewer" data-scroll-reveal aria-live="polite" aria-atomic="true">
             <figure id="facilities-photo-6-1" data-facilities-photo="1"><img src="./assets/facilities/6f-01.webp"
                 alt="흥K병원 6층 중앙수술센터" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1125"
                 loading="lazy" decoding="async"></figure>
@@ -4466,9 +4468,9 @@
         </section>
         <section class="facilities-panel" id="facilities-floor-7" data-floor-panel="7"
           aria-labelledby="facilities-floor-title-7">
-          <h3 id="facilities-floor-title-7" class="facilities-floor-title"><span
+          <h3 id="facilities-floor-title-7" class="facilities-floor-title" data-scroll-reveal><span
               data-i18n="facilities.floors.7.heading">7F - 입원병동</span></h3>
-          <div class="facilities-thumbnail-wrap"><button class="facilities-scroll" type="button" data-scroll="prev"
+          <div class="facilities-thumbnail-wrap" data-scroll-reveal><button class="facilities-scroll" type="button" data-scroll="prev"
               hidden aria-label="이전 사진 목록" data-i18n-label="facilities.previous"><svg width="20" height="20"
                 viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -4520,7 +4522,7 @@
                 <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
               </svg></button>
           </div>
-          <div class="facilities-viewer" aria-live="polite" aria-atomic="true">
+          <div class="facilities-viewer" data-scroll-reveal aria-live="polite" aria-atomic="true">
             <figure id="facilities-photo-7-1" data-facilities-photo="1" data-photo-pending><img
                 src="./assets/facilities/7f-01.webp" alt="흥K병원 7층 입원병동 사진 1"
                 data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
@@ -4553,9 +4555,9 @@
         </section>
         <section class="facilities-panel" id="facilities-floor-8" data-floor-panel="8"
           aria-labelledby="facilities-floor-title-8">
-          <h3 id="facilities-floor-title-8" class="facilities-floor-title"><span
+          <h3 id="facilities-floor-title-8" class="facilities-floor-title" data-scroll-reveal><span
               data-i18n="facilities.floors.8.heading">8F - 입원병동</span></h3>
-          <div class="facilities-thumbnail-wrap"><button class="facilities-scroll" type="button" data-scroll="prev"
+          <div class="facilities-thumbnail-wrap" data-scroll-reveal><button class="facilities-scroll" type="button" data-scroll="prev"
               hidden aria-label="이전 사진 목록" data-i18n-label="facilities.previous"><svg width="20" height="20"
                 viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -4623,7 +4625,7 @@
                 <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
               </svg></button>
           </div>
-          <div class="facilities-viewer" aria-live="polite" aria-atomic="true">
+          <div class="facilities-viewer" data-scroll-reveal aria-live="polite" aria-atomic="true">
             <figure id="facilities-photo-8-1" data-facilities-photo="1" data-photo-pending><img
                 src="./assets/facilities/8f-01.webp" alt="흥K병원 8층 입원병동" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외"
                 width="1600" height="900" loading="lazy" decoding="async"></figure>
@@ -4658,9 +4660,9 @@
         </section>
         <section class="facilities-panel" id="facilities-floor-9" data-floor-panel="9"
           aria-labelledby="facilities-floor-title-9">
-          <h3 id="facilities-floor-title-9" class="facilities-floor-title"><span
+          <h3 id="facilities-floor-title-9" class="facilities-floor-title" data-scroll-reveal><span
               data-i18n="facilities.floors.9.heading">9F - 옥상정원</span></h3>
-          <div class="facilities-thumbnail-wrap"><button class="facilities-scroll" type="button" data-scroll="prev"
+          <div class="facilities-thumbnail-wrap" data-scroll-reveal><button class="facilities-scroll" type="button" data-scroll="prev"
               hidden aria-label="이전 사진 목록" data-i18n-label="facilities.previous"><svg width="20" height="20"
                 viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" />
@@ -4698,7 +4700,7 @@
                 <path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" />
               </svg></button>
           </div>
-          <div class="facilities-viewer" aria-live="polite" aria-atomic="true">
+          <div class="facilities-viewer" data-scroll-reveal aria-live="polite" aria-atomic="true">
             <figure id="facilities-photo-9-1" data-facilities-photo="1" data-photo-pending><img
                 src="./assets/facilities/9f-01.webp" alt="흥K병원 9층 옥상정원 사진 1"
                 data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1600" height="900" loading="lazy"
@@ -4780,7 +4782,7 @@
               <p data-i18n="service360.step7">귀국</p>
             </li>
           </ol>
-          <p class="service360-cost" data-i18n="service360.hotelCost">호텔 비용은 개인 부담입니다.</p>
+          <p class="service360-cost" data-scroll-reveal data-i18n="service360.hotelCost">호텔 비용은 개인 부담입니다.</p>
         </section>
         <section class="service360-pickup service360-inner" aria-labelledby="service360-pickup-title">
           <div class="service360-pickup-copy" data-service360-reveal>
@@ -4855,7 +4857,7 @@
                 <figcaption data-i18n-static="호텔 고유 영문명">LE COLLECTIVE SIHEUNG WAVEPARK</figcaption>
               </figure>
               <figure class="service360-hotel swiper-slide" data-hotel-repeat aria-hidden="true" inert><img
-                  src="./assets/service-360/hotel-paradise.webp" alt="인스파이어 리조트 카드의 시안 이미지"
+                  src="./assets/service-360/hotel-inspire.webp" alt="인스파이어 리조트 카드의 시안 이미지"
                   data-i18n-alt="service360.hotel5Alt" width="900" height="1100" loading="lazy" decoding="async">
                 <figcaption data-i18n-static="호텔 고유 영문명">INSPIRE ENTERTAINMENT RESORT</figcaption>
               </figure>
@@ -4866,7 +4868,7 @@
     </section>
 
     <section id="reservation" class="reservation" aria-labelledby="reservation-title">
-      <header class="reservation-header">
+      <header class="reservation-header" data-scroll-reveal>
         <p class="reservation-kicker"><b>10</b><span data-i18n="reservation.kicker">RESERVATION</span></p>
         <h2 data-i18n="reservation.title" id="reservation-title">진료 예약</h2>
         <p data-i18n="reservation.description">환자 정보는 여권에 기재된 대로 입력해주세요.</p>
@@ -4876,7 +4878,7 @@
           <legend class="reservation-sr"><span data-i18n="reservation.painLegend">통증 부위 선택</span></legend>
           <h3><span data-i18n-static="단계 번호">STEP 1</span><span data-i18n="reservation.painTitle">통증부위는 어디인가요?</span>
           </h3>
-          <div class="reservation-pain-options"><label class="reservation-pain-option"><input type="radio"
+          <div class="reservation-pain-options" data-scroll-reveal><label class="reservation-pain-option"><input type="radio"
                 name="painArea" value="knee" required><img src="./assets/reservation/knee.webp" width="200" height="200"
                 alt="무릎 통증 부위 안내" data-i18n-alt="reservation.kneeAlt" loading="lazy"><span class="reservation-choice"><i
                   aria-hidden="true"></i><span data-i18n="reservation.knee">무릎</span></span></label><label
@@ -5093,7 +5095,7 @@
             </div>
             <div class="contact-method" data-contact-reveal>
               <h4 data-i18n="contact.subwayLabel">지하철 이용시</h4>
-              <p data-i18n="contact.gimpoRail">인천공항 제1터미널 또는 제2터미널에서 공항철도 일반열차 이용</p>
+              <p data-i18n="contact.gimpoRail" data-i18n-ko-source="html">서해선 시흥능곡역 행 탑승 후 9개 이동하여 시흥능곡역 3번 출구</p>
               <ol class="contact-steps">
                 <li><span data-i18n="contact.gimpoStep0">김포공항역에서 원시 방면 서해선 이용</span><img class="contact-step-icon"
                     src="./assets/contact/step-next.svg" width="16" height="16" alt=""></li>
