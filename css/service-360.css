@@ -290,7 +290,7 @@
   word-break:normal;
 }
 [data-service360-reveal] {
-  transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.22,.61,.36,1);
+  transition:opacity 1.6s ease,transform 1.6s cubic-bezier(.22,.61,.36,1);
 }
 .service360-reveal-pending {
   opacity:0;

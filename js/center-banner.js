@@ -9,7 +9,7 @@ export function renderCenterBanners() {
       entry.target.classList.add('center-banner-shown');
       observer.unobserve(entry.target);
     });
-  }, { threshold: .1 });
+  }, { threshold: .1, rootMargin: '0px 0px -96px 0px' });
   targets.forEach(target => {
     target.classList.add('center-banner-pending');
     observer.observe(target);

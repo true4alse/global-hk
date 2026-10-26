@@ -67,7 +67,7 @@
 .doctor-career-columns li { position: relative; padding-left: 13px; margin-bottom: 8px; font-size: 16px; line-height: 1.45; word-break: keep-all; overflow-wrap: anywhere; }
 .doctor-career-marker { position: absolute; left: 0; top: 0; }
 .doctors-reveal-pending { opacity: 0; transform: translateX(-36px); }
-.doctors-reveal-shown { opacity: 1; transform: none; transition: opacity 1.1s ease, transform 1.1s cubic-bezier(.22,1,.36,1); }
+.doctors-reveal-shown { opacity: 1; transform: none; transition: opacity 1.6s ease, transform 1.6s cubic-bezier(.22,1,.36,1); }
 @media (max-width: 1200px) {
   .doctor-profile { padding-right: 5%; }
 .doctor-portrait-frame {
@@ -157,6 +157,21 @@
   .doctor-slider.swiper-initialized .doctor-detail h4 { padding: 6px 12px; margin-bottom: 12px; font-size: 12px; }
   .doctor-slider.swiper-initialized .doctor-detail p { max-width: none; font-size: 12px; line-height: 1.45; word-break: normal; }
   .doctor-slider.swiper-initialized .doctor-detail:has(.doctor-career-columns) { display: none; }
+  /* Profiles with careers only still need a visible mobile introduction. */
+  .doctor-slider.swiper-initialized .doctor-copy > .doctor-detail:only-of-type:has(.doctor-career-columns) {
+    display: block;
+    align-self: start;
+    max-height: clamp(220px, 65cqw, 340px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .doctor-slider.swiper-initialized .doctor-detail:only-of-type .doctor-career-columns {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
   .doctor-slider.swiper-initialized .doctor-mobile-more { display: grid; place-items: center; position: absolute; left: 24.876cqw; top: -15px; width: 44px; height: 44px; padding: 0; border: 0; background: transparent; color: #000; cursor: pointer; }
   .doctor-mobile-more img { display: block; }
 }

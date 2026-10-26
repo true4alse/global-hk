@@ -317,7 +317,7 @@
 .about [data-about-reveal].about-shown {
     opacity: 1;
     translate: 0 0;
-    transition: opacity 900ms ease, translate 900ms cubic-bezier(.22, 1, .36, 1);
+    transition: opacity 1600ms ease, translate 1600ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .header-nav a {

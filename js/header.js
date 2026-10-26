@@ -1,7 +1,8 @@
+import { renderScrollMotion } from './scroll-motion.js';
 import { renderCenterMenu } from './center-menu.js';
 import { renderContact } from './contact.js';
 import { renderCustomerCenter } from './customer-center.js';
-import { renderReservation } from './reservation.js';
+import { renderReservation } from './reservation.js?v=20261007';
 import { renderService360 } from './service-360.js';
 import { renderFacilities } from './facilities.js';
 import { renderDoctors } from './doctors.js';
@@ -43,6 +44,7 @@ renderReservation();
 renderCustomerCenter();
 renderContact();
 renderCenterMenu();
+renderScrollMotion();
 const toggle = document.querySelector('.language-toggle');
 const panel = document.querySelector('.language-options');
 const currentLanguageName = document.querySelector('.current-language-name');
@@ -111,6 +113,7 @@ document.addEventListener('focusin', event => {
 // 실제 스크롤 방향을 사용하므로 마우스 휠·터치·키보드 모두 같은 방식으로 동작합니다.
 const header = document.querySelector('.site-header');
 const headerTop = header.querySelector('.header-top');
+const headerNav = header.querySelector('.header-nav');
 let previousScroll = Math.max(0, window.scrollY);
 let directionDistance = 0;
 let framePending = false;
@@ -121,9 +124,11 @@ function showHeaderTop(show) {
 function measureHeader() {
   document.documentElement.style.setProperty('--header-top-height', `${headerTop.offsetHeight}px`);
   document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+  document.documentElement.style.setProperty('--mobile-nav-height', `${headerNav.offsetHeight}px`);
 }
 measureHeader();
 new ResizeObserver(measureHeader).observe(header);
+new ResizeObserver(measureHeader).observe(headerNav);
 window.addEventListener('scroll', () => {
   if (framePending) return;
   framePending = true;
