@@ -1,18 +1,27 @@
 /* Pointer feedback only; do not replace transforms used by sliders or reveals. */
-.header-nav a { position: relative; cursor: pointer; }
-.header-nav a::after {
-  content: ''; position: absolute; left: 0; right: 0; bottom: 3px;
-  height: 2px; background: #fff; transform: scaleX(0);
-  transform-origin: left; transition: transform .25s ease;
+.header-nav a {
+  position: relative; cursor: pointer;
+  transition: text-shadow .3s ease;
 }
 :is(.pill, .language-options button, .center-menu a, .center-treatment-toggle,
   .reservation-submit, .customer-copy, .facilities-scroll, .doctors-motion-toggle,
   .research-photo-toggle, .research-marquee-toggle, .about-marquee-toggle) {
   transition: background-color .25s ease, color .25s ease, box-shadow .25s ease, filter .25s ease;
 }
-.header-nav a:focus-visible::after { transform: scaleX(1); }
+.header-nav :is(a, button):focus-visible { outline: none; background-color: #ffffff24; box-shadow: inset 0 0 0 2px #ffffffb3; border-radius: 5px; }
+@keyframes header-gradient-flow {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .header-nav {
+    background-image: linear-gradient(110deg, #267fb9 0%, #267fb9 20%, #58b6bc 50%, #267fb9 80%, #267fb9 100%);
+    background-size: 250% 100%;
+    animation: header-gradient-flow 5s ease-in-out infinite alternate;
+  }
+}
 @media (hover: hover) and (pointer: fine) {
-  .header-nav a:hover::after { transform: scaleX(1); }
+  .header-nav a:hover { text-shadow: 0 0 4px #ffffffb3, 0 0 10px #b9fff2cc, 0 0 18px #83f7ec99; }
   .pill:not(:disabled):hover { background-color: #eef9fa; box-shadow: 0 5px 18px #277fb926; }
   .language-options button:not(:disabled):hover { background-color: #e6f5f6; color: #167f91; }
   .center-menu a:hover { background-color: #fff9; border-radius: 12px; box-shadow: 0 3px 10px #167f911a; }
@@ -26,8 +35,98 @@
   .contact-address:hover { text-decoration: underline; text-underline-offset: 4px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .header-nav a::after,
+  .header-nav a,
   :is(.pill, .language-options button, .center-menu a, .center-treatment-toggle,
     .reservation-submit, .customer-copy, .facilities-scroll, .doctors-motion-toggle,
     .research-photo-toggle, .research-marquee-toggle, .about-marquee-toggle) { transition: none; }
+}
+
+/* Keep the translated links intact; reserve the middle seat for inquiry. */
+@media (max-width: 760px) {
+  .header-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(44px, auto));
+    gap: 0 4px;
+    padding-top: 8px;
+  }
+  .header-nav [data-nav] { min-height: 40px; padding: 6px 2px; }
+  .header-nav [data-nav="about"] { grid-area: 1 / 1 / 2 / 2; }
+  .header-nav [data-nav="specialties"] { grid-area: 2 / 1 / 3 / 2; }
+  .header-nav [data-nav="doctors"] { grid-area: 2 / 2 / 3 / 3; }
+  .header-nav [data-nav="facilities"] { grid-area: 1 / 3 / 2 / 4; }
+  .header-nav [data-nav="location"] { grid-area: 2 / 3 / 3 / 4; }
+  .header-nav [data-nav="inquiry"] {
+    grid-area: 1 / 2 / 2 / 3;
+    align-self: end;
+    justify-self: center;
+    display: grid;
+    place-items: center;
+    width: 72px;
+    min-height: 72px;
+    margin-top: -28px;
+    padding: 10px 5px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #43c6c5, #0c79b5);
+    box-shadow: 0 5px 16px #003d6370, inset 0 1px 0 #ffffff70;
+    transform: translateY(-4px);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.3;
+    text-align: center;
+    transition: text-shadow .3s ease;
+  }
+  .header-nav [data-nav="inquiry"]:focus-visible {
+    box-shadow: 0 6px 22px #003d6380, inset 0 0 0 2px #ffffff90;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-nav [data-nav="inquiry"] { transition: none; }
+}
+
+/* Public-site controls: glow without moving labels or changing translation markup. */
+.facilities-floor { transition: opacity .3s ease, text-shadow .3s ease; }
+:is(.customer-contact-value, .footer-info a, .contact-address) {
+  transition: color .25s ease, text-shadow .25s ease;
+}
+:is(.doctor-mobile-more, .doctor-modal-close, .doctor-previous, .doctor-next,
+  .doctor-slide-toggle, .doctor-dot, .research-previous, .research-next,
+  .footer-social a, .hospital-logo, .center-treatment-video a) {
+  transition: filter .25s ease, box-shadow .25s ease;
+}
+.facilities-floor:focus-visible {
+  opacity: 1;
+  text-shadow: 0 0 4px #ffffff80, 0 0 12px #9cf5e999;
+}
+@media (hover: hover) and (pointer: fine) {
+  .facilities-floor:hover {
+    opacity: 1;
+    text-shadow: 0 0 4px #ffffff80, 0 0 12px #9cf5e999;
+  }
+  :is(.center-treatment-toggle, .reservation-submit):not(:disabled):not([aria-disabled="true"]):hover {
+    text-shadow: 0 0 4px #ffffff80, 0 0 10px #b9fff299;
+  }
+  :is(.customer-contact-value, .footer-info a, .contact-address):hover {
+    color: #168c9d;
+    text-shadow: 0 0 8px #39b5ba66;
+  }
+  :is(.doctor-mobile-more, .doctor-modal-close, .doctor-previous, .doctor-next,
+    .doctor-slide-toggle, .doctor-dot, .research-previous, .research-next):not(:disabled):not([aria-disabled="true"]):hover {
+    filter: drop-shadow(0 0 4px #39b5ba80);
+  }
+  :is(.footer-social a, .hospital-logo, .center-treatment-video a):hover {
+    filter: drop-shadow(0 0 5px #39b5ba66);
+  }
+  .reservation-pain-option:not(:has(input:disabled)):hover .reservation-choice,
+  .reservation-insurance-options label:not(:has(input:disabled)):hover span,
+  .reservation-consent:not(:has(input:disabled)):hover span {
+    text-shadow: 0 0 8px #b9fff280;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.facilities-floor, .customer-contact-value, .footer-info a, .contact-address,
+    .doctor-mobile-more, .doctor-modal-close, .doctor-previous, .doctor-next,
+    .doctor-slide-toggle, .doctor-dot, .research-previous, .research-next,
+    .footer-social a, .hospital-logo, .center-treatment-video a) { transition: none; }
 }

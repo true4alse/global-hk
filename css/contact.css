@@ -14,6 +14,16 @@
 .contact-line::before { content:""; position:absolute; left:0; top:50%; width:6px; height:6px; border-radius:50%; background:#277fb9; transform:translateY(-50%); }
 .contact-duration img { width:32px; height:32px; object-fit:contain; }
 .contact-time { padding:14px 26px; border-radius:100px; background:linear-gradient(115deg,#14b8c4,#1179cb,#14b8c4); color:#fff; font-size:24px; font-weight:700; line-height:29px; }
+@keyframes contact-gradient-flow {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .contact-time {
+    background-size: 250% 100%;
+    animation: contact-gradient-flow 3s ease-in-out infinite alternate;
+  }
+}
 .contact-method { margin-top:32px; }
 .contact-route-heading + .contact-method { margin-top:48px; }
 .contact-method h4 { display:table; padding:4px 16px; border-radius:555px; background:#3dbabc; color:#fff; font-size:16px; line-height:19px; font-weight:400; }

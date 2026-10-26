@@ -200,7 +200,35 @@
   pointer-events: none;
 }
 @keyframes treatment-ring-turn { to { transform: rotate(360deg); } }
+/* A translucent ripple expands behind the solid disc, without moving the diagram. */
+.treatment-instrument-circle::after,
+.treatment-ripple {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 1px solid rgb(61 180 183 / 26%);
+  border-radius: 50%;
+  background: rgb(61 180 183 / 6%);
+  pointer-events: none;
+  opacity: 0;
+}
+@keyframes treatment-ripple {
+  0% { transform: scale(.65); opacity: 0; }
+  20% { opacity: .75; }
+  100% { transform: scale(1.85); opacity: 0; }
+}
 @media (prefers-reduced-motion: no-preference) {
+  .treatment-instrument-circle::after,
+  .treatment-ripple {
+    animation: treatment-ripple 5s ease-out infinite paused;
+  }
+  .treatment-ripple--second { animation-delay: -1.667s; }
+  .treatment-ripple--third { animation-delay: -3.333s; }
+  .treatment-instrument-circle.ring-motion-running::after,
+  .ring-motion-running > .treatment-ripple {
+    animation-play-state: running;
+  }
   .treatment-instrument-circle::before {
     animation: treatment-ring-turn 36s linear infinite paused;
   }
