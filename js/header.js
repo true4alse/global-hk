@@ -113,6 +113,7 @@ document.addEventListener('focusin', event => {
 // 실제 스크롤 방향을 사용하므로 마우스 휠·터치·키보드 모두 같은 방식으로 동작합니다.
 const header = document.querySelector('.site-header');
 const headerTop = header.querySelector('.header-top');
+const headerNav = header.querySelector('.header-nav');
 let previousScroll = Math.max(0, window.scrollY);
 let directionDistance = 0;
 let framePending = false;
@@ -123,9 +124,11 @@ function showHeaderTop(show) {
 function measureHeader() {
   document.documentElement.style.setProperty('--header-top-height', `${headerTop.offsetHeight}px`);
   document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+  document.documentElement.style.setProperty('--mobile-nav-height', `${headerNav.offsetHeight}px`);
 }
 measureHeader();
 new ResizeObserver(measureHeader).observe(header);
+new ResizeObserver(measureHeader).observe(headerNav);
 window.addEventListener('scroll', () => {
   if (framePending) return;
   framePending = true;

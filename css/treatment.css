@@ -185,9 +185,28 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background: #3db4b7;
-  outline: 2px dashed #3db4b7;
+  outline: 2px dashed transparent;
   outline-offset: 15px;
   box-shadow: 0 0 0 50px rgb(61 180 183 / 2%), 0 0 0 95px rgb(61 180 183 / 2%);
+}
+
+/* Keep the original outline offset for connector geometry; rotate only this ring. */
+.treatment-instrument-circle::before {
+  content: '';
+  position: absolute;
+  inset: -17px;
+  border: 2px dashed #3db4b7;
+  border-radius: 50%;
+  pointer-events: none;
+}
+@keyframes treatment-ring-turn { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: no-preference) {
+  .treatment-instrument-circle::before {
+    animation: treatment-ring-turn 36s linear infinite paused;
+  }
+  .treatment-instrument-circle.ring-motion-running::before {
+    animation-play-state: running;
+  }
 }
 
 .treatment-instrument > .treatment-instrument-image {
@@ -472,6 +491,7 @@
     width: 230px;
     outline-offset: 12px;
   }
+  .treatment-instrument-circle::before { inset: -14px; }
 
   .treatment-instrument > .treatment-instrument-image {
     width: 360px;

@@ -1,7 +1,15 @@
 // Animate existing HTML only; content remains visible without JavaScript.
 export function renderScrollMotion() {
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const content = [...document.querySelectorAll('[data-scroll-reveal]')];
+  // These existing elements have no section-specific reveal. Only motion classes
+  // are added: HTML content and translation attributes stay untouched.
+  const additions = [...document.querySelectorAll(
+    '.treatment-instrument-image, .treatment-strategy-image, .service360-hotels, ' +
+    '.reservation-patient > h3, .reservation-field, .reservation-insurance, ' +
+    '.reservation-actions, .footer-logo, .footer-social, .footer-copyright'
+  )];
+  additions.forEach(element => element.classList.add('scroll-motion-content'));
+  const content = [...document.querySelectorAll('[data-scroll-reveal], .scroll-motion-content')];
   const cards = [...document.querySelectorAll('.center-treatment')];
   const targets = [...content, ...cards];
   const shown = new WeakSet();
@@ -46,4 +54,23 @@ export function renderScrollMotion() {
   }));
   motion.addEventListener('change', setup);
   setup();
+  // Spin the decorative ring only while it is visible. The instrument and
+  // connector coordinates are stationary, including during rotation.
+  const rings = [...document.querySelectorAll('.treatment-instrument-circle')];
+  const visibleRings = new Set();
+  const syncRings = () => rings.forEach(ring => ring.classList.toggle(
+    'ring-motion-running', visibleRings.has(ring) && !motion.matches && !document.hidden
+  ));
+  if ('IntersectionObserver' in window) {
+    const ringObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) visibleRings.add(entry.target);
+        else visibleRings.delete(entry.target);
+      });
+      syncRings();
+    });
+    rings.forEach(ring => ringObserver.observe(ring));
+  }
+  motion.addEventListener('change', syncRings);
+  document.addEventListener('visibilitychange', syncRings);
 }
