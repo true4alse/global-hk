@@ -28,3 +28,33 @@
   .reservation-field.scroll-motion-pending { translate: 0 22px; }
   .footer-logo.scroll-motion-pending { translate: -40px 0; }
 }
+
+/* Isolate only the facilities artwork, keeping text and controls sharp. */
+.facilities { position: relative; isolation: isolate; background-image: none; }
+.facilities::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: #003380 url('../assets/facilities/background.webp') center top / 100% 100% no-repeat;
+  background-blend-mode: color-burn;
+}
+/* Omitted final opacity uses each layer's original value and blend mode. */
+@keyframes ambient-background-focus {
+  from { filter: blur(14px); opacity: 0; }
+  to { filter: blur(0); }
+}
+@keyframes ambient-decoration-focus {
+  from { filter: blur(8px); opacity: 0; }
+  to { filter: blur(0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ambient-pending:not(.facilities), .facilities.ambient-pending::before { opacity: 0; }
+  .ambient-background-enter:not(.facilities), .facilities.ambient-background-enter::before {
+    animation: ambient-background-focus 1.4s ease-out both;
+  }
+  .ambient-decoration-enter {
+    animation: ambient-decoration-focus 1.2s ease-out 1.4s both;
+  }
+}
