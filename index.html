@@ -180,7 +180,7 @@
             <span class="about-stat-icon doctor" aria-hidden="true">
               <img src="./assets/about/group10.svg" class="" alt="" width="50" height="50">
             </span>
-            <span class="about-stat-value">400</span>
+            <span class="about-stat-value">273614</span>
           </li>
           <!-- 입원환자: 아이콘 src와 표시 숫자는 이 카드에서 수정합니다. -->
           <li class="about-stat" data-stat="iv">
@@ -191,7 +191,7 @@
               <img src="./assets/about/vector2.svg" class="iv-marks" alt="" width="50" height="50">
               <img src="./assets/about/vector3.svg" class="iv-dot" alt="" width="50" height="50">
             </span>
-            <span class="about-stat-value">6,152</span>
+            <span class="about-stat-value">18941</span>
           </li>
           <!-- 국제환자: 아이콘 src와 표시 숫자는 이 카드에서 수정합니다. -->
           <li class="about-stat" data-stat="world">
@@ -209,7 +209,7 @@
               <img src="./assets/about/vector4.svg" class="stethoscope-tips" alt="" width="50" height="50">
               <img src="./assets/about/group12.svg" class="stethoscope-head" alt="" width="50" height="50">
             </span>
-            <span class="about-stat-value">7,208</span>
+            <span class="about-stat-value">13180</span>
           </li>
         </ul>
 
@@ -4883,6 +4883,7 @@
         <p data-i18n="reservation.description">환자 정보는 여권에 기재된 대로 입력해주세요.</p>
       </header>
       <form class="reservation-form" method="post" action="./api/reservations.php">
+        <input type="text" name="website" hidden tabindex="-1" autocomplete="off" aria-hidden="true" data-i18n-static="자동입력 탐지용 비표시 필드">
         <fieldset class="reservation-pain">
           <legend class="reservation-sr"><span data-i18n="reservation.painLegend">통증 부위 선택</span></legend>
           <h3><span data-i18n-static="단계 번호">STEP 1</span><span data-i18n="reservation.painTitle">통증부위는 어디인가요?</span>
@@ -4970,14 +4971,20 @@
             class="reservation-submit" type="submit"><span data-i18n="reservation.submit">예약 신청하기</span></button>
           <div class="reservation-status" role="status" hidden>
             <p data-reservation-state="sending" data-i18n="reservation.sending" hidden>예약 신청을 접수하고 있습니다.</p>
-            <p data-reservation-state="success" data-i18n="reservation.success" hidden>예약 신청이 접수되었습니다. 아직 예약 확정은 아니며, 담당자가 확인 후 연락드립니다.</p>
-            <p data-reservation-state="invalid" data-i18n="reservation.invalid" hidden>입력 내용을 확인해주세요. 생일과 희망 진료일, 이메일 형식을 확인해주세요.</p>
-            <p data-reservation-state="rate" data-i18n="reservation.rate" hidden>잠시 후 다시 신청해주세요.</p>
-            <p data-reservation-state="error" data-i18n="reservation.error" hidden>접수 결과를 확인하지 못했습니다. 입력 내용은 유지됩니다. 잠시 후 다시 시도하거나 병원으로 문의해주세요.</p>
           </div>
         </div>
       </form>
     </section>
+
+    <dialog class="reservation-success-dialog" aria-labelledby="reservation-success-message">
+      <div class="reservation-success-icon" aria-hidden="true">✓</div>
+      <p id="reservation-success-message" data-reservation-result="success" data-i18n="reservation.success">예약 신청이 접수되었습니다. 아직 예약 확정은 아니며, 담당자가 확인 후 연락드립니다.</p>
+      <p id="reservation-invalid-message" data-reservation-result="invalid" data-i18n="reservation.invalid" hidden>입력 내용을 확인해주세요. 생일과 희망 진료일, 이메일 형식을 확인해주세요.</p>
+      <p id="reservation-rate-message" data-reservation-result="rate" data-i18n="reservation.rate" hidden>잠시 후 다시 신청해주세요.</p>
+      <p id="reservation-error-message" data-reservation-result="error" data-i18n="reservation.error" hidden>접수 결과를 확인하지 못했습니다. 입력 내용은 유지됩니다. 잠시 후 다시 시도하거나 병원으로 문의해주세요.</p>
+      <p class="reservation-result-detail" id="reservation-result-detail" hidden></p>
+      <form method="dialog"><button class="reservation-success-confirm" autofocus data-i18n-static="언어 공통 확인 표기">OK</button></form>
+    </dialog>
 
     <section id="customer-center" class="customer-center" aria-labelledby="customer-center-title">
       <img class="customer-background" src="./assets/customer-center/reception.webp" width="1532" height="972"

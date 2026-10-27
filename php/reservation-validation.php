@@ -6,7 +6,7 @@ function validateReservation(array $input): array {
     foreach ($limits as $key => $limit) {
         $value = $input[$key] ?? '';
         if (!is_string($value) || !mb_check_encoding($value, 'UTF-8') || mb_strlen($value, 'UTF-8') > $limit || str_contains($value, "\0")) throw new InvalidArgumentException($key);
-        $data[$key] = $value; // Preserve original text and line breaks.
+        $data[$key] = $key === 'email' ? trim($value) : $value; // Preserve original symptoms and line breaks.
     }
     foreach (['givenName','familyName','email','phone'] as $key) {
         if (trim($data[$key]) === '') throw new InvalidArgumentException($key);

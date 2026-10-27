@@ -21,6 +21,7 @@ try {
         database()->exec("ALTER TABLE admin_users ADD notify_new_reservations TINYINT NOT NULL DEFAULT 0");
     }
     database()->exec(file_get_contents(dirname(__DIR__) . '/database/003_sms.sql'));
+    database()->exec(file_get_contents(dirname(__DIR__) . '/database/004_abuse.sql'));
     echo "Reservation table ready.\n";
 } catch (Throwable $error) {
     fwrite(STDERR, "Migration failed. Check database configuration and permissions.\n");

@@ -3,7 +3,7 @@ declare(strict_types=1);
 function smsConfig(): array {
     $path=dirname(__DIR__).'/config/sms.local.php';
     $config=is_file($path) ? require $path : [];
-    return array_replace(['mode'=>'disabled','api_key'=>'','api_secret'=>'','from'=>'','admin_url'=>''], $config);
+    return array_replace(['mode'=>'disabled','api_key'=>'','api_secret'=>'','from'=>'','admin_url'=>'','limit_10_minutes'=>20,'limit_24_hours'=>100], $config);
 }
 function smsQueue(PDO $db,int $reservationId,array $config): void {
     if (!in_array($config['mode'],['simulate','live'],true)) return;
@@ -58,6 +58,20 @@ function smsRun(PDO $db,array $config,?callable $send=null): int {
             if ($job['mode']!==$config['mode'] || !$q->fetchColumn() || strtotime($job['created_at'].' UTC')<time()-86400) {
                 $state='cancelled'; $code='DISABLED_CHANGED_OR_EXPIRED'; $provider=null;
             } else {
+                // Count every live attempt, including ambiguous outcomes and retries.
+                // The worker lock serializes this reservation of the sending budget.
+                if ($config['mode']==='live') {
+                    $db->exec('DELETE FROM sms_attempts WHERE created_at < DATE_SUB(UTC_TIMESTAMP(), INTERVAL 24 HOUR)');
+                    $recent=(int)$db->query('SELECT COUNT(*) FROM sms_attempts WHERE created_at >= DATE_SUB(UTC_TIMESTAMP(), INTERVAL 10 MINUTE)')->fetchColumn();
+                    $daily=(int)$db->query('SELECT COUNT(*) FROM sms_attempts')->fetchColumn();
+                    if ($recent>=max(1,(int)($config['limit_10_minutes']??20)) || $daily>=max(1,(int)($config['limit_24_hours']??100))) {
+                        $q=$db->prepare("UPDATE sms_jobs SET state='held',result_code='SEND_LIMIT',updated_at=UTC_TIMESTAMP() WHERE id=?");
+                        $q->execute([$job['id']]);
+                        $count++;
+                        continue;
+                    }
+                    $db->exec('INSERT INTO sms_attempts(created_at) VALUES (UTC_TIMESTAMP())');
+                }
                 $q=$db->prepare("UPDATE sms_jobs SET state='sending',attempts=attempts+1,updated_at=UTC_TIMESTAMP() WHERE id=?"); $q->execute([$job['id']]);
                 try { [$state,$code,$provider]=($send ?? 'smsSend')($config,$job['phone']); }
                 catch(Throwable $ex) { $state='unknown'; $code='CHECK_SOLAPI'; $provider=null; }
