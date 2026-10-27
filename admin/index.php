@@ -15,6 +15,9 @@ $counts=array_fill_keys(array_keys($labels),0); foreach($db->query('SELECT statu
 $languages=['ko'=>'한국어','en'=>'영어','zh'=>'중국어','ja'=>'일본어','ru'=>'러시아어','mn'=>'몽골어','hi'=>'힌디어','ar'=>'아랍어','vi'=>'베트남어'];
 $pain=['knee'=>'무릎','shoulder'=>'어깨','hand'=>'손·팔꿈치','foot'=>'발·발목','spine'=>'허리'];
 pageStart('예약 목록',$user); ?>
+<?php $heldSms=(int)database()->query("SELECT COUNT(*) FROM sms_jobs WHERE state='held'")->fetchColumn(); if($heldSms): ?>
+<p class="notice error" role="alert">문자 발송량 상한을 초과하여 <?=e($heldSms)?>건이 보류되었습니다. 예약은 정상 저장되어 있습니다. 아래 예약 목록을 확인해주세요. 보류 문자는 자동 재발송하지 않습니다.<?php if($user['role']==='superadmin'): ?> <a href="sms.php">문자 알림 기록 확인</a><?php endif; ?></p>
+<?php endif; ?>
 <div class="heading"><div><p class="eyebrow">RESERVATIONS</p><h1>예약 접수 현황</h1><p class="muted">환자의 신청 내용을 확인하고 진행 상태를 관리하세요.</p></div><a class="quiet" href="index.php">새로고침</a></div>
 <nav class="stats" aria-label="상태별 예약"><a class="stat" <?= $status === '' ? 'aria-current="page"' : '' ?> href="index.php"><span>전체 예약</span><strong><?=array_sum($counts)?></strong></a><?php foreach($labels as $key=>$label): ?><a class="stat" <?= $status === $key ? 'aria-current="page"' : '' ?> href="?status=<?=e($key)?>"><span><?=e($label)?></span><strong><?=$counts[$key]?></strong></a><?php endforeach; ?></nav>
 <section class="card"><form method="get" class="filters"><label>처리 상태<select name="status"><option value="">전체 상태</option><?php foreach($labels as $key=>$label): ?><option value="<?=e($key)?>" <?=$status===$key?'selected':''?>><?=e($label)?></option><?php endforeach; ?></select></label><label class="search">예약 검색<input name="q" value="<?=e($search)?>" maxlength="100" placeholder="이름, 이메일 또는 연락처"></label><button class="primary">검색</button></form>
