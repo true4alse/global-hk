@@ -15,7 +15,7 @@ export function renderApkass() {
       entry.target.classList.remove('apkass-reveal-pending');
       entry.target.classList.add('apkass-reveal-shown');
       observer.unobserve(entry.target);
-    }), { threshold: .08 });
+    }), { threshold: .08, rootMargin: '0px 0px -96px 0px' });
     targets.filter(item => !item.classList.contains('apkass-reveal-shown')).forEach(item => {
       item.classList.add('apkass-reveal-pending');
       observer.observe(item);

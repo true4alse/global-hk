@@ -11,7 +11,7 @@ export function renderContact() {
       entry.target.classList.remove('contact-reveal-pending');
       entry.target.dataset.contactShown = 'true';
       observer.unobserve(entry.target);
-    }), { threshold: .1 });
+    }), { threshold: .1, rootMargin: '0px 0px -96px 0px' });
     targets.filter(item => !item.dataset.contactShown).forEach(item => {
       item.classList.add('contact-reveal-pending');
       observer.observe(item);

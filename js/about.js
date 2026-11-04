@@ -25,7 +25,7 @@ export function renderAbout() {
       track.style.setProperty('--photo-width', width + 'px');
       track.style.setProperty('--photo-height', width * 2/3 + 'px');
       const height = width * 2/3;
-      const widths = photos.map(img => height * (img.naturalWidth && img.naturalHeight ? img.naturalWidth / img.naturalHeight : 1.5));
+      const widths = photos.map(img => height * (Number(img.dataset.marqueeAspect) || (img.naturalWidth && img.naturalHeight ? img.naturalWidth / img.naturalHeight : 1.5)));
       const distance = widths.reduce((sum, value) => sum + value, 0);
       track.style.setProperty('--marquee-distance', distance + 'px');
       track.style.setProperty('--marquee-duration', distance/16 + 's');
@@ -95,7 +95,7 @@ export function renderAbout() {
       if (!entry.isIntersecting) return;
       observer.unobserve(element);
       element.classList.add('about-shown');
-    }),{threshold:.15});
+    }),{threshold:.15, rootMargin: '0px 0px -96px 0px' });
     [...reveals,...counters,...rows].forEach(element => observer.observe(element));
   } else showFinal();
   function onReducedChange() {

@@ -34,7 +34,7 @@ export function renderMis() {
         });
       }
     });
-  }, { threshold: [.18, .45] });
+  }, { threshold: [.18, .45], rootMargin: '0px 0px -96px 0px' });
   [...targets, sequence].forEach(element => observer.observe(element));
   motion.addEventListener('change', event => { if (event.matches) finish(); });
 }

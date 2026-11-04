@@ -28,7 +28,7 @@
 .cadaver-trophy { position: absolute; z-index: 3; top: -20vw; left: 50%; width: 45%; transform: translateX(-45%); pointer-events: none; }
 .cadaver-trophy img { display: block; width: 100%; height: auto; }
 /* 문구는 왼쪽→오른쪽, 배경은 블러 해제, 트로피는 아래→위. 각각 화면에 들어올 때 한 번 실행합니다. */
-.cadaver-pending { opacity: 0; transform: translateX(-36px); transition: opacity 1.1s ease var(--cadaver-delay,0ms),transform 1.1s cubic-bezier(.22,1,.36,1) var(--cadaver-delay,0ms); }
+.cadaver-pending { opacity: 0; transform: translateX(-36px); transition: opacity 1.6s ease var(--cadaver-delay,0ms),transform 1.6s cubic-bezier(.22,1,.36,1) var(--cadaver-delay,0ms); }
 .cadaver-pending[data-cadaver-reveal="blur"] { transform: none; filter: blur(18px); transition: opacity 2.2s ease var(--cadaver-delay,0ms),filter 2.2s ease var(--cadaver-delay,0ms); }
 .cadaver-pending[data-cadaver-reveal="up"] { transform: translateY(80px); transition-duration: 1.4s; }
 .cadaver-shown[data-cadaver-reveal] {

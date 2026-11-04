@@ -28,7 +28,7 @@
 .global-award-source { color: #287ba1; font-size: 14px; line-height: 1.4; font-weight: 700; margin: 0 0 4px; white-space: nowrap; }
 .global-award-detail, .global-award-date { color: #174d71; margin: 0; font-size: 14px; line-height: 1.5; word-break: keep-all; }
 /* JS가 준비된 경우에만 숨겨서, JS 비활성화 시에도 콘텐츠를 읽을 수 있습니다. */
-.global-pending[data-global-reveal] { opacity: 0; transform: translateX(-32px); transition: opacity .9s ease,transform .9s cubic-bezier(.2,.65,.3,1); }
+.global-pending[data-global-reveal] { opacity: 0; transform: translateX(-32px); transition: opacity 1.6s ease,transform 1.6s cubic-bezier(.2,.65,.3,1); }
 .global-pending[data-global-photo] { opacity: 0; filter: blur(20px); transition: opacity 2.2s ease,filter 2.2s ease; }
 .global-shown[data-global-reveal] { opacity: 1; transform: translateX(0); }
 .global-shown[data-global-photo] { opacity: 1; filter: blur(0); }

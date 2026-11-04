@@ -13,7 +13,7 @@ export function renderResearch() {
         entry.target.classList.add('research-shown');
         revealObserver.unobserve(entry.target);
       });
-    }, { threshold: .12 });
+    }, { threshold: .12, rootMargin: '0px 0px -96px 0px' });
     targets.forEach(element => revealObserver.observe(element));
   }
 

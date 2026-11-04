@@ -25,7 +25,7 @@ export function renderDoctors() {
         entry.target.classList.remove('doctors-reveal-pending');
         entry.target.classList.add('doctors-reveal-shown');
         reveals.unobserve(entry.target);
-      }), { threshold: 0.08 });
+      }), { threshold: 0.08, rootMargin: '0px 0px -96px 0px' });
       targets.filter(item => !item.classList.contains('doctors-reveal-shown')).forEach(item => {
         item.classList.add('doctors-reveal-pending');
         reveals.observe(item);

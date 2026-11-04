@@ -14,7 +14,7 @@ export function renderCustomerCenter() {
       entry.target.classList.remove('customer-reveal-pending');
       entry.target.dataset.revealed = 'true';
       observer.unobserve(entry.target);
-    }), { threshold: .1 });
+    }), { threshold: .1, rootMargin: '0px 0px -96px 0px' });
     targets.filter(item => !item.dataset.revealed).forEach(item => {
       item.classList.add('customer-reveal-pending');
       observer.observe(item);
