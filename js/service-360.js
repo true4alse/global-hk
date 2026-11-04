@@ -15,7 +15,7 @@ export function renderService360() {
       entry.target.classList.remove('service360-reveal-pending');
       entry.target.dataset.revealed = 'true';
       observer.unobserve(entry.target);
-    }), { threshold: .08 });
+    }), { threshold: .08, rootMargin: '0px 0px -96px 0px' });
     targets.filter(item => !item.dataset.revealed).forEach(item => {
       item.classList.add('service360-reveal-pending');
       observer.observe(item);
@@ -30,27 +30,49 @@ function initHotelMarquee(section, motion) {
   if (!window.Swiper) return;
   const gallery = section.querySelector('.service360-hotels');
   let paused = false;
+  let dragging = false;
+  let frame = 0;
+  let previousTime = 0;
   const swiper = new window.Swiper(gallery, {
     slidesPerView: 'auto', spaceBetween: 24, loop: true,
-    speed: 10000, initialSlide: 2, centeredSlides: true,
-    loopAdditionalSlides: 2, a11y: false, grabCursor: true,
-    autoplay: { delay: 0, disableOnInteraction: false, waitForTransition: true },
+    speed: 500, initialSlide: 5, centeredSlides: true,
+    loopAdditionalSlides: 0, a11y: false, grabCursor: true,
+    freeMode: { enabled: true, momentum: false },
     breakpoints: { 601: { spaceBetween: 24 }, 1101: { spaceBetween: 32 } }
   });
-  function freeze() {
-    const position = swiper.getTranslate();
-    swiper.autoplay.stop();
+  // Keep a constant pixel speed instead of restarting a long transition per card.
+  // Swiper manages dragging and reorders only the existing HTML slides at the seam.
+  function advance(time) {
+    frame = 0;
+    if (paused || dragging || motion.matches || document.hidden) return;
+    const elapsed = previousTime ? Math.min(time - previousTime, 64) : 0;
+    previousTime = time;
     swiper.setTransition(0);
+    const anchor = swiper.slides[swiper.activeIndex];
+    const before = anchor.getBoundingClientRect().left;
+    swiper.loopFix({ direction: 'next', setTranslate: true });
+    // loopFix may snap to a slide center; retain its actual on-screen position.
+    const correction = before - anchor.getBoundingClientRect().left;
+    const position = swiper.getTranslate() + correction - elapsed * 0.032;
     swiper.setTranslate(position);
     swiper.updateProgress(position);
+    swiper.updateActiveIndex();
+    swiper.updateSlidesClasses();
+    frame = requestAnimationFrame(advance);
   }
   function sync() {
-    if (paused || motion.matches || document.hidden) freeze();
-    else if (!swiper.autoplay.running) swiper.autoplay.start();
+    cancelAnimationFrame(frame);
+    previousTime = 0;
+    if (!paused && !dragging && !motion.matches && !document.hidden) {
+      frame = requestAnimationFrame(advance);
+    }
   }
-  gallery.addEventListener('mouseenter', () => { paused = true; sync(); });
-  gallery.addEventListener('mouseleave', () => { paused = gallery.contains(document.activeElement); sync(); });
-  gallery.addEventListener('focusin', () => { paused = true; sync(); });
+  swiper.on('touchStart', () => { dragging = true; sync(); });
+  swiper.on('touchEnd', () => { dragging = false; sync(); });
+  gallery.addEventListener('focusin', () => {
+    paused = gallery.matches(':focus-visible');
+    sync();
+  });
   gallery.addEventListener('focusout', () => { paused = false; sync(); });
   gallery.addEventListener('keydown', event => {
     if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;

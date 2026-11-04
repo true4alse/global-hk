@@ -26,6 +26,17 @@ const root = (...elements) => ({
   },
 });
 
+test('HTML 한국어 수정은 언어를 바꿨다가 돌아와도 유지하고 외국어 번역은 사용한다', () => {
+  const copy = new Element({ 'data-i18n': 'contact.gimpoRail', 'data-i18n-ko-source': 'html' }, '수정한 김포공항 안내');
+  const page = root(copy);
+  page.documentElement = { lang: 'en' };
+  applyTranslations({ contact: { gimpoRail: 'English directions' } }, page);
+  assert.equal(copy.textContent, 'English directions');
+  page.documentElement.lang = 'ko';
+  applyTranslations({ contact: { gimpoRail: '이전 문구' } }, page);
+  assert.equal(copy.textContent, '수정한 김포공항 안내');
+});
+
 test('기존 센터 키와 중첩/배열 키로 긴 번역 및 줄바꿈을 연결한다', () => {
   const title = new Element({ 'data-center-treatment': 'title' }, '제목', [new Element({}, '', [], 'BR')]);
   const copy = new Element({ 'data-i18n': 'about.description.0' }, '소개');

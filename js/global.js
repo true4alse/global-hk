@@ -12,7 +12,7 @@ export function renderGlobal() {
       watermark.classList.remove('letters-pending');
       watermark.classList.add('letters-shown');
       lettersObserver.disconnect();
-    }, { threshold:.15 });
+    }, { threshold:.15, rootMargin: '0px 0px -96px 0px' });
     lettersObserver.observe(watermark);
     motion.addEventListener('change', () => {
       if (motion.matches) { lettersObserver.disconnect(); watermark.classList.remove('letters-pending'); }
@@ -80,7 +80,7 @@ export function renderGlobal() {
         element.addEventListener('error', reveal, { once: true });
       } else reveal();
     }
-  }), {threshold: .18});
+  }), {threshold: .18, rootMargin: '0px 0px -96px 0px' });
   [...targets,...counters].forEach(element => observer.observe(element));
   motion.addEventListener('change',event => { if (event.matches) finish(); });
 }

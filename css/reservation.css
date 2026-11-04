@@ -52,3 +52,20 @@
  .reservation-consent { font-size:15px; text-align:left; } .reservation-submit { margin-top:28px; padding:16px 48px; font-size:24px!important; }
 }
 @media(prefers-reduced-motion:reduce) { .reservation-pain-option img { transition:none; } }
+
+.reservation-success-dialog {
+ box-sizing:border-box; width:min(460px,calc(100vw - 40px)); max-height:calc(100dvh - 48px);
+ margin:auto; padding:36px 28px 28px; overflow:auto; border:1px solid #bce7e8;
+ border-radius:24px; background:#fff; color:#243746; text-align:center;
+ box-shadow:0 24px 80px #062c4c40;
+}
+.reservation-success-dialog::backdrop { background:rgb(6 27 46 / 55%); backdrop-filter:blur(4px); }
+.reservation-success-icon { display:grid; place-items:center; width:64px; height:64px; margin:0 auto 22px; border-radius:50%; background:#e3f6f5; color:#169d9f; font-size:36px; }
+.reservation-success-dialog p { margin:0 0 26px; font-size:18px; line-height:1.75; overflow-wrap:anywhere; word-break:keep-all; }
+.reservation-success-confirm { width:100%; min-height:48px; padding:12px 24px; border:0; border-radius:12px; background:linear-gradient(110deg,#277fba,#34b9bc); color:#fff; font-size:18px; font-weight:700; cursor:pointer; }
+.reservation-success-confirm:hover { filter:brightness(1.08); }
+.reservation-success-confirm:focus-visible { outline:3px solid #167ca6; outline-offset:4px; }
+.reservation-success-dialog [hidden] { display:none!important; }
+.reservation-success-dialog:not([data-result="success"]) .reservation-success-icon { background:#fff2df; color:#a85d14; }
+.reservation-success-dialog .reservation-result-detail { padding:12px; border-radius:10px; background:#fff6eb; color:#854b1c; font-size:15px; }
+.reservation [aria-invalid="true"] { outline:2px solid #c36b25; outline-offset:3px; }

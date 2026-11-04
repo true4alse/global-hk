@@ -20,7 +20,7 @@ export function renderTreatment() {
         image.addEventListener('error', show, { once: true });
       } else show();
     });
-  }, { threshold: .15 });
+  }, { threshold: .15, rootMargin: '0px 0px -96px 0px' });
   targets.forEach(element => observer.observe(element));
   motion.addEventListener('change', event => {
     if (!event.matches) return;

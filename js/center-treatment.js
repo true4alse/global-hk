@@ -23,7 +23,7 @@ export function renderCenterTreatments() {
         entry.target.classList.add('center-treatment-reveal-shown');
         observer.unobserve(entry.target);
       });
-    }, { threshold: .08 }) : null;
+    }, { threshold: .08, rootMargin: '0px 0px -96px 0px' }) : null;
 
     function prepareReveal() {
       observer?.disconnect();

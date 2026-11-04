@@ -152,7 +152,7 @@
 .center-treatment-reveal-pending.center-treatment-reveal-shown {
   opacity: 1;
   translate: 0 0;
-  transition: opacity 1.1s ease, translate 1.1s cubic-bezier(.22, 1, .36, 1);
+  transition: opacity 1.6s ease, translate 1.6s cubic-bezier(.22, 1, .36, 1);
 }
 
 .center-treatment-panel a:focus-visible :is(.center-treatment-reveal-pending) {

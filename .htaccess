@@ -1,0 +1,10 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+
+<FilesMatch "^(\.|AGENTS\.md$|server\.cjs$)">
+    Require all denied
+</FilesMatch>
+
+RewriteEngine On
+# Language URLs share the HTML entry point, including after a refresh.
+RewriteRule ^(ko|en|zh|ja|ru|mn|hi|ar|vi)/?$ index.html [END]
