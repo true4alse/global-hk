@@ -50,8 +50,8 @@ const hero = {
   "period": "Жилд",
   "unit": "Тохиолдол",
   "title": "Үе мөчний мэс засал хүндрэх тусам туршлага чухал",
-  "descriptionFirst": "Heung-K эмнэлэг нь мэс заслын арвин туршлага, олон улсын эмнэлгийн хамтын ажиллагаанд тулгуурлан үе мөчний хүндрэлтэй болон хиймэл үе дахин солих мэс заслаар мэргэшсэн.",
-  "descriptionSecond": "Өвчтөн бүрийн биеийн байдал, эмчилгээний түүхийг нягтлан үзэж, хүндрэлтэй тохиолдолд ч тохирсон эмчилгээ сонгохын тулд ур чадвараа тогтмол хөгжүүлдэг."
+  "descriptionFirst": "Heung-K эмнэлэг нь арвин туршлага, олон улсын хамтын ажиллагаанд тулгуурлан үе мөчний хүнд болон давтан мэс заслаар мэргэшсэн.",
+  "descriptionSecond": "Өвчтөн бүрийн биеийн байдал, эмчилгээний түүхийг харгалзан хамгийн тохиромжтой эмчилгээг сонгохыг зорьдог."
 };
 
 // ── 08. About HEUNG-K · 병원 소개 ──
@@ -92,18 +92,18 @@ const about = {
 // ── 09. GLOBAL EXCELLENCE · HSS 교류 ──
 const global = {
   "kicker": "GLOBAL EXCELLENCE",
-  "leadStart": "Дэлхийн түвшний ортопедийн мэс заслыг",
+  "leadStart": "Дэлхийн түвшний ортопедийн мэс засал",
   "hospital": " Heung-K эмнэлэгт",
-  "leadEnd": " мэдрээрэй.",
+  "leadEnd": " эмнэлэгт.",
   "description": "Бид дэлхийн тэргүүлэх эмнэлгүүдээс суралцаж, өөрсдийн туршлагаа олон улсад хуваалцан,\nүе мөч, нурууны эмчилгээгээ тасралтгүй сайжруулдаг.",
   "awardsLabel": "HSS-ийн ортопедийн чансаа",
   "yearsUnit": "YEARS",
   "newsweek": "Дэлхийн ортопедийн салбарт 5 жил дараалан 1-р байрт",
   "usnews": "АНУ-ын ортопедийн салбарт 17 жил дараалан 1-р байрт",
   "hssTitle": "HSS — дэлхийн ортопедийн тэргүүлэх эмнэлэг",
-  "hssDescription": "Нью-Йоркийн Манхэттенд байрлах Hospital for Special Surgery (HSS) нь оношилгоо, эмчилгээ, судалгаа, сургалт, инновацаар тэргүүлдэг дэлхийд нэр хүндтэй ортопедийн эмнэлэг юм.",
+  "hssDescription": "Нью-Йоркийн Манхэттенд байрлах Hospital for Special Surgery (HSS) нь эмчилгээ, судалгаа, сургалт, инновацаараа дэлхийд тэргүүлэгч ортопедийн эмнэлэг юм.",
   "imageAlt": {
-    "hssSnf": "Heung-K эмнэлгийн ерөнхий захирал, эмч Jong-Keun Kim HSS SNF-ийн үе солих, сэргээн засах төвд зочилсон нь",
+    "hssSnf": "Heung-K эмнэлгийн захирал, эмч Jong-Keun Kim HSS SNF-ийн үе солих, сэргээн засах төвд зочилсон нь",
     "surgeryExchange": "HSS-ийн мэс заслын үеэр туршлага солилцож буй эмч нар",
     "hssBuilding": "Нью-Йорк дахь HSS эмнэлгийн гадна байдал",
     "hssVisit": "Jong-Keun Kim эмч HSS-ийн мэс заслын өрөөний өмнө",
@@ -115,8 +115,8 @@ const global = {
     "surgicalDiscussion": "Мэс заслын үеэр клиникийн туршлага солилцож буй эмч нар"
   },
   "hssExchangeTitle": "HSS-ээс суралцаж,\nHeung-K-ийн туршлагыг дэлхийд түгээнэ",
-  "hssExchangeFirst": "Heung-K эмнэлгийн ерөнхий захирал, эмч Jong-Keun Kim нь HSS-ийн Academic Visitor Program (AVP) болон Корнеллийн их сургуулийн Visiting Scholar хөтөлбөрт оролцож, ортопедийн эмчилгээ, судалгааны тэргүүн туршлагыг газар дээр нь судалсан.",
-  "hssExchangeSecond": "Тэрээр HSS-ийн эмч нартай үе солих мэс заслын мэдлэгээ хуваалцаж, Heung-K эмнэлгийн MIS TKA мэс заслын туршлага, арга техникийг танилцуулсаар байна.",
+  "hssExchangeFirst": "Heung-K эмнэлгийн захирал, эмч Jong-Keun Kim нь HSS-ийн Academic Visitor Program (AVP) болон Корнеллийн их сургуулийн Visiting Scholar хөтөлбөрт оролцож, ортопедийн эмчилгээ, судалгааны тэргүүн туршлагыг газар дээр нь судалсан.",
+  "hssExchangeSecond": "Тэрээр HSS-ийн эмч нартай үе солих мэс заслын туршлагаа хуваалцаж, Heung-K эмнэлгийн MIS TKA арга техникийг танилцуулсаар байна.",
   "watermark": "HSS IN KOREA"
 };
 
@@ -124,22 +124,22 @@ const global = {
 const apkass = {
   "logoKasAlt": "Солонгосын үе дурангийн нийгэмлэгийн лого",
   "logoApkassAlt": "APKASS 2026 KOREA лого",
-  "eyebrow": "Ортопедийн салбарын шинэ ололтыг хуваалцах олон улсын уулзалт",
+  "eyebrow": "Гэмтэл согог заслын шинэ ололтыг хуваалцах олон улсын хурал",
   "leadership": "INTERNATIONAL ACADEMIC LEADERSHIP",
   "apkass": "APKASS",
   "year": "2026",
   "korea": "KOREA",
   "ickas": "ICKAS",
-  "description": "Ази, Номхон далайн бүс болон дэлхийн мэргэжилтнүүд хамгийн сүүлийн үеийн судалгаа, эмчилгээний дэвшлээ хуваалцах олон улсын хурал",
+  "description": "Ази, Номхон далайн бүс болон дэлхийн бусад орны мэргэжилтнүүд судалгаа, эмчилгээний сүүлийн үеийн ололтоо хуваалцах олон улсын хурал",
   "founder01Alt": "APKASS 2026 хурлын оролцогчдын хамтын зураг",
   "founder02Alt": "Heung-K эмнэлэг APKASS 2026-ийн албан ёсны хамтрагч эмнэлгийн дурсгалын самбар гардан авч буй нь",
-  "hospital": "Heung-K эмнэлэг,",
-  "partnership": "APKASS 2026-ийн албан ёсны хамтрагч эмнэлэг",
+  "hospital": "Heung-K эмнэлэг, ",
+  "partnership": "APKASS 2026 ийн албан ёсны хамтрагч эмнэлэг",
   "contributor": "OFFICIAL INSTITUTIONAL CONTRIBUTOR",
   "founder": "FOUNDER",
   "chairpersonAlt": "APKASS 2026 хурлын дэлгэцэнд гарч буй Jong-Keun Kim эмч",
   "name": "Jong-Keun Kim",
-  "role": "Ерөнхий захирал",
+  "role": "Эмнэлгийн захирал",
   "session": "APKASS 2026-ийн эрдэм шинжилгээний хуралдааныг даргалсан нь",
   "session01Alt": "Jong-Keun Kim эмч APKASS 2026-ийн хуралдааныг даргалж буй нь",
   "session02Alt": "APKASS 2026-ийн илтгэл, хэлэлцүүлэг",
@@ -156,7 +156,7 @@ const apkass = {
 const mis = {
   "kicker": "MIS TKA · Бага зүслэгтэй өвдөгний үе солих мэс засал",
   "title": "Бага зүслэгээр өвдөгний үеийг бүрэн солих мэс засал",
-  "description": "Бага зүслэгтэй өвдөгний үе солих мэс засал нь ойр орчмын зөөлөн эдийн гэмтлийг багасгаж, хагалгааны дараах өвдөлтийг бууруулах, сэргээн засах эмчилгээг эрт эхлүүлэх, өдөр тутмын амьдралд хурдан эргэн ороход тусалдаг.",
+  "description": "Бага зүслэгтэй өвдөгний үе солих мэс засал нь зөөлөн эдийн гэмтэл, хагалгааны дараах өвдөлтийг багасгаж, эрт нөхөн сэргээх, өдөр тутмын амьдралдаа хурдан эргэн ороход тусалдаг.",
   "imageAlt": {
     "kneeVisual": "Өвдөгний үений ясны бүтэц",
     "incisionComparison": "Өвдөгний зүслэгийн урт ба долоовор хурууг харьцуулсан зураг"
@@ -168,9 +168,9 @@ const mis = {
   "questionLabel": "Асуулт",
   "questionFirst": "Юугаараа ",
   "questionStrong": "ялгаатай вэ?",
-  "differenceFirst": "Өвдөгний тойгны дээр ба доор тус бүр ойролцоогоор 3–4 см зүсэлт хийж, үений дотор мэс засал гүйцэтгэнэ.",
+  "differenceFirst": "Тойгны дээд, доод хэсэгт тус бүр 3–4 см орчим зүсэлт хийж мэс засал гүйцэтгэнэ.",
   "differenceSecond": "Уламжлалт 7–9 см-ийн зүслэгтэй харьцуулахад",
-  "differenceThird": "энэ арга нь зүслэг болон эргэн тойрны эдийн гэмтлийг багасгах зорилготой.",
+  "differenceThird": "зүслэг болон орчны эдийн гэмтлийг багасгах зорилготой.",
   "captionName": "MIS TKA",
   "captionSuffix": " · Minimally Invasive TKA",
   "benefitTitle": "Жижиг зүслэг — хурдан сэргэлт",
@@ -179,7 +179,7 @@ const mis = {
   "benefit1Description": "Гуяанд зүсэлт хийхгүй\nШилбэний зүслэгийг хамгийн бага хэмжээнд байлгана",
   "benefit2Title": "Зөвхөн шаардлагатай зүслэг",
   "benefit2Description": "Тойгны дээд ба доод хэсэгт тус бүр ойролцоогоор 3–4 см зүсэлт\nШаардлагатай хэсэгт хамгийн бага зүслэгээр хүрнэ",
-  "benefit3Title": "Нарийвчлалтай, бага зүслэгтэй өвдөгний үе солих мэс засал",
+  "benefit3Title": "Нарийвчлалтай, бага зүслэгтэй үе солих мэс засал",
   "benefit3Description": "Өвдөгний үений дотор мэс засал хийж\nхиймэл үеийг нарийвчлалтай суулгана."
 };
 
@@ -187,9 +187,9 @@ const mis = {
 const treatment = {
   "hospital": "Heung-K эмнэлэг",
   "titleFirst": " өвчтөн бүрд",
-  "titleSecond": "тохирсон онцгой эмчилгээг",
+  "titleSecond": "тохирсон тусгай эмчилгээ",
   "titleThird": "үзүүлдэг",
-  "intro": "Нарийвчлалтай, системтэй мэс засалд зориулсан\nHeung-K эмнэлгийн тусгай арга барил",
+  "intro": "Нарийвчлалтай мэс засалд зориулсан\nHeung-K эмнэлгийн тусгай арга барил",
   "imageAlt": {
     "patentFrame": "Бага зүслэгтэй өвдөгний үе солих мэс заслын хэмжих хэрэгслийн патент (№ 10-2622418)",
     "jkMinimal": "JK Minimal — шилбэ, гуяны ясны хэмжих багаж",
@@ -199,25 +199,25 @@ const treatment = {
   "systemName": "InJury Knee Minimal:",
   "systemShortName": "JK Minimal",
   "patentEmphasis": "Бага зүслэгтэй үе солих мэс засал",
-  "patentDescription": "Шилбэ, гуяны ясны хэмжих хэрэгсэл",
+  "patentDescription": "Шилбэ, гуяны ясны хэмжилтийн хэрэгсэл",
   "methodLabel": "JK Minimal-ийн онцлог",
-  "maximum": "Хамгийн өндөр ",
+  "maximum": "Дээд зэргийн ",
   "efficiency": "үр ашиг",
-  "methodDescription": "Жижиг зүслэгийн үед мэс заслын талбайг үр ашигтай ашиглах зориулалттай JK Minimal (InJury Knee Minimal) системийг боловсруулсан",
+  "methodDescription": "JK Minimal (InJury Knee Minimal) систем нь жижиг зүслэгээр мэс заслын талбайг үр дүнтэй ашиглахад зориулагдсан.",
   "minimumInjury": "Хамгийн бага ",
   "injury": "эдийн гэмтэл",
   "minimumIncision": "Хамгийн бага ",
   "incision": "зүслэг",
-  "strategiesTitle": "Мэс заслын амжилт, өвчтөний сэтгэл ханамжийг нэмэгдүүлэх хувь хүнд тохирсон арга",
+  "strategiesTitle": "Мэс заслын үр дүн, өвчтөний сэтгэл ханамжийг сайжруулах хувь хүнд тохирсон арга",
   "psiTitle": "PSI",
-  "psiSubtitle": "Өвчтөнд тохируулсан үе солих мэс засал",
-  "psiDescription": "Өвчтөний ясны бүтцэд тохируулсан 3D PSI хэрэгслээр хиймэл үеийг нарийвчлалтай байрлуулна",
+  "psiSubtitle": "Хувь хүнд тохирсон үе солих мэс засал",
+  "psiDescription": "Өвчтөний ясны бүтцэд тохируулсан 3D PSI хэрэгслээр хиймэл үеийг нарийн байрлуулна.",
   "makoTitle": "MAKO",
   "makoSubtitle": "Роботын тусламжтай үе солих мэс засал",
-  "makoDescription": "CT-д суурилсан 3D төлөвлөгөөгөөр роботын тусламжтай ясыг нарийвчлалтай тайрч, бага зүслэгийн туршлагатай хослуулна",
+  "makoDescription": "CT-д суурилсан 3D төлөвлөгөөгөөр роботын тусламжтай ясыг нарийн тайрч, бага зүслэгтэй мэс засалтай хослуулна.",
   "windowTitle": "Mobile Window Technique",
-  "windowSubtitle": "Жижиг зүслэгээр мэс заслын зай гаргах арга",
-  "windowDescription": "Mobile Window Technique нь бага зүслэгийн доторх мэс заслын зайг үр ашигтай ашиглана"
+  "windowSubtitle": "Жижиг зүслэгээр ажиллах зай гаргах арга",
+  "windowDescription": "Mobile Window Technique нь жижиг зүслэгээр мэс заслын зайг үр дүнтэй ашиглах боломж олгоно."
 };
 
 // ── 13. 절개 비교 · 치료 장점 ──
@@ -288,9 +288,9 @@ const research = {
     "publication07": "Heung-K эмнэлгийн судалгааны өгүүллийн жааз 7",
     "publication08": "Heung-K эмнэлгийн судалгааны өгүүллийн жааз 8"
   },
-  "photoCaption1": "AAOS PRESENTATION",
-  "photoCaption2": "CADAVER WORKSHOP",
-  "photoCaption3": "ORTHOPAEDIC RESEARCH PRESENTATION",
+  "photoCaption1": "AAOS ИЛТГЭЛ",
+  "photoCaption2": "CADAVER СУРГАЛТ",
+  "photoCaption3": "ГЭМТЭЛ СОГОГ ЗАСЛЫН СУДАЛГААНЫ ИЛТГЭЛ",
   "controlsLabel": "사진 슬라이드 제어-안해도됨",
   "previous": "이전 사진-안해도됨",
   "photoPause": "사진 자동 재생 멈추기-안해도됨",
@@ -313,7 +313,7 @@ const specialty = {
   "jungSeungJin": "Dr. Seung Jin Jung",
   "kimSeHoon": "Dr. Sehun Kim",
   "leeMyungChul": "Dr. Myung Chul Lee, Хүндэт захирал",
-  "kimJongGeun": "Dr. Jong-Keun Kim, Ерөнхий захирал",
+  "kimJongGeun": "Dr. Jong-Keun Kim, Эмнэлгийн захирал",
   "leeSuGeon": "Dr. Su-Keon Lee",
   "leeJunYoung": "Dr. Joon Young Lee",
   "leeKyungHwa": "Dr. Gyeong Hwa Lee",
@@ -350,7 +350,7 @@ const knee = {
   "service7": "Cruciate Ligament Reconstruction and Revision Surgery (ACL / PCL)",
   "service8": "Sports Injury Diagnosis and Treatment",
   "imageAlt": {
-    "kimJongGeun": "Dr. Jong-Keun Kim, Ерөнхий захирал",
+    "kimJongGeun": "Dr. Jong-Keun Kim, Эмнэлгийн захирал",
     "leeJunYoung": "Dr. Joon Young Lee",
     "chosunArticle": "Чосон Ильбо сонины нийтлэл: Бага зүслэгтэй өвдөгний үе солих мэс засал өвдөлтийг багасгаж, сэргэлтийг түргэсгэнэ"
   },
@@ -561,12 +561,12 @@ const shoulder = {
   "title": "Мөрний үений төв",
   "description1": "Нарийвчилсан оношилгоо, мэс заслын бус эмчилгээнээс хүндрэлтэй мэс засал, сэргээн засах эмчилгээ хүртэл.",
   "description2": "Мөрний үений эмгэгт зориулсан чанартай, цогц тусламж үзүүлнэ.",
-  "service1": "Эргүүлэгч ханцуйвчийн урагдал, шөрмөсний эмгэг",
-  "service2": "Мөрний тогтворгүй байдал, давтан мултрал",
-  "service3": "Хөлдүү мөр (наалдамхай капсулит)",
-  "service4": "Мөрний хавчигдлын хам шинж",
-  "service5": "Мөрний шөрмөсний шохойжилт",
-  "service6": "Спортын гаралтай мөрний гэмтэл",
+  "service1": "Rotator cuff tear and Tendinopathy",
+  "service2": "Shoulder instability and recurrent dislocation",
+  "service3": "Frozen shoulder (adhesive capsulitis)",
+  "service4": "Shoulder impingement syndrome",
+  "service5": "Calcific tendinitis of the shoulder",
+  "service6": "Sports-related shoulder injuries",
   "aacAlt": "Азийн үе дурангийн нийгэмлэг (AAC)-ийн лого",
   "kossmAlt": "Солонгосын ортопедийн спортын анагаах ухааны нийгэмлэг (KOSSM)-ийн лого",
   "affiliation": "Asia Arthroscopy Congress (AAC)\nСурталчилгаа, санхүүгийн хорооны гишүүн",
@@ -644,13 +644,13 @@ const handFoot = {
   "title": "Гар, хөлийн төв",
   "description1": "Нарийвчилсан оношилгоо, мэс заслын бус эмчилгээнээс хүндрэлтэй мэс засал, сэргээн засах эмчилгээ хүртэл.",
   "description2": "Гар, хөлийн эмгэгт зориулсан чанартай, цогц тусламж үзүүлнэ.",
-  "service1": "Хөлийн эрхий хуруу гадагш хазайх эмгэгийн засал",
-  "service2": "Шагайн шөрмөс сунах, холбоос нөхөн сэргээх мэс засал",
-  "service3": "Ахиллын шөрмөс тасрах, шөрмөсний үрэвсэл",
-  "service4": "Улны фасцит, өсгийн өвдөлт",
-  "service5": "Бугуйн суваг хавчигдах хам шинж",
-  "service6": "TFCC урагдал, бугуйн тогтворгүй байдал",
-  "service7": "Хуруу тээглэх эмгэг",
+  "service1": "Hallux valgus (bunion) correction",
+  "service2": "Ankle Sprain and Ligament Reconstruction",
+  "service3": "Achilles tendon rupture and tendinopathy",
+  "service4": "Plantar Fasciitis and Heel Pain",
+  "service5": "Carpal Tunnel Syndrome",
+  "service6": "TFCC Tears and Wrist Instability",
+  "service7": "Trigger Finger",
   "doctorAlt": "Dr. Sehun Kim"
 };
 
@@ -756,13 +756,13 @@ const spine = {
   "title": "Нурууны төв",
   "description1": "Нарийвчилсан оношилгоо, мэс заслын бус эмчилгээнээс хүндрэлтэй мэс засал, сэргээн засах эмчилгээ хүртэл.",
   "description2": "Нурууны эмгэгт зориулсан чанартай, цогц тусламж үзүүлнэ.",
-  "service1": "Хүзүү, бүсэлхийн дискний ивэрхий",
-  "service2": "Нугасны сувгийн нарийсал",
-  "service3": "Хүзүү, бүсэлхийн архаг өвдөлт",
-  "service4": "Нугалам гулсах эмгэг",
-  "service5": "Нурууны шахалтын хугарал",
-  "service6": "Хоёр сувгийн дурангийн нурууны мэс засал (BESS)",
-  "service7": "Бага инвазив нугалам бэхлэх мэс засал",
+  "service1": "Cervical and Lumbar Disc Herniation",
+  "service2": "Spinal Stenosis",
+  "service3": "Chronic Neck and Low Back Pain",
+  "service4": "Spondylolisthesis",
+  "service5": "Spinal Compression Fractures",
+  "service6": "Biportal Endoscopic Spine Surgery (BESS)",
+  "service7": "Minimally Invasive Spinal Fusion",
   "doctorChoAlt": "Dr. Nam Ik Cho",
   "doctorYoonAlt": "Dr. Sang Hoon Yoon"
 };
@@ -867,11 +867,11 @@ const doctors = {
   "carouselLabel": "Heung-K эмнэлгийн эмч нарын танилцуулга",
   "profiles": [
     {
-      "slideLabel": "Dr. Jong-Keun Kim — Ерөнхий захирлын танилцуулга",
-      "portraitAlt": "Dr. Jong-Keun Kim, Ерөнхий захирал",
-      "specialty": "Ортопедийн мэс засалч",
+      "slideLabel": "Dr. Jong-Keun Kim — Эмнэлгийн захирлын танилцуулга",
+      "portraitAlt": "Dr. Jong-Keun Kim, Эмнэлгийн захирал",
+      "specialty": "Гэмтэл согог заслын эмч",
       "name": "Jong-Keun Kim",
-      "role": "Ерөнхий захирал",
+      "role": "Эмнэлгийн захирал",
       "specialties": "Өвдөг (бага зүслэгтэй үе солих / хувь хүнд тохируулсан PSI / үе дуран), үе дахин солих мэс засал, үүдэл эсийн эмчилгээ, мөгөөрсний эс шилжүүлэн суулгах, түнх (үе солих / дуран), спортын гэмтэл, хөл, шагай",
       "careers": [
         [
@@ -894,10 +894,10 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Dr. Su-Keon Lee — Эмчийн танилцуулга",
+      "slideLabel": "Dr. Su-Keon Lee — Танилцуулга",
       "portraitAlt": "Dr. Su-Keon Lee",
-      "specialty": "Ортопедийн мэс засалч",
-      "name": "Su-Keon Lee ",
+      "specialty": "Гэмтэл согог заслын эмч",
+      "name": "Su-Keon Lee",
       "role": "Эмч",
       "specialties": "Мөр (үе дуран / үе солих), тохой, спортын гэмтэл, мөрний хугарал",
       "careers": [
@@ -952,9 +952,9 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Dr. Joon Young Lee — Эмчийн танилцуулга",
+      "slideLabel": "Dr. Joon Young Lee — Танилцуулга",
       "portraitAlt": "Dr. Joon Young Lee",
-      "specialty": "Ортопедийн мэс засалч",
+      "specialty": "Гэмтэл согог заслын эмч",
       "name": "Joon Young Lee",
       "role": "Эмч",
       "specialties": "Өвдөг (бага зүслэгтэй үе солих / PSI / үе дуран), спортын гэмтэл (чагтан холбоосын урагдал), түнх солих, үүдэл эсийн эмчилгээ, хөлийн эмгэг",
@@ -973,9 +973,9 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Dr. Sehun Kim — Эмчийн танилцуулга",
+      "slideLabel": "Dr. Sehun Kim — Танилцуулга",
       "portraitAlt": "Dr. Sehun Kim",
-      "specialty": "Ортопедийн мэс засалч",
+      "specialty": "Гэмтэл согог заслын эмч",
       "name": "Sehun Kim",
       "role": "Эмч",
       "specialties": "Гар, хөлийн эмгэг, бичил мэс засал, өсөлтийн клиник",
@@ -1014,7 +1014,7 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Dr. Sang Hoon Yoon — Эмчийн танилцуулга",
+      "slideLabel": "Dr. Sang Hoon Yoon — Танилцуулга",
       "portraitAlt": "Dr. Sang Hoon Yoon",
       "specialty": "Мэдрэлийн мэс засалч",
       "name": "Sang Hoon Yoon",
@@ -1033,7 +1033,7 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Dr. Seung Jin Jung — Эмчийн танилцуулга",
+      "slideLabel": "Dr. Seung Jin Jung — Танилцуулга",
       "portraitAlt": "Dr. Seung Jin Jung",
       "specialty": "Өрхийн анагаах ухааны мэргэжлийн эмч",
       "name": "Seung Jin Jung",
@@ -1057,7 +1057,7 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Dr. Gyeong Hwa Lee — Эмчийн танилцуулга",
+      "slideLabel": "Dr. Gyeong Hwa Lee — Танилцуулга",
       "portraitAlt": "Dr. Gyeong Hwa Lee",
       "specialty": "Дотрын мэргэжлийн эмч",
       "name": "Gyeong Hwa Lee",
@@ -1074,7 +1074,7 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Dr. Jin-Hyoung Park — Эмчийн танилцуулга",
+      "slideLabel": "Dr. Jin-Hyoung Park — Танилцуулга",
       "portraitAlt": "Dr. Jin-Hyoung Park",
       "specialty": "Мэдээгүйжүүлгийн эмч",
       "name": "Jin-Hyoung Park",
@@ -1093,7 +1093,7 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Dr. Junsung Kim — Эмчийн танилцуулга",
+      "slideLabel": "Dr. Junsung Kim — Танилцуулга",
       "portraitAlt": "Dr. Junsung Kim",
       "specialty": "Дүрс оношилгооны эмч",
       "name": "Junsung Kim",
@@ -1123,10 +1123,10 @@ const doctors = {
   "slideResume": "Эмч нарын автомат солигдолтыг үргэлжлүүлэх",
   "dialogLabel": "Эмчийн танилцуулга",
   "closeDetails": "Эмчийн танилцуулгыг хаах",
-  "specialty": "Ортопедийн мэс засалч",
+  "specialty": "Гэмтэл согог заслын эмч",
   "name": "Jong-Keun Kim",
-  "role": "Ерөнхий захирал",
-  "portraitAlt": "Dr. Jong-Keun Kim, Ерөнхий захирал",
+  "role": "Эмнэлгийн захирал",
+  "portraitAlt": "Dr. Jong-Keun Kim, Эмнэлгийн захирал",
   "specialties": "Өвдөг (бага зүслэгтэй үе солих / хувь хүнд тохируулсан PSI / үе дуран), үе дахин солих мэс засал, үүдэл эсийн эмчилгээ, мөгөөрсний эс шилжүүлэн суулгах, түнх (үе солих / дуран), спортын гэмтэл, хөл, шагай",
   "career01": "Сөүлийн үндэсний их сургуулийн Анагаах ухааны сургуулийн докторын зэрэг",
   "career02": "Сөүлийн үндэсний их сургуулийн Анагаах ухааны сургуулийн магистр",
@@ -1332,12 +1332,12 @@ const contact = {
   "gimpoAlt": "Гимпогийн олон улсын нисэх буудлын зураг",
   "gimpo": "Гимпогийн олон улсын нисэх буудал",
   "gimpoTime": "30 минут",
-  "gimpoRail": "김포공항 문구로",
+  "gimpoRail": "Seohae шугамаар Siheung Neunggok хүртэл 9 буудал, 3-р гарц.",
   "gimpoStep0": "Гимпогийн нисэх буудлын буудлаас Вонши чиглэлийн Seohae шугамд сууна.",
   "gimpoStep1": "9 буудал явсны дараа Шихын Нынгок буудалд бууна.",
   "gimpoStep2": "Шихын Нынгок буудалд бууж, 3-р гарцаар гарна.",
   "logoAlt": "Heung-K эмнэлэг",
-  "footerLabel0": "Heung-K эмнэлгийн ерөнхий захирал",
+  "footerLabel0": "Heung-K эмнэлгийн захирал",
   "footerValue0": "Jong-Keun Kim",
   "footerLabel1": "Бизнесийн бүртгэлийн дугаар",
   "footerLabel2": "Хаяг",

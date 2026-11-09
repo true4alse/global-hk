@@ -41,7 +41,7 @@ const nav = {
   "specialties": "SPECIALTIES",
   "doctors": "OUR DOCTORS",
   "facilities": "FACILITIES",
-  "inquiry": "INQUIRY",
+  "inquiry": "CONTACT",
   "location": "LOCATION"
 };
 
@@ -92,7 +92,7 @@ const about = {
 // ── 09. GLOBAL EXCELLENCE · HSS 교류 ──
 const global = {
   "kicker": "GLOBAL EXCELLENCE",
-  "leadStart": "世界水準の整形外科手術を、 ",
+  "leadStart": "世界水準の整形外科手術を、",
   "hospital": "Heung-K病院",
   "leadEnd": "で体感する。",
   "description": "世界最先端の医療現場から学び、私たちが培ってきた経験を世界へ発信する。\nHeung-K病院は、関節・脊椎治療に特化した病院として、より良い医療の実現を目指しています。",
@@ -103,19 +103,19 @@ const global = {
   "hssTitle": "世界の整形外科医療をリードするHSS",
   "hssDescription": "ニューヨーク・マンハッタンにあるHSS（Hospital for Special Surgery）は、整形外科の診療・研究・教育・医療技術の発展をリードする専門病院です。",
   "imageAlt": {
-    "hssSnf": "HSS SNF人工関節再建センターを訪問したJong-Keun Kim代表院長",
+    "hssSnf": "HSS SNF人工関節再建センターを訪問したDr. Jong-Keun Kim病院長",
     "surgeryExchange": "HSSの手術現場で臨床経験を共有する医療スタッフ",
     "hssBuilding": "ニューヨークにあるHSS病院の外観",
-    "hssVisit": "HSSの手術室前に立つJong-Keun Kim代表院長",
+    "hssVisit": "HSSの手術室前に立つDr. Jong-Keun Kim病院長",
     "surgeryTeam": "HSSの手術に参加する医療スタッフ",
-    "colleagues": "HSSの医療スタッフとともに撮影したJong-Keun Kim代表院長",
+    "colleagues": "HSSの医療スタッフとともに撮影したDr. Jong-Keun Kim病院長",
     "operatingRoom": "HSSの手術室で行われる臨床交流",
-    "hssLobby": "HSSを訪問したJong-Keun Kim代表院長",
+    "hssLobby": "HSSを訪問したDr. Jong-Keun Kim病院長",
     "visitorTeam": "HSSの医療スタッフとの研修訪問記念写真",
     "surgicalDiscussion": "手術中に治療経験や意見を交換する医療スタッフ"
   },
   "hssExchangeTitle": "HSSから学び、\nHeung-K病院の専門技術を世界へ発信する",
-  "hssExchangeFirst": "Jong-Keun Kim代表院長は、HSSのAcademic Visitor Program(AVP) への招待研修およびCornell UniversityのVisiting Scholarプログラムを通じて、世界水準の整形外科診療・研究の現場で研鑽を積みました。",
+  "hssExchangeFirst": "Dr. Jong-Keun Kim病院長は、HSSのAcademic Visitor Program（AVP）への招待研修およびCornell UniversityのVisiting Scholarプログラムを通じて、世界水準の整形外科診療・研究の現場で研鑽を積みました。",
   "hssExchangeSecond": "HSSの医療スタッフと人工関節置換術の知見を共有し、Heung-K病院のMIS TKA（低侵襲人工膝関節全置換術）の技術と経験を紹介するなど、国際交流を続けています。",
   "watermark": "HSS IN KOREA"
 };
@@ -133,19 +133,19 @@ const apkass = {
   "description": "アジア太平洋地域をはじめ、世界各国の専門家が集い、最新の研究成果や治療に関する知見を共有する国際学術大会",
   "founder01Alt": "APKASS 2026国際学術大会の参加者による集合記念写真",
   "founder02Alt": "Heung-K病院へのAPKASS 2026公式協力病院記念盾の授与式",
-  "hospital": "Heung-K病院、",
+  "hospital": "Heung-K病院 — ",
   "partnership": "APKASS 2026公式協力病院",
   "contributor": "OFFICIAL INSTITUTIONAL CONTRIBUTOR",
   "founder": "FOUNDER",
-  "chairpersonAlt": "国際学術大会の発表スクリーンに紹介されたJong-Keun Kim代表院長",
+  "chairpersonAlt": "国際学術大会の発表スクリーンに紹介されたDr. Jong-Keun Kim病院長",
   "name": "Jong-Keun Kim",
-  "role": "代表院長",
+  "role": "病院長",
   "session": "APKASS 2026の学術セッションで座長を務める",
-  "session01Alt": "APKASS 2026の学術セッションで座長を務めたJong-Keun Kim代表院長",
+  "session01Alt": "APKASS 2026の学術セッションで座長を務めたDr. Jong-Keun Kim病院長",
   "session02Alt": "APKASS 2026の学術セッションにおける発表・討論の様子",
   "gallery01Alt": "国際学術大会で講演を聴講する専門家たち",
   "gallery02Alt": "学術セッションに熱心に耳を傾ける参加者たち",
-  "gallery03Alt": "海外の専門家と交流するJong-Keun Kim代表院長",
+  "gallery03Alt": "海外の専門家と交流するDr. Jong-Keun Kim病院長",
   "gallery04Alt": "APKASS 2026で講演する海外の専門家",
   "gallery05Alt": "国際学術大会のメインホール全景",
   "gallery06Alt": "発表と討論が行われる国際学術セッション",
@@ -169,27 +169,27 @@ const mis = {
   "questionFirst": "何が ",
   "questionStrong": "違うのでしょうか？",
   "differenceFirst": "膝蓋骨の上端と下端にそれぞれ約3～4cmの切開を加え、膝関節内で手術を行います。",
-  "differenceSecond": "従来の手術における約7～9cm（人差し指の一節程度）の切開と比較して、",
+  "differenceSecond": "従来の約7～9cm（人差し指の長さ程度）の切開と比較して、",
   "differenceThird": "切開範囲を最小限に抑え、周囲の組織への損傷を軽減することを目指します。",
   "captionName": "MIS TKA",
   "captionSuffix": " · Minimally Invasive TKA",
   "benefitTitle": "小さな切開から始まる、回復の違い",
   "benefitIntro": "Heung-K病院のMIS TKAは、切開や組織への負担を抑え、術後のリハビリテーションと日常生活への早期復帰を支援します。",
-  "benefit1Title": "切開による負担を最小限に抑えた手術",
+  "benefit1Title": "組織への負担を抑えた手術",
   "benefit1Description": "太ももへの切開を行わず\nすねの切開を最小限に",
   "benefit2Title": "必要最小限の切開",
   "benefit2Description": "上下それぞれ約3～4cmの切開\n必要な部位に最小限の切開でアプローチ",
   "benefit3Title": "低侵襲かつ精密な人工膝関節置換術",
-  "benefit3Description": "膝関節内で手術を行い\n精密な人工膝関節置換術を実施します。"
+  "benefit3Description": "膝関節内で精密に手術を行います。"
 };
 
 // ── 12. 차별화된 치료 · JK Minimal ──
 const treatment = {
   "hospital": "Heung-K病院",
   "titleFirst": "は",
-  "titleSecond": "特色ある治療を",
+  "titleSecond": "患者様に合った治療を",
   "titleThird": "提供します",
-  "intro": "精密かつ体系的な手術のための\nHeung-K病院ならではの治療",
+  "intro": "精密な手術を支える\nHeung-K病院独自の治療法",
   "imageAlt": {
     "patentFrame": "低侵襲人工膝関節全置換術用の脛骨サイズ測定手動器具の特許証（特許第10-2622418号）",
     "jkMinimal": "JK Minimal脛骨・大腿骨サイズ測定器具",
@@ -208,7 +208,7 @@ const treatment = {
   "injury": "損傷",
   "minimumIncision": "最小",
   "incision": "切開",
-  "strategiesTitle": "手術成績と患者満足度の向上を目指す取り組み",
+  "strategiesTitle": "手術成績と患者満足度を高める個別化治療",
   "psiTitle": "PSI",
   "psiSubtitle": "患者様に合わせた人工関節置換術",
   "psiDescription": "患者様の骨格に合わせた3Dオーダーメイド手術器具（PSI）を用い、人工関節を正確に設置",
@@ -217,7 +217,7 @@ const treatment = {
   "makoDescription": "CT画像に基づく患者様ごとの3D手術計画により、計画範囲内で正確に骨を切除。ロボットの精度と低侵襲手術のノウハウを融合",
   "windowTitle": "Mobile Window Technique",
   "windowSubtitle": "最小切開で手術スペースを確保",
-  "windowDescription": "モバイルウィンドウテクニック（Mobile Window Technique）により、限られた切開範囲でも手術スペースを最大限に活用する手術手技"
+  "windowDescription": "小さな切開でも手術スペースを効率よく活用する技術"
 };
 
 // ── 13. 절개 비교 · 치료 장점 ──
@@ -252,7 +252,7 @@ const cadaver = {
   "title": "低侵襲・個別化人工関節置換術の国際研修センター",
   "word": "CADAVER",
   "workshopLabel": "MIS TKA CADAVER WORKSHOP",
-  "workshop": "2025年CADAVER WORKSHOPを開催",
+  "workshop": "2025年CADAVER WORKSHOPを成功裏に開催",
   "training": "最小切開による人工膝関節置換術の手術手技研修",
   "hospital": "Heung-K病院",
   "descriptionFirst": "では、国内外の整形外科専門医を対象にCADAVER WORKSHOPを開催し、",
@@ -276,7 +276,7 @@ const research = {
   "carouselRole": "carousel",
   "slideRole": "slide",
   "imageAlt": {
-    "aaosPresentation": "国際整形外科学会で発表するJong-Keun Kim代表院長",
+    "aaosPresentation": "国際整形外科学会で発表するDr. Jong-Keun Kim病院長",
     "yonseiWorkshop": "延世大学のCADAVER WORKSHOPで交流する医療スタッフ",
     "koaPresentation": "整形外科学会で臨床研究の成果を発表する医療スタッフ",
     "publication01": "Heung-K病院の医療スタッフによる研究論文の展示額1",
@@ -308,17 +308,17 @@ const specialty = {
   "titleFirst": "SPECIALTY",
   "titleSecond": "CENTER",
   "doctorsLabel": "Heung-K病院の医療スタッフ",
-  "parkJinHyung": "Jin-Hyoung Park院長",
-  "kimJunSung": "Junsung Kim院長",
-  "jungSeungJin": "Seung Jin Jung院長",
-  "kimSeHoon": "Sehun Kim院長",
-  "leeMyungChul": "Myung Chul Lee名誉院長",
-  "kimJongGeun": "Jong-Keun Kim代表院長",
-  "leeSuGeon": "Su-Keon Lee院長",
-  "leeJunYoung": "Joon Young Lee院長",
-  "leeKyungHwa": "Gyeong Hwa Lee院長",
-  "joNamIk": "Nam Ik Cho院長",
-  "yoonSangHoon": "Sang Hoon Yoon院長"
+  "parkJinHyung": "Dr. Jin-Hyoung Park",
+  "kimJunSung": "Dr. Junsung Kim",
+  "jungSeungJin": "Dr. Seung Jin Jung",
+  "kimSeHoon": "Dr. Sehun Kim",
+  "leeMyungChul": "Dr. Myung Chul Lee名誉院長",
+  "kimJongGeun": "Dr. Jong-Keun Kim病院長",
+  "leeSuGeon": "Dr. Su-Keon Lee",
+  "leeJunYoung": "Dr. Joon Young Lee",
+  "leeKyungHwa": "Dr. Gyeong Hwa Lee",
+  "joNamIk": "Dr. Nam Ik Cho",
+  "yoonSangHoon": "Dr. Sang Hoon Yoon"
 };
 
 // ── 17. 전담센터 퀵메뉴 ──
@@ -350,8 +350,8 @@ const knee = {
   "service7": "Cruciate Ligament Reconstruction and Revision Surgery (ACL / PCL)",
   "service8": "Sports Injury Diagnosis and Treatment",
   "imageAlt": {
-    "kimJongGeun": "Jong-Keun Kim代表院長",
-    "leeJunYoung": "Joon Young Lee院長",
+    "kimJongGeun": "Dr. Jong-Keun Kim病院長",
+    "leeJunYoung": "Dr. Joon Young Lee",
     "chosunArticle": "朝鮮日報の記事：小さな切開で行う人工膝関節置換術、痛みを軽減し回復を早める"
   },
   "articleOpen": "朝鮮日報の記事画像を拡大表示（新しいウィンドウ）"
@@ -570,7 +570,7 @@ const shoulder = {
   "aacAlt": "アジア関節鏡学会AACのロゴ",
   "kossmAlt": "大韓整形外科スポーツ医学会KOSSMのロゴ",
   "affiliation": "Asia Arthroscopy Congress (AAC)\nMember of the Promotion & Finance Committee",
-  "doctorAlt": "Su-Keon Lee院長"
+  "doctorAlt": "Dr. Su-Keon Lee"
 };
 
 // ── 21. 어깨전담센터 · 치료 상세 ──
@@ -867,11 +867,11 @@ const doctors = {
   "carouselLabel": "Heung-K病院の医師紹介スライド",
   "profiles": [
     {
-      "slideLabel": "Jong-Keun Kim代表院長の紹介",
-      "portraitAlt": "Jong-Keun Kim代表院長",
+      "slideLabel": "Dr. Jong-Keun Kim病院長の紹介",
+      "portraitAlt": "Dr. Jong-Keun Kim病院長",
       "specialty": "整形外科専門医",
       "name": "Jong-Keun Kim",
-      "role": "代表院長",
+      "role": "病院長",
       "specialties": "膝関節（最小切開人工関節置換術／患者別PSI／関節鏡手術）、人工関節再置換術、幹細胞治療、軟骨細胞移植、股関節（人工関節置換術／関節鏡手術）、スポーツ外傷、足部疾患",
       "careers": [
         [
@@ -894,11 +894,11 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Su-Keon Lee院長の紹介",
-      "portraitAlt": "Su-Keon Lee院長",
+      "slideLabel": "Dr. Su-Keon Leeの紹介",
+      "portraitAlt": "Dr. Su-Keon Lee",
       "specialty": "整形外科専門医",
       "name": "Su-Keon Lee",
-      "role": "院長",
+      "role": "医師",
       "specialties": "肩関節（関節鏡手術／人工関節置換術）、肘関節、スポーツ外傷、肩関節の骨折",
       "careers": [
         [
@@ -920,8 +920,8 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Myung Chul Lee名誉院長の紹介",
-      "portraitAlt": "Myung Chul Lee名誉院長",
+      "slideLabel": "Dr. Myung Chul Lee名誉院長の紹介",
+      "portraitAlt": "Dr. Myung Chul Lee名誉院長",
       "specialty": "内科・核医学専門医",
       "name": "Myung Chul Lee",
       "role": "名誉院長",
@@ -952,11 +952,11 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Joon Young Lee院長の紹介",
-      "portraitAlt": "Joon Young Lee院長",
+      "slideLabel": "Dr. Joon Young Leeの紹介",
+      "portraitAlt": "Dr. Joon Young Lee",
       "specialty": "整形外科専門医",
       "name": "Joon Young Lee",
-      "role": "院長",
+      "role": "医師",
       "specialties": "膝関節（最小切開人工関節置換術／患者別PSI／関節鏡手術）、スポーツ外傷（十字靭帯断裂）、人工股関節置換術、幹細胞治療、足部疾患",
       "careers": [
         [
@@ -973,11 +973,11 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Sehun Kim院長の紹介",
-      "portraitAlt": "Sehun Kim院長",
+      "slideLabel": "Dr. Sehun Kimの紹介",
+      "portraitAlt": "Dr. Sehun Kim",
       "specialty": "整形外科専門医",
       "name": "Sehun Kim",
-      "role": "院長",
+      "role": "医師",
       "specialties": "手・足の疾患、手足のマイクロサージャリー、成長クリニック",
       "careers": [
         [
@@ -992,8 +992,8 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Nam Ik Choセンター長の紹介",
-      "portraitAlt": "Nam Ik Choセンター長",
+      "slideLabel": "Dr. Nam Ik Cho脊椎センター長の紹介",
+      "portraitAlt": "Dr. Nam Ik Cho脊椎センター長",
       "specialty": "脊椎外科専門医",
       "name": "Nam Ik Cho",
       "role": "センター長",
@@ -1014,11 +1014,11 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Sang Hoon Yoon院長の紹介",
-      "portraitAlt": "Sang Hoon Yoon院長",
+      "slideLabel": "Dr. Sang Hoon Yoonの紹介",
+      "portraitAlt": "Dr. Sang Hoon Yoon",
       "specialty": "脳神経外科専門医",
       "name": "Sang Hoon Yoon",
-      "role": "院長",
+      "role": "医師",
       "specialties": "脊椎疾患（頸椎・胸椎・腰椎）、脳神経疾患、非手術的注射治療・処置、脊椎腫瘍、低侵襲脊椎手術、脊椎疾患に伴う歩行障害、肥満治療",
       "careers": [
         [
@@ -1033,11 +1033,11 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Seung Jin Jung院長の紹介",
-      "portraitAlt": "Seung Jin Jung院長",
+      "slideLabel": "Dr. Seung Jin Jungの紹介",
+      "portraitAlt": "Dr. Seung Jin Jung",
       "specialty": "家庭医学科専門医",
       "name": "Seung Jin Jung",
-      "role": "院長",
+      "role": "医師",
       "specialties": "消化器内科、胃・大腸内視鏡検査、肥満クリニック、慢性疾患、消化器超音波検査",
       "careers": [
         [
@@ -1057,11 +1057,11 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Gyeong Hwa Lee院長の紹介",
-      "portraitAlt": "Gyeong Hwa Lee院長",
+      "slideLabel": "Dr. Gyeong Hwa Leeの紹介",
+      "portraitAlt": "Dr. Gyeong Hwa Lee",
       "specialty": "内科専門医",
       "name": "Gyeong Hwa Lee",
-      "role": "院長",
+      "role": "医師",
       "specialties": "消化器内科、胃・大腸内視鏡検査、慢性疾患",
       "careers": [
         [
@@ -1074,11 +1074,11 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Jin-Hyoung Park院長の紹介",
-      "portraitAlt": "Jin-Hyoung Park院長",
+      "slideLabel": "Dr. Jin-Hyoung Parkの紹介",
+      "portraitAlt": "Dr. Jin-Hyoung Park",
       "specialty": "麻酔科専門医",
       "name": "Jin-Hyoung Park",
-      "role": "院長",
+      "role": "医師",
       "specialties": "難易度の高い局所麻酔、高齢者の麻酔、慢性疾患患者の麻酔",
       "careers": [
         [
@@ -1093,11 +1093,11 @@ const doctors = {
       ]
     },
     {
-      "slideLabel": "Junsung Kim院長の紹介",
-      "portraitAlt": "Junsung Kim院長",
+      "slideLabel": "Dr. Junsung Kimの紹介",
+      "portraitAlt": "Dr. Junsung Kim",
       "specialty": "放射線科専門医",
       "name": "Junsung Kim",
-      "role": "院長",
+      "role": "医師",
       "specialties": "MRI・CT画像の専門読影、心エコー検査、超音波検査（筋骨格系・腹部・甲状腺・頭頸部・乳房・胸部）",
       "careers": [
         [
@@ -1125,8 +1125,8 @@ const doctors = {
   "closeDetails": "医師の詳細情報を閉じる",
   "specialty": "整形外科専門医",
   "name": "Jong-Keun Kim",
-  "role": "代表院長",
-  "portraitAlt": "Jong-Keun Kim代表院長",
+  "role": "病院長",
+  "portraitAlt": "Dr. Jong-Keun Kim病院長",
   "specialties": "膝関節（最小切開人工関節置換術／患者別PSI／関節鏡手術）、人工関節再置換術、幹細胞治療、軟骨細胞移植、股関節（人工関節置換術／関節鏡手術）、スポーツ外傷、足部疾患",
   "career01": "ソウル大学校医科大学 博士号取得",
   "career02": "ソウル大学校医科大学 修士号取得",
@@ -1332,12 +1332,12 @@ const contact = {
   "gimpoAlt": "金浦国際空港の全景",
   "gimpo": "金浦国際空港",
   "gimpoTime": "30分",
-  "gimpoRail": "인천공항 제1터미널 또는 제2터미널에서 공항철도 일반열차 이용",
+  "gimpoRail": "西海線の始興陵谷駅方面行きに乗車し、9駅先の始興陵谷駅で下車、3番出口へ。",
   "gimpoStep0": "金浦空港駅から元時方面行きの西海線に乗車",
   "gimpoStep1": "9駅先の始興陵谷駅で下車",
   "gimpoStep2": "始興陵谷駅で下車し、3番出口をご利用ください",
   "logoAlt": "Heung-K病院",
-  "footerLabel0": "Heung-K病院 代表院長",
+  "footerLabel0": "Heung-K病院 病院長",
   "footerValue0": "Jong-Keun Kim",
   "footerLabel1": "事業者登録番号",
   "footerLabel2": "住所",
