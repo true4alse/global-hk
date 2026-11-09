@@ -162,7 +162,7 @@ const mis = {
     "incisionComparison": "Illustration Comparing the Knee Incision Length with the Length of an Index Finger"
   },
   "claimStartFirst": "The World's Only ",
-  "claimStartSecond": "Surgical Technique of Its Kind",
+  "claimStartSecond": "Minimally Invasive Surgical Technique",
   "claimEndFirst": "A Truly",
   "claimEndSecond": "Minimally Invasive Approach",
   "questionLabel": "Question",
