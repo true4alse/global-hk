@@ -92,7 +92,7 @@ const about = {
 // ── 09. GLOBAL EXCELLENCE · HSS 교류 ──
 const global = {
   "kicker": "GLOBAL EXCELLENCE",
-  "leadStart": "The Global Standard in Orthopedic Surgery",
+  "leadStart": "The Global Standard in Orthopedic Surgery —",
   "hospital": " Experience It",
   "leadEnd": " at HEUNG-K Hospital.",
   "description": "By learning from leading medical institutions worldwide and sharing our expertise globally,\nHEUNG-K Hospital continues to advance joint and spine treatment.",
@@ -133,7 +133,7 @@ const apkass = {
   "description": "An international conference bringing together experts from the Asia-Pacific region and beyond to share the latest research and advances in treatment",
   "founder01Alt": "Group Photo of APKASS 2026 Conference Participants",
   "founder02Alt": "HEUNG-K Hospital Receiving a Commemorative Plaque as an Official Partner Hospital of APKASS 2026",
-  "hospital": "HEUNG-K Hospital,",
+  "hospital": "HEUNG-K Hospital — ",
   "partnership": "Official Partner Hospital of APKASS 2026",
   "contributor": "OFFICIAL INSTITUTIONAL CONTRIBUTOR",
   "founder": "FOUNDER",
@@ -161,8 +161,8 @@ const mis = {
     "kneeVisual": "Bone Structure of the Knee Joint",
     "incisionComparison": "Illustration Comparing the Knee Incision Length with the Length of an Index Finger"
   },
-  "claimStartFirst": "Worldwide",
-  "claimStartSecond": "A One-of-a-Kind Surgical Technique",
+  "claimStartFirst": "The World's Only ",
+  "claimStartSecond": "Minimally Invasive Surgical Technique",
   "claimEndFirst": "A Truly",
   "claimEndSecond": "Minimally Invasive Approach",
   "questionLabel": "Question",
@@ -198,12 +198,12 @@ const treatment = {
   },
   "systemName": "InJury Knee Minimal:",
   "systemShortName": "JK Minimal",
-  "patentEmphasis": "Minimally Invasive Joint Replacement Surgery",
+  "patentEmphasis": "Minimally Invasive Knee Replacement Surgery",
   "patentDescription": "Tibial and Femoral Sizing Instruments",
   "methodLabel": "Features of JK Minimal",
   "maximum": "Maximum ",
   "efficiency": "Efficiency",
-  "methodDescription": "Development of JK Minimal (InJury Knee Minimal), a Knee Replacement System Designed to Maximize Surgical Space Through Minimal Incisions",
+  "methodDescription": "JK Minimal (InJury Knee Minimal) is designed to maximize surgical space through small incisions",
   "minimumInjury": "Minimal ",
   "injury": "Tissue Damage",
   "minimumIncision": "Minimal ",
@@ -217,7 +217,7 @@ const treatment = {
   "makoDescription": "CT-Based 3D Surgical Planning Guides Precise Robotic Bone Resection, Combining Robotic Precision with Minimally Invasive Expertise",
   "windowTitle": "Mobile Window Technique",
   "windowSubtitle": "Creating Surgical Space Through Minimal Incisions",
-  "windowDescription": "An Efficient Surgical Technique That Maximizes the Use of Surgical Space Through the Mobile Window Technique"
+  "windowDescription": "Makes efficient use of surgical space through small incisions"
 };
 
 // ── 13. 절개 비교 · 치료 장점 ──
@@ -242,7 +242,7 @@ const incision = {
   "movementDescription": "Reduced tissue damage may limit scar tissue formation within the joint, improving mobility and allowing earlier walking after surgery.",
   "scarTitle": "Minimal Scarring",
   "scarDescription": "Smaller incisions may leave less noticeable scars and improve patient satisfaction.",
-  "recoveryTitle": "Shorter Hospital Stay and Faster Return to Daily Activities",
+  "recoveryTitle": "Shorter Hospital Stay, Faster Recovery",
   "recoveryDescription": "Faster recovery may shorten hospital stays and help patients return to daily activities sooner."
 };
 
@@ -252,16 +252,16 @@ const cadaver = {
   "title": "International Training Center for Minimally Invasive and Patient-Specific Joint Replacement",
   "word": "CADAVER",
   "workshopLabel": "MIS TKA CADAVER WORKSHOP",
-  "workshop": "Successful Hosting of the 2025 Cadaver Workshop",
+  "workshop": "Successful Hosting of the 2025 CADAVER Workshop",
   "training": "Training in Minimally Invasive Total Knee Arthroplasty",
   "hospital": "HEUNG-K Hospital ",
-  "descriptionFirst": "hosts cadaver workshops for orthopedic surgeons from Korea and abroad,",
+  "descriptionFirst": "hosts CADAVER workshops for orthopedic surgeons from Korea and abroad,",
   "descriptionSecond": "sharing MIS-TKA surgical techniques and clinical expertise,",
   "descriptionThird": "while promoting ongoing medical education and academic exchange.",
   "imageAlt": {
-    "workshopGroupFramed": "Group Photo of Medical Professionals Attending a Cadaver Workshop in a Gold Frame",
-    "workshopCollageFramed": "Gold-Framed Photo Collage of Cadaver Workshop Lectures, Hands-On Training, and Medical Exchange",
-    "trophy": "Gold Hand-Shaped Trophy Displayed in the Cadaver Workshop Section"
+    "workshopGroupFramed": "Group Photo of Medical Professionals Attending a CADAVER Workshop in a Gold Frame",
+    "workshopCollageFramed": "Gold-Framed Photo Collage of CADAVER Workshop Lectures, Hands-On Training, and Medical Exchange",
+    "trophy": "Gold Hand-Shaped Trophy Displayed in the CADAVER Workshop Section"
   }
 };
 
@@ -434,7 +434,7 @@ const centerTreatmentsKnee = {
   "makoBenefitsSuffix": "Benefits",
   "makoBenefit1Title": "Reduced Postoperative Pain",
   "makoBenefit1Body": "Smaller incisions may reduce damage to surrounding soft tissues (muscles and ligaments), helping relieve postoperative pain and reduce the need for pain medication.",
-  "makoBenefit2Title": "Improved Joint Mobility\nEarlier Walking After Surgery",
+  "makoBenefit2Title": "Improved Mobility\nEarlier Walking",
   "makoBenefit2Body": "Reduced tissue damage may limit scar tissue formation within the joint, improving mobility and allowing earlier walking after surgery.",
   "makoBenefit3Title": "Minimal Scarring",
   "makoBenefit3Body": "Smaller incisions may leave less noticeable scars and improve patient satisfaction.",
@@ -526,7 +526,7 @@ const centerTreatmentsKnee = {
   "cruciateStep2Body": "Prepare the Graft and Create Precise Bone Tunnels",
   "cruciateStep2": "Step 2",
   "cruciateStep3Body": "Insert and Secure the Graft",
-  "cruciateStep3": "Step3",
+  "cruciateStep3": "Step 3",
   "cruciateHospital": "HEUNG-K Hospital",
   "cruciateProcessBody": "preserves remaining ligament tissue, creates small, precisely positioned bone tunnels, and securely fixes an autograft or allograft suited to the patient's condition. This helps restore knee stability and function.",
   "cruciateAclTitle": "ACL Reconstruction Case",
@@ -897,7 +897,7 @@ const doctors = {
       "slideLabel": "Dr. Su-Keon Lee - Profile",
       "portraitAlt": "Dr. Su-Keon Lee",
       "specialty": "Orthopedic Surgeon",
-      "name": "Su-Keon Lee ",
+      "name": "Su-Keon Lee",
       "role": "Dr.",
       "specialties": "Shoulder (Arthroscopy / Joint Replacement), Elbow, Sports Injuries, Shoulder Fractures",
       "careers": [
@@ -1332,7 +1332,7 @@ const contact = {
   "gimpoAlt": "View of Gimpo International Airport",
   "gimpo": "Gimpo International Airport",
   "gimpoTime": "30 Minutes",
-  "gimpoRail": "김포공항 문구로",
+  "gimpoRail": "Take the Seohae Line toward Siheung Neunggok, travel 9 stops, and use Exit 3.",
   "gimpoStep0": "Take the Seohae Line toward Wonsi from Gimpo International Airport Station.",
   "gimpoStep1": "Travel 9 stops and get off at Siheung Neunggok Station.",
   "gimpoStep2": "Get off at Siheung Neunggok Station and take Exit 3.",
