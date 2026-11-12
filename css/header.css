@@ -2,6 +2,7 @@
   --font-ui: "Pretendard", "Malgun Gothic", sans-serif;
   --header-blue: #267fb9;
   --pill-shadow: 2px 2px 9.3px rgb(0 0 0 / 5%);
+  --mobile-nav-radius: 20px;
 }
 
 * {
@@ -345,7 +346,7 @@ a:focus-visible {
     padding: 4px max(12px, env(safe-area-inset-right, 0px)) calc(4px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
     background: linear-gradient(90deg, var(--header-blue) 49.519%, #58b6bc 100%);
     box-shadow: 0 -4px 18px rgb(0 34 64 / 14%);
-    border-radius: 20px 20px 0 0;
+    border-radius: var(--mobile-nav-radius) var(--mobile-nav-radius) 0 0;
 }
 
   .header-nav :is(a, button) {

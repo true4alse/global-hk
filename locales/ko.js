@@ -47,6 +47,8 @@ const nav = {
 
 // ── 07. 메인 비주얼 ──
 const hero = {
+    researchTitle: "진료를 넘어 연구와 교육으로,\n더 나은 일상으로.",
+    researchLabel: "진료를 넘어 연구와 교육으로, 더 나은 일상으로.",
   "period": "연 간",
   "unit": "례",
   "title": "어려운 관절 수술일수록, 경험이 중요합니다",

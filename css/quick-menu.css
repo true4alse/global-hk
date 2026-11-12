@@ -329,21 +329,21 @@ button.contact-quick-link { font-family:inherit; cursor:pointer; padding:0; }
 }
 
 .doctor-department-nav>button {
-  display: block;
-  flex: 0 0 auto;
-  white-space: nowrap;
-  padding: 10px;
-  border: 0;
-  border-radius: 20px;
-  background: transparent;
-  color: white;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: clamp(14px, 1.25vw, 24px);
-  line-height: 1.35;
-  cursor: pointer;
-  list-style: none;
-  text-align: center;
+    display: block;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px;
+    border: 0;
+    border-radius: 40px;
+    background: transparent;
+    color: white;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: clamp(14px, 1.25vw, 24px);
+    line-height: 1.35;
+    cursor: pointer;
+    list-style: none;
+    text-align: center;
 }
 
 .doctor-department-nav button:hover,

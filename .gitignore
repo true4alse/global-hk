@@ -4,3 +4,5 @@
 
 # Generated deployment copies; never commit server credentials.
 /deploy/
+
+/tmp/

@@ -1,6 +1,0 @@
-PASS layout all 9 languages: 320
-PASS layout all 9 languages: 390
-PASS layout all 9 languages: 760
-PASS layout all 9 languages: 1024
-PASS layout all 9 languages: 1440
-PASS loop, autoplay, pause, offscreen, count, JS-free fallback; no browser exceptions.

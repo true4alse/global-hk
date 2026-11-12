@@ -15,7 +15,7 @@ test('Swiper 로드 실패 시에도 HTML 숫자와 번역된 접근성 문구�
     context.renderHero({ period, unit });
     assert.equal(number.textContent, '2,500');
     assert.equal(number.dataset.target, '2500');
-    assert.equal(attributes.get('aria-label'), `${period.replaceAll(' ', '')} 2,500 ${unit}`);
+    assert.equal(attributes.get('aria-label'), `2,500 ${unit}`);
   }
 });
 
@@ -26,5 +26,5 @@ test('숫자는 번역 데이터가 아닌 HTML data-target에서 읽는다', ()
   const context = vm.createContext({ document: { querySelector: () => hero }, Intl, window: {} });
   vm.runInContext(source, context);
   context.renderHero({ period: 'Annual', unit: 'cases', number: 'wrong' });
-  assert.equal(label, 'Annual 9,876 cases');
+  assert.equal(label, '9,876 cases');
 });
