@@ -51,7 +51,28 @@ const hero = {
   "unit": "례",
   "title": "어려운 관절 수술일수록, 경험이 중요합니다",
   "descriptionFirst": "흥K병원은 축적된 수술 경험과 지속적인 글로벌 의료 교류를 바탕으로 고난도 관절 수술부터 인공관절 재수술까지 전문적으로 시행합니다.",
-  "descriptionSecond": "환자의 상태와 이전 치료 경험까지 세심하게 살피고, 더 어려운 수술에도 최선의 치료 방법을 찾을 수 있도록 관절 치료의 전문성을 끊임없이 높여갑니다."
+  "descriptionSecond": "환자의 상태와 이전 치료 경험까지 세심하게 살피고, 더 어려운 수술에도 최선의 치료 방법을 찾을 수 있도록 관절 치료의 전문성을 끊임없이 높여갑니다.",
+  "carouselLabel": "흥K병원 주요 진료 안내",
+  "minimalTitle": "최소절개 인공관절 수술",
+  "orKicker": "안전한 수술을 위한",
+  "orClean": "고청정 초청결",
+  "orRooms": "수술실 5개 운영",
+  "orSpecialty": "마취통증의학과",
+  "orStaff": "전문의 상주",
+  "nursingWards": "전 병동",
+  "nursingHours": "24시간",
+  "nursingService": "간호간병 통합서비스",
+  "nursingDescription": "24시간 간호로 안심할 수 있는 입원 환경을 제공합니다.",
+  "rehabLead": "환자의 회복 단계를 고려한",
+  "rehabPersonal": "1:1 맞춤형",
+  "rehabTreatment": "재활치료",
+  "rehabDescription": "개별 기능 평가를 바탕으로 체계적인 재활치료를 제공하여 신체 기능 회복과 일상생활 복귀를 돕습니다.",
+  "orPhotoAlt": "수술실 의료진의 수술 모습",
+  "rehabPhotoAlt": "맞춤형 재활치료 시설",
+  "previous": "이전 슬라이드",
+  "next": "다음 슬라이드",
+  "pause": "자동 슬라이드 정지",
+  "play": "자동 슬라이드 재생"
 };
 
 // ── 08. About HEUNG-K · 병원 소개 ──
@@ -252,7 +273,7 @@ const cadaver = {
   "title": "국제 최소침습 및 환자 맞춤형 인공관절 연수 교육센터",
   "word": "CADAVER",
   "workshopLabel": "MIS TKA CADAVER WORKSHOP",
-  "workshop": "2025 카데바 워크샵 성황리 개최",
+  "workshop": "2025 2026 카데바 워크샵 2년 연속 성황리 개최",
   "training": "최소절개 인공관절 수술 교육",
   "hospital": "흥K병원",
   "descriptionFirst": "은 국내외 정형외과 전문의를 대상으로 카데바 워크샵을 개최하여",
@@ -1336,7 +1357,7 @@ const contact = {
   "gimpoAlt": "김포국제공항 전경",
   "gimpo": "김포국제공항",
   "gimpoTime": "30분",
-  "gimpoRail": "인천공항 제1터미널 또는 제2터미널에서 공항철도 일반열차 이용",
+  "gimpoRail": "서해선 시흥능곡역 행 탑승 후 9개 이동하여 시흥능곡역 3번 출구",
   "gimpoStep0": "김포공항역에서 원시 방면 서해선 이용",
   "gimpoStep1": "9개 역 이동 후 시흥능곡역 하차",
   "gimpoStep2": "시흥능곡역 하차 후 3번 출구 이용",
@@ -1357,7 +1378,39 @@ const contact = {
 };
 
 // 사이트 연결용: 위 문구들을 기존 번역 키 구조로 모읍니다. 이 아래는 수정하지 않습니다.
+const quickMenu = {
+  "label": "빠른 메뉴",
+  "open": "빠른 메뉴 열기",
+  "close": "빠른 메뉴 닫기",
+  "phone": "전화 문의",
+  "reserve": "진료예약",
+  "email": "이메일 문의",
+  "hours": "진료시간",
+  "weekdays": "월–금",
+  "saturday": "토요일"
+};
+
+const doctorMenu = {
+  "label": "진료과별 의료진 선택",
+  "knee": "무릎 센터",
+  "shoulder": "어깨 센터",
+  "handFoot": "손발 센터",
+  "spine": "척추 센터",
+  "internal": "내과",
+  "radiology": "영상의학과",
+  "anesthesia": "마취통증의학과"
+};
+
+// 검색 결과 및 공유 미리보기 문구. 기존 본문 번역은 유지합니다.
+const seo = {
+  "title": "흥K병원 | 관절·척추 진료 및 국제환자 안내",
+  "description": "경기도 시흥시 흥K병원의 무릎·어깨·손발·척추 진료, 의료진과 시설을 확인하세요. 국제환자를 위한 진료예약, 방문 및 의료서비스 안내를 제공합니다."
+};
+
 export default {
+  seo,
+  quickMenu,
+  doctorMenu,
   pageTitle,
   languageLabel,
   header,

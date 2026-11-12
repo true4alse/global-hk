@@ -1,6 +1,15 @@
 .reservation { --reservation-mint:#3dbabc; --reservation-blue:#277fb9; container-type:inline-size; padding:83px 0; background:#fff; color:#353535; font-family:'HK Pretendard',var(--font-ui); scroll-margin-top:110px; }
 .reservation :is(h2,h3,p,fieldset) { margin:0; }
 .reservation fieldset { min-width:0; border:0; padding:0; }
+/* Reserve room for both fixed desktop quick menus, including date-picker controls. */
+@media (min-width:1101px) {
+ .reservation fieldset.reservation-patient {
+   width: calc(100% - 320px);
+   max-width: 1600px;
+   margin-inline: auto;
+   padding-inline: 0;
+ }
+}
 .reservation-header { text-align:center; }
 .reservation-kicker { display:flex; flex-direction:column; gap:8px; align-items:center; padding:10px; color:var(--reservation-mint); font-size:16px; line-height:1.45; }
 .reservation-kicker b { font-size:24px; }
@@ -49,7 +58,10 @@
  .reservation-fields { grid-template-columns:1fr; gap:16px; margin-top:36px; } .reservation-column { gap:16px; }
  .reservation-field { grid-template-columns:76px minmax(0,1fr); gap:12px; } .reservation-field :is(input,select,textarea) { font-size:16px; padding:12px; }
  .reservation .reservation-insurance { grid-template-columns:76px 1fr; } .reservation-insurance legend { width:76px; }
- .reservation-consent { font-size:15px; text-align:left; } .reservation-submit { margin-top:28px; padding:16px 48px; font-size:24px!important; }
+ .reservation-consent { font-size:15px; text-align:left; } .reservation-submit { margin-top:28px; padding:16px 24px; max-width:100%; overflow-wrap:anywhere; font-size:24px!important; }
+ .reservation h3>span:first-child { white-space:normal; overflow-wrap:anywhere; }
+ .reservation .reservation-insurance { grid-template-columns:76px minmax(0,1fr); }
+ .reservation-insurance-options { min-width:0; overflow-wrap:anywhere; }
 }
 @media(prefers-reduced-motion:reduce) { .reservation-pain-option img { transition:none; } }
 

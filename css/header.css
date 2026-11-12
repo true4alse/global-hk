@@ -10,6 +10,8 @@
 
 html {
   scroll-padding-top: calc(var(--header-height, 93px) + 16px);
+  /* Animated/fixed decorations must not create a page-level horizontal scroll. */
+  overflow-x: clip;
 }
 
 body {
@@ -157,6 +159,24 @@ a:focus-visible {
 .header-phone {
   justify-self: end;
   padding: 10px 19px;
+  text-decoration: none;
+}
+
+.header-phone-icon { display: none; }
+.header-phone-number { color: #000; }
+
+@media (max-width: 390px) {
+  .site-header .header-top { grid-template-columns: minmax(0, 1fr) 40px; }
+  .header-top .header-phone {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    color: var(--header-blue);
+  }
+  .header-phone-number { display: none; }
+  .header-phone-icon { display: block; }
 }
 
 .header-nav a {
@@ -215,7 +235,8 @@ a:focus-visible {
   padding: 0;
 }
 
-.language-options button {
+.language-options [data-language] {
+  text-decoration: none;
   display:flex;
   align-items:center;
   gap:12px;
@@ -231,17 +252,17 @@ a:focus-visible {
   cursor: pointer;
 }
 
-.language-options button[aria-current] {
+.language-options [data-language][aria-current] {
   background: #eff7fc;
   font-weight: 700;
 }
 
-.language-options button:disabled {
+.language-options [data-language]:disabled {
   color: #72777c;
   cursor: default;
 }
 
-.language-options button img { display:block; flex:none; width:28px; height:21px; object-fit:cover; border-radius:2px; box-shadow:0 0 0 1px #0001; }
+.language-options [data-language] img { display:block; flex:none; width:28px; height:21px; object-fit:cover; border-radius:2px; box-shadow:0 0 0 1px #0001; }
 
 @media (max-width: 1200px) {
   .header-nav {

@@ -9,7 +9,8 @@
 .facilities-floor-title { display:flex; align-items:center; gap:16px; margin:0 0 28px; font-size:24px; font-weight:700; line-height:29px; text-align:center; }
 .facilities-floor-title::before,.facilities-floor-title::after { content:''; height:1px; background:#d9d9d9; flex:1; }
 .facilities-thumbnail-wrap { position:relative; margin-bottom:29px; }
-.facilities-thumbnails { display:flex; gap:16px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x proximity; scrollbar-width:none; }
+/* Photo order follows the physical left/right buttons in every language. */
+.facilities-thumbnails { direction:ltr; display:flex; gap:16px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x proximity; scrollbar-width:none; }
 .facilities-thumbnails::-webkit-scrollbar { display:none; }
 .facilities-thumbnail { flex:0 0 auto; position:relative; display:block; height:100px; aspect-ratio:var(--thumbnail-ratio,1.5); scroll-snap-align:start; border-radius:8px; overflow:hidden; color:#fff; text-decoration:none; opacity:.5; transition:opacity .2s; }
 .facilities-thumbnail img { display:block; width:100%; height:100%; object-fit:cover; }

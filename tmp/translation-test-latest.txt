@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: HTML 한국어 수정은 언어를 바꿨다가 돌아와도 유지하고 외국어 번역은 사용한다
+ok 1 - HTML 한국어 수정은 언어를 바꿨다가 돌아와도 유지하고 외국어 번역은 사용한다
+  ---
+  duration_ms: 2.314
+  type: 'test'
+  ...
+# Subtest: 기존 센터 키와 중첩/배열 키로 긴 번역 및 줄바꿈을 연결한다
+ok 2 - 기존 센터 키와 중첩/배열 키로 긴 번역 및 줄바꿈을 연결한다
+  ---
+  duration_ms: 0.3556
+  type: 'test'
+  ...
+# Subtest: 누락/잘못된 타입의 번역은 HTML 기본 문구와 alt를 유지한다
+ok 3 - 누락/잘못된 타입의 번역은 HTML 기본 문구와 alt를 유지한다
+  ---
+  duration_ms: 0.2919
+  type: 'test'
+  ...
+# Subtest: 강조/이미지를 포함한 부모는 보존하고 말단 문구만 안전하게 교체한다
+ok 4 - 강조/이미지를 포함한 부모는 보존하고 말단 문구만 안전하게 교체한다
+  ---
+  duration_ms: 1.203
+  type: 'test'
+  ...
+# Subtest: alt·접근성 이름·재생/정지 문구를 번역하고 이미지와 통계는 유지한다
+ok 5 - alt·접근성 이름·재생/정지 문구를 번역하고 이미지와 통계는 유지한다
+  ---
+  duration_ms: 0.2452
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 103.1051

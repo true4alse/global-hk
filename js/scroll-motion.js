@@ -57,7 +57,7 @@ export function renderScrollMotion() {
   // Blur individual image layers, never their blending/positioning containers.
   // Each decoration waits until both its own viewport entry and background reveal.
   const backgroundLayers = [...document.querySelectorAll(
-    '.hero-background, .apkass-skyline, .apkass-texture, .treatment-background, ' +
+    '.apkass-skyline, .apkass-texture, .treatment-background, ' +
     '.knee-center-surgery, .knee-center-texture, .center-banner-surgery, .center-banner-texture, .facilities'
   )];
   const decorations = [...document.querySelectorAll(

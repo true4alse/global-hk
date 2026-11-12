@@ -21,7 +21,7 @@ export const languages = [
   { code: 'ar', label: 'العربية', dir: 'rtl', content: ar },
 ];
 
-// URL을 우선하고 쿠키는 언어 없는 최초 진입에만 사용합니다.
+// 언어 URL을 우선합니다. 기본 주소는 항상 한국어로 유지해 검색 결과와 일치시킵니다.
 export function localeUrl(code, url = new URL(location.href)) {
   return localeHref(code, url, document.baseURI, languages.map(language => language.code));
 }
@@ -29,7 +29,7 @@ export function localeUrl(code, url = new URL(location.href)) {
 export function initializeLocale(code) {
   const requested = requestedLocale(new URL(location.href), document.baseURI, languages.map(language => language.code));
   const cookie = document.cookie.split('; ').find(value => value.startsWith('site_language='))?.split('=')[1];
-  const selected = languages.find(language => language.code === (code || requested || cookie) && language.content) || languages[0];
+  const selected = languages.find(language => language.code === (code || requested || document.documentElement.lang) && language.content) || languages[0];
   document.documentElement.lang = selected.code;
   document.documentElement.dir = selected.dir;
   document.body.className = `lang-${selected.code}`;

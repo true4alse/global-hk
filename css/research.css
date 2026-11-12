@@ -162,6 +162,8 @@
 
 .research-marquee {
   position: relative;
+  /* Keep the repeated artwork and its leftward motion in the same direction. */
+  direction: ltr;
   margin-top: -4.4vw;
   overflow: hidden;
 }
@@ -184,6 +186,7 @@
 .research-marquee-set {
   display: flex;
   flex: 0 0 auto;
+  min-width: 100vw;
   align-items: end;
   gap: clamp(20px, 2.5vw, 48px);
   padding: 0 clamp(20px, 2.5vw, 48px) 0 0;
@@ -193,7 +196,7 @@
 
 .research-marquee-set li {
   width: clamp(158px, 14.4vw, 280px);
-  flex: 0 0 auto;
+  flex: 1 0 auto;
 }
 
 .research-marquee-set img {
@@ -255,12 +258,14 @@
   }
 
   .research h2 {
-    font-size: 30px;
+    font-size: clamp(24px, 7.5vw, 30px);
+    overflow-wrap: anywhere;
   }
 
   .research-description {
     font-size: 17px;
     line-height: 1.7;
+    overflow-wrap: anywhere;
   }
 
   .research-description p+p {

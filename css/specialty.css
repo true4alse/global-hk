@@ -116,7 +116,15 @@
 }
 @media (max-width:600px) {
   .specialty-brand { margin-top:42px !important; }
-  .specialty-title { font-size:13vw; margin-top:26px !important; }
+  .specialty-title {
+    font-size: 12vw;
+    margin-top: 26px !important;
+    padding-inline: 16px;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  html:lang(ru) .specialty-title { font-size: clamp(18px, 5.7vw, 34px); }
   .specialty-doctors { margin-top:18px; }
   .specialty-doctor { padding-top:8px; }
   .specialty-kicker { gap:8px; }

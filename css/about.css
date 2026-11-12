@@ -103,6 +103,7 @@
 
 .about-stat {
     position: relative;
+    container-type: inline-size;
     min-width: 0;
     min-height: 246px;
     padding: 18px;
@@ -126,9 +127,10 @@
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 600;
-    font-size: 60px;
+    font-size: min(60px, 22cqw);
     line-height: 1.3;
     font-variant-numeric: tabular-nums;
+    white-space: nowrap;
 }
 
 .about-stat-icon {
@@ -339,7 +341,7 @@
     }
 
     .about-stat-value {
-        font-size: clamp(38px, 4.2vw, 60px);
+        font-size: min(clamp(38px, 4.2vw, 60px), 22cqw);
     }
 
     .about-stat-label {
@@ -391,7 +393,7 @@
     }
 
     .about-stat-value {
-        font-size: 48px;
+        font-size: min(48px, 22cqw);
     }
 
     .about-ribbon-top {
@@ -441,12 +443,14 @@
 
     .about-stats {
         margin-top: 44px;
+        container-type: inline-size;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
 
     .about-stat,
     .about-stat:nth-child(4) {
+        container-type: normal;
         grid-column: auto;
         min-height: 174px;
         padding: 14px;
@@ -472,7 +476,8 @@
     }
 
     .about-stat-value {
-        font-size: 42px;
+        /* Use the shared two-column width, including the full-width last card. */
+        font-size: min(42px, calc(11cqw - 7.92px));
     }
 
     .about-ribbon-top {

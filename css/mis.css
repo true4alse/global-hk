@@ -100,6 +100,44 @@
   .mis-benefit-list img { width: 64px; height: 64px; flex-basis: 64px; }
   .mis-benefit-list h5 { font-size: 15px; }
 }
+/* Reserve the knee illustration's center space for longer translated claims. */
+html:is(:lang(ru), :lang(hi), :lang(en), :lang(vi)) .mis-signature {
+  grid-template-columns: minmax(0, 1fr) 28% minmax(0, 1fr);
+  column-gap: clamp(16px, 2vw, 32px);
+}
+html:is(:lang(ru), :lang(hi), :lang(en), :lang(vi)) .mis-claim {
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  font-size: clamp(20px, 2.2vw, 40px);
+  line-height: 1.4;
+  letter-spacing: -.025em;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+html:is(:lang(ru), :lang(hi), :lang(en), :lang(vi)) .mis-claim-start { grid-column: 1; }
+html:is(:lang(ru), :lang(hi), :lang(en), :lang(vi)) .mis-claim-end { grid-column: 3; }
+@media (max-width: 600px) {
+  html:is(:lang(ru), :lang(hi), :lang(en), :lang(vi)) .mis-signature {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    row-gap: 16px;
+  }
+  html:is(:lang(ru), :lang(hi), :lang(en), :lang(vi)) .mis-knee {
+    position: relative;
+    inset: auto;
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    transform: translateX(-21%);
+  }
+  html:is(:lang(ru), :lang(hi), :lang(en), :lang(vi)) .mis-claim {
+    grid-column: 1;
+    font-size: clamp(22px, 5.6vw, 28px);
+  }
+  html:is(:lang(ru), :lang(hi), :lang(en), :lang(vi)) .mis-claim-start { grid-row: 1; }
+  html:is(:lang(ru), :lang(hi), :lang(en), :lang(vi)) .mis-claim-end { grid-row: 3; }
+}
 @media (prefers-reduced-motion: reduce) {
   .mis-pending[data-mis-reveal],.mis-pending[data-mis-blur],.mis-sequence-ready .mis-claim { opacity: 1; transform: none; filter: none; transition: none; animation: none; }
   .mis-sequence-ready .mis-knee { opacity: 1; animation: none; }

@@ -1,8 +1,10 @@
 /* HSS: 콘텐츠는 HTML, 배치/등장 효과는 이 파일에서 관리합니다. */
+/* Keep off-screen reveal transforms inside this section's horizontal bounds. */
+html:lang(ar) .global-excellence { overflow-x: clip; }
 .global-excellence { position: relative; isolation: isolate; padding-top: clamp(70px,6.3vw,121px); color: #080d10; font-family: 'HK Pretendard',var(--font-ui); }
 .global-kicker { display: grid; gap: 10px; margin: 0; text-align: center; color: #46aaa9; font-size: 16px; line-height: 1.4; }
 .global-kicker > span:first-child { font-size: 24px; font-weight: 700; }
-.global-stage { display: grid; position: relative; }
+.global-stage { display: grid; grid-template-columns: minmax(0, 1fr); position: relative; }
 .global-intro { grid-area: 1 / 1; min-width: 0; }
 /* 소개 + 화관 + HSS 의료 교류 전체를 스티키 범위로 사용합니다. */
 .global-sticky-layer { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
@@ -34,7 +36,7 @@
 .global-shown[data-global-photo] { opacity: 1; filter: blur(0); }
 @media (max-width: 900px) {
  .global-intro { padding-bottom: 80px; }
- .global-copy { max-width: 560px; }
+ .global-copy { max-width: min(560px, 100%); }
  .global-photo { width: 58%; top: 30%; opacity: .7; }
  .global-awards { max-width: 660px; gap: 8px; margin-top: 76px; }
  .global-award { padding-inline: 40px; }
@@ -63,6 +65,7 @@
  .global-watermark { position: static; }
 }
 
+.global-watermark { direction: ltr; unicode-bidi: isolate; }
 .global-watermark-line { display:inline-block; }
 .global-watermark-line>span { display:inline-block; }
 .global-watermark.letters-pending .global-watermark-line>span { opacity:0; transform:translateY(.15em); }

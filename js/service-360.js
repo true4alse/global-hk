@@ -40,6 +40,25 @@ function initHotelMarquee(section, motion) {
     freeMode: { enabled: true, momentum: false },
     breakpoints: { 601: { spaceBetween: 24 }, 1101: { spaceBetween: 32 } }
   });
+  // Free dragging can also reorder the loop. Preserve the fractional position
+  // between cards instead of allowing loopFix to snap to the nearest center.
+  let dragAnchor;
+  swiper.on('beforeLoopFix', () => {
+    const element = dragging && swiper.slides[swiper.activeIndex];
+    dragAnchor = element ? { element, left: element.getBoundingClientRect().left } : null;
+  });
+  swiper.on('loopFix', () => {
+    if (!dragAnchor) return;
+    const correction = dragAnchor.left - dragAnchor.element.getBoundingClientRect().left;
+    dragAnchor = null;
+    if (Math.abs(correction) < .01) return;
+    swiper.setTransition(0);
+    swiper.setTranslate(swiper.getTranslate() + correction);
+    swiper.touchEventsData.startTranslate += correction;
+    swiper.touchEventsData.currentTranslate += correction;
+    swiper.updateActiveIndex();
+    swiper.updateSlidesClasses();
+  });
   // Keep a constant pixel speed instead of restarting a long transition per card.
   // Swiper manages dragging and reorders only the existing HTML slides at the seam.
   function advance(time) {

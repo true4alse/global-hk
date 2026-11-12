@@ -1,0 +1,638 @@
+/* Four editable HTML slides; layout is isolated from the former single hero. */
+.hero {
+  padding: 0;
+  min-height: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.hero .hero-slider {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.hero .swiper-wrapper {
+  height: auto;
+  align-items: stretch;
+}
+
+.hero .hero-slide {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  height: auto;
+  min-height: max(760px, 50.573vw);
+  overflow: hidden;
+  color: #363636;
+  background: #efece9;
+}
+
+.hero-slider:not(.swiper-initialized)>.swiper-wrapper {
+  display: block;
+}
+
+.hero .hero-background-layer {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero .hero-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero .hero-slide--surgery {
+  background: #041a2b;
+  color: #fff;
+  padding: clamp(230px, 14.2vw, 340px) 0 120px;
+}
+
+.hero-minimal-title {
+  margin: 0 auto clamp(26px, 3.5vw, 68px);
+  padding: 0 24px;
+  max-width: 1200px;
+  font-size: clamp(36px, 4.16vw, 90px);
+  line-height: 1.25;
+  font-weight: 700;
+  text-align: center;
+}
+
+.hero .hero-statistic {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 413px) minmax(0, 1fr);
+  gap: 21px;
+  align-items: center;
+  direction: ltr;
+  min-height: 0;
+}
+
+.hero .hero-rule {
+  margin: 64px 0 0;
+}
+
+.hero-statistic-center {
+  min-width: 0;
+  text-align: center;
+}
+
+.hero .hero-period {
+  position: static;
+  transform: none;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.45;
+}
+
+.hero .hero-number {
+  padding: 0;
+  font-size: clamp(100px, 8.08vw, 180px);
+  line-height: 1.15;
+}
+
+.hero .hero-unit {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.hero .hero-copy {
+  width: min(1100px, calc(100% - 64px));
+  margin: 24px auto 0;
+}
+
+.hero .hero-title {
+  font-size: clamp(32px, 2.8vw, 60px);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.hero .hero-description {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  margin: 28px auto 0;
+  padding: 0;
+  max-width: 962px;
+}
+
+.hero .hero-description p {
+  padding: 0;
+  padding-inline-start: 20px;
+  border-inline-start: 1px solid #ffffff80;
+  font-size: clamp(14px, .84vw, 18px);
+  line-height: 1.6;
+}
+
+.hero :is(h1, h2, p) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.hero :is(h1, h2) {
+  text-wrap: balance;
+}
+
+.hero-decoration {
+  position: absolute;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.hero-decoration img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-brand {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  top: max(160px, 8vw);
+  left: 7.6%;
+  margin: 0;
+  font-size: 11px;
+  direction: ltr;
+  color: #404040;
+  z-index: 1;
+}
+
+.hero-brand>span:first-child {
+  width: clamp(70px, 11vw, 211px);
+  height: 1px;
+  background: currentColor;
+  opacity: .4;
+}
+
+.hero-feature-copy {
+  position: relative;
+  width: 43%;
+  margin-left: 7.6%;
+  padding: max(270px, 15.8vw) 0 140px;
+  box-sizing: border-box;
+}
+
+.hero-feature-title {
+  margin: 0;
+  font-size: clamp(40px, 4.16vw, 90px);
+  line-height: 1.24;
+  font-weight: 750;
+  letter-spacing: -.035em;
+}
+
+.hero-feature-title>span {
+  display: block;
+}
+
+.hero-feature-title em {
+  color: #3dbabc;
+  font-style: normal;
+}
+
+.hero-feature-title .hero-blue {
+  color: #277fb9;
+}
+
+.hero-feature-description {
+  margin: 32px 0 0;
+  font-size: clamp(20px, 1.875vw, 40px);
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+
+.hero-kicker {
+  margin: 0 0 16px;
+  font-size: clamp(24px, 2.6vw, 54px);
+  line-height: 1.3;
+  color: #161616;
+}
+
+.hero-slide--or .hero-feature-copy {
+  margin-left: 48.3%;
+  width: 40%;
+  padding-top: max(220px, 10.3vw);
+}
+
+.hero-slide--or .hero-feature-title {
+  font-size: clamp(44px, 5.2vw, 110px);
+}
+
+.hero-slide--or .hero-brand {
+  display: none;
+}
+
+.hero-or-badge {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px 24px;
+  border-radius: 36px;
+  margin: 32px 0 0;
+  background: #fff;
+  color: #161616;
+  font-size: clamp(16px, 1.56vw, 32px);
+  font-weight: 700;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.hero-or-badge strong {
+  color: #277fb9;
+}
+
+.hero-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 44px;
+}
+
+.hero-thumbnails img {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.hero-thumbnails--rehab {
+  grid-template-columns: 2.2fr 2.25fr 1fr;
+  max-width: 456px;
+  margin-top: 28px;
+  gap: 10px;
+}
+
+.hero-thumbnails--rehab img {
+  height: 100%;
+  aspect-ratio: auto;
+  max-height: 120px;
+}
+
+.hero-thumbnails--rehab img:last-child {
+  aspect-ratio: 2 / 3;
+}
+
+.hero-slide--nursing .hero-feature-description {
+  max-width: 520px;
+}
+
+.hero-slide--rehab .hero-feature-copy {
+  padding-top: max(250px, 12.45vw);
+}
+
+/* Reading direction follows the language; the photographic composition stays fixed. */
+html[dir="rtl"] .hero :is(.hero-feature-copy, .hero-copy, .hero-minimal-title) {
+  direction: rtl;
+}
+
+html:not([lang="ko"]) .hero-feature-title {
+  font-size: clamp(30px, 3.3vw, 72px);
+  line-height: 1.3;
+  letter-spacing: -.025em;
+}
+
+html:not([lang="ko"]) .hero-minimal-title {
+  font-size: clamp(32px, 3.6vw, 78px);
+}
+
+.hero-controls {
+    position: absolute;
+    z-index: 3;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 3px 8px;
+    background: #55acc09c;
+    backdrop-filter: blur(12px);
+    border: 1px solid #ffffff55;
+    border-radius: 50px;
+    color: #fff;
+    direction: ltr;
+}
+
+.hero-controls[hidden] {
+  display: none;
+}
+
+.hero-controls button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background .2s;
+}
+
+.hero-controls button:hover {
+  background: #ffffff25;
+}
+
+.hero-controls button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+}
+
+.hero-controls svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.hero-dots {
+  display: flex;
+}
+
+.hero-dots button {
+  width: 28px;
+}
+
+.hero-dots button::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 20px;
+  background: #ffffff80;
+  transition: width .4s, background .4s;
+}
+
+.hero-dots button[aria-current="true"]::after {
+  width: 22px;
+  background: #fff;
+}
+
+.hero-toggle .hero-play-icon,
+.hero-toggle.is-paused .hero-pause-icon {
+  display: none;
+}
+
+.hero-toggle.is-paused .hero-play-icon {
+  display: block;
+}
+
+.hero-toggle:disabled {
+  opacity: .4;
+  cursor: default;
+}
+
+/* Each slide keeps is-arrived after its first appearance, including loop wraps. */
+.hero.is-enhanced .hero-slide:not(.is-arrived) :is(.hero-background-layer, .hero-decoration, .hero-enter, .hero-copy, .hero-statistic) {
+  opacity: 0;
+}
+
+.hero.is-enhanced .is-arrived .hero-background-layer {
+  animation: hero-background-reveal 1.8s ease both;
+}
+
+.hero.is-enhanced .is-arrived .hero-decoration {
+  animation: hero-decoration-reveal 1.6s .85s ease both;
+}
+
+.hero.is-enhanced .is-arrived .hero-light--right {
+  animation-delay: 1.25s;
+}
+
+.hero.is-enhanced .is-arrived :is(.hero-enter, .hero-copy, .hero-statistic) {
+  animation: hero-content-reveal 1.2s 1.85s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.hero.is-enhanced .is-arrived :is(.hero-feature-description, .hero-or-badge, .hero-copy) {
+  animation-delay: 2.05s;
+}
+
+.hero.is-enhanced .is-arrived .hero-thumbnails {
+  animation-delay: 2.25s;
+}
+
+/* Swiper moves nodes during looping: settled slides must not restart CSS motion. */
+.hero.is-enhanced .is-revealed :is(.hero-background-layer, .hero-decoration, .hero-enter, .hero-copy, .hero-statistic) {
+    animation: none;
+    opacity: var(--hero-layer-opacity, 1);
+    filter: none;
+    translate: none;
+    word-break: keep-all;
+}
+
+@keyframes hero-background-reveal {
+  from {
+    opacity: 0;
+    filter: blur(18px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes hero-decoration-reveal {
+  from {
+    filter: blur(18px);
+    opacity: 0;
+  }
+
+  to {
+    filter: blur(0);
+  }
+}
+
+@keyframes hero-content-reveal {
+  from {
+    opacity: 0;
+    translate: 0 22px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 761px) {
+
+  .hero-feature-copy,
+  .hero-slide--nursing .hero-feature-copy {
+    width: 48%;
+    margin-left: 7%;
+  }
+
+  .hero-slide--or .hero-feature-copy {
+    width: 49%;
+    margin-left: 44%;
+  }
+
+  .hero-feature-description {
+    font-size: 22px;
+  }
+}
+
+/* Portrait assets include the decoration and preserve the mobile composition. */
+@media (max-width: 760px) {
+  .hero .hero-slide {
+    min-height: max(700px, 216.8vw);
+  }
+
+  .hero .hero-background {
+    object-position: center;
+  }
+
+  .hero .hero-slide--surgery {
+    padding: max(180px, 56vw) 0 140px;
+  }
+
+  .hero-minimal-title, html:not([lang="ko"]) .hero-minimal-title {
+    font-size: clamp(32px, 5vw, 42px);
+    padding: 0 24px;
+    margin-bottom: 32px;
+}
+
+  .hero .hero-statistic {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 230px) minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .hero .hero-number {
+    font-size: clamp(76px, 20vw, 90px);
+  }
+
+  .hero .hero-period,
+  .hero .hero-unit {
+    font-size: 14px;
+  }
+
+  .hero .hero-rule {
+    margin-top: 40px;
+  }
+
+  .hero .hero-copy {
+    width: calc(100% - 48px);
+    margin-top: 24px;
+  }
+
+  .hero .hero-title {
+    font-size: clamp(18px, 4.5vw, 30px);
+    line-height: 1.4;
+  }
+
+  .hero .hero-description {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .hero .hero-description p {
+    padding-inline-start: 10px;
+    font-size: clamp(12px, 3.1vw, 17px);
+    line-height: 1.65;
+  }
+
+  .hero-brand {
+    top: 8%;
+    left: 24px;
+    right: 24px;
+    justify-content: flex-end;
+    font-size: 8px;
+  }
+
+  .hero-brand>span:first-child {
+    width: 70px;
+  }
+
+  .hero-slide--or .hero-brand {
+    display: flex;
+    top: auto;
+    bottom: 95px;
+    color: #404040;
+  }
+
+  .hero .hero-feature-copy,
+  .hero .hero-slide--or .hero-feature-copy,
+  .hero .hero-slide--nursing .hero-feature-copy {
+    margin: 0;
+    padding: max(130px, 36vw) 24px max(380px, 115vw);
+    width: 100%;
+  }
+
+  .hero-feature-title, html:not([lang="ko"]) .hero-feature-title, .hero-slide--or .hero-feature-title {
+    font-size: clamp(32px, 6.1vw, 46px);
+    line-height: 1.32;
+    letter-spacing: -.025em;
+    text-wrap: initial;
+}
+
+  .hero-feature-description {
+    margin-top: 20px;
+    font-size: clamp(13px, 3.4vw, 20px);
+    line-height: 1.6;
+  }
+
+  .hero-kicker {
+    font-size: clamp(18px, 4.5vw, 30px);
+    margin-bottom: 8px;
+  }
+
+  .hero-or-badge {
+    padding: 8px 12px;
+    font-size: clamp(12px, 3vw, 18px);
+    margin-top: 16px;
+    gap: 4px 10px;
+  }
+
+  .hero-slide--or .hero-thumbnails {
+    display: none;
+  }
+
+  .hero-thumbnails {
+    margin-top: 24px;
+    gap: 6px;
+  }
+
+  .hero-thumbnails--rehab {
+    max-width: 320px;
+  }
+
+  .hero-thumbnails--rehab img {
+    max-height: 75px;
+  }
+
+  .hero-controls {
+    bottom: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero.is-enhanced .hero-slide :is(.hero-background-layer, .hero-decoration, .hero-enter, .hero-copy, .hero-statistic) {
+    animation: none !important;
+    opacity: var(--hero-layer-opacity, 1) !important;
+    filter: none !important;
+    translate: none !important;
+  }
+
+  .hero-controls * {
+    transition: none !important;
+  }
+}

@@ -143,7 +143,8 @@
 .treatment-method {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1.15fr 1fr;
+  /* Long translations must not consume the instrument's column. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr);
   align-items: center;
   width: 70%;
   max-width: 1400px;
@@ -156,7 +157,28 @@
   font-size: clamp(28px, 3.75vw, 72px);
   line-height: 1.2;
   letter-spacing: -.055em;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.treatment-method > div {
+  min-width: 0;
+}
+
+/* Keep diagram anchors in place while Arabic text reads right to left. */
+html:lang(ar) .treatment-method {
+  direction: ltr;
+}
+
+html:lang(ar) .treatment-method :is(h3, p) {
+  direction: rtl;
+}
+
+/* Translated headings need room for several words within the same diagram. */
+html:is(:lang(en), :lang(ru), :lang(mn), :lang(ar), :lang(vi)) .treatment-method h3 {
+  font-size: clamp(20px, 2.2vw, 42px);
+  line-height: 1.3;
+  letter-spacing: -.025em;
 }
 
 .treatment-efficiency {
@@ -438,7 +460,13 @@
   }
 
   .treatment-banner h2 {
-    font-size: clamp(36px, 7vw, 52px);
+    font-size: clamp(28px, 7vw, 52px);
+  }
+
+  .treatment :is(h2, h3, h4, h5, p) {
+    min-width: 0;
+    word-break: normal;
+    overflow-wrap: anywhere;
   }
 
   .treatment-banner-copy p {
@@ -535,6 +563,12 @@
 
   .treatment-minimum h3 {
     font-size: clamp(26px, 6vw, 32px);
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  html:is(:lang(en), :lang(ru), :lang(mn), :lang(ar), :lang(vi)) .treatment-method h3 {
+    font-size: clamp(20px, 5vw, 28px);
   }
 
   .treatment-strategies {

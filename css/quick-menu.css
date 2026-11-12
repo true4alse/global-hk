@@ -1,0 +1,517 @@
+/* Contact shortcuts: shared HTML, a fixed rail on desktop and a dial on touch screens. */
+.contact-quick {
+  position: fixed;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 95;
+}
+
+@media (min-width: 1101px) {
+  .contact-quick {
+    top: var(--contact-menu-top, calc(var(--header-height, 93px) + 12px));
+    transform: none;
+  }
+  .contact-quick .contact-quick-panel {
+    max-height: calc(100dvh - var(--contact-menu-top, 105px) - 12px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+}
+
+.contact-quick-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 88px;
+  padding: 22px 10px;
+  border: 1px solid white;
+  border-radius: 80px;
+  background: radial-gradient(ellipse at center, #569e9e, #467a9c);
+  box-shadow: 2px 5px 10px #0003;
+}
+
+.contact-quick-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  min-height: 40px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  border-radius: 12px;
+  transition: background .2s, filter .2s;
+}
+
+.contact-quick img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex: none;
+}
+
+.contact-quick-link span[dir=ltr] {
+  font-family: Arial, sans-serif;
+}
+
+button.contact-quick-link { font-family:inherit; cursor:pointer; padding:0; }
+@media(min-width:1101px) { button.contact-quick-link { border:0; background:transparent; } }
+.quick-copy-notice { position:fixed; left:12px; top:12px; width:max-content; z-index:110; max-width:min(300px,calc(100vw - 24px)); pointer-events:none; }
+.quick-copy-notice p { margin:0; padding:14px 18px; border-radius:12px; background:#125b70; color:white; box-shadow:0 4px 18px #0003; font-size:14px; line-height:1.5; pointer-events:auto; }
+.quick-copy-notice [hidden] { display:none; }
+
+.contact-quick-link:hover {
+  background: #ffffff18;
+  filter: drop-shadow(0 0 5px #c5ffff80);
+}
+
+.contact-quick :is(a, button):focus-visible {
+  outline: 3px solid #a2ffff;
+  outline-offset: 3px;
+}
+
+.contact-quick-hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: white;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.contact-quick-hours time {
+  display: block;
+  font-size: 9px;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+.contact-quick-toggle {
+  display: none;
+}
+
+@media(min-width:1101px) {
+
+  /* Keep the specialty rail on the opposite side, including RTL pages. */
+  .center-menu {
+    margin-inline: 0;
+    margin-left: 19px;
+    margin-right: auto;
+  }
+}
+
+.quick-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media(min-width:1101px) and (max-height:700px) {
+  .contact-quick-panel {
+    gap: 6px;
+    padding-block: 14px;
+  }
+
+  .contact-quick-link {
+    min-height: 36px;
+    font-size: 10px;
+  }
+
+  .contact-quick img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media(max-width:1100px) {
+  .contact-quick {
+    --dial-scale: .8;
+    right: max(12px, env(safe-area-inset-right));
+    top: 50%;
+    width: calc(234px * var(--dial-scale));
+    height: calc(533px * var(--dial-scale));
+    pointer-events: none;
+  }
+
+  .contact-quick-panel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    visibility: hidden;
+    transition: visibility 0s .45s;
+  }
+
+  .contact-quick.is-open .contact-quick-panel {
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .contact-quick-link {
+    position: absolute;
+    width: calc(70px * var(--dial-scale));
+    height: calc(70px * var(--dial-scale));
+    min-height: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, #569e9e, #467a9c);
+    box-shadow: 0 4px 6px #0003;
+    opacity: 0;
+    transform: rotate(-75deg) scale(.25);
+    transform-origin: calc((234px - var(--x)) * var(--dial-scale)) calc((266px - var(--y)) * var(--dial-scale));
+    left: calc(var(--x) * var(--dial-scale));
+    top: calc(var(--y) * var(--dial-scale));
+    transition: transform .55s cubic-bezier(.2, .75, .25, 1), opacity .3s;
+    pointer-events: none;
+  }
+
+  .contact-quick.is-open .contact-quick-link {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+    pointer-events: auto;
+    transition-delay: calc(var(--step) * 45ms);
+  }
+
+  .contact-quick-link:nth-child(1) {
+    --x: 164px;
+    --y: 0px;
+    --step: 0;
+  }
+
+  .contact-quick-link:nth-child(2) {
+    --x: 76px;
+    --y: 59px;
+    --step: 1;
+  }
+
+  .contact-quick-link:nth-child(3) {
+    --x: 12px;
+    --y: 155px;
+    --step: 2;
+  }
+
+  .contact-quick-link:nth-child(4) {
+    --x: 0px;
+    --y: 279px;
+    --step: 3;
+  }
+
+  .contact-quick-link:nth-child(5) {
+    --x: 47px;
+    --y: 393px;
+    --step: 4;
+  }
+
+  .contact-quick-link:nth-child(6) {
+    --x: 129px;
+    --y: 463px;
+    --step: 5;
+  }
+
+  .contact-quick-link span {
+    display: none;
+  }
+
+  .contact-quick-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 52px;
+    height: 52px;
+    padding: 8px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, #569e9e, #467a9c);
+    color: white;
+    box-shadow: 0 4px 8px #0003;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: width .35s, height .35s, border-radius .35s;
+  }
+
+}
+
+@media(max-width:760px) {
+  .contact-quick {
+    top: calc((100dvh - var(--mobile-nav-height, 96px)) / 2 + 24px);
+  }
+}
+
+@media(max-width:1100px) and (max-height:740px) {
+  .contact-quick {
+    --dial-scale: .65;
+  }
+}
+
+@media(max-width:1100px) and (max-height:600px) {
+  .contact-quick {
+    top: 12px;
+    transform: none;
+    width: 200px;
+    height: calc(100dvh - 24px);
+  }
+
+  .contact-quick.is-open .contact-quick-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 48px);
+    gap: 8px;
+    align-content: center;
+    justify-content: start;
+    direction: ltr;
+  }
+
+  .contact-quick-link {
+    position: static;
+    width: 48px;
+    height: 48px;
+    transform-origin: center;
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  .contact-quick *,
+  .contact-quick *::after {
+    transition: none !important;
+  }
+}
+
+/* Department menu: authored doctor choices use the existing profile translations. */
+.doctors-title {
+  margin-bottom: 40px;
+}
+
+.doctor-department-nav {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 2px 12px;
+  width: fit-content;
+  max-width: calc(100% - 240px);
+  margin: 0 auto 40px;
+  padding: 5px 24px;
+  border-radius: 50px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ffffff80 transparent;
+  background: #3dbabc;
+}
+
+.doctor-department-nav>button {
+  display: block;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  padding: 10px;
+  border: 0;
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: clamp(14px, 1.25vw, 24px);
+  line-height: 1.35;
+  cursor: pointer;
+  list-style: none;
+  text-align: center;
+}
+
+.doctor-department-nav button:hover,
+.doctor-department-nav [aria-current=true] {
+  background: #ffffff24;
+  text-shadow: 0 0 8px #fff7;
+}
+
+.doctor-department-nav button:focus-visible {
+  outline: 2px solid #003380;
+  outline-offset: 2px;
+}
+
+@media(min-width:761px) and (max-width:1100px) {
+  .doctor-department-nav {
+    max-width: calc(100% - 120px);
+  }
+}
+
+@media(max-width:760px) {
+  .doctors-title {
+    margin-bottom: 24px;
+  }
+
+.doctor-department-nav {
+    gap: 2px;
+    max-width: calc(100% - 32px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+    padding: 8px;
+    border-radius: 50px;
+}
+
+  .doctor-department-nav>button {
+    padding: 9px 8px;
+    font-size: 13px;
+    overflow-wrap: normal;
+  }
+
+  .doctor-department-nav>* {
+    max-width: 100%;
+  }
+}
+
+/* Match the GNB palette, with a translucent glass surface instead of a solid fill. */
+.contact-quick-panel {
+  width: 119px;
+  height: var(--contact-rail-height, min(715px, calc(100dvh - 40px)));
+  justify-content: space-between;
+  padding: 24px 12px;
+}
+
+.contact-quick-panel,
+.contact-quick-toggle {
+  background: linear-gradient(110deg, #267fb9cc 0%, #267fb9cc 20%, #58b6bccc 50%, #267fb9cc 80%, #267fb9cc 100%);
+  background-size: 250% 100%;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+@media(prefers-reduced-motion:no-preference) {
+
+  .contact-quick-panel,
+  .contact-quick-toggle {
+    animation: header-gradient-flow 5s ease-in-out infinite alternate;
+  }
+}
+
+.contact-quick-burger {
+  display: grid;
+  gap: 3px;
+  width: 12px;
+}
+
+.contact-quick-burger>span {
+  display: block;
+  height: 1.5px;
+  width: 12px;
+  background: white;
+  border-radius: 2px;
+  transition: transform .25s, opacity .25s;
+}
+
+.contact-quick.is-open .contact-quick-burger>span:nth-child(1) {
+  transform: translateY(4.5px) rotate(45deg);
+}
+
+.contact-quick.is-open .contact-quick-burger>span:nth-child(2) {
+  opacity: 0;
+}
+
+.contact-quick.is-open .contact-quick-burger>span:nth-child(3) {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+@media(max-width:1100px) {
+  .contact-quick {
+    right: 0;
+    width: calc(234px * var(--dial-scale) + 52px);
+  }
+
+  .contact-quick-panel {
+    width: calc(234px * var(--dial-scale));
+    height: 100%;
+    inset: 0 52px 0 auto;
+    padding: 0;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    animation: none;
+  }
+
+  .contact-quick-toggle {
+    right: -12px;
+    width: 40px;
+    height: 52px;
+    padding-right: 14px;
+    border-radius: 999px 0 0 999px;
+    border-right: 0;
+    box-shadow: -2px 3px 10px #00338025;
+}
+
+  .contact-quick-panel>.contact-quick-hours {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    width: 88px;
+    padding: 12px 6px;
+    border: 1px solid #ffffffaa;
+    border-radius: 7px;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s;
+  }
+
+  .contact-quick.is-open .contact-quick-panel>.contact-quick-hours {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .contact-quick-link,
+  .contact-quick-panel>.contact-quick-hours {
+    background: linear-gradient(110deg, #267fb9cc 0%, #267fb9cc 20%, #58b6bccc 50%, #267fb9cc 80%, #267fb9cc 100%);
+    background-size: 250% 100%;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+@media(max-width:1100px) and (prefers-reduced-motion:no-preference) {
+
+  .contact-quick-link,
+  .contact-quick-panel>.contact-quick-hours {
+    animation: header-gradient-flow 5s ease-in-out infinite alternate;
+  }
+}
+
+@media(max-width:1100px) and (max-height:600px) {
+  .contact-quick {
+    width: 264px;
+  }
+
+  .contact-quick-panel {
+    width: 212px;
+  }
+}

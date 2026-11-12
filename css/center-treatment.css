@@ -78,9 +78,12 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: 128px;
+  width: max-content;
+  min-width: 128px;
+  box-sizing: border-box;
   height: 40px;
-  padding: 0;
+  padding: 0 22px;
+  white-space: nowrap;
   border-radius: 0 0 8px 8px;
   background: var(--center-accent);
   color: #fff;
@@ -116,6 +119,7 @@
 }
 
 .center-treatment-toggle svg {
+  flex-shrink: 0;
   width: 12px;
   height: 12px;
   transition: transform .25s ease;
@@ -1188,6 +1192,16 @@
 }
 
 @media (max-width: 700px) {
+  .center-treatment :is(h3, h4, h5, h6, p, li, figcaption) {
+    min-width: 0;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .center-treatment .center-treatment-heading {
+    font-size: clamp(20px, 5.5vw, 26px);
+  }
+
   .center-treatment-comparison-matrix--badges thead th { height: auto; padding-block: 12px; font-size: 18px; }
   .center-treatment-comparison-badge { width: fit-content; min-width: 100px; margin-inline: auto; }
   .center-treatment-sequence.center-treatment-sequence--five { grid-template-columns: repeat(2, minmax(0, 200px)); gap: 32px 20px; }
@@ -1196,9 +1210,9 @@
   .center-treatment-comparison-matrix tbody tr { padding-bottom: 16px; }
   .center-treatment-comparison-matrix th:nth-child(2) { grid-column: 1 / -1; grid-row: 1; width: auto; padding: 8px 0; font-weight: 700; color: var(--center-blue); }
   .center-treatment-comparison-matrix thead td { display: none; }
-  .center-treatment-result-pair--mica { grid-template-columns: minmax(0, 1fr); max-width: 385px; gap: 24px; }
+  .center-treatment-result-pair--mica { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 620px; gap: 8px; }
   .center-treatment-benefit-grid--five { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .center-treatment-result-pair--grouped { grid-template-columns: minmax(0, 1fr); gap: 24px; max-width: 620px; }
+  .center-treatment-result-pair--grouped { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; max-width: 620px; }
   .center-treatment-subheading { font-size: 20px; }
   .center-treatment-sequence--three { grid-template-columns: minmax(0, 1fr); max-width: 300px; margin-inline: auto; }
   .center-treatment-benefit-grid--wrap > li { flex-basis: calc(50% - 10px); }

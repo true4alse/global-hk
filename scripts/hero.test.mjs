@@ -4,36 +4,27 @@ import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 
 const source = (await readFile(new URL('../js/hero.js', import.meta.url), 'utf8')).replace('export function', 'function');
-test('언어를 반복 변경해도 원본 7208로 카운트하고 쉼표로 표시한다', () => {
-  const classes = { add() {}, remove() {} };
-  const number = { textContent:'7,208', dataset:{}, classList:classes };
-  const statistic = { classList:classes, setAttribute() {} };
-  const hero = { querySelector:s => s === '.hero-number' ? number : statistic, querySelectorAll:() => [] };
-  const document = { documentElement:{lang:'ko'}, querySelector:() => hero };
-  const frames = new Map();
-  let id = 0;
-  let reduced = false;
-  const context = vm.createContext({
-    document, Intl, window:{ matchMedia:() => ({ matches:reduced, addEventListener() {}, removeEventListener() {} }), IntersectionObserver:true },
-    requestAnimationFrame:fn => { frames.set(++id,fn); return id; },
-    cancelAnimationFrame:key => frames.delete(key),
-    IntersectionObserver:class { constructor(fn) { this.fn=fn; } observe(target) { this.fn([{target,isIntersecting:true}]); } unobserve() {} disconnect() {} },
-  });
+test('Swiper 로드 실패 시에도 HTML 숫자와 번역된 접근성 문구를 유지한다', () => {
+  const number = { textContent: '2,500', dataset: { target: '2500' } };
+  const attributes = new Map();
+  const statistic = { setAttribute: (key, value) => attributes.set(key, value) };
+  const hero = { querySelector: selector => selector === '.hero-number' ? number : statistic };
+  const context = vm.createContext({ document: { querySelector: () => hero }, Intl, window: {} });
   vm.runInContext(source, context);
-  const tick = time => { const pending=[...frames.values()]; frames.clear(); pending.forEach(fn=>fn(time)); };
-  for (const lang of ['ko','ru','vi','ar','en']) {
-    document.documentElement.lang=lang;
-    vm.runInContext("renderHero({period:'연간',unit:'례'})",context);
-    tick(0);
-    assert.equal(number.textContent,'0');
-    tick(1200);
-    assert.equal(number.textContent,'6,307',lang+' 중간 애니메이션');
-    tick(2400);
-    assert.equal(number.textContent,'7,208',lang+' 최종 표기');
-    assert.equal(number.dataset.target,'7208');
+  for (const [period, unit] of [['연 간', '례'], ['Annually', 'cases'], ['Ежегодно', 'случаев']]) {
+    context.renderHero({ period, unit });
+    assert.equal(number.textContent, '2,500');
+    assert.equal(number.dataset.target, '2500');
+    assert.equal(attributes.get('aria-label'), `${period.replaceAll(' ', '')} 2,500 ${unit}`);
   }
-  reduced=true;
-  vm.runInContext("renderHero({period:'연간',unit:'례'})",context);
-  assert.equal(number.textContent,'7,208');
-  assert.equal(frames.size,0);
+});
+
+test('숫자는 번역 데이터가 아닌 HTML data-target에서 읽는다', () => {
+  const number = { textContent: '1,234', dataset: { target: '9876' } };
+  let label;
+  const hero = { querySelector: selector => selector === '.hero-number' ? number : { setAttribute: (_, value) => { label = value; } } };
+  const context = vm.createContext({ document: { querySelector: () => hero }, Intl, window: {} });
+  vm.runInContext(source, context);
+  context.renderHero({ period: 'Annual', unit: 'cases', number: 'wrong' });
+  assert.equal(label, 'Annual 9,876 cases');
 });
