@@ -515,3 +515,47 @@ button.contact-quick-link { font-family:inherit; cursor:pointer; padding:0; }
     width: 212px;
   }
 }
+
+/* Department menu and profile navigation share one responsive row. */
+.doctor-department-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: calc(100% - 240px);
+  margin: 0 auto 40px;
+}
+.doctor-department-controls .doctor-department-nav {
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+}
+.doctor-department-arrow {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #3dbabc;
+  border-radius: 50%;
+  background: white;
+  color: #279ea4;
+  cursor: pointer;
+  transition: background .2s, color .2s, box-shadow .2s;
+}
+.doctor-department-arrow[hidden] { display: none; }
+.doctor-department-arrow:hover { background: #3dbabc; color: white; box-shadow: 0 3px 12px #3dbabc40; }
+.doctor-department-arrow:focus-visible { outline: 2px solid #003380; outline-offset: 3px; }
+html[dir="rtl"] .doctor-department-arrow svg { transform: rotate(180deg); }
+@media (min-width:761px) and (max-width:1100px) {
+  .doctor-department-controls { max-width: calc(100% - 120px); }
+}
+@media (max-width:760px) {
+  .doctor-department-controls { max-width: calc(100% - 24px); gap: 6px; margin-bottom: 24px; }
+  .doctor-department-arrow {
+      flex-basis: 36px;
+      width: 36px;
+      height: 36px;
+  }
+}

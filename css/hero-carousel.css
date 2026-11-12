@@ -131,9 +131,9 @@
 }
 
 .hero :is(h1, h2, p) {
-  min-width: 0;
-  overflow-wrap: anywhere;
-  word-break: normal;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
 }
 
 .hero :is(h1, h2) {
