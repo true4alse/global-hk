@@ -40,15 +40,16 @@
 .knee-center-copy { position: relative; z-index: 2; width: 37.168%; margin-left: 15.565%; padding-top: 6.559%; }
 .knee-center-title-wrap { position: relative; display: grid; place-items: center; min-height: 10.672cqw; }
 .knee-center-title {
-  padding-top: .5726cqw;
-  font-size: 4.2166cqw;
-  font-weight: 700;
-  line-height: 1.19753;
-  text-align: center;
-  color: #e5c47e;
-  background: linear-gradient(110deg, #e2a443 0%, #ecd2aa 19%, #cb9c51 37%, #f4c560 54%, #c99035 73%, #efce9a 91%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+    padding-top: .5726cqw;
+    font-size: 4.2166cqw;
+    font-weight: 700;
+    line-height: 1.19753;
+    text-align: center;
+    color: #e5c47e;
+    background: linear-gradient(110deg, #e2a443 0%, #ecd2aa 19%, #cb9c51 37%, #f4c560 54%, #c99035 73%, #efce9a 91%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-wrap: balance;
 }
 .knee-center-title span { display: block; }
 .knee-center-laurel { position: absolute; top: 0; width: 18.627%; height: auto; }

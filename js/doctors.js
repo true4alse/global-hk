@@ -89,6 +89,17 @@ function initDoctorSlider(section, reduced) {
     toggle.classList.toggle('is-paused', paused);
   }
   dots.forEach((dot, i) => dot.addEventListener('click', () => swiper.slideToLoop(i)));
+  ['previous', 'next'].forEach(direction => {
+    const button = section.querySelector(`.doctor-department-${direction}`);
+    if (!button) return;
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      paused = true;
+      sync();
+      if (direction === 'previous') swiper.slidePrev();
+      else swiper.slideNext();
+    });
+  });
   departmentNav?.querySelectorAll('[data-doctor-target]').forEach(button => {
     button.addEventListener('click', () => {
       paused = true;

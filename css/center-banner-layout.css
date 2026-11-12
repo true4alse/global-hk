@@ -37,11 +37,12 @@
 .center-banner-copy { position: relative; width: 37.1681%; margin-left: 31.7022%; padding-top: 4.47684cqw; padding-bottom: 2.59766cqw; }
 .center-banner-title-wrap { position: relative; min-height: 10.6715cqw; display: grid; place-items: center; }
 .center-banner-title {
-  padding-top: .57262cqw;
-  font-size: 4.21655cqw;
-  font-weight: 700;
-  line-height: 1.19753;
-  text-align: center;
+    padding-top: .57262cqw;
+    font-size: 4.21655cqw;
+    font-weight: 700;
+    line-height: 1.19753;
+    text-align: center;
+    text-wrap: balance;
 }
 .center-banner-title, .center-banner-description {
   color: #d7bf86;
