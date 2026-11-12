@@ -213,7 +213,7 @@
         <div class="swiper-wrapper">
           <article class="hero-slide hero-slide--surgery swiper-slide" data-hero-slide="0"
             aria-labelledby="hero-minimal-title">
-            <div class="hero-background-layer">
+            <div class="hero-background-layer" data-swiper-parallax="18%">
               <picture>
                 <source media="(max-width: 760px)" srcset="./assets/hero/hero-1-mobile.webp"><img
                   class="hero-background" src="./assets/hero/hero-1-desktop.webp" alt="" width="3840" height="1942"
@@ -221,13 +221,11 @@
               </picture>
             </div>
             <div class="hero-surgery-content">
-              <h2 id="hero-minimal-title" class="hero-minimal-title hero-enter" data-hero="minimalTitle">최소절개 인공관절 수술
-              </h2>
-              <div class="hero-statistic" aria-label="연간 2,500례"
-                data-i18n-dynamic-label="HTML 숫자와 hero.period/unit로 조합">
+              <h2 id="hero-minimal-title" class="hero-minimal-title hero-enter" data-hero="minimalTitle">최소절개 인공관절 수술</h2>
+              <div class="hero-statistic" aria-label="2,500례"
+                data-i18n-dynamic-label="HTML 숫자와 hero.unit로 조합">
                 <img class="hero-rule" src="./assets/hero-line-start.svg" alt="" width="741" height="1">
                 <div class="hero-statistic-center" aria-hidden="true">
-                  <p class="hero-period" data-hero="period">연 간</p>
                   <span class="hero-number" data-count data-target="2500">2,500</span>
                   <span class="hero-unit" data-hero="unit">례</span>
                 </div>
@@ -235,21 +233,28 @@
               </div>
               <div class="hero-copy">
                 <h1 class="hero-title" id="hero-title" data-hero="title">어려운 관절 수술일수록, 경험이 중요합니다</h1>
-                <div class="hero-description">
-                  <p data-hero="descriptionFirst">흥K병원은 축적된 수술 경험과 지속적인 글로벌 의료 교류를 바탕으로 고난도 관절 수술부터 인공관절 재수술까지 전문적으로
-                    시행합니다.</p>
-                  <p data-hero="descriptionSecond">환자의 상태와 이전 치료 경험까지 세심하게 살피고, 더 어려운 수술에도 최선의 치료 방법을 찾을 수 있도록 관절 치료의
-                    전문성을 끊임없이 높여갑니다.</p>
+                <div class="hero-description" hidden>
+                  <p data-hero="descriptionFirst">흥K병원은 축적된 수술 경험과 지속적인 글로벌 의료 교류를 바탕으로 고난도 관절 수술부터 인공관절 재수술까지 전문적으로 시행합니다.</p>
+                  <p data-hero="descriptionSecond">환자의 상태와 이전 치료 경험까지 세심하게 살피고, 더 어려운 수술에도 최선의 치료 방법을 찾을 수 있도록 관절 치료의 전문성을 끊임없이 높여갑니다.</p>
                 </div>
               </div>
             </div>
           </article>
-          <article class="hero-slide hero-slide--or swiper-slide" data-hero-slide="1" aria-labelledby="hero-or-title"
+          <article class="hero-slide hero-slide--research swiper-slide" data-hero-slide="1" aria-labelledby="hero-research-title" data-figma-node="1837:4177">
+            <div class="hero-background-layer" data-swiper-parallax="18%"><picture>
+              <source media="(max-width: 760px)" srcset="./assets/hero/hero-2-mobile.webp">
+              <img class="hero-background" src="./assets/hero/hero-2-desktop.webp" alt="" width="3840" height="1942" decoding="async" draggable="false">
+            </picture></div>
+            <div class="hero-feature-copy">
+              <h2 id="hero-research-title" class="hero-feature-title hero-enter" data-i18n="hero.researchTitle" data-i18n-lines="">진료를 넘어 연구와 교육으로,<br>더 나은 일상으로.</h2>
+            </div>
+          </article>
+          <article class="hero-slide hero-slide--or swiper-slide" data-hero-slide="2" aria-labelledby="hero-or-title"
             data-figma-node="1775:3905">
-            <div class="hero-background-layer">
+            <div class="hero-background-layer" data-swiper-parallax="18%">
               <picture>
-                <source media="(max-width: 760px)" srcset="./assets/hero/hero-2-mobile.webp"><img
-                  class="hero-background" src="./assets/hero/hero-2-desktop.webp" alt="" width="3840" height="1942"
+                <source media="(max-width: 760px)" srcset="./assets/hero/hero-3-mobile.webp"><img
+                  class="hero-background" src="./assets/hero/hero-3-desktop.webp" alt="" width="3840" height="1942"
                   decoding="async" draggable="false">
               </picture>
             </div>
@@ -263,28 +268,9 @@
                   data-hero="orStaff">전문의 상주</strong></p>
             </div>
           </article>
-          <article class="hero-slide hero-slide--nursing swiper-slide" data-hero-slide="2"
+          <article class="hero-slide hero-slide--nursing swiper-slide" data-hero-slide="3"
             aria-labelledby="hero-nursing-title" data-figma-node="1768:3810">
-            <div class="hero-background-layer">
-              <picture>
-                <source media="(max-width: 760px)" srcset="./assets/hero/hero-3-mobile.webp"><img
-                  class="hero-background" src="./assets/hero/hero-3-desktop.webp" alt="" width="3840" height="1942"
-                  decoding="async" draggable="false">
-              </picture>
-            </div>
-            <p class="hero-brand hero-enter" aria-hidden="true"><span></span><span data-i18n-static="병원 영문 브랜드">HEUNG-K
-                HOSPITAL</span></p>
-            <div class="hero-feature-copy">
-              <h2 id="hero-nursing-title" class="hero-feature-title hero-enter"><span><span data-hero="nursingWards">전
-                    병동</span> <em data-hero="nursingHours">24시간</em></span><span data-hero="nursingService">간호간병
-                  통합서비스</span></h2>
-              <p class="hero-feature-description hero-enter" data-hero="nursingDescription">24시간 간호로 안심할 수 있는 입원 환경을
-                제공합니다.</p>
-            </div>
-          </article>
-          <article class="hero-slide hero-slide--rehab swiper-slide" data-hero-slide="3"
-            aria-labelledby="hero-rehab-title" data-figma-node="1775:3918">
-            <div class="hero-background-layer">
+            <div class="hero-background-layer" data-swiper-parallax="18%">
               <picture>
                 <source media="(max-width: 760px)" srcset="./assets/hero/hero-4-mobile.webp"><img
                   class="hero-background" src="./assets/hero/hero-4-desktop.webp" alt="" width="3840" height="1942"
@@ -294,20 +280,40 @@
             <p class="hero-brand hero-enter" aria-hidden="true"><span></span><span data-i18n-static="병원 영문 브랜드">HEUNG-K
                 HOSPITAL</span></p>
             <div class="hero-feature-copy">
-              <h2 id="hero-rehab-title" class="hero-feature-title hero-enter"><span data-hero="rehabLead">환자의 회복 단계를
-                  고려한</span><span><em data-hero="rehabPersonal">1:1 맞춤형</em> <span
+              <h2 id="hero-nursing-title" class="hero-feature-title hero-enter"><span><span data-hero="nursingWards">전 병동</span> <em data-hero="nursingHours">24시간</em></span><span data-hero="nursingService">간호간병 통합서비스</span></h2>
+              <p class="hero-feature-description hero-enter" data-hero="nursingDescription">24시간 간호로 안심할 수 있는 입원 환경을 제공합니다.</p>
+            </div>
+          </article>
+          <article class="hero-slide hero-slide--rehab swiper-slide" data-hero-slide="4"
+            aria-labelledby="hero-rehab-title" data-figma-node="1775:3918">
+            <div class="hero-background-layer" data-swiper-parallax="18%">
+              <picture>
+                <source media="(max-width: 760px)" srcset="./assets/hero/hero-5-mobile.webp"><img
+                  class="hero-background" src="./assets/hero/hero-5-desktop.webp" alt="" width="3840" height="1942"
+                  decoding="async" draggable="false">
+              </picture>
+            </div>
+            <p class="hero-brand hero-enter" aria-hidden="true"><span></span><span data-i18n-static="병원 영문 브랜드">HEUNG-K
+                HOSPITAL</span></p>
+            <div class="hero-feature-copy">
+              <h2 id="hero-rehab-title" class="hero-feature-title hero-enter"><span hidden data-hero="rehabLead">환자의 회복 단계를 고려한</span><span><em data-hero="rehabPersonal">1:1 맞춤형</em> <span
                     data-hero="rehabTreatment">재활치료</span></span></h2>
-              <p class="hero-feature-description hero-enter" data-hero="rehabDescription">개별 기능 평가를 바탕으로 체계적인 재활치료를 제공하여
-                신체 기능 회복과 일상생활 복귀를 돕습니다.</p>
-              <div class="hero-thumbnails hero-thumbnails--rehab hero-enter"><img class=""
-                  src="./assets/hero/hero-rehab-photo-1.webp" alt="맞춤형 재활치료 시설" data-i18n-alt="hero.rehabPhotoAlt"
-                  decoding="async" draggable="false"><img class="" src="./assets/hero/hero-rehab-photo-2.webp"
-                  alt="맞춤형 재활치료 시설" data-i18n-alt="hero.rehabPhotoAlt" decoding="async" draggable="false"><img class=""
-                  src="./assets/hero/hero-rehab-photo-3.webp" alt="맞춤형 재활치료 시설" data-i18n-alt="hero.rehabPhotoAlt"
-                  decoding="async" draggable="false"></div>
+              <p class="hero-feature-description hero-enter" data-hero="rehabDescription">개별 기능 평가를 바탕으로 체계적인 재활치료를 제공하여 신체 기능 회복과 일상생활 복귀를 돕습니다.</p>
             </div>
           </article>
         </div>
+      </div>
+      <div class="hero-sparkles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
       </div>
       <div class="hero-controls" hidden>
         <button type="button" class="hero-previous" aria-label="이전 슬라이드" data-i18n-label="hero.previous"><svg
@@ -317,9 +323,10 @@
         <div class="hero-dots">
           <button type="button" data-hero-go="0" aria-label="최소절개 인공관절 수술" data-i18n-label="hero.minimalTitle"
             aria-current="true"></button>
-          <button type="button" data-hero-go="1" aria-label="수술실 5개 운영" data-i18n-label="hero.orRooms"></button>
-          <button type="button" data-hero-go="2" aria-label="간호간병 통합서비스" data-i18n-label="hero.nursingService"></button>
-          <button type="button" data-hero-go="3" aria-label="재활치료" data-i18n-label="hero.rehabTreatment"></button>
+          <button type="button" data-hero-go="1" aria-label="진료를 넘어 연구와 교육으로, 더 나은 일상으로." data-i18n-label="hero.researchLabel"></button>
+          <button type="button" data-hero-go="2" aria-label="수술실 5개 운영" data-i18n-label="hero.orRooms"></button>
+          <button type="button" data-hero-go="3" aria-label="간호간병 통합서비스" data-i18n-label="hero.nursingService"></button>
+          <button type="button" data-hero-go="4" aria-label="재활치료" data-i18n-label="hero.rehabTreatment"></button>
         </div>
         <button type="button" class="hero-next" aria-label="다음 슬라이드" data-i18n-label="hero.next"><svg
             viewBox="0 0 24 24" aria-hidden="true">

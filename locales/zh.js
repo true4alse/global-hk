@@ -47,6 +47,8 @@ const nav = {
 
 // ── 07. 메인 비주얼 ──
 const hero = {
+    researchTitle: "超越诊疗，以科研与教育\n创造更美好的日常。",
+    researchLabel: "超越诊疗，以科研与教育 创造更美好的日常。",
   "period": "每年",
   "unit": "例",
   "title": "关节手术越复杂, 临床经验越重要",

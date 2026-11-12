@@ -47,13 +47,15 @@ const nav = {
 
 // ── 07. 메인 비주얼 ──
 const hero = {
+    researchTitle: "Beyond care, through research and education,\ntoward a better everyday life.",
+    researchLabel: "Beyond care, through research and education, toward a better everyday life.",
   "period": "Annually",
   "unit": "Cases",
   "title": "The More Complex the Joint Surgery, the More Experience Matters",
   "descriptionFirst": "With extensive surgical experience and ongoing international medical exchange, HEUNG-K Hospital specializes in complex joint surgery and revision joint replacement.",
   "descriptionSecond": "We carefully consider each patient's condition and treatment history, continuously advancing our expertise in joint treatment to find the best approach, even for complex surgical cases.",
   "carouselLabel": "HEUNG-K Hospital care highlights",
-  "minimalTitle": "Minimal-incision Joint Replacement",
+  "minimalTitle": "Minimally Invasive Total Knee Arthroplasty",
   "orKicker": "For safer surgery",
   "orClean": "High-cleanliness",
   "orRooms": "Five operating rooms",

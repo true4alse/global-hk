@@ -47,6 +47,8 @@ const nav = {
 
 // ── 07. 메인 비주얼 ──
 const hero = {
+    researchTitle: "Vượt trên điều trị, bằng nghiên cứu và đào tạo,\nhướng tới cuộc sống tốt đẹp hơn.",
+    researchLabel: "Vượt trên điều trị, bằng nghiên cứu và đào tạo, hướng tới cuộc sống tốt đẹp hơn.",
   "period": "Hằng năm",
   "unit": "Ca phẫu thuật",
   "title": "Phẫu thuật khớp càng khó, kinh nghiệm càng quan trọng",

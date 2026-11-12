@@ -7,7 +7,7 @@ export function renderHero(content) {
   const number = hero.querySelector('.hero-number');
   const target = Number(number.dataset.target ||= number.textContent.replaceAll(',', '').trim());
   const formatted = new Intl.NumberFormat('en-US').format(target);
-  hero.querySelector('.hero-statistic')?.setAttribute('aria-label', `${content.period.replaceAll(' ', '')} ${formatted} ${content.unit}`);
+  hero.querySelector('.hero-statistic')?.setAttribute('aria-label', `${formatted} ${content.unit}`);
   if (heroInstances.has(hero)) {
     heroInstances.get(hero).refresh();
     return;
@@ -22,6 +22,10 @@ export function renderHero(content) {
   let frame = 0, timer = 0, generation = 0;
   let previousRealIndex = 0;
 
+  function setPlaybackProgress(progress) {
+    hero.style.setProperty('--hero-playback-progress', `${Math.max(0, Math.min(1, progress)) * 100}%`);
+  }
+
   function finishCount() {
     clearTimeout(timer);
     cancelAnimationFrame(frame);
@@ -31,7 +35,7 @@ export function renderHero(content) {
     let started;
     function tick(now) {
       started ??= now;
-      const progress = Math.min((now - started) / 2200, 1);
+      const progress = Math.min((now - started) / 1700, 1);
       number.textContent = new Intl.NumberFormat('en-US').format(Math.round(target * (1 - (1 - progress) ** 3)));
       if (progress < 1) frame = requestAnimationFrame(tick);
     }
@@ -68,13 +72,19 @@ export function renderHero(content) {
     slide.classList.add('is-arrived');
     if (slide.contains(number) && !reduced.matches) {
       number.textContent = '0';
-      timer = setTimeout(countUp, 1900);
+      timer = setTimeout(countUp, 1150);
     }
   }
   function sync() {
     const play = visible && !document.hidden && !paused && !focused && !hovered && !reduced.matches;
-    if (play && !swiper.autoplay.running) swiper.autoplay.start();
-    if (!play && swiper.autoplay.running) swiper.autoplay.stop();
+    if (reduced.matches) {
+      if (swiper.autoplay.running) swiper.autoplay.stop();
+      setPlaybackProgress(0);
+    } else {
+      if (play && !swiper.autoplay.running) swiper.autoplay.start();
+      else if (play && swiper.autoplay.paused && !swiper.animating) swiper.autoplay.resume();
+      if (!play && swiper.autoplay.running && !swiper.autoplay.paused) swiper.autoplay.pause();
+    }
     swiper.params.speed = reduced.matches ? 0 : 850;
     toggle.disabled = reduced.matches;
     toggle.setAttribute('aria-label', paused ? toggle.dataset.play : toggle.dataset.pause);
@@ -83,19 +93,33 @@ export function renderHero(content) {
   const swiper = new window.Swiper(region, {
     init: false, slidesPerView: 1, spaceBetween: 0, loop: true,
     autoHeight: false, speed: reduced.matches ? 0 : 850,
-    autoplay: { delay: 10000, disableOnInteraction: false },
+    parallax: true,
+    autoplay: { delay: 5000, disableOnInteraction: false },
     a11y: false,
   });
+  swiper.on('autoplayTimeLeft', (_instance, _timeLeft, remaining) => {
+    if (swiper.autoplay.running && !swiper.autoplay.paused && !swiper.animating) {
+      setPlaybackProgress(1 - remaining);
+    }
+  });
+  // Swiper also resumes after transitions/tab visibility changes; keep the
+  // user's pause, hover, keyboard focus and offscreen state authoritative.
+  swiper.on('autoplayResume', sync);
   swiper.on('slideChange', () => {
     // Loop initialization and layout updates can emit slideChange for the
     // same slide. Only a genuine departure should finish its first reveal.
     if (swiper.realIndex !== previousRealIndex) {
+      setPlaybackProgress(0);
       resetArrival();
       previousRealIndex = swiper.realIndex;
     }
     markCurrent();
   });
+  // Start the reveal during travel so the incoming background is visible
+  // while its independent parallax layer moves into place.
+  swiper.on('slideChangeTransitionStart', arrive);
   swiper.on('slideChangeTransitionEnd', arrive);
+  swiper.on('slideChangeTransitionEnd', sync);
   // Startup resize/update can invalidate a pending decode without transitionEnd.
   swiper.on('resize', () => queueMicrotask(arrive));
   swiper.on('update', () => queueMicrotask(arrive));
@@ -111,7 +135,7 @@ export function renderHero(content) {
   hero.querySelector('.hero-previous').addEventListener('click', () => swiper.slidePrev());
   dots.forEach(dot => dot.addEventListener('click', () => swiper.slideToLoop(Number(dot.dataset.heroGo))));
   toggle.addEventListener('click', () => { paused = !paused; sync(); });
-  hero.addEventListener('focusin', () => { focused = true; sync(); });
+  hero.addEventListener('focusin', event => { focused = event.target !== toggle; sync(); });
   hero.addEventListener('focusout', event => { if (!hero.contains(event.relatedTarget)) { focused = false; sync(); } });
   hero.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovered = true; sync(); } });
   hero.addEventListener('pointerleave', () => { hovered = false; sync(); });

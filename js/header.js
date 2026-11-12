@@ -125,6 +125,9 @@ const headerNav = header.querySelector('.header-nav');
 let previousScroll = Math.max(0, window.scrollY);
 let directionDistance = 0;
 let framePending = false;
+const desktopHeader = window.matchMedia('(min-width: 761px)');
+let headerHovered = false;
+let restoreCompactOnLeave = false;
 function showHeaderTop(show) {
   header.classList.toggle('is-compact', !show);
   headerTop.inert = !show;
@@ -137,6 +140,25 @@ function measureHeader() {
 measureHeader();
 new ResizeObserver(measureHeader).observe(header);
 new ResizeObserver(measureHeader).observe(headerNav);
+header.addEventListener('pointerenter', event => {
+  if (event.pointerType !== 'mouse' || !desktopHeader.matches) return;
+  restoreCompactOnLeave = header.classList.contains('is-compact');
+  headerHovered = true;
+  showHeaderTop(true);
+});
+header.addEventListener('pointerleave', () => {
+  if (!headerHovered) return;
+  headerHovered = false;
+  const keyboardFocus = header.contains(document.activeElement) && document.activeElement.matches(':focus-visible');
+  if (restoreCompactOnLeave && window.scrollY > headerTop.offsetHeight && panel.hidden && !keyboardFocus) {
+    showHeaderTop(false);
+  }
+  restoreCompactOnLeave = false;
+});
+desktopHeader.addEventListener('change', () => {
+  headerHovered = false;
+  restoreCompactOnLeave = false;
+});
 window.addEventListener('scroll', () => {
   if (framePending) return;
   framePending = true;
@@ -146,6 +168,7 @@ window.addEventListener('scroll', () => {
     const delta = current - previousScroll;
     previousScroll = current;
     if (current <= 12) {
+      restoreCompactOnLeave = false;
       showHeaderTop(true);
       directionDistance = 0;
       return;
@@ -154,12 +177,16 @@ window.addEventListener('scroll', () => {
     directionDistance = Math.sign(delta) === Math.sign(directionDistance) ? directionDistance + delta : delta;
     // 미세한 스크롤에는 반응하지 않아 헤더가 떨리지 않도록 합니다.
     if (Math.abs(directionDistance) < 8) return;
-    if (directionDistance < 0) showHeaderTop(true);
+    if (directionDistance < 0) {
+      restoreCompactOnLeave = false;
+      showHeaderTop(true);
+    }
     else if (current > headerTop.offsetHeight && panel.hidden) {
       // 언어 선택 후 마우스 포커스가 버튼에 남아도 스크롤 숨김을 막지 않습니다.
       // 키보드로 조작 중인 경우에만 포커스가 화면 밖으로 사라지지 않도록 유지합니다.
       const keyboardFocus = headerTop.contains(document.activeElement) && document.activeElement.matches(':focus-visible');
-      if (!keyboardFocus) showHeaderTop(false);
+      if (headerHovered) restoreCompactOnLeave = true;
+      else if (!keyboardFocus) showHeaderTop(false);
     }
     directionDistance = 0;
   });
