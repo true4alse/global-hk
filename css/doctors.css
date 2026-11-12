@@ -1,3 +1,5 @@
+/* RTL counts negative reveal offsets toward the page's scrollable width. */
+html:lang(ar) .doctors { overflow-x: clip; }
 .doctors {
   --doctors-mint: #36b6bb;
   padding-top: clamp(90px, 8vw, 160px);
@@ -212,7 +214,7 @@
 
 .doctor-modal header {
   position: absolute;
-  left: 53.731%;
+  inset-inline-start: 53.731%;
   top: 29.602cqw;
   width: 40%;
 }
@@ -261,18 +263,48 @@
 
 .doctor-modal-close {
   position: sticky;
+  display: grid;
+  place-items: center;
   float: right;
   top: 8px;
   margin: 8px 8px -48px 0;
   z-index: 2;
   width: 40px;
   height: 40px;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   font-size: 28px;
   background: #fff;
   color: #111;
   cursor: pointer;
+}
+
+/* Draw the close mark independently of each language font's baseline. */
+.doctor-modal-close > span {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+  font-size: 0;
+  line-height: 0;
+}
+
+.doctor-modal-close > span::before,
+.doctor-modal-close > span::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.doctor-modal-close > span::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .doctor-modal-close:focus-visible,
@@ -301,6 +333,10 @@
 
 .doctor-name span {
   font-weight: 100;
+}
+
+.doctor-name > [data-doctor-prefix] {
+  order: -1;
 }
 
 .doctor-detail {
@@ -348,7 +384,7 @@
 
 .doctor-career-columns li {
   position: relative;
-  padding-left: 13px;
+  padding-inline-start: 13px;
   margin-bottom: 8px;
   font-size: 16px;
   line-height: 1.45;
@@ -358,7 +394,7 @@
 
 .doctor-career-marker {
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: 0;
 }
 
@@ -622,7 +658,7 @@
     left: auto;
     top: auto;
     width: auto;
-    margin-top: 39.055cqw;
+    margin-top: 24px;
     padding-right: 16px;
   }
 
@@ -691,20 +727,23 @@
   .doctor-slider.swiper-initialized .doctor-mobile-more {
     display: grid;
     place-items: center;
-    position: absolute;
-    left: 24.876cqw;
-    top: -15px;
+    position: relative;
+    margin-block-start: 12px;
     width: 44px;
     height: 44px;
     padding: 0;
     border: 0;
-    background: transparent;
-    color: #000;
+    border-radius: 50%;
+    background: #38b7bb;
+    color: #fff;
     cursor: pointer;
   }
 
   .doctor-mobile-more img {
     display: block;
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
   }
 }
 

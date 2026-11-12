@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+
+<head>
+
+  <script async src="https://www.googletagmanager.com/gtm.js?id=G-FX1TRZPZTB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+  </script>
+  <meta name="naver-site-verification" content="0d2d363aa125eca02721c1ca020cfd2fa330f9ce" />
+
+
+  <meta charset="utf-8">
+  <base href="./">
+  <script>
+    // Keep asset paths relative to the site folder, including /ko/ and GitHub Pages /repository/.
+    (() => {
+      const path = location.pathname;
+      const root = path.replace(/\/(ko|en|zh|ja|ru|mn|hi|ar|vi)(?:\/index\.html)?\/?$/, '/');
+      document.querySelector('base').setAttribute('href', root !== path ? root : path.slice(0, path.lastIndexOf('/') + 1));
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO:START -->
+  <title data-i18n="seo.title">흥K병원 | 관절·척추 진료 및 국제환자 안내</title>
+  <meta name="description" content="경기도 시흥시 흥K병원의 무릎·어깨·손발·척추 진료, 의료진과 시설을 확인하세요. 국제환자를 위한 진료예약, 방문 및 의료서비스 안내를 제공합니다.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://heungkglobal.com/ko/">
+  <link rel="alternate" hreflang="ko" href="https://heungkglobal.com/ko/">
+  <link rel="alternate" hreflang="en" href="https://heungkglobal.com/en/">
+  <link rel="alternate" hreflang="zh" href="https://heungkglobal.com/zh/">
+  <link rel="alternate" hreflang="ja" href="https://heungkglobal.com/ja/">
+  <link rel="alternate" hreflang="ru" href="https://heungkglobal.com/ru/">
+  <link rel="alternate" hreflang="mn" href="https://heungkglobal.com/mn/">
+  <link rel="alternate" hreflang="hi" href="https://heungkglobal.com/hi/">
+  <link rel="alternate" hreflang="vi" href="https://heungkglobal.com/vi/">
+  <link rel="alternate" hreflang="ar" href="https://heungkglobal.com/ar/">
+  <link rel="alternate" hreflang="x-default" href="https://heungkglobal.com/en/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HEUNG-K Hospital">
+  <meta property="og:title" content="흥K병원 | 관절·척추 진료 및 국제환자 안내">
+  <meta property="og:description"
+    content="경기도 시흥시 흥K병원의 무릎·어깨·손발·척추 진료, 의료진과 시설을 확인하세요. 국제환자를 위한 진료예약, 방문 및 의료서비스 안내를 제공합니다.">
+  <meta property="og:url" content="https://heungkglobal.com/ko/">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:image" content="https://heungkglobal.com/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="HEUNG-K Hospital">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="흥K병원 | 관절·척추 진료 및 국제환자 안내">
+  <meta name="twitter:description"
+    content="경기도 시흥시 흥K병원의 무릎·어깨·손발·척추 진료, 의료진과 시설을 확인하세요. 국제환자를 위한 진료예약, 방문 및 의료서비스 안내를 제공합니다.">
+  <meta name="twitter:image" content="https://heungkglobal.com/assets/social-preview.png">
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@type":"Hospital","@id":"https://heungkglobal.com/#hospital","name":"흥K병원","alternateName":"HEUNG-K Hospital","url":"https://heungkglobal.com/","logo":"https://heungkglobal.com/assets/logo-symbol.png","image":"https://heungkglobal.com/assets/social-preview.png","telephone":"1551-1119","address":{"@type":"PostalAddress","streetAddress":"능곡번영길 22","addressLocality":"시흥시","addressRegion":"경기도","addressCountry":"KR"},"sameAs":["https://www.youtube.com/@Heung_K","https://blog.naver.com/heung-k","https://pf.kakao.com/_eGxoxmb"]}</script>
+  <!-- SEO:END -->
+  <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/hero.css">
+  <link rel="stylesheet" href="./css/hero-carousel.css">
+  <link rel="stylesheet" href="./css/about.css">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/hss.css">
+  <link rel="stylesheet" href="./css/apkass.css">
+  <link rel="stylesheet" href="./css/mis.css">
+  <link rel="stylesheet" href="./css/treatment.css">
+  <link rel="stylesheet" href="./css/incision.css">
+  <link rel="stylesheet" href="./css/cadaver.css">
+  <link rel="stylesheet" href="./assets/vendor/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/research.css">
+  <link rel="stylesheet" href="./css/specialty.css">
+  <link rel="stylesheet" href="./css/knee-center.css">
+  <link rel="stylesheet" href="./css/center-banner.css">
+  <link rel="stylesheet" href="./css/center-banner-layout.css">
+  <link rel="stylesheet" href="./css/hand-foot-center.css">
+  <link rel="stylesheet" href="./css/spine-center.css">
+  <link rel="stylesheet" href="./css/center-treatment.css">
+  <link rel="stylesheet" href="./css/doctors.css">
+  <link rel="stylesheet" href="./css/facilities.css">
+  <script defer src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script type="module" src="./js/header.js?v=20261007"></script>
+  <link rel="stylesheet" href="./css/service-360.css">
+  <link rel="stylesheet" href="./css/reservation.css">
+  <link rel="stylesheet" href="./css/customer-center.css">
+  <link rel="stylesheet" href="./css/contact.css">
+  <link rel="stylesheet" href="./css/center-menu.css">
+  <link rel="stylesheet" href="./css/section-rails.css">
+  <link rel="stylesheet" href="./css/language-fonts.css">
+  <link rel="stylesheet" href="./css/scroll-motion.css">
+  <link rel="stylesheet" href="./css/interactions.css">
+  <link rel="stylesheet" href="./css/quick-menu.css">
+  <style>
+    .header-inquiry-icon {
+      display: none;
+    }
+
+    @media (max-width: 760px) {
+      .header-inquiry-icon {
+        display: block;
+      }
+
+      /* Keep the existing menu name available to screen readers. */
+      .header-inquiry-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+    }
+  </style>

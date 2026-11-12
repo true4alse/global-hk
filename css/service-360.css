@@ -251,6 +251,8 @@
   color:var(--service-mint);
 }
 .service360-hotels {
+  /* Match Swiper's drag coordinates to the continuous leftward photo motion. */
+  direction:ltr;
   margin-top:3.8cqw;
   overflow-x:auto;
   overscroll-behavior-x:contain;
@@ -288,6 +290,9 @@
   line-height:1.2;
   text-align:center;
   word-break:normal;
+}
+html:lang(ar) .service360-hotel figcaption {
+  direction:rtl;
 }
 [data-service360-reveal] {
   transition:opacity 1.6s ease,transform 1.6s cubic-bezier(.22,.61,.36,1);

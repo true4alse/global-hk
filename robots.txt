@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /config/
+Disallow: /private/
+Disallow: /php/
+Disallow: /scripts/
+Disallow: /deploy/
+Disallow: /tmp/
+Disallow: /docs/
+Disallow: /output/
+
+Sitemap: https://heungkglobal.com/sitemap.xml

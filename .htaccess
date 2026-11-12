@@ -6,5 +6,12 @@ DirectoryIndex index.html
 </FilesMatch>
 
 RewriteEngine On
-# Language URLs share the HTML entry point, including after a refresh.
+# Normalize only the production host; local/subfolder previews remain unchanged.
+RewriteCond %{HTTP_HOST} ^(?:www\.)?heungkglobal\.com$ [NC]
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://heungkglobal.com%{REQUEST_URI} [R=301,L]
+
+# Serve generated language directories. Retain a fallback for unbuilt previews.
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html !-f
 RewriteRule ^(ko|en|zh|ja|ru|mn|hi|ar|vi)/?$ index.html [END]

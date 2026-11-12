@@ -58,3 +58,21 @@
     animation: ambient-decoration-focus 1.2s ease-out 1.4s both;
   }
 }
+
+/* RTL negative-X reveals must not expand the page beyond its left edge.
+   Clip preserves vertical sticky positioning and nested horizontal carousels. */
+html[dir="rtl"] body { overflow-x: clip; }
+@media (prefers-reduced-motion: no-preference) {
+  html[dir="rtl"] :is(.contact-reveal-pending, .customer-reveal-pending,
+    .doctors-reveal-pending, .service360-reveal-pending, .research-pending:not(.research-shown),
+    .incision-pending:not(.incision-shown), .cadaver-pending:not(.cadaver-shown), .mis-pending:not(.mis-shown)[data-mis-reveal],
+    .global-pending:not(.global-shown)[data-global-reveal], .treatment-pending:not(.treatment-shown):not([data-treatment-reveal="up"])) {
+    transform: translateX(36px);
+  }
+  html[dir="rtl"] :is(.apkass-reveal-pending,
+    .knee-center-pending:not(.knee-center-shown),
+    .center-banner-pending:not(.center-banner-shown):not([data-center-banner-reveal="up"]),
+    .center-treatment-reveal-pending:not(.center-treatment-reveal-shown)) { translate: 36px 0; }
+  html[dir="rtl"] .scroll-motion-pending .center-treatment-copy { translate: 36px 0; }
+  html[dir="rtl"] .footer-logo.scroll-motion-pending { translate: 40px 0; }
+}

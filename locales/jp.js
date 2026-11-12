@@ -37,12 +37,12 @@ const homeLabel = "Heung-K病院のホームページ";
 
 // ── 06. 상단 내비게이션 ──
 const nav = {
-  "about": "ABOUT HEUNG-K",
-  "specialties": "SPECIALTIES",
-  "doctors": "OUR DOCTORS",
-  "facilities": "FACILITIES",
-  "inquiry": "INQUIRY",
-  "location": "LOCATION"
+  "about": "病院紹介",
+  "specialties": "専門診療",
+  "doctors": "医師紹介",
+  "facilities": "院内施設",
+  "inquiry": "お問い合わせ",
+  "location": "アクセス"
 };
 
 // ── 07. 메인 비주얼 ──
@@ -51,7 +51,28 @@ const hero = {
   "unit": "件",
   "title": "難易度の高い関節手術ほど、豊富な経験が重要です",
   "descriptionFirst": "Heung-K病院は、豊富な手術経験と継続的な国際医療交流を活かし、高難度の関節手術や人工関節再置換術に取り組んでいます。",
-  "descriptionSecond": "患者様の状態や治療歴を丁寧に確認し、難しい症例にも適切な治療を提案できるよう専門性を磨いています。"
+  "descriptionSecond": "患者様の状態や治療歴を丁寧に確認し、難しい症例にも適切な治療を提案できるよう専門性を磨いています。",
+  "carouselLabel": "Heung-K病院の診療の特徴",
+  "minimalTitle": "小切開による人工関節置換術",
+  "orKicker": "安全な手術のために",
+  "orClean": "高い清浄度を保つ",
+  "orRooms": "5室の手術室を運用",
+  "orSpecialty": "麻酔疼痛医学科",
+  "orStaff": "専門医が常駐",
+  "nursingWards": "全病棟で",
+  "nursingHours": "24時間",
+  "nursingService": "看護・介護統合サービス",
+  "nursingDescription": "24時間の看護で、安心して療養できる入院環境を提供します。",
+  "rehabLead": "患者様の回復段階に合わせた",
+  "rehabPersonal": "マンツーマンの個別",
+  "rehabTreatment": "リハビリテーション",
+  "rehabDescription": "個々の機能評価に基づく体系的なリハビリテーションにより、身体機能の回復と日常生活への復帰を支援します。",
+  "orPhotoAlt": "手術室で手術を行う医療チーム",
+  "rehabPhotoAlt": "個別リハビリテーションのための設備",
+  "previous": "前のスライド",
+  "next": "次のスライド",
+  "pause": "自動再生を停止",
+  "play": "自動再生を開始"
 };
 
 // ── 08. About HEUNG-K · 병원 소개 ──
@@ -252,7 +273,7 @@ const cadaver = {
   "title": "低侵襲・個別化人工関節置換術の国際研修センター",
   "word": "CADAVER",
   "workshopLabel": "MIS TKA CADAVER WORKSHOP",
-  "workshop": "2025年CADAVER WORKSHOPを開催",
+  "workshop": "2025年・2026年の2年連続でカダバーワークショップを盛況のうちに開催",
   "training": "最小切開による人工膝関節置換術の手術手技研修",
   "hospital": "Heung-K病院",
   "descriptionFirst": "では、国内外の整形外科専門医を対象にCADAVER WORKSHOPを開催し、",
@@ -1332,7 +1353,7 @@ const contact = {
   "gimpoAlt": "金浦国際空港の全景",
   "gimpo": "金浦国際空港",
   "gimpoTime": "30分",
-  "gimpoRail": "인천공항 제1터미널 또는 제2터미널에서 공항철도 일반열차 이용",
+  "gimpoRail": "西海線に乗り、9駅先の始興陵谷駅で下車して、3番出口をご利用ください。",
   "gimpoStep0": "金浦空港駅から元時方面行きの西海線に乗車",
   "gimpoStep1": "9駅先の始興陵谷駅で下車",
   "gimpoStep2": "始興陵谷駅で下車し、3番出口をご利用ください",
@@ -1353,7 +1374,39 @@ const contact = {
 };
 
 // 사이트 연결용: 위 문구들을 기존 번역 키 구조로 모읍니다. 이 아래는 수정하지 않습니다.
+const quickMenu = {
+  "label": "クイックメニュー",
+  "open": "クイックメニューを開く",
+  "close": "クイックメニューを閉じる",
+  "phone": "電話で問い合わせ",
+  "reserve": "診療予約",
+  "email": "メールで問い合わせ",
+  "hours": "診療時間",
+  "weekdays": "月〜金",
+  "saturday": "土曜日"
+};
+
+const doctorMenu = {
+  "label": "診療科別に医師を選択",
+  "knee": "膝関節センター",
+  "shoulder": "肩関節センター",
+  "handFoot": "手・足センター",
+  "spine": "脊椎センター",
+  "internal": "内科",
+  "radiology": "放射線科",
+  "anesthesia": "麻酔科・疼痛科"
+};
+
+// 검색 결과 및 공유 미리보기 문구. 기존 본문 번역은 유지합니다.
+const seo = {
+  "title": "Heung-K病院 | 韓国の関節・脊椎診療と海外患者サポート",
+  "description": "韓国・京畿道始興市のHeung-K病院。膝・肩・手足・脊椎の診療、医師紹介、院内設備のほか、海外からの患者様向けに診療予約やアクセスをご案内します。"
+};
+
 export default {
+  seo,
+  quickMenu,
+  doctorMenu,
   pageTitle,
   languageLabel,
   header,

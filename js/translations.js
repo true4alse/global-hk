@@ -32,7 +32,7 @@ const koreanHtmlText = new WeakMap();
 export function applyTranslations(content, root = document) {
   function translateText(element, key) {
     const useHtmlSource = element.getAttribute('data-i18n-ko-source') === 'html';
-    if (useHtmlSource && !koreanHtmlText.has(element)) koreanHtmlText.set(element, element.textContent);
+    if (useHtmlSource && !koreanHtmlText.has(element)) koreanHtmlText.set(element, element.getAttribute('data-i18n-ko-text') ?? element.textContent);
     const language = root.documentElement?.lang || root.ownerDocument?.documentElement?.lang;
     const value = useHtmlSource && language === 'ko'
       ? koreanHtmlText.get(element)
@@ -41,6 +41,11 @@ export function applyTranslations(content, root = document) {
     if (typeof value !== 'string' || [...element.children].some(child => child.tagName !== 'BR')) return;
     element.textContent = value;
     element.toggleAttribute('data-i18n-lines', value.includes('\n'));
+    // These are forms of address, unlike job titles such as Medical Director.
+    // Mark their position without editing locale text or moving the HTML nodes.
+    if (/^doctors\.profiles\.\d+\.role$/.test(key)) {
+      element.toggleAttribute('data-doctor-prefix', /^(Dr\.?|د\.|डॉक्टर)$/u.test(value.trim()));
+    }
   }
   for (const [attribute, group] of Object.entries(sectionAttributes)) {
     root.querySelectorAll(`[${attribute}]`).forEach(element => {

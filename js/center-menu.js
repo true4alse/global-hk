@@ -1,6 +1,7 @@
 export function renderCenterMenu() {
   const menu = document.querySelector('.center-menu');
   const header = document.querySelector('.site-header');
+  const contactMenu = document.querySelector('.contact-quick');
   if (!menu || !header) return;
   const headerTop = header.querySelector('.header-top');
   const mobile = matchMedia('(max-width: 760px)');
@@ -14,6 +15,7 @@ export function renderCenterMenu() {
     const visibleHeader = mobile.matches && headerTop ? headerTop : header;
     const top = Math.max(0, visibleHeader.getBoundingClientRect().bottom) + 12;
     menu.style.setProperty('--center-menu-top', `${top}px`);
+    contactMenu?.style.setProperty('--contact-menu-top', `${top}px`);
     let current = 0;
     sections.forEach((section, i) => {
       if (section && section.getBoundingClientRect().top <= Math.max(top + 80, innerHeight * .4)) current = i;

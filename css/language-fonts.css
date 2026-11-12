@@ -62,3 +62,32 @@ html:is([lang="zh"], [lang="ja"], [lang="ru"], [lang="mn"], [lang="hi"], [lang="
 }
 /* 위 디자인 타이틀·숫자는 각 섹션의 원래 Playfair 세리프를 상속합니다.
    global-title의 민트색 H/S/S는 기존 산세리프 규칙을 그대로 유지합니다. */
+
+/* CJK prose can wrap between characters; Korean keep-all must not enlarge these layouts. */
+html:is([lang="zh"], [lang="ja"]) :is(
+  .about h2, .about p, .global-lead, .global-description,
+  .global-award-detail, .global-award-date,
+  .research h2, .research-description, .reservation-header > p,
+  .facilities-heading > p:last-child,
+  .apkass-session h3, .apkass-founder-copy h3
+) {
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Narrow screens must retain the full translated copy, including long unspaced words. */
+@media (max-width: 760px) {
+  :is(.cadaver, .research-heading, .service360, .contact-route) :is(h2, h3, h4, p, li) {
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+  html:is([lang="zh"], [lang="ja"]) :is(.cadaver, .research-heading, .service360, .contact-route) :is(h2, h3, h4, p, li) {
+    word-break: normal;
+  }
+  .contact-route { grid-template-columns: minmax(0, 1fr); }
+  .contact-route > *, .contact-route-heading > *, .contact-address > * { min-width: 0; }
+  .contact-address { max-width: 100%; overflow-wrap: anywhere; }
+  .contact-address svg { flex-shrink: 0; }
+  .contact-duration { max-width: 100%; }
+  .contact-time { overflow-wrap: anywhere; min-width: 0; }
+}

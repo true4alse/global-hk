@@ -51,7 +51,28 @@ const hero = {
   "unit": "Cases",
   "title": "The More Complex the Joint Surgery, the More Experience Matters",
   "descriptionFirst": "With extensive surgical experience and ongoing international medical exchange, HEUNG-K Hospital specializes in complex joint surgery and revision joint replacement.",
-  "descriptionSecond": "We carefully consider each patient's condition and treatment history, continuously advancing our expertise in joint treatment to find the best approach, even for complex surgical cases."
+  "descriptionSecond": "We carefully consider each patient's condition and treatment history, continuously advancing our expertise in joint treatment to find the best approach, even for complex surgical cases.",
+  "carouselLabel": "HEUNG-K Hospital care highlights",
+  "minimalTitle": "Minimal-incision Joint Replacement",
+  "orKicker": "For safer surgery",
+  "orClean": "High-cleanliness",
+  "orRooms": "Five operating rooms",
+  "orSpecialty": "Anesthesiology",
+  "orStaff": "Specialists on site",
+  "nursingWards": "Across all wards",
+  "nursingHours": "24-hour",
+  "nursingService": "Integrated Nursing and Care",
+  "nursingDescription": "Round-the-clock nursing provides a reassuring environment throughout your hospital stay.",
+  "rehabLead": "Rehabilitation tailored to your stage of recovery",
+  "rehabPersonal": "One-to-one personalized",
+  "rehabTreatment": "Rehabilitation",
+  "rehabDescription": "Based on individual functional assessments, our structured rehabilitation helps restore physical function and supports a return to everyday life.",
+  "orPhotoAlt": "Medical team performing surgery in an operating room",
+  "rehabPhotoAlt": "Facilities for personalized rehabilitation",
+  "previous": "Previous slide",
+  "next": "Next slide",
+  "pause": "Pause automatic slides",
+  "play": "Play automatic slides"
 };
 
 // ── 08. About HEUNG-K · 병원 소개 ──
@@ -252,7 +273,7 @@ const cadaver = {
   "title": "International Training Center for Minimally Invasive and Patient-Specific Joint Replacement",
   "word": "CADAVER",
   "workshopLabel": "MIS TKA CADAVER WORKSHOP",
-  "workshop": "Successful Hosting of the 2025 Cadaver Workshop",
+  "workshop": "Cadaver Workshops Successfully Held for Two Consecutive Years, 2025 and 2026",
   "training": "Training in Minimally Invasive Total Knee Arthroplasty",
   "hospital": "HEUNG-K Hospital ",
   "descriptionFirst": "hosts cadaver workshops for orthopedic surgeons from Korea and abroad,",
@@ -1332,7 +1353,7 @@ const contact = {
   "gimpoAlt": "View of Gimpo International Airport",
   "gimpo": "Gimpo International Airport",
   "gimpoTime": "30 Minutes",
-  "gimpoRail": "김포공항 문구로",
+  "gimpoRail": "Take the Seohae Line to Siheung Neunggok Station, travel 9 stops, and use Exit 3.",
   "gimpoStep0": "Take the Seohae Line toward Wonsi from Gimpo International Airport Station.",
   "gimpoStep1": "Travel 9 stops and get off at Siheung Neunggok Station.",
   "gimpoStep2": "Get off at Siheung Neunggok Station and take Exit 3.",
@@ -1353,7 +1374,39 @@ const contact = {
 };
 
 // 사이트 연결용: 위 문구들을 기존 번역 키 구조로 모읍니다. 이 아래는 수정하지 않습니다.
+const quickMenu = {
+  "label": "Quick menu",
+  "open": "Open quick menu",
+  "close": "Close quick menu",
+  "phone": "Call us",
+  "reserve": "Appointment",
+  "email": "Email us",
+  "hours": "Opening hours",
+  "weekdays": "MON–FRI",
+  "saturday": "SAT"
+};
+
+const doctorMenu = {
+  "label": "Choose doctors by department",
+  "knee": "Knee Center",
+  "shoulder": "Shoulder Center",
+  "handFoot": "Hand & Foot Center",
+  "spine": "Spine Center",
+  "internal": "Internal Medicine",
+  "radiology": "Radiology",
+  "anesthesia": "Anesthesiology & Pain Medicine"
+};
+
+// 검색 결과 및 공유 미리보기 문구. 기존 본문 번역은 유지합니다.
+const seo = {
+  "title": "HEUNG-K Hospital | Joint & Spine Care in Korea",
+  "description": "Explore knee, shoulder, hand, foot and spine care at HEUNG-K Hospital in Siheung, Korea. Meet our doctors and find appointments, facilities and international patient services."
+};
+
 export default {
+  seo,
+  quickMenu,
+  doctorMenu,
   pageTitle,
   languageLabel,
   header,

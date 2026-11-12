@@ -106,3 +106,63 @@
   .center-banner-affiliation figcaption { font-size: 12px; }
   .center-banner-doctor { width: min(300px, 88%); margin-top: 24px; }
 }
+
+/* Reserve separate columns for the laurels and translated titles in all centers. */
+:is(.knee-center-title-wrap, .center-banner-title-wrap) {
+  grid-template-columns: 18.627% minmax(0, 1fr) 18.627%;
+  column-gap: 2%;
+  padding-inline: 0;
+  direction: ltr;
+}
+:is(.knee-center-title-wrap, .center-banner-title-wrap) > img {
+  position: static;
+  width: 100%;
+  height: auto;
+  align-self: center;
+}
+:is(.knee-center-title, .center-banner-title) {
+  min-width: 0;
+  max-width: 100%;
+  font-size: 3.5cqw;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+html:lang(ar) :is(.knee-center-title, .center-banner-title) { direction: rtl; }
+/* Center the Arabic copy explicitly instead of relying on RTL block margins. */
+html:lang(ar) :is(.knee-center-copy, .center-banner-copy) {
+  margin-inline: auto;
+  text-align: center;
+}
+html:lang(ar) :is(.knee-center-services, .center-banner-services) {
+  margin-inline: auto;
+  padding-inline: 0;
+  text-align: center;
+  list-style-position: inside;
+}
+html:lang(ar) :is(.knee-center-services, .center-banner-services)[lang="en"] {
+  direction: ltr;
+}
+html:not(:lang(ko), :lang(ja), :lang(zh)) :is(.knee-center-title, .center-banner-title) {
+  font-size: 2.5cqw;
+  line-height: 1.35;
+}
+@media (max-width: 1200px) {
+  :is(.knee-center-title-wrap, .center-banner-title-wrap) {
+    grid-template-columns: 110px minmax(0, 1fr) 110px;
+    column-gap: 12px;
+  }
+  :is(.knee-center-title, .center-banner-title) { font-size: clamp(36px, 5vw, 60px); }
+  html:not(:lang(ko), :lang(ja), :lang(zh)) :is(.knee-center-title, .center-banner-title) {
+    font-size: clamp(28px, 4vw, 46px);
+  }
+}
+@media (max-width: 600px) {
+  :is(.knee-center-title-wrap, .center-banner-title-wrap) {
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    column-gap: 8px;
+  }
+  :is(.knee-center-title, .center-banner-title) { font-size: clamp(24px, 7vw, 40px); }
+  html:not(:lang(ko), :lang(ja), :lang(zh)) :is(.knee-center-title, .center-banner-title) {
+    font-size: clamp(20px, 5.7vw, 30px);
+  }
+}

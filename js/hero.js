@@ -1,91 +1,133 @@
-const activeAnimations = new WeakMap();
+const heroInstances = new WeakMap();
 
-// 선택된 언어 콘텐츠와 공통 히어로 모션을 연결합니다.
+// Content, pictures and controls are authored in HTML. Swiper only moves slides.
 export function renderHero(content) {
   const hero = document.querySelector('.hero');
   if (!hero || !content) return;
-  activeAnimations.get(hero)?.();
   const number = hero.querySelector('.hero-number');
-  number.dataset.target ||= number.textContent.replaceAll(',', '').trim();
-  const target = Number(number.dataset.target);
-  const count = new Intl.NumberFormat('en-US').format(target);
-  const animationContent = { ...content, count, target };
-  hero.querySelector('.hero-statistic')?.setAttribute('aria-label', content.period.replaceAll(' ', '') + ' ' + count + content.unit);
-  activeAnimations.set(hero, animateHero(hero, animationContent));
-}
-
-function animateHero(hero, content) {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const statistic = hero.querySelector('.hero-statistic');
-  const number = hero.querySelector('.hero-number');
-  const texts = [...hero.querySelectorAll('.hero-period, .hero-unit, .hero-title, .hero-description p')];
-  // 표시 문자열을 숫자로 다시 해석하지 않습니다. 언어별 구분자와 무관하게 HTML의 원본 수치를 사용합니다.
-  const target = content.target;
-  const formatter = new Intl.NumberFormat('en-US');
-  let frame = 0;
-  let observer;
-  let disposed = false;
-
-  function finish() {
-    cancelAnimationFrame(frame);
-    observer?.disconnect();
-    number.classList.remove('is-rolling');
-    number.textContent = content.count;
-    statistic.classList.remove('statistic-pending');
-    texts.forEach(element => element.classList.remove('reveal-pending'));
+  const target = Number(number.dataset.target ||= number.textContent.replaceAll(',', '').trim());
+  const formatted = new Intl.NumberFormat('en-US').format(target);
+  hero.querySelector('.hero-statistic')?.setAttribute('aria-label', `${content.period.replaceAll(' ', '')} ${formatted} ${content.unit}`);
+  if (heroInstances.has(hero)) {
+    heroInstances.get(hero).refresh();
+    return;
   }
+  if (!window.Swiper) return;
+  const region = hero.querySelector('.hero-slider');
+  const slides = [...hero.querySelectorAll('[data-hero-slide]')];
+  const dots = [...hero.querySelectorAll('[data-hero-go]')];
+  const toggle = hero.querySelector('.hero-toggle');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let visible = false, paused = false, focused = false, hovered = false;
+  let frame = 0, timer = 0, generation = 0;
+  let previousRealIndex = 0;
 
+  function finishCount() {
+    clearTimeout(timer);
+    cancelAnimationFrame(frame);
+    number.textContent = formatted;
+  }
   function countUp() {
-    const duration = 2400;
-    let startedAt;
+    let started;
     function tick(now) {
-      startedAt ??= now;
-      const progress = Math.min((now - startedAt) / duration, 1);
-      // 빠르게 올라간 뒤 목표 숫자에 가까워지며 부드럽게 감속합니다.
-      const eased = 1 - Math.pow(1 - progress, 3);
-      number.textContent = formatter.format(Math.round(target * eased));
+      started ??= now;
+      const progress = Math.min((now - started) / 2200, 1);
+      number.textContent = new Intl.NumberFormat('en-US').format(Math.round(target * (1 - (1 - progress) ** 3)));
       if (progress < 1) frame = requestAnimationFrame(tick);
-      else number.textContent = content.count;
     }
     frame = requestAnimationFrame(tick);
   }
-
-  function startObserving() {
-    if (disposed || reducedMotion.matches) return finish();
-    if (!('IntersectionObserver' in window) || !Number.isFinite(target)) return finish();
-    number.textContent = '0';
-    statistic.classList.add('statistic-pending');
-    texts.forEach(element => {
-      element.classList.remove('is-revealed');
-      element.classList.add('reveal-pending');
+  function activeSlide() { return slides.find(slide => Number(slide.dataset.heroSlide) === swiper.realIndex); }
+  function markCurrent() {
+    slides.forEach(slide => {
+      const active = Number(slide.dataset.heroSlide) === swiper.realIndex;
+      slide.inert = !active;
+      slide.setAttribute('aria-hidden', String(!active));
     });
-    observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        observer.unobserve(entry.target);
-        if (entry.target === number) {
-          statistic.classList.remove('statistic-pending');
-          countUp();
-        } else {
-          entry.target.classList.add('is-revealed');
-        }
-      });
-    }, { threshold: 0.15 });
-    observer.observe(number);
-    texts.forEach(element => observer.observe(element));
+    dots.forEach(dot => {
+      if (Number(dot.dataset.heroGo) === swiper.realIndex) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
   }
-
-  const onMotionChange = () => { if (reducedMotion.matches) finish(); };
-  reducedMotion.addEventListener('change', onMotionChange);
-  // 사용자 동작 줄이기 설정에서는 최종 수치와 문구를 즉시 표시합니다.
-  if (reducedMotion.matches) finish();
-  else startObserving();
-  return () => {
-    disposed = true;
-    finish();
-    reducedMotion.removeEventListener('change', onMotionChange);
-  };
+  function resetArrival() {
+    generation++;
+    finishCount();
+    // Keep each slide's first reveal across loops and offscreen pauses.
+    slides.forEach(slide => {
+      if (slide.classList.contains('is-arrived')) slide.classList.add('is-revealed');
+    });
+  }
+  async function arrive() {
+    if (!visible || document.hidden) return;
+    const slide = activeSlide();
+    if (!slide || slide.classList.contains('is-arrived')) return;
+    const ownGeneration = ++generation;
+    // Wait for actual pictures, so slow connections do not spend the reveal unseen.
+    await Promise.all([...slide.querySelectorAll('img')].map(img => img.decode?.().catch(() => {})));
+    if (generation !== ownGeneration || !visible || document.hidden || activeSlide() !== slide) return;
+    slide.classList.add('is-arrived');
+    if (slide.contains(number) && !reduced.matches) {
+      number.textContent = '0';
+      timer = setTimeout(countUp, 1900);
+    }
+  }
+  function sync() {
+    const play = visible && !document.hidden && !paused && !focused && !hovered && !reduced.matches;
+    if (play && !swiper.autoplay.running) swiper.autoplay.start();
+    if (!play && swiper.autoplay.running) swiper.autoplay.stop();
+    swiper.params.speed = reduced.matches ? 0 : 850;
+    toggle.disabled = reduced.matches;
+    toggle.setAttribute('aria-label', paused ? toggle.dataset.play : toggle.dataset.pause);
+    toggle.classList.toggle('is-paused', paused);
+  }
+  const swiper = new window.Swiper(region, {
+    init: false, slidesPerView: 1, spaceBetween: 0, loop: true,
+    autoHeight: false, speed: reduced.matches ? 0 : 850,
+    autoplay: { delay: 10000, disableOnInteraction: false },
+    a11y: false,
+  });
+  swiper.on('slideChange', () => {
+    // Loop initialization and layout updates can emit slideChange for the
+    // same slide. Only a genuine departure should finish its first reveal.
+    if (swiper.realIndex !== previousRealIndex) {
+      resetArrival();
+      previousRealIndex = swiper.realIndex;
+    }
+    markCurrent();
+  });
+  swiper.on('slideChangeTransitionEnd', arrive);
+  // Startup resize/update can invalidate a pending decode without transitionEnd.
+  swiper.on('resize', () => queueMicrotask(arrive));
+  swiper.on('update', () => queueMicrotask(arrive));
+  swiper.init();
+  hero.classList.add('is-enhanced');
+  hero.querySelector('.hero-controls').hidden = false;
+  markCurrent();
+  const initialBounds = hero.getBoundingClientRect();
+  visible = initialBounds.bottom > 0 && initialBounds.top < window.innerHeight;
+  sync();
+  arrive();
+  hero.querySelector('.hero-next').addEventListener('click', () => swiper.slideNext());
+  hero.querySelector('.hero-previous').addEventListener('click', () => swiper.slidePrev());
+  dots.forEach(dot => dot.addEventListener('click', () => swiper.slideToLoop(Number(dot.dataset.heroGo))));
+  toggle.addEventListener('click', () => { paused = !paused; sync(); });
+  hero.addEventListener('focusin', () => { focused = true; sync(); });
+  hero.addEventListener('focusout', event => { if (!hero.contains(event.relatedTarget)) { focused = false; sync(); } });
+  hero.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovered = true; sync(); } });
+  hero.addEventListener('pointerleave', () => { hovered = false; sync(); });
+  document.addEventListener('visibilitychange', () => { sync(); if (document.hidden) resetArrival(); else arrive(); });
+  reduced.addEventListener('change', () => { finishCount(); sync(); arrive(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      sync();
+      if (visible) arrive(); else resetArrival();
+    }, { threshold: 0.08 }).observe(hero);
+  } else { visible = true; sync(); arrive(); }
+  heroInstances.set(hero, { refresh() {
+    swiper.update();
+    markCurrent();
+    sync();
+    arrive();
+  } });
 }
-
-
-

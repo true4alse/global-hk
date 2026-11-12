@@ -37,12 +37,12 @@ const homeLabel = "兴K医院首页";
 
 // ── 06. 상단 내비게이션 ──
 const nav = {
-  "about": "ABOUT HEUNG-K",
-  "specialties": "SPECIALTIES",
-  "doctors": "OUR DOCTORS",
-  "facilities": "FACILITIES",
-  "inquiry": "CONTACT",
-  "location": "LOCATION"
+  "about": "医院介绍",
+  "specialties": "特色诊疗",
+  "doctors": "医生团队",
+  "facilities": "医院设施",
+  "inquiry": "咨询预约",
+  "location": "交通指南"
 };
 
 // ── 07. 메인 비주얼 ──
@@ -51,7 +51,28 @@ const hero = {
   "unit": "例",
   "title": "关节手术越复杂, 临床经验越重要",
   "descriptionFirst": "兴K医院依托丰富的手术经验和持续的国际医疗交流, 专注于高难度关节手术及人工关节翻修术。",
-  "descriptionSecond": "我们细致评估患者病情及既往治疗史, 不断精进关节诊疗技术, 为复杂病例制定适宜的治疗方案。"
+  "descriptionSecond": "我们细致评估患者病情及既往治疗史, 不断精进关节诊疗技术, 为复杂病例制定适宜的治疗方案。",
+  "carouselLabel": "兴K医院诊疗特色",
+  "minimalTitle": "小切口人工关节置换术",
+  "orKicker": "为安全手术提供保障",
+  "orClean": "高洁净手术环境",
+  "orRooms": "配备5间手术室",
+  "orSpecialty": "麻醉疼痛医学科",
+  "orStaff": "专科医生常驻",
+  "nursingWards": "所有病房",
+  "nursingHours": "24小时",
+  "nursingService": "护理陪护一体化服务",
+  "nursingDescription": "提供24小时护理，让患者安心住院。",
+  "rehabLead": "根据患者的康复阶段",
+  "rehabPersonal": "一对一个性化",
+  "rehabTreatment": "康复治疗",
+  "rehabDescription": "基于个体功能评估，提供系统的康复治疗，帮助恢复身体功能并重返日常生活。",
+  "orPhotoAlt": "医疗团队在手术室进行手术",
+  "rehabPhotoAlt": "个性化康复治疗设施",
+  "previous": "上一张",
+  "next": "下一张",
+  "pause": "暂停自动轮播",
+  "play": "开始自动轮播"
 };
 
 // ── 08. About HEUNG-K · 병원 소개 ──
@@ -252,7 +273,7 @@ const cadaver = {
   "title": "国际微创与个性化人工关节置换术培训中心",
   "word": "CADAVER",
   "workshopLabel": "MIS TKA CADAVER WORKSHOP",
-  "workshop": "2025年CADAVER Workshop圆满举办",
+  "workshop": "2025、2026连续两年成功举办CADAVER研修班",
   "training": "微创全膝关节置换术技术培训",
   "hospital": "兴K医院",
   "descriptionFirst": "面向国内外骨科专科医生举办CADAVER Workshop,",
@@ -1332,7 +1353,7 @@ const contact = {
   "gimpoAlt": "金浦国际机场外景",
   "gimpo": "金浦国际机场",
   "gimpoTime": "30分钟",
-  "gimpoRail": "인천공항 제1터미널 또는 제2터미널에서 공항철도 일반열차 이용",
+  "gimpoRail": "乘坐西海线，经过9站后在始兴陵谷站下车，从3号出口出站。",
   "gimpoStep0": "在金浦机场站乘坐开往元时方向的西海线",
   "gimpoStep1": "乘坐9站后在始兴能谷站下车",
   "gimpoStep2": "在始兴能谷站下车, 从3号出口出站",
@@ -1353,7 +1374,39 @@ const contact = {
 };
 
 // 사이트 연결용: 위 문구들을 기존 번역 키 구조로 모읍니다. 이 아래는 수정하지 않습니다.
+const quickMenu = {
+  "label": "快捷菜单",
+  "open": "打开快捷菜单",
+  "close": "关闭快捷菜单",
+  "phone": "电话咨询",
+  "reserve": "预约就诊",
+  "email": "邮件咨询",
+  "hours": "门诊时间",
+  "weekdays": "周一至周五",
+  "saturday": "周六"
+};
+
+const doctorMenu = {
+  "label": "按科室选择医生",
+  "knee": "膝关节中心",
+  "shoulder": "肩关节中心",
+  "handFoot": "手足中心",
+  "spine": "脊柱中心",
+  "internal": "内科",
+  "radiology": "放射科",
+  "anesthesia": "麻醉疼痛科"
+};
+
+// 검색 결과 및 공유 미리보기 문구. 기존 본문 번역은 유지합니다.
+const seo = {
+  "title": "兴K医院 | 韩国关节与脊柱诊疗及国际患者服务",
+  "description": "了解韩国京畿道始兴市兴K医院的膝、肩、手足及脊柱诊疗、医疗团队和院内设施，查看国际患者预约、来院交通及医疗服务指南。"
+};
+
 export default {
+  seo,
+  quickMenu,
+  doctorMenu,
   pageTitle,
   languageLabel,
   header,

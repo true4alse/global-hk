@@ -1,3 +1,5 @@
+import { updateSeo } from './seo.js';
+import { renderQuickMenu } from './quick-menu.js';
 import { renderScrollMotion } from './scroll-motion.js';
 import { renderCenterMenu } from './center-menu.js';
 import { renderContact } from './contact.js';
@@ -24,6 +26,7 @@ import { applyTranslations } from './translations.js';
 
 let selected = initializeLocale();
 applyTranslations(selected.content);
+  updateSeo(selected.code, selected.content);
 renderHero(selected.content.hero);
 renderAbout();
 renderGlobal();
@@ -44,6 +47,7 @@ renderReservation();
 renderCustomerCenter();
 renderContact();
 renderCenterMenu();
+renderQuickMenu();
 renderScrollMotion();
 const toggle = document.querySelector('.language-toggle');
 const panel = document.querySelector('.language-options');
@@ -68,6 +72,7 @@ function changeLanguage(code, pushHistory = true) {
   if (pushHistory) history.pushState(null, '', localeUrl(code));
   selected = initializeLocale(code);
   applyTranslations(selected.content);
+  updateSeo(selected.code, selected.content);
   updateLanguageName();
   renderHero(selected.content.hero);
   renderAbout();
@@ -89,7 +94,10 @@ document.querySelectorAll('[data-language]').forEach(button => {
   button.disabled = !language?.content;
   if (language?.code === selected.code) button.setAttribute('aria-current','true');
   else button.removeAttribute('aria-current');
-  button.addEventListener('click', () => {
+  button.setAttribute('href', localeUrl(button.dataset.language));
+  button.addEventListener('click', event => {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
     if (!language?.content) return;
     if (language.code === selected.code) return setOpen(false,true);
     changeLanguage(language.code);

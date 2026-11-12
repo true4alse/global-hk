@@ -51,6 +51,14 @@ function initDoctorSlider(section, reduced) {
   const toggle = region.querySelector('.doctor-slide-toggle');
   const slides = [...slider.querySelectorAll('.doctor-profile')];
   const dots = [...region.querySelectorAll('[data-doctor-slide]')];
+  const departmentNav = section.querySelector('.doctor-department-nav');
+  const departmentGroups = [...section.querySelectorAll('[data-doctor-group]')];
+  function syncDepartment(current) {
+    departmentGroups.forEach(item => {
+      if (item.dataset.doctorGroup.split(',').includes(String(current))) item.setAttribute('aria-current', 'true');
+      else item.removeAttribute('aria-current');
+    });
+  }
   let paused = false, focused = false, visible = false, modalOpen = false;
   const swiper = new window.Swiper(slider, {
 
@@ -62,6 +70,7 @@ function initDoctorSlider(section, reduced) {
     on: {
       slideChange(instance) {
         const current = instance.realIndex;
+        syncDepartment(current);
         slides.forEach((slide, i) => { slide.inert = i !== current; slide.setAttribute('aria-hidden', String(i !== current)); });
         dots.forEach((dot, i) => {
           if (i === current) dot.setAttribute('aria-current', 'true');
@@ -80,6 +89,14 @@ function initDoctorSlider(section, reduced) {
     toggle.classList.toggle('is-paused', paused);
   }
   dots.forEach((dot, i) => dot.addEventListener('click', () => swiper.slideToLoop(i)));
+  departmentNav?.querySelectorAll('[data-doctor-target]').forEach(button => {
+    button.addEventListener('click', () => {
+      paused = true;
+      sync();
+      swiper.slideToLoop(Number(button.dataset.doctorTarget));
+    });
+  });
+  syncDepartment(swiper.realIndex);
   toggle.addEventListener('click', () => { paused = !paused; sync(); });
   slider.addEventListener('focusin', () => { focused = true; sync(); });
   slider.addEventListener('focusout', event => { if (!slider.contains(event.relatedTarget)) { focused = false; sync(); } });

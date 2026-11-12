@@ -37,12 +37,12 @@ const homeLabel = "Trang chủ Bệnh viện Heung-K";
 
 // ── 06. 상단 내비게이션 ──
 const nav = {
-  "about": "ABOUT HEUNG-K",
-  "specialties": "SPECIALTIES",
-  "doctors": "OUR DOCTORS",
-  "facilities": "FACILITIES",
-  "inquiry": "INQUIRY",
-  "location": "LOCATION"
+  "about": "Giới thiệu",
+  "specialties": "Chuyên khoa",
+  "doctors": "Đội ngũ bác sĩ",
+  "facilities": "Cơ sở vật chất",
+  "inquiry": "Liên hệ",
+  "location": "Đường đi"
 };
 
 // ── 07. 메인 비주얼 ──
@@ -51,7 +51,28 @@ const hero = {
   "unit": "Ca phẫu thuật",
   "title": "Phẫu thuật khớp càng khó, kinh nghiệm càng quan trọng",
   "descriptionFirst": "Bệnh viện Heung-K chuyên thực hiện các ca phẫu thuật khớp phức tạp, bao gồm thay lại khớp nhân tạo, dựa trên kinh nghiệm phẫu thuật phong phú và hợp tác y khoa quốc tế thường xuyên.",
-  "descriptionSecond": "Chúng tôi đánh giá kỹ tình trạng và tiền sử điều trị của từng bệnh nhân, đồng thời không ngừng nâng cao chuyên môn để lựa chọn phương pháp phù hợp, kể cả với những ca phẫu thuật khó."
+  "descriptionSecond": "Chúng tôi đánh giá kỹ tình trạng và tiền sử điều trị của từng bệnh nhân, đồng thời không ngừng nâng cao chuyên môn để lựa chọn phương pháp phù hợp, kể cả với những ca phẫu thuật khó.",
+  "carouselLabel": "Các dịch vụ nổi bật của Bệnh viện Heung-K",
+  "minimalTitle": "Thay khớp nhân tạo qua đường mổ nhỏ",
+  "orKicker": "Vì sự an toàn trong phẫu thuật",
+  "orClean": "Độ sạch cao",
+  "orRooms": "Vận hành 5 phòng mổ",
+  "orSpecialty": "Chuyên khoa gây mê và điều trị đau",
+  "orStaff": "Bác sĩ chuyên khoa thường trực",
+  "nursingWards": "Tại tất cả các khoa nội trú",
+  "nursingHours": "24 giờ",
+  "nursingService": "Dịch vụ điều dưỡng và chăm sóc tích hợp",
+  "nursingDescription": "Chăm sóc điều dưỡng suốt 24 giờ giúp người bệnh an tâm trong thời gian nằm viện.",
+  "rehabLead": "Phù hợp với từng giai đoạn hồi phục",
+  "rehabPersonal": "Cá nhân hóa một kèm một",
+  "rehabTreatment": "Phục hồi chức năng",
+  "rehabDescription": "Dựa trên đánh giá chức năng của từng người bệnh, chương trình phục hồi có hệ thống giúp khôi phục chức năng cơ thể và trở lại sinh hoạt hằng ngày.",
+  "orPhotoAlt": "Đội ngũ y tế thực hiện phẫu thuật trong phòng mổ",
+  "rehabPhotoAlt": "Cơ sở phục hồi chức năng cá nhân hóa",
+  "previous": "Trang chiếu trước",
+  "next": "Trang chiếu tiếp theo",
+  "pause": "Dừng trình chiếu tự động",
+  "play": "Bật trình chiếu tự động"
 };
 
 // ── 08. About HEUNG-K · Giới thiệu bệnh viện ──
@@ -252,7 +273,7 @@ const cadaver = {
   "title": "Trung tâm Đào tạo Quốc tế về Phẫu thuật Thay khớp Ít xâm lấn và Cá thể hóa",
   "word": "CADAVER",
   "workshopLabel": "MIS TKA CADAVER WORKSHOP",
-  "workshop": "Tổ chức thành công hội thảo CADAVER 2025",
+  "workshop": "Tổ chức thành công hội thảo CADAVER trong hai năm liên tiếp 2025 và 2026",
   "training": "Đào tạo kỹ thuật thay khớp với đường mổ tối thiểu",
   "hospital": "Bệnh viện Heung-K",
   "descriptionFirst": "tổ chức hội thảo CADAVER dành cho các bác sĩ chuyên khoa chấn thương chỉnh hình trong và ngoài nước,",
@@ -1332,7 +1353,7 @@ const contact = {
   "gimpoAlt": "Toàn cảnh Sân bay Quốc tế Gimpo",
   "gimpo": "Sân bay Quốc tế Gimpo",
   "gimpoTime": "30 phút",
-  "gimpoRail": "인천공항 제1터미널 또는 제2터미널에서 공항철도 일반열차 이용",
+  "gimpoRail": "Đi tuyến Seohae qua 9 ga, xuống tại ga Siheung Neunggok và ra cửa số 3.",
   "gimpoStep0": "Đi tuyến Seohae hướng Wonsi từ ga Sân bay Gimpo",
   "gimpoStep1": "Đi qua 9 ga, xuống tại ga Siheung Neunggok",
   "gimpoStep2": "Xuống tại ga Siheung Neunggok, ra Cửa số 3",
@@ -1353,7 +1374,39 @@ const contact = {
 };
 
 // 사이트 연결용: 위 문구들을 기존 번역 키 구조로 모읍니다. 이 아래는 수정하지 않습니다.
+const quickMenu = {
+  "label": "Menu nhanh",
+  "open": "Mở menu nhanh",
+  "close": "Đóng menu nhanh",
+  "phone": "Gọi điện",
+  "reserve": "Đặt lịch khám",
+  "email": "Gửi email",
+  "hours": "Giờ khám bệnh",
+  "weekdays": "THỨ 2–6",
+  "saturday": "THỨ 7"
+};
+
+const doctorMenu = {
+  "label": "Chọn bác sĩ theo chuyên khoa",
+  "knee": "Trung tâm Khớp gối",
+  "shoulder": "Trung tâm Vai",
+  "handFoot": "Trung tâm Bàn tay & Bàn chân",
+  "spine": "Trung tâm Cột sống",
+  "internal": "Nội khoa",
+  "radiology": "Chẩn đoán hình ảnh",
+  "anesthesia": "Gây mê & Điều trị đau"
+};
+
+// 검색 결과 및 공유 미리보기 문구. 기존 본문 번역은 유지합니다.
+const seo = {
+  "title": "Bệnh viện Heung-K | Điều trị khớp và cột sống tại Hàn Quốc",
+  "description": "Tìm hiểu dịch vụ điều trị đầu gối, vai, bàn tay, bàn chân và cột sống tại Bệnh viện Heung-K ở Siheung, Hàn Quốc. Thông tin bác sĩ, đặt lịch và hỗ trợ bệnh nhân quốc tế."
+};
+
 export default {
+  seo,
+  quickMenu,
+  doctorMenu,
   pageTitle,
   languageLabel,
   header,

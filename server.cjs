@@ -16,7 +16,13 @@ http.createServer((req, res) => {
     if (!pathname.startsWith(basePath)) { res.writeHead(404).end(); return; }
     pathname = '/' + pathname.slice(basePath.length);
   }
-  if (pathname === '/' || /^\/(ko|en|zh|ja|ru|mn|hi|ar|vi)\/?$/.test(pathname)) pathname = '/index.html';
+  if (pathname === '/') pathname = '/index.html';
+  const languageRoute = pathname.match(/^\/(ko|en|zh|ja|ru|mn|hi|ar|vi)\/?$/);
+  if (languageRoute) {
+    if (!pathname.endsWith('/')) { res.writeHead(301, {Location: basePath + languageRoute[1] + '/'}).end(); return; }
+    const generated = `/${languageRoute[1]}/index.html`;
+    pathname = fs.existsSync(path.join(root, generated)) ? generated : '/index.html';
+  }
   const file = path.resolve(root, '.' + pathname);
   if (!file.startsWith(root + path.sep) || !types[path.extname(file)]) { res.writeHead(404).end(); return; }
   fs.readFile(file, (error, data) => {
