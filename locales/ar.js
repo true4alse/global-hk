@@ -124,7 +124,7 @@ const global = {
   "hssTitle": "HSS: مرجع عالمي في جراحة العظام",
   "hssDescription": "يقع مستشفى الجراحة الخاصة (HSS) في مانهاتن بنيويورك، وهو من أبرز مستشفيات جراحة العظام عالميًا في الرعاية والبحث والتعليم والابتكار الطبي.",
   "imageAlt": {
-    "hssSnf": "زيارة الدكتور Jong-Keun Kim، المدير الطبي، لمركز HSS SNF لاستبدال المفاصل وإعادة بنائها",
+    "hssSnf": "زيارة الدكتور Jong-Keun Kim، مدير المستشفى، لمركز HSS SNF لاستبدال المفاصل وإعادة بنائها",
     "surgeryExchange": "تبادل الخبرات بين الفرق الطبية أثناء الجراحة في HSS",
     "hssBuilding": "المظهر الخارجي لمستشفى HSS في نيويورك",
     "hssVisit": "الدكتور Jong-Keun Kim أمام غرفة عمليات في HSS",
@@ -136,7 +136,7 @@ const global = {
     "surgicalDiscussion": "تبادل الخبرات والآراء السريرية أثناء الجراحة"
   },
   "hssExchangeTitle": "نتعلم من HSS،\nونشارك خبرة Heung-K مع العالم",
-  "hssExchangeFirst": "اكتسب الدكتور Jong-Keun Kim، المدير الطبي لمستشفى Heung-K، خبرة مباشرة في الممارسات والأبحاث المتقدمة لجراحة العظام عبر برنامج الزائر الأكاديمي في HSS (AVP) وبرنامج الباحث الزائر بجامعة كورنيل.",
+  "hssExchangeFirst": "اكتسب الدكتور Jong-Keun Kim، مدير مستشفى Heung-K، خبرة مباشرة في الممارسات والأبحاث المتقدمة لجراحة العظام عبر برنامج الزائر الأكاديمي في HSS (AVP) وبرنامج الباحث الزائر بجامعة كورنيل.",
   "hssExchangeSecond": "ويواصل تبادل الخبرات في جراحات استبدال المفاصل مع أطباء HSS، ومشاركة تقنيات مستشفى Heung-K وخبرته الواسعة في جراحة MIS TKA.",
   "watermark": "HSS في كوريا"
 };
@@ -154,13 +154,13 @@ const apkass = {
   "description": "مؤتمر دولي يجمع خبراء من آسيا والمحيط الهادئ وسائر أنحاء العالم لتبادل أحدث الأبحاث والتطورات العلاجية",
   "founder01Alt": "صورة جماعية للمشاركين في مؤتمر APKASS 2026",
   "founder02Alt": "تسلّم مستشفى Heung-K درعًا تذكاريًا بصفته شريكًا رسميًا لمؤتمر APKASS 2026",
-  "hospital": "مستشفى Heung-K،",
-  "partnership": "المستشفى الشريك الرسمي لمؤتمر APKASS 2026",
+  "hospital": "مستشفى Heung-K — ",
+  "partnership": "الشريك الرسمي لمؤتمر APKASS 2026",
   "contributor": "مساهم مؤسسي رسمي",
   "founder": "المؤسس",
-  "chairpersonAlt": "ظهور الدكتور Jong-Keun Kim، المدير الطبي، على شاشة عرض المؤتمر",
+  "chairpersonAlt": "ظهور الدكتور Jong-Keun Kim، مدير المستشفى، على شاشة عرض المؤتمر",
   "name": "Jong-Keun Kim",
-  "role": "المدير الطبي",
+  "role": "مدير المستشفى",
   "session": "رئاسة جلسة علمية في مؤتمر APKASS 2026",
   "session01Alt": "الدكتور Jong-Keun Kim يرأس جلسة علمية في APKASS 2026",
   "session02Alt": "عروض ونقاشات في إحدى جلسات APKASS 2026",
@@ -183,7 +183,7 @@ const mis = {
     "incisionComparison": "رسم يقارن طول شق الركبة بطول السبابة"
   },
   "claimStartFirst": "على مستوى العالم",
-  "claimStartSecond": "تقنية جراحية فريدة",
+  "claimStartSecond": "تقنية جراحية فريدة من نوعها",
   "claimEndFirst": "نهج",
   "claimEndSecond": "طفيف التوغل بحق",
   "questionLabel": "سؤال",
@@ -219,16 +219,16 @@ const treatment = {
   },
   "systemName": "InJury Knee Minimal:",
   "systemShortName": "JK Minimal",
-  "patentEmphasis": "جراحة استبدال المفاصل طفيفة التوغل",
+  "patentEmphasis": "جراحة استبدال الركبة طفيفة التوغل",
   "patentDescription": "أدوات قياس حجم عظم الظنبوب والفخذ",
   "methodLabel": "ميزات JK Minimal",
-  "maximum": "أقصى",
+  "maximum": "أقصى ",
   "efficiency": "كفاءة",
-  "methodDescription": "تطوير نظام JK Minimal لاستبدال الركبة لاستغلال المساحة الجراحية بأفضل شكل عبر شقوق صغيرة",
-  "minimumInjury": "أقل",
+  "methodDescription": "طُوّر نظام JK Minimal لاستغلال مساحة العمل الجراحي بكفاءة عبر شقوق صغيرة",
+  "minimumInjury": "أقل ",
   "injury": "تلف للأنسجة",
-  "minimumIncision": "أقل",
-  "incision": "شقوق",
+  "minimumIncision": "شقوق ",
+  "incision": "أصغر",
   "strategiesTitle": "نهج مخصص لتحسين نتائج الجراحة ورضا المرضى",
   "psiTitle": "PSI",
   "psiSubtitle": "استبدال المفاصل وفق احتياجات كل مريض",
@@ -238,13 +238,13 @@ const treatment = {
   "makoDescription": "تخطيط جراحي ثلاثي الأبعاد يعتمد على التصوير المقطعي لقطع العظم بدقة، مع الجمع بين دقة الروبوت وخبرة الجراحة طفيفة التوغل",
   "windowTitle": "تقنية النافذة المتحركة",
   "windowSubtitle": "توفير مساحة للعمل الجراحي عبر شقوق صغيرة",
-  "windowDescription": "تقنية جراحية تستغل مساحة العمل بأعلى كفاءة باستخدام النافذة المتحركة"
+  "windowDescription": "تتيح الاستفادة من مساحة العمل الجراحي عبر شقوق صغيرة"
 };
 
 // ── 13. 절개 비교 · 치료 장점 ──
 const incision = {
   "titleAccent": "شقوق صغيرة",
-  "title": "فرق واضح للعين",
+  "title": "فرق واضح",
   "imageAlt": {
     "case68": "مقارنة مواضع الشقوق في ركبتي مريضة تبلغ 68 عامًا",
     "case72": "مقارنة مواضع الشقوق في ركبتي مريضة تبلغ 72 عامًا",
@@ -263,7 +263,7 @@ const incision = {
   "movementDescription": "قد يحد تقليل تلف الأنسجة من تكوّن الالتصاقات داخل المفصل، مما يحسّن الحركة ويساعد على المشي المبكر.",
   "scarTitle": "ندوب أقل",
   "scarDescription": "قد تترك الشقوق الصغيرة ندوبًا أقل وضوحًا وترفع رضا المرضى.",
-  "recoveryTitle": "إقامة أقصر في المستشفى وعودة أسرع للحياة اليومية",
+  "recoveryTitle": "إقامة أقصر وعودة أسرع للحياة اليومية",
   "recoveryDescription": "قد يؤدي التعافي الأسرع إلى تقصير مدة الإقامة في المستشفى والعودة المبكرة للنشاط اليومي."
 };
 
@@ -334,7 +334,7 @@ const specialty = {
   "jungSeungJin": "د. Seung Jin Jung",
   "kimSeHoon": "د. Sehun Kim",
   "leeMyungChul": "د. Myung Chul Lee، المدير الفخري",
-  "kimJongGeun": "د. Jong-Keun Kim، المدير الطبي",
+  "kimJongGeun": "د. Jong-Keun Kim، مدير المستشفى",
   "leeSuGeon": "د. Su-Keon Lee",
   "leeJunYoung": "د. Joon Young Lee",
   "leeKyungHwa": "د. Gyeong Hwa Lee",
@@ -371,7 +371,7 @@ const knee = {
   "service7": "Cruciate Ligament Reconstruction and Revision Surgery (ACL / PCL)",
   "service8": "Sports Injury Diagnosis and Treatment",
   "imageAlt": {
-    "kimJongGeun": "د. Jong-Keun Kim، المدير الطبي",
+    "kimJongGeun": "د. Jong-Keun Kim، مدير المستشفى",
     "leeJunYoung": "د. Joon Young Lee",
     "chosunArticle": "مقال بصحيفة تشوسون إلبو: جراحة استبدال الركبة طفيفة التوغل تقلل الألم وتسرّع التعافي"
   },
@@ -411,10 +411,10 @@ const centerTreatmentsKnee = {
   "mako995_5015": "دقة أعلى، وضبط أدق، وأمان أكبر",
   "mako995_5017": "يجمع استبدال الركبة بمساعدة الروبوت بين خبرة الجرّاح ودقة التقنية الروبوتية.",
   "mako995_5018": "يوفر التصوير المقطعي قبل العملية نموذجًا ثلاثي الأبعاد للركبة لتحديد حجم الزرعة وموضعها ومناطق قطع العظم. وأثناء الجراحة يقيّم الطبيب توازن المفصل ويوجه الذراع الروبوتية لقطع العظم بدقة ضمن الحدود المخططة وتركيب المفصل الصناعي.",
-  "makoDoctorPrefix": "خبرة الجرّاح ",
-  "makoDoctorExperience": "الخبرة",
-  "makoRobotPrefix": "دقة الروبوت ",
-  "makoRobotAccuracy": "الدقة",
+  "makoDoctorPrefix": "خبرة ",
+  "makoDoctorExperience": "الجرّاح",
+  "makoRobotPrefix": "دقة ",
+  "makoRobotAccuracy": "الروبوت",
   "mako995_5031": "مراحل استبدال الركبة بمساعدة الروبوت في مستشفى Heung-K",
   "mako995_5038": "التقييم والتخطيط قبل الجراحة",
   "mako995_5039": "يُنشئ التصوير المقطعي نموذجًا ثلاثي الأبعاد للركبة لتخطيط حجم المفصل الصناعي وموضعه ونطاق قطع العظم.",
@@ -888,11 +888,11 @@ const doctors = {
   "carouselLabel": "عرض تعريفي لأطباء مستشفى Heung-K",
   "profiles": [
     {
-      "slideLabel": "الملف الشخصي للدكتور Jong-Keun Kim – المدير الطبي",
-      "portraitAlt": "د. Jong-Keun Kim، المدير الطبي",
+      "slideLabel": "الملف الشخصي للدكتور Jong-Keun Kim – مدير المستشفى",
+      "portraitAlt": "د. Jong-Keun Kim، مدير المستشفى",
       "specialty": "جرّاح عظام",
       "name": "Jong-Keun Kim",
-      "role": "المدير الطبي",
+      "role": "مدير المستشفى",
       "specialties": "الركبة (استبدال الركبة طفيف التوغل / الأدوات المخصصة للمريض PSI / تنظير المفصل)، إعادة استبدال المفاصل، العلاج بالخلايا الجذعية، زرع الخلايا الغضروفية، الورك (الاستبدال / التنظير)، الإصابات الرياضية، القدم والكاحل",
       "careers": [
         [
@@ -918,7 +918,7 @@ const doctors = {
       "slideLabel": "الملف الشخصي للدكتور Su-Keon Lee",
       "portraitAlt": "د. Su-Keon Lee",
       "specialty": "جرّاح عظام",
-      "name": "Su-Keon Lee ",
+      "name": "Su-Keon Lee",
       "role": "د.",
       "specialties": "الكتف (تنظير المفصل / استبدال المفصل)، المرفق، الإصابات الرياضية، كسور الكتف",
       "careers": [
@@ -1146,8 +1146,8 @@ const doctors = {
   "closeDetails": "إغلاق الملف الشخصي",
   "specialty": "جرّاح عظام",
   "name": "Jong-Keun Kim",
-  "role": "المدير الطبي",
-  "portraitAlt": "د. Jong-Keun Kim، المدير الطبي",
+  "role": "مدير المستشفى",
+  "portraitAlt": "د. Jong-Keun Kim، مدير المستشفى",
   "specialties": "الركبة (استبدال الركبة طفيف التوغل / الأدوات المخصصة للمريض PSI / تنظير المفصل)، إعادة استبدال المفاصل، العلاج بالخلايا الجذعية، زرع الخلايا الغضروفية، الورك (الاستبدال / التنظير)، الإصابات الرياضية، القدم والكاحل",
   "career01": "دكتوراه، كلية الطب بجامعة سيول الوطنية",
   "career02": "ماجستير، كلية الطب بجامعة سيول الوطنية",
@@ -1356,9 +1356,9 @@ const contact = {
   "gimpoRail": "استقل خط سوهاي لمسافة 9 محطات حتى محطة سيهيونغ نونغوك، ثم استخدم المخرج رقم 3.",
   "gimpoStep0": "استقل خط Seohae باتجاه Wonsi من محطة مطار غيمبو الدولي.",
   "gimpoStep1": "بعد 9 محطات، انزل في محطة Siheung Neunggok.",
-  "gimpoStep2": "انزل في محطة Siheung Neunggok واخرج من المخرج 3.",
+  "gimpoStep2": "اخرج من المخرج 3.",
   "logoAlt": "مستشفى Heung-K",
-  "footerLabel0": "المدير الطبي لمستشفى Heung-K",
+  "footerLabel0": "مدير مستشفى Heung-K",
   "footerValue0": "Jong-Keun Kim",
   "footerLabel1": "رقم تسجيل النشاط التجاري",
   "footerLabel2": "العنوان",
