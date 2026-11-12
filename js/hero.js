@@ -14,11 +14,13 @@ export function renderHero(content) {
   }
   if (!window.Swiper) return;
   const region = hero.querySelector('.hero-slider');
+  const readingDirection = () => document.documentElement.dir === 'rtl' ? 'rtl' : 'ltr';
+  region.dir = readingDirection();
   const slides = [...hero.querySelectorAll('[data-hero-slide]')];
   const dots = [...hero.querySelectorAll('[data-hero-go]')];
   const toggle = hero.querySelector('.hero-toggle');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let visible = false, paused = false, focused = false, hovered = false;
+  let visible = false, paused = false, focused = false;
   let frame = 0, timer = 0, generation = 0;
   let previousRealIndex = 0;
 
@@ -76,7 +78,7 @@ export function renderHero(content) {
     }
   }
   function sync() {
-    const play = visible && !document.hidden && !paused && !focused && !hovered && !reduced.matches;
+    const play = visible && !document.hidden && !paused && !focused && !reduced.matches;
     if (reduced.matches) {
       if (swiper.autoplay.running) swiper.autoplay.stop();
       setPlaybackProgress(0);
@@ -94,7 +96,7 @@ export function renderHero(content) {
     init: false, slidesPerView: 1, spaceBetween: 0, loop: true,
     autoHeight: false, speed: reduced.matches ? 0 : 850,
     parallax: true,
-    autoplay: { delay: 5000, disableOnInteraction: false },
+    autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: false },
     a11y: false,
   });
   swiper.on('autoplayTimeLeft', (_instance, _timeLeft, remaining) => {
@@ -103,7 +105,7 @@ export function renderHero(content) {
     }
   });
   // Swiper also resumes after transitions/tab visibility changes; keep the
-  // user's pause, hover, keyboard focus and offscreen state authoritative.
+  // user's pause, keyboard focus and offscreen state authoritative.
   swiper.on('autoplayResume', sync);
   swiper.on('slideChange', () => {
     // Loop initialization and layout updates can emit slideChange for the
@@ -137,8 +139,6 @@ export function renderHero(content) {
   toggle.addEventListener('click', () => { paused = !paused; sync(); });
   hero.addEventListener('focusin', event => { focused = event.target !== toggle; sync(); });
   hero.addEventListener('focusout', event => { if (!hero.contains(event.relatedTarget)) { focused = false; sync(); } });
-  hero.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovered = true; sync(); } });
-  hero.addEventListener('pointerleave', () => { hovered = false; sync(); });
   document.addEventListener('visibilitychange', () => { sync(); if (document.hidden) resetArrival(); else arrive(); });
   reduced.addEventListener('change', () => { finishCount(); sync(); arrive(); });
   if ('IntersectionObserver' in window) {
@@ -149,6 +149,13 @@ export function renderHero(content) {
     }, { threshold: 0.08 }).observe(hero);
   } else { visible = true; sync(); arrive(); }
   heroInstances.set(hero, { refresh() {
+    const direction = readingDirection();
+    if (swiper.rtl !== (direction === 'rtl')) {
+      const current = swiper.realIndex;
+      swiper.setTransition(0);
+      swiper.changeLanguageDirection(direction);
+      swiper.slideToLoop(current, 0, false);
+    }
     swiper.update();
     markCurrent();
     sync();
