@@ -361,10 +361,10 @@ const centerMenu = {
 // ── 18. 무릎전담센터 · 배너 ──
 const knee = {
   "hospital": "Больница Heung-K",
-  "title": "Центр лечения коленного сустава",
+  "title": "Центр лечения коленного и тазобедренного суставов",
   "descriptionFirst": "От точной диагностики и консервативного лечения до сложных операций и реабилитации.",
-  "descriptionSecond": "Комплексная помощь при заболеваниях коленного сустава.",
-  "service1": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO system)",
+  "descriptionSecond": "Комплексная помощь при заболеваниях коленного и тазобедренного суставов.",
+  "service1": "Robot Assisted Knee & Hip arthroplasty (MAKO system)",
   "service2": "Knee Revision Surgery",
   "service3": "Stem Cell Cartilage Regeneration (CARTISTEM)",
   "service4": "Autologous Chondrocyte Implantation (CartiLife)",
@@ -382,8 +382,21 @@ const knee = {
 
 // ── 19. 무릎전담센터 · 치료 상세 (공통 펼침/접힘 문구 포함) ──
 const centerTreatmentsKnee = {
+  "starHeadline": "Мировой подход к хирургии тазобедренного сустава —",
+  "starHeadlineHighlight": "теперь в HEUNG-K!",
+  "starSubtitle": "Новый подход к эндопротезированию тазобедренного сустава",
+  "starBenefit1": "Минимизация повреждения тканей: малый разрез",
+  "starBenefit2": "Доступ с учетом сохранения мышц",
+  "starBenefit3": "Методика на основе международного научного обмена",
+  "starDescriptionBefore": "Как представитель в Азии международного общества малоинвазивного эндопротезирования тазобедренного сустава ",
+  "starDescriptionAfter": " главный врач Ким Джонгын участвует в научном обмене и исследованиях и выполняет операции через малый разрез с учетом состояния каждого пациента.",
+  "starActivities": "Узнать о сотрудничестве с HSS и STAR Approach Foundation",
+  "starDoctor": "Ким Джонгын",
+  "starDoctorRole": "Главный врач",
+  "starDoctorAffiliation": "Представитель STAR Approach Foundation в Азии",
+  "starPhotoAlt": "Международный научный обмен STAR Approach Foundation и главный врач Ким Джонгын",
   "kneeLabel": "Методы лечения коленного сустава",
-  "makoTitle": "Малоинвазивное тотальное эндопротезирование колена с роботом MAKO",
+  "makoTitle": "Робот-ассистированное эндопротезирование коленного и тазобедренного суставов (MAKO)",
   "mako687_1179": "Сочетание малоинвазивного опыта Heung-K и передовых роботизированных технологий",
   "imageAlt": {
     "introRobotSystem": "Роботизированная система эндопротезирования MAKO",

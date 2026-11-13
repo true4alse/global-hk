@@ -361,10 +361,10 @@ const centerMenu = {
 // ── 18. 무릎전담센터 · 배너 ──
 const knee = {
   "hospital": "흥K병원",
-  "title": "무릎전담센터",
+  "title": "무릎 & 고관절 전담센터",
   "descriptionFirst": "정밀 진단부터 비수술 치료, 고난도 수술과 재활까지.",
-  "descriptionSecond": "무릎 질환에 특화된 진료 시스템으로 치료의 완성도를 높입니다.",
-  "service1": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO system)",
+  "descriptionSecond": "무릎 & 고관절 질환에 특화된 진료 시스템으로 치료의 완성도를 높입니다.",
+  "service1": "Robot Assisted Knee & Hip arthroplasty (MAKO system)",
   "service2": "knee Revision Surgery",
   "service3": "Stem Cell Cartilage Regeneration (CARTISTEM)",
   "service4": "Autologous Chondrocyte Implantation (CartiLife)",
@@ -382,8 +382,21 @@ const knee = {
 
 // ── 19. 무릎전담센터 · 치료 상세 (공통 펼침/접힘 문구 포함) ──
 const centerTreatmentsKnee = {
+  "starHeadline": "세계적 고관절 수술 철학을,",
+  "starHeadlineHighlight": "이제 흥K에서!",
+  "starSubtitle": "고관절 인공관절 수술의 새로운 접근법",
+  "starBenefit1": "조직 손상 최소화(최소절개법)",
+  "starBenefit2": "근육 보존을 고려한 접근법 사용",
+  "starBenefit3": "국제 학술 교류 기반의 수술법",
+  "starDescriptionBefore": "국제 고관절 최소절개 인공관절 수술학회인 ",
+  "starDescriptionAfter": "의 아시아 대표로 김종근 대표원장이 교류 및 연구를 진행하고 있으며, 환자의 상태에 맞춘 최소절개 고관절 인공관절 수술을 시행합니다.",
+  "starActivities": "HSS & STAR Approach Foundation 활동 보러가기",
+  "starDoctor": "김종근",
+  "starDoctorRole": "대표원장",
+  "starDoctorAffiliation": "STAR Approach Foundation 아시아 대표",
+  "starPhotoAlt": "STAR Approach Foundation 국제 학술 교류 사진과 김종근 대표원장",
   "kneeLabel": "무릎전담센터 치료",
-  "makoTitle": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO)",
+  "makoTitle": "Robot Assisted Knee & Hip arthroplasty (MAKO)",
   "mako687_1179": "로봇인공관절 수술 시스템으로 흥케이병원의 최소침습 전문성에 첨단기술을 더하다!",
   "imageAlt": {
     "introRobotSystem": "MAKO 로봇 인공관절 수술 시스템",

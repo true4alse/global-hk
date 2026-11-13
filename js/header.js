@@ -24,7 +24,12 @@ import { renderHero } from './hero.js';
 import { languages, initializeLocale, localeUrl } from './i18n.js';
 import { applyTranslations } from './translations.js';
 
+const initialPath = location.pathname;
 let selected = initializeLocale();
+// Legacy /ko/ SEO entries must load the shared HTML, not only replace its URL.
+if (initialPath !== location.pathname) {
+  location.reload();
+} else {
 applyTranslations(selected.content);
   updateSeo(selected.code, selected.content);
 renderHero(selected.content.hero);
@@ -218,3 +223,4 @@ document.addEventListener('click', event => {
   }
   target.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
 });
+}

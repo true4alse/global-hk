@@ -361,10 +361,10 @@ const centerMenu = {
 // ── 18. 무릎전담센터 · 배너 ──
 const knee = {
   "hospital": "HEUNG-K Hospital",
-  "title": "Knee Center",
+  "title": "Knee & Hip Center",
   "descriptionFirst": "From precise diagnosis and non-surgical treatment to complex surgery and rehabilitation.",
-  "descriptionSecond": "Our specialized knee treatment system delivers comprehensive, high-quality care.",
-  "service1": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO system)",
+  "descriptionSecond": "Our specialized knee and hip treatment system delivers comprehensive, high-quality care.",
+  "service1": "Robot Assisted Knee & Hip arthroplasty (MAKO system)",
   "service2": "Knee Revision Surgery",
   "service3": "Stem Cell Cartilage Regeneration (CARTISTEM)",
   "service4": "Autologous Chondrocyte Implantation (CartiLife)",
@@ -382,8 +382,21 @@ const knee = {
 
 // ── 19. 무릎전담센터 · 치료 상세 (공통 펼침/접힘 문구 포함) ──
 const centerTreatmentsKnee = {
+  "starHeadline": "Experience World-Class Hip Surgery Philosophy,",
+  "starHeadlineHighlight": "Now at HEUNG-K!",
+  "starSubtitle": "A New Approach to Hip Replacement Surgery",
+  "starBenefit1": "Minimal Tissue Damage (Minimal-Incision Technique)",
+  "starBenefit2": "Muscle-Preserving Surgical Approach",
+  "starBenefit3": "Surgical Techniques Based on International Academic Exchange",
+  "starDescriptionBefore": "As the Asian Representative of ",
+  "starDescriptionAfter": ", an international organization dedicated to minimally invasive hip replacement surgery, Dr. Jong-Keun Kim actively engages in research and international exchange. HEUNG-K Hospital provides minimally invasive hip replacement surgery tailored to each patient's condition.",
+  "starActivities": "Explore HSS & STAR Approach Foundation Activities",
+  "starDoctor": "Dr. Jong-Keun Kim,",
+  "starDoctorRole": "Medical Director",
+  "starDoctorAffiliation": "Asian Representative of STAR Approach Foundation",
+  "starPhotoAlt": "International academic exchange with STAR Approach Foundation and Dr. Jong-Keun Kim, Medical Director",
   "kneeLabel": "Knee Center Treatments",
-  "makoTitle": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO)",
+  "makoTitle": "Robot Assisted Knee & Hip arthroplasty (MAKO)",
   "mako687_1179": "Combining HEUNG-K Hospital's Minimally Invasive Expertise with Advanced Robotic Technology",
   "imageAlt": {
     "introRobotSystem": "MAKO Robotic-Assisted Joint Replacement System",

@@ -14,6 +14,8 @@ export function renderHero(content) {
   }
   if (!window.Swiper) return;
   const region = hero.querySelector('.hero-slider');
+  // Old static snapshots must not block initialization of the rest of the page.
+  if (!region) return;
   const readingDirection = () => document.documentElement.dir === 'rtl' ? 'rtl' : 'ltr';
   region.dir = readingDirection();
   const slides = [...hero.querySelectorAll('[data-hero-slide]')];

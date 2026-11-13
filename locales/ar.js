@@ -361,10 +361,10 @@ const centerMenu = {
 // ── 18. 무릎전담센터 · 배너 ──
 const knee = {
   "hospital": "مستشفى Heung-K",
-  "title": "مركز الركبة",
+  "title": "مركز الركبة والورك",
   "descriptionFirst": "من التشخيص الدقيق والعلاج غير الجراحي إلى الجراحات المعقدة وإعادة التأهيل.",
-  "descriptionSecond": "رعاية متكاملة وعالية الجودة لأمراض الركبة.",
-  "service1": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO system)",
+  "descriptionSecond": "رعاية متكاملة وعالية الجودة لأمراض الركبة والورك.",
+  "service1": "Robot Assisted Knee & Hip arthroplasty (MAKO system)",
   "service2": "Knee Revision Surgery",
   "service3": "Stem Cell Cartilage Regeneration (CARTISTEM)",
   "service4": "Autologous Chondrocyte Implantation (CartiLife)",
@@ -382,8 +382,21 @@ const knee = {
 
 // ── 19. 무릎전담센터 · 치료 상세 (공통 펼침/접힘 문구 포함) ──
 const centerTreatmentsKnee = {
+  "starHeadline": "فلسفة عالمية لجراحة مفصل الورك،",
+  "starHeadlineHighlight": "الآن في HEUNG-K!",
+  "starSubtitle": "نهج جديد لجراحة استبدال مفصل الورك",
+  "starBenefit1": "تقليل تلف الأنسجة بشق جراحي صغير",
+  "starBenefit2": "نهج يراعي الحفاظ على العضلات",
+  "starBenefit3": "تقنيات تستند إلى التبادل العلمي الدولي",
+  "starDescriptionBefore": "بصفته ممثل آسيا لدى الجمعية الدولية لاستبدال مفصل الورك بشق صغير، ",
+  "starDescriptionAfter": "، يشارك المدير العام كيم جونغ غون في التبادل العلمي والأبحاث، ويجري جراحة استبدال مفصل الورك بشق صغير بما يناسب حالة كل مريض.",
+  "starActivities": "استكشف أنشطة HSS وSTAR Approach Foundation",
+  "starDoctor": "كيم جونغ غون",
+  "starDoctorRole": "المدير العام",
+  "starDoctorAffiliation": "ممثل آسيا لدى STAR Approach Foundation",
+  "starPhotoAlt": "التبادل العلمي الدولي مع STAR Approach Foundation والمدير العام كيم جونغ غون",
   "kneeLabel": "علاجات مركز الركبة",
-  "makoTitle": "استبدال الركبة بالكامل بمساعدة الروبوت وبجراحة طفيفة التوغل (MAKO)",
+  "makoTitle": "استبدال مفصلي الركبة والورك بمساعدة الروبوت (MAKO)",
   "mako687_1179": "الجمع بين خبرة مستشفى Heung-K في الجراحة طفيفة التوغل والتقنيات الروبوتية المتقدمة",
   "imageAlt": {
     "introRobotSystem": "نظام MAKO الروبوتي لاستبدال المفاصل",

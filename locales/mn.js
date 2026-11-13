@@ -361,10 +361,10 @@ const centerMenu = {
 // ── 18. 무릎전담센터 · 배너 ──
 const knee = {
   "hospital": "Heung-K эмнэлэг",
-  "title": "Өвдөгний үений төв",
+  "title": "Өвдөг, түнхний үений төв",
   "descriptionFirst": "Нарийвчилсан оношилгоо, мэс заслын бус эмчилгээнээс эхлээд хүндрэлтэй мэс засал, сэргээн засах эмчилгээ хүртэл.",
-  "descriptionSecond": "Өвдөгний үений эмгэгт зориулсан чанартай, цогц тусламж үзүүлнэ.",
-  "service1": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO system)",
+  "descriptionSecond": "Өвдөг, түнхний үений эмгэгт зориулсан чанартай, цогц тусламж үзүүлнэ.",
+  "service1": "Robot Assisted Knee & Hip arthroplasty (MAKO system)",
   "service2": "Knee Revision Surgery",
   "service3": "Stem Cell Cartilage Regeneration (CARTISTEM)",
   "service4": "Autologous Chondrocyte Implantation (CartiLife)",
@@ -382,8 +382,21 @@ const knee = {
 
 // ── 19. 무릎전담센터 · 치료 상세 (공통 펼침/접힘 문구 포함) ──
 const centerTreatmentsKnee = {
+  "starHeadline": "Түнхний мэс заслын дэлхийн түвшний арга барилыг",
+  "starHeadlineHighlight": "одоо HEUNG-K-д!",
+  "starSubtitle": "Түнхний үе солих мэс заслын шинэ арга",
+  "starBenefit1": "Эдийн гэмтлийг багасгах жижиг зүслэг",
+  "starBenefit2": "Булчинг хадгалахад чиглэсэн арга",
+  "starBenefit3": "Олон улсын эрдэм шинжилгээний солилцоонд тулгуурласан арга",
+  "starDescriptionBefore": "Түнхний үеийг жижиг зүслэгээр солих олон улсын нийгэмлэг болох ",
+  "starDescriptionAfter": "-ийн Азийн төлөөлөгч, ерөнхий эмч Ким Жонгын эрдэм шинжилгээний солилцоо, судалгаанд оролцож, өвчтөн бүрийн нөхцөлд тохирсон жижиг зүслэгтэй түнхний үе солих мэс засал хийдэг.",
+  "starActivities": "HSS ба STAR Approach Foundation-ийн үйл ажиллагааг үзэх",
+  "starDoctor": "Ким Жонгын",
+  "starDoctorRole": "Ерөнхий эмч",
+  "starDoctorAffiliation": "STAR Approach Foundation-ийн Азийн төлөөлөгч",
+  "starPhotoAlt": "STAR Approach Foundation-ийн олон улсын эрдэм шинжилгээний солилцоо болон ерөнхий эмч Ким Жонгын",
   "kneeLabel": "Өвдөгний үений төвийн эмчилгээ",
-  "makoTitle": "MAKO роботын тусламжтай бага зүслэгтэй өвдөгний үе солих мэс засал",
+  "makoTitle": "Роботын тусламжтай өвдөг, түнхний үе солих мэс засал (MAKO)",
   "mako687_1179": "Heung-K-ийн бага зүслэгтэй мэс заслын туршлагыг орчин үеийн робот технологитой хослуулна",
   "imageAlt": {
     "introRobotSystem": "MAKO роботын тусламжтай үе солих систем",

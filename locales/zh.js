@@ -361,10 +361,10 @@ const centerMenu = {
 // ── 18. 무릎전담센터 · 배너 ──
 const knee = {
   "hospital": "兴K医院",
-  "title": "膝关节专科中心",
+  "title": "膝关节与髋关节专科中心",
   "descriptionFirst": "涵盖精准诊断、保守治疗、高难度手术及术后康复。",
-  "descriptionSecond": "以专业化诊疗体系, 为膝关节疾病提供系统治疗。",
-  "service1": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO system)",
+  "descriptionSecond": "以专业化诊疗体系，为膝关节与髋关节疾病提供系统治疗。",
+  "service1": "Robot Assisted Knee & Hip arthroplasty (MAKO system)",
   "service2": "Knee Revision Surgery",
   "service3": "Stem Cell Cartilage Regeneration (CARTISTEM)",
   "service4": "Autologous Chondrocyte Implantation (CartiLife)",
@@ -382,8 +382,21 @@ const knee = {
 
 // ── 19. 무릎전담센터 · 치료 상세 (공통 펼침/접힘 문구 포함) ──
 const centerTreatmentsKnee = {
+  "starHeadline": "世界级髋关节手术理念，",
+  "starHeadlineHighlight": "尽在兴K医院！",
+  "starSubtitle": "髋关节置换术的新入路",
+  "starBenefit1": "尽量减少组织损伤（微创切口）",
+  "starBenefit2": "采用注重肌肉保留的手术入路",
+  "starBenefit3": "基于国际学术交流的手术技术",
+  "starDescriptionBefore": "作为国际微创髋关节置换学会 ",
+  "starDescriptionAfter": " 的亚洲代表，金宗根院长积极开展学术交流与研究，并根据患者情况实施微创髋关节置换手术。",
+  "starActivities": "查看 HSS 与 STAR Approach Foundation 活动",
+  "starDoctor": "金宗根",
+  "starDoctorRole": "代表院长",
+  "starDoctorAffiliation": "STAR Approach Foundation 亚洲代表",
+  "starPhotoAlt": "STAR Approach Foundation 国际学术交流合影与金宗根代表院长",
   "kneeLabel": "膝关节专科中心治疗",
-  "makoTitle": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO)",
+  "makoTitle": "Robot Assisted Knee & Hip arthroplasty (MAKO)",
   "mako687_1179": "融合兴K医院的微创手术经验与先进机器人技术",
   "imageAlt": {
     "introRobotSystem": "MAKO机器人人工关节手术系统",
