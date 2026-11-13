@@ -51,7 +51,10 @@
     -webkit-text-fill-color: transparent;
     text-wrap: balance;
 }
-.knee-center-title span { display: block; }
+.knee-center-title span {
+    display: block;
+    word-break: keep-all;
+}
 .knee-center-laurel { position: absolute; top: 0; width: 18.627%; height: auto; }
 .knee-center-laurel--left { left: 0; }
 .knee-center-laurel--right { right: 0; transform: scaleX(-1); }

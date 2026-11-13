@@ -17,9 +17,9 @@ test('Live Server는 저장 후 새로고침 가능한 실제 파일 주소를 �
   else globalThis.document=previous;
  }
 });
-test('local language routes retain search/hash and replace the existing language', () => {
+test('local language routes use the shared entry and retain search/hash', () => {
  const url = new URL('http://127.0.0.1:4173/ko/?preview=1#reservation');
- assert.equal(localeHref('en', url, 'http://127.0.0.1:4173/', codes), '/en/?preview=1#reservation');
+ assert.equal(localeHref('en', url, 'http://127.0.0.1:4173/', codes), '/?preview=1&lang=en#reservation');
  assert.equal(requestedLocale(url, 'http://127.0.0.1:4173/', codes), 'ko');
 });
 test('GitHub Pages preserves the repository path and a refreshable static entry point', () => {
@@ -29,5 +29,14 @@ test('GitHub Pages preserves the repository path and a refreshable static entry 
 });
 test('a deployed subfolder retains its prefix for language routes', () => {
  const url = new URL('https://hospital.example/global/ko/#doctors');
- assert.equal(localeHref('en', url, 'https://hospital.example/global/', codes), '/global/en/#doctors');
+ assert.equal(localeHref('en', url, 'https://hospital.example/global/', codes), '/global/?lang=en#doctors');
+});
+
+test('production query language takes priority over a legacy SEO route', () => {
+ const base = 'https://heungkglobal.com/';
+ const url = new URL(base + 'ko/?lang=en#about');
+ assert.equal(requestedLocale(url, base, codes), 'en');
+ assert.equal(localeHref('en', url, base, codes), '/?lang=en#about');
+ assert.equal(requestedLocale(new URL(base + '?lang=invalid'), base, codes), undefined);
+ assert.equal(localeHref('ko', new URL(base + 'index.html?lang=en'), base, codes), '/index.html?lang=ko');
 });

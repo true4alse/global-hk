@@ -361,10 +361,10 @@ const centerMenu = {
 // ── 18. 무릎전담센터 · 배너 ──
 const knee = {
   "hospital": "Bệnh viện Heung-K",
-  "title": "Trung tâm Chuyên khoa Khớp gối",
+  "title": "Trung tâm Chuyên khoa Khớp gối & Khớp háng",
   "descriptionFirst": "Từ chẩn đoán chính xác, điều trị không phẫu thuật đến phẫu thuật phức tạp và phục hồi chức năng.",
-  "descriptionSecond": "Chăm sóc chuyên sâu, toàn diện các bệnh lý khớp gối.",
-  "service1": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO system)",
+  "descriptionSecond": "Chăm sóc chuyên sâu, toàn diện các bệnh lý khớp gối và khớp háng.",
+  "service1": "Robot Assisted Knee & Hip arthroplasty (MAKO system)",
   "service2": "Knee Revision Surgery",
   "service3": "Stem Cell Cartilage Regeneration (CARTISTEM)",
   "service4": "Autologous Chondrocyte Implantation (CartiLife)",
@@ -382,8 +382,21 @@ const knee = {
 
 // ── 19. 무릎전담센터 · 치료 상세 (공통 펼침/접힘 문구 포함) ──
 const centerTreatmentsKnee = {
+  "starHeadline": "Triết lý phẫu thuật khớp háng tầm quốc tế,",
+  "starHeadlineHighlight": "nay tại HEUNG-K!",
+  "starSubtitle": "Hướng tiếp cận mới trong phẫu thuật thay khớp háng",
+  "starBenefit1": "Giảm thiểu tổn thương mô bằng đường rạch nhỏ",
+  "starBenefit2": "Tiếp cận chú trọng bảo tồn cơ",
+  "starBenefit3": "Kỹ thuật dựa trên trao đổi học thuật quốc tế",
+  "starDescriptionBefore": "Là đại diện châu Á của tổ chức quốc tế về thay khớp háng với đường rạch nhỏ, ",
+  "starDescriptionAfter": ", Giám đốc Kim Jong-geun tham gia trao đổi học thuật và nghiên cứu, thực hiện thay khớp háng với đường rạch nhỏ phù hợp với tình trạng từng bệnh nhân.",
+  "starActivities": "Xem hoạt động HSS & STAR Approach Foundation",
+  "starDoctor": "Kim Jong-geun",
+  "starDoctorRole": "Giám đốc bệnh viện",
+  "starDoctorAffiliation": "Đại diện châu Á, STAR Approach Foundation",
+  "starPhotoAlt": "Trao đổi học thuật quốc tế với STAR Approach Foundation và Giám đốc Kim Jong-geun",
   "kneeLabel": "Các phương pháp điều trị tại Trung tâm Chuyên khoa Khớp gối",
-  "makoTitle": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO)",
+  "makoTitle": "Robot Assisted Knee & Hip arthroplasty (MAKO)",
   "mako687_1179": "Kết hợp công nghệ robot tiên tiến với chuyên môn phẫu thuật ít xâm lấn của Bệnh viện Heung-K!",
   "imageAlt": {
     "introRobotSystem": "Hệ thống robot hỗ trợ thay khớp MAKO",

@@ -4,6 +4,16 @@ import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 
 const source = (await readFile(new URL('../js/hero.js', import.meta.url), 'utf8')).replace('export function', 'function');
+
+test('legacy static markup without a slider does not interrupt page initialization', () => {
+  const number = { textContent: '2,500', dataset: { target: '2500' } };
+  const hero = { querySelector: selector => selector === '.hero-number' ? number
+    : selector === '.hero-statistic' ? { setAttribute() {} } : null };
+  const context = vm.createContext({ document: { querySelector: () => hero }, Intl,
+    window: { Swiper() { throw new Error('Missing slider must not be initialized'); } } });
+  vm.runInContext(source, context);
+  assert.doesNotThrow(() => context.renderHero({ unit: 'cases' }));
+});
 test('Swiper 로드 실패 시에도 HTML 숫자와 번역된 접근성 문구를 유지한다', () => {
   const number = { textContent: '2,500', dataset: { target: '2500' } };
   const attributes = new Map();

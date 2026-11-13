@@ -361,10 +361,10 @@ const centerMenu = {
 // ── 18. 무릎전담센터 · 배너 ──
 const knee = {
   "hospital": "Heung-K अस्पताल",
-  "title": "घुटना विशेषज्ञ केंद्र",
+  "title": "घुटना एवं कूल्हा विशेषज्ञ केंद्र",
   "descriptionFirst": "सटीक जाँच और बिना सर्जरी के उपचार से लेकर जटिल सर्जरी और पुनर्वास तक।",
-  "descriptionSecond": "हमारा विशेष घुटना उपचार तंत्र संपूर्ण, उच्च-गुणवत्ता की देखभाल प्रदान करता है।",
-  "service1": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO system)",
+  "descriptionSecond": "हमारा विशेष घुटना एवं कूल्हा उपचार तंत्र संपूर्ण, उच्च-गुणवत्ता की देखभाल प्रदान करता है।",
+  "service1": "Robot Assisted Knee & Hip arthroplasty (MAKO system)",
   "service2": "Knee Revision Surgery",
   "service3": "Stem Cell Cartilage Regeneration (CARTISTEM)",
   "service4": "Autologous Chondrocyte Implantation (CartiLife)",
@@ -382,8 +382,21 @@ const knee = {
 
 // ── 19. 무릎전담센터 · 치료 상세 (공통 펼침/접힘 문구 포함) ──
 const centerTreatmentsKnee = {
+  "starHeadline": "कूल्हे की सर्जरी का वैश्विक दृष्टिकोण,",
+  "starHeadlineHighlight": "अब HEUNG-K में!",
+  "starSubtitle": "हिप रिप्लेसमेंट सर्जरी का एक नया तरीका",
+  "starBenefit1": "छोटे चीरे से ऊतकों की क्षति कम करना",
+  "starBenefit2": "मांसपेशियों को सुरक्षित रखने पर केंद्रित तकनीक",
+  "starBenefit3": "अंतरराष्ट्रीय शैक्षणिक आदान-प्रदान पर आधारित तकनीक",
+  "starDescriptionBefore": "न्यूनतम चीरे वाली हिप रिप्लेसमेंट सर्जरी की अंतरराष्ट्रीय संस्था ",
+  "starDescriptionAfter": " के एशियाई प्रतिनिधि के रूप में मुख्य निदेशक किम जोंग-गुन शैक्षणिक आदान-प्रदान और शोध में भाग लेते हैं तथा प्रत्येक रोगी की स्थिति के अनुसार छोटे चीरे से हिप रिप्लेसमेंट करते हैं।",
+  "starActivities": "HSS और STAR Approach Foundation की गतिविधियाँ देखें",
+  "starDoctor": "किम जोंग-गुन",
+  "starDoctorRole": "मुख्य निदेशक",
+  "starDoctorAffiliation": "STAR Approach Foundation के एशियाई प्रतिनिधि",
+  "starPhotoAlt": "STAR Approach Foundation का अंतरराष्ट्रीय शैक्षणिक आदान-प्रदान और मुख्य निदेशक किम जोंग-गुन",
   "kneeLabel": "घुटना केंद्र के उपचार",
-  "makoTitle": "रोबोट-सहायता प्राप्त MIS पूर्ण घुटना प्रत्यारोपण (MAKO)",
+  "makoTitle": "रोबोट-सहायता प्राप्त घुटना एवं कूल्हा प्रत्यारोपण (MAKO)",
   "mako687_1179": "Heung-K की न्यूनतम चीरे की विशेषज्ञता और उन्नत रोबोट तकनीक का मेल",
   "imageAlt": {
     "introRobotSystem": "MAKO रोबोट-सहायता प्राप्त जोड़ प्रत्यारोपण प्रणाली",

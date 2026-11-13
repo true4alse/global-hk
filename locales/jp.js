@@ -361,10 +361,10 @@ const centerMenu = {
 // ── 18. 무릎전담센터 · 배너 ──
 const knee = {
   "hospital": "Heung-K病院",
-  "title": "膝関節専門センター",
+  "title": "膝関節・股関節専門センター",
   "descriptionFirst": "精密な診断から保存療法、高難度手術、リハビリテーションまで。",
-  "descriptionSecond": "膝関節疾患に特化した診療体制で、治療の質を高めます。",
-  "service1": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO system)",
+  "descriptionSecond": "膝関節・股関節疾患に特化した診療体制で、治療の質を高めます。",
+  "service1": "Robot Assisted Knee & Hip arthroplasty (MAKO system)",
   "service2": "Knee Revision Surgery",
   "service3": "Stem Cell Cartilage Regeneration (CARTISTEM)",
   "service4": "Autologous Chondrocyte Implantation (CartiLife)",
@@ -382,8 +382,21 @@ const knee = {
 
 // ── 19. 무릎전담센터 · 치료 상세 (공통 펼침/접힘 문구 포함) ──
 const centerTreatmentsKnee = {
+  "starHeadline": "世界的な股関節手術の理念を、",
+  "starHeadlineHighlight": "今、HEUNG-Kで！",
+  "starSubtitle": "人工股関節置換術の新しいアプローチ",
+  "starBenefit1": "組織の損傷を最小限に（最小切開法）",
+  "starBenefit2": "筋肉の温存に配慮したアプローチ",
+  "starBenefit3": "国際学術交流に基づく手術法",
+  "starDescriptionBefore": "国際的な最小切開人工股関節手術学会である ",
+  "starDescriptionAfter": " のアジア代表として、キム・ジョングン代表院長が交流・研究に取り組み、患者様の状態に合わせた最小切開人工股関節置換術を行っています。",
+  "starActivities": "HSS・STAR Approach Foundationの活動を見る",
+  "starDoctor": "キム・ジョングン",
+  "starDoctorRole": "代表院長",
+  "starDoctorAffiliation": "STAR Approach Foundation アジア代表",
+  "starPhotoAlt": "STAR Approach Foundationの国際学術交流とキム・ジョングン代表院長",
   "kneeLabel": "膝関節専門センターの治療",
-  "makoTitle": "Robot-Assisted MIS Total Knee Arthroplasty (MAKO)",
+  "makoTitle": "Robot Assisted Knee & Hip arthroplasty (MAKO)",
   "mako687_1179": "Heung-K病院の低侵襲手術技術とMAKOのロボット技術を融合",
   "imageAlt": {
     "introRobotSystem": "MAKOロボット支援人工関節手術システム",
