@@ -1370,7 +1370,7 @@ const contact = {
   "gimpoAlt": "View of Gimpo International Airport",
   "gimpo": "Gimpo International Airport",
   "gimpoTime": "30 Minutes",
-  "gimpoRail": "김포공항 문구로",
+  "gimpoRail": "Take the Seohae Line from Gimpo International Airport Station, travel 9 stops to Siheung Neunggok Station, and take Exit 3.",
   "gimpoStep0": "Take the Seohae Line toward Wonsi from Gimpo International Airport Station.",
   "gimpoStep1": "Travel 9 stops and get off at Siheung Neunggok Station.",
   "gimpoStep2": "Get off at Siheung Neunggok Station and take Exit 3.",
