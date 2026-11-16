@@ -91,6 +91,56 @@ a:focus-visible {
   justify-self: start;
 }
 
+.header-language-tools {
+  container-type: inline-size;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.official-website-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    flex: 0 0 auto;
+    min-width: 40px;
+    height: 40px;
+    padding: 4px 16px;
+    border-radius: 46px;
+    background: #fff;
+    box-shadow: var(--pill-shadow);
+    color: var(--header-blue);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.official-website-link img {
+  display: block;
+  flex: 0 0 30px;
+  width: 30px;
+  height: auto;
+}
+
+.official-website-link:hover { background: #eff7fc; }
+html:not([lang="ko"]) .official-website-link { display: none; }
+
+/* 실제 언어 영역에 여유가 없으면 문구를 숨기고 아이콘의 클릭 영역은 유지합니다. */
+@container (max-width: 310px) {
+  .official-website-text { display: none; }
+  .official-website-link { padding-inline: 7px; }
+}
+
+@media (max-width: 480px) {
+  html[lang="ko"] .header-language-tools .language-toggle { padding-inline: 8px; }
+  html[lang="ko"] .header-language-tools [data-i18n="header.languageButton"] { display: none; }
+}
+
 .language-toggle {
   direction: ltr;
   display: flex;
