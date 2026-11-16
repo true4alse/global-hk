@@ -14,6 +14,8 @@ const languageLabel = "Хэл сонгох";
 
 // ── 03. 상단 헤더 ──
 const header = {
+  "officialMenuText": "Албан ёсны вэбсайт",
+  "officialMenuLabel": "Албан ёсны вэбсайт руу очих (шинэ цонх)",
   "languageButton": "global",
   "phoneLabel": "시안용 임시 전화번호(수정안해도 됨 일단)",
   "navLabel": "Үндсэн цэс"

@@ -14,6 +14,8 @@ const languageLabel = "选择语言";
 
 // ── 03. 상단 헤더 ──
 const header = {
+  "officialMenuText": "访问官方网站",
+  "officialMenuLabel": "访问官方网站（新窗口）",
   "languageButton": "global",
   "phoneLabel": "시안용 임시 전화번호(수정안해도 됨 일단)",
   "navLabel": "主菜单"

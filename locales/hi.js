@@ -14,6 +14,8 @@ const languageLabel = "भाषा चुनें";
 
 // ── 03. 상단 헤더 ──
 const header = {
+  "officialMenuText": "आधिकारिक वेबसाइट पर जाएँ",
+  "officialMenuLabel": "आधिकारिक वेबसाइट पर जाएँ (नया टैब)",
   "languageButton": "global",
   "phoneLabel": "시안용 임시 전화번호(수정안해도 됨 일단)",
   "navLabel": "मुख्य मेनू"

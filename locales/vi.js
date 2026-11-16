@@ -14,6 +14,8 @@ const languageLabel = "Chọn ngôn ngữ";
 
 // ── 03. 상단 헤더 ──
 const header = {
+  "officialMenuText": "Truy cập website chính thức",
+  "officialMenuLabel": "Truy cập website chính thức (mở tab mới)",
   "languageButton": "global",
   "phoneLabel": "시안용 임시 전화번호(수정안해도 됨 일단)",
   "navLabel": "Menu chính"

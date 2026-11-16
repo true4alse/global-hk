@@ -14,6 +14,8 @@ const languageLabel = "Выберите язык";
 
 // ── 03. 상단 헤더 ──
 const header = {
+  "officialMenuText": "Официальный сайт",
+  "officialMenuLabel": "Перейти на официальный сайт (новая вкладка)",
   "languageButton": "global",
   "phoneLabel": "시안용 임시 전화번호(수정안해도 됨 일단)",
   "navLabel": "Главное меню"
