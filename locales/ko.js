@@ -14,6 +14,8 @@ const languageLabel = "언어 선택";
 
 // ── 03. 상단 헤더 ──
 const header = {
+  "officialWebsite": "흥K병원 공식 홈페이지로 이동",
+  "officialWebsiteText": "공식홈페이지",
   "languageButton": "global",
   "phoneLabel": "시안용 임시 전화번호(수정안해도 됨 일단)",
   "navLabel": "주 메뉴"
