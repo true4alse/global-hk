@@ -362,11 +362,11 @@ html:lang(ar) .doctors { overflow-x: clip; }
   line-height: 1.45;
   word-break: keep-all;
   overflow-wrap: anywhere;
-  display: -webkit-box;
+  /* display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 
-  overflow: hidden;
+  overflow: hidden; */
   text-overflow: ellipsis;
 }
 
@@ -490,6 +490,32 @@ html:lang(ar) .doctors { overflow-x: clip; }
 .doctor-slider {
   max-width: 1920px;
   margin-inline: auto;
+}
+
+/* 공통 화살표는 슬라이드 밖에 두어 전환 후에도 키보드 포커스를 유지합니다. */
+.doctor-carousel {
+  position: relative;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+.doctor-profile-navigation {
+  position: absolute;
+  z-index: 6;
+  left: calc(32.19% - 112px);
+  top: calc(clamp(80px, 10.57vw, 203px) + clamp(18px, 1.25vw, 24px) * 1.45 + clamp(42px, 4.22vw, 81px) * .725 - 22px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  direction: ltr;
+}
+
+@media (max-width: 767px) {
+  .doctor-profile-navigation {
+    position: static;
+    justify-content: center;
+    margin: 0 16px 12px;
+  }
 }
 
 .doctor-slider:not(.swiper-initialized)>.swiper-wrapper {
@@ -785,6 +811,74 @@ html:lang(ar) .doctors { overflow-x: clip; }
 }
 
 /* Keep the longest profile height for every slide, including responsive reflow. */
+/* PC에서는 큰 여백 대신 본문에 공간을 배분하고, 긴 약력은 자연스럽게 늘어납니다. */
+@media (min-width: 768px) {
+  .doctors .doctors-title {
+    margin-block: 48px 24px;
+    font-size: clamp(28px, 2.2vw, 40px);
+  }
+
+  .doctors .doctor-department-controls { margin-bottom: 20px; }
+  .doctors .doctor-department-nav > button { padding-block: 8px; font-size: clamp(13px, 1vw, 18px); }
+
+.doctor-slider .doctor-profile {
+    min-height: min(620px, calc(100dvh - var(--header-height, 120px) - 80px));
+    padding: 80px 8% 32px 31%;
+}
+
+  .doctor-slider .doctor-portrait-frame {
+    top: auto;
+    bottom: 0;
+    left: 3%;
+    width: clamp(160px, min(26%, 380px, calc((100dvh - var(--header-height, 120px) - 160px) * .6667)), 380px);
+    height: auto;
+    margin: 0;
+  }
+
+  .doctor-slider .doctor-specialty { font-size: clamp(16px, 1vw, 18px); line-height: 1.4; }
+  .doctor-slider .doctor-name { gap: 0 12px; font-size: clamp(32px, 3vw, 54px); line-height: 1.15; }
+  .doctor-slider .doctor-name span { font-size: .65em; }
+  .doctor-slider .doctor-detail { margin-top: 20px; }
+  .doctor-slider .doctor-detail h4 { margin-bottom: 10px; padding: 5px 16px; font-size: 13px; }
+  .doctor-slider .doctor-detail p { max-width: none; font-size: 14px; line-height: 1.45; }
+  .doctor-slider .doctor-career-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .doctor-slider .doctor-career-columns > ul:only-child { grid-column: 1 / -1; columns: 2; column-gap: 24px; }
+  .doctor-slider .doctor-career-columns li { break-inside: avoid; margin-bottom: 4px; font-size: 14px; line-height: 1.4; }
+
+  .doctor-profile-navigation {
+    inset: 0;
+    display: block;
+    pointer-events: none;
+  }
+
+  .doctor-profile-navigation .doctor-department-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: auto;
+  }
+
+  .doctor-profile-navigation .doctor-department-previous { left: calc(30% - 56px); }
+  .doctor-profile-navigation .doctor-department-next { right: calc(4% - 22px); }
+}
+
+/* 우측 고정 퀵메뉴와 다음 버튼 사이에도 클릭할 여유를 둡니다. */
+@media (min-width: 1101px) {
+  .doctor-slider .doctor-profile { padding-right: max(8%, 208px); }
+  .doctor-profile-navigation .doctor-department-next { right: max(calc(4% - 22px), 148px); }
+}
+
+@media (min-width: 768px) and (max-height: 820px) {
+.doctor-slider .doctor-profile {
+    padding-block: 28px;
+}
+  .doctor-slider .doctor-name { font-size: clamp(30px, 2.8vw, 42px); }
+  .doctor-slider .doctor-detail { margin-top: 16px; }
+  .doctor-slider .doctor-detail p,
+  .doctor-slider .doctor-career-columns li { font-size: 13px; line-height: 1.35; }
+  .doctor-slider .doctor-career-columns li { margin-bottom: 3px; }
+}
+
 .doctor-slider.swiper-initialized>.swiper-wrapper {
   height: auto;
   align-items: stretch;

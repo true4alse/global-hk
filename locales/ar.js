@@ -14,6 +14,8 @@ const languageLabel = "اختر اللغة";
 
 // ── 03. 상단 헤더 ──
 const header = {
+  "officialMenuText": "زيارة الموقع الرسمي",
+  "officialMenuLabel": "زيارة الموقع الرسمي (يفتح في علامة تبويب جديدة)",
   "languageButton": "global",
   "phoneLabel": "시안용 임시 전화번호(수정안해도 됨 일단)",
   "navLabel": "القائمة الرئيسية"

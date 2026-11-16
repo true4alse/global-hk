@@ -59,7 +59,7 @@
   <!-- SEO:END -->
   <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="./css/header.css?v=20261116-2">
+  <link rel="stylesheet" href="./css/header.css?v=20261116-4">
   <link rel="stylesheet" href="./css/hero.css">
   <link rel="stylesheet" href="./css/hero-carousel.css">
   <link rel="stylesheet" href="./css/about.css">
@@ -79,7 +79,7 @@
   <link rel="stylesheet" href="./css/hand-foot-center.css">
   <link rel="stylesheet" href="./css/spine-center.css">
   <link rel="stylesheet" href="./css/center-treatment.css?v=20261115-1">
-  <link rel="stylesheet" href="./css/doctors.css">
+  <link rel="stylesheet" href="./css/doctors.css?v=20261116-4">
   <link rel="stylesheet" href="./css/facilities.css">
   <script defer src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script type="module" src="./js/header.js?v=20261007"></script>
@@ -171,6 +171,13 @@
                   src="./assets/flags/vn.svg" width="28" height="21" alt=""><span lang="en"
                   data-i18n-static="언어 영문 3글자 표기">VIE</span></a></li>
           </ul>
+          <div class="language-menu-footer">
+            <a class="language-official-link" href="https://www.heung-k.co.kr" target="_blank" rel="noopener noreferrer" aria-label="공식 홈페이지 바로가기 (새 창)" data-i18n-label="header.officialMenuLabel">
+              <img src="./assets/logo-symbol.png" width="628" height="565" alt="">
+              <span data-i18n="header.officialMenuText">공식 홈페이지 바로가기</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3h7v7M21 3 10 14M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/></svg>
+            </a>
+          </div>
         </div>
       </div>
       <a class="official-website-link" href="https://www.heung-k.co.kr" aria-label="흥K병원 공식 홈페이지로 이동" title="흥K병원 공식 홈페이지로 이동" data-i18n-label="header.officialWebsite" data-figma-node="399:969">
@@ -3346,7 +3353,6 @@
         <span data-i18n="doctors.title">의료진 소개</span>
       </h2>
       <div class="doctor-department-controls">
-        <button class="doctor-department-arrow doctor-department-previous" type="button" aria-label="이전 의료진" data-i18n-label="doctors.previous" hidden><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M13 4 7 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
       <nav class="doctor-department-nav" aria-label="진료과별 의료진 선택" data-i18n-label="doctorMenu.label">
         <button type="button" data-doctor-target="0" data-doctor-group="0,1"><span data-i18n="doctorMenu.knee">무릎
             센터</span></button>
@@ -3363,10 +3369,13 @@
         <button type="button" data-doctor-target="10" data-doctor-group="10"><span
             data-i18n="doctorMenu.anesthesia">마취통증의학과</span></button>
       </nav>
-        <button class="doctor-department-arrow doctor-department-next" type="button" aria-label="다음 의료진" data-i18n-label="doctors.next" hidden><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m7 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
       </div>
       <div class="doctor-carousel" data-scroll-reveal role="region" aria-label="흥K병원 의료진 소개 슬라이드"
         data-i18n-label="doctors.carouselLabel">
+        <div class="doctor-profile-navigation">
+          <button class="doctor-department-arrow doctor-department-previous" type="button" aria-label="이전 의료진" data-i18n-label="doctors.previous" hidden><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M13 4 7 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
+          <button class="doctor-department-arrow doctor-department-next" type="button" aria-label="다음 의료진" data-i18n-label="doctors.next" hidden><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="m7 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></button>
+        </div>
         <div class="doctor-slider swiper">
           <div class="swiper-wrapper">
             <article class="doctor-profile swiper-slide" role="group" aria-label="김종근 대표원장 소개"
@@ -4641,11 +4650,6 @@
                 data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:140 / 100"><img
                   src="./assets/facilities/6f-02.webp" alt="흥K병원 6층 검진센터 대기실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외"
                   width="1532" height="1096" loading="lazy" decoding="async"></a>
-              <a class="facilities-thumbnail" href="#facilities-photo-6-3" data-photo="3"
-                aria-controls="facilities-photo-6-3" aria-label="6층 시설 사진 3 사진 보기"
-                data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:133 / 100"><img
-                  src="./assets/facilities/6f-03.webp" alt="흥K병원 6층 시설 사진 3" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외"
-                  width="2000" height="1506" loading="lazy" decoding="async"></a>
               <a class="facilities-thumbnail" href="#facilities-photo-6-4" data-photo="4"
                 aria-controls="facilities-photo-6-4" aria-label="6층 중앙수술센터 입구 사진 보기"
                 data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" style="--thumbnail-ratio:134 / 100"><img
@@ -4709,9 +4713,6 @@
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-2" data-facilities-photo="2"><img src="./assets/facilities/6f-02.webp"
                 alt="흥K병원 6층 검진센터 대기실" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="1532" height="1096"
-                loading="lazy" decoding="async"></figure>
-            <figure id="facilities-photo-6-3" data-facilities-photo="3"><img src="./assets/facilities/6f-03.webp"
-                alt="흥K병원 6층 시설 사진 3" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1506"
                 loading="lazy" decoding="async"></figure>
             <figure id="facilities-photo-6-4" data-facilities-photo="4"><img src="./assets/facilities/6f-04.webp"
                 alt="흥K병원 6층 중앙수술센터 입구" data-i18n-static="둘러보기 사진 설명·선택 라벨은 번역 제외" width="2000" height="1500"
@@ -5280,7 +5281,7 @@
             data-copy-target="customer-address-text" aria-label="병원 주소 복사"
             data-i18n-label="customerCenter.copyAddress"><img src="./assets/customer-center/copy.svg" width="24"
               height="24" alt=""></button></div><iframe class="customer-map"
-          src="https://www.google.com/maps?q=%ED%9D%A5%EC%BC%80%EC%9D%B4%EB%B3%91%EC%9B%90%20%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%EB%8A%A5%EA%B3%A1%EB%B2%88%EC%98%81%EA%B8%B8%2022&amp;z=16&amp;output=embed"
+          src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x357b6532313aaa9f%3A0xee4e671d92e8b815!2z7Z2l7LyA7J2067OR7JuQ!5e0!3m2!1sko!2skr!4v1794833091634!5m2!1sko!2skr"
           title="흥K병원 위치 구글 지도" data-i18n-title="customerCenter.mapTitle" width="1632" height="514" loading="lazy"
           allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>

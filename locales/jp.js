@@ -14,6 +14,8 @@ const languageLabel = "言語を選択";
 
 // ── 03. 상단 헤더 ──
 const header = {
+  "officialMenuText": "公式サイトへ",
+  "officialMenuLabel": "公式サイトへ（新しいタブで開きます）",
   "languageButton": "global",
   "phoneLabel": "시안용 임시 전화번호(수정안해도 됨 일단)",
   "navLabel": "メインメニュー"
@@ -1368,7 +1370,7 @@ const contact = {
   "gimpoAlt": "金浦国際空港の全景",
   "gimpo": "金浦国際空港",
   "gimpoTime": "30分",
-  "gimpoRail": "인천공항 제1터미널 또는 제2터미널에서 공항철도 일반열차 이용",
+  "gimpoRail": "金浦空港駅から西海線に乗り、9駅先の始興陵谷駅で下車し、3番出口をご利用ください。",
   "gimpoStep0": "金浦空港駅から元時方面行きの西海線に乗車",
   "gimpoStep1": "9駅先の始興陵谷駅で下車",
   "gimpoStep2": "始興陵谷駅で下車し、3番出口をご利用ください",
